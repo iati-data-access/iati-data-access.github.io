@@ -1,0 +1,6 @@
+node_modules
+docs/.vuepress/dist
+*.html
+*.py
+out.md
+.DS_Store
