@@ -1,7 +1,8 @@
 {
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "axios": "^0.21.0",
