@@ -8,10 +8,15 @@
         placeholder="Select a country"
         v-model="selectedCountry"
       ></v-select>
-      <p><a
-        :href="selectedCountryURL"
-        v-if="selectedCountry"
-        class="nav-link action-button">Download file →</a></p>
+      <p
+        v-if="selectedCountry">
+        <a
+          :href="selectedCountryURLTransactions"
+          class="nav-link action-button">Download transactional file →</a>
+        <a
+          :href="selectedCountryURLBudgets"
+          class="nav-link action-button">Download budget file →</a>
+      </p>
     </div>
   </div>
 </template>
@@ -28,7 +33,10 @@ export default {
     }
   },
   computed: {
-    selectedCountryURL() {
+    selectedCountryURLBudgets() {
+      return `https://github.com/markbrough/iati-data-access/blob/gh-pages/budget-${this.selectedCountry}.xlsx?raw=true`
+    },
+    selectedCountryURLTransactions() {
       return `https://github.com/markbrough/iati-data-access/blob/gh-pages/${this.selectedCountry}.xlsx?raw=true`
     }
   },
