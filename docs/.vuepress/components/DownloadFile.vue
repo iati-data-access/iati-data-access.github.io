@@ -12,10 +12,14 @@
         v-if="selectedCountry">
         <a
           :href="selectedCountryURLTransactions"
-          class="nav-link action-button">Download transactional file →</a>
+          class="nav-link action-button">Download transactions file →</a>
+        <br />Contains commitments, disbursements and expenditures
+      </p>
+      <p v-if="selectedCountry">
         <a
           :href="selectedCountryURLBudgets"
-          class="nav-link action-button">Download budget file →</a>
+          class="nav-link action-button">Download budgets file →</a>
+        <br />Contains forward-looking budget data
       </p>
     </div>
   </div>
