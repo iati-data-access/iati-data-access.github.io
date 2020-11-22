@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <v-select
-      :options="countries"
-      label="country_name"
-      :reduce="country => country.country_code"
-      placeholder="Select a country"
-      v-model="selectedCountry"
-    ></v-select>
-    <p><a :href="selectedCountryURL" v-if="selectedCountry">Download file</a></p>
+  <div class="home">
+    <div class="hero">
+      <v-select
+        :options="countries"
+        label="country_name"
+        :reduce="country => country.country_code"
+        placeholder="Select a country"
+        v-model="selectedCountry"
+      ></v-select>
+      <p><a
+        :href="selectedCountryURL"
+        v-if="selectedCountry"
+        class="nav-link action-button">Download file →</a></p>
+    </div>
   </div>
 </template>
 <style>
@@ -18,7 +23,7 @@ export default {
   name: 'DownloadFile',
   data () {
     return {
-      countries: [{label: 'Canada', code: 'ca'}],
+      countries: [],
       selectedCountry: null
     }
   },
@@ -29,8 +34,19 @@ export default {
   },
   async beforeMount() {
     var data = await axios.get(`https://raw.githubusercontent.com/markbrough/iati-data-access/gh-pages/index.json`)
-    console.log(data.data)
-    this.countries = data.data
+    this.countries = data.data.sort((a, b) => {
+      const countryRegionBool = {'country': 0, 'region': 1}
+      if (countryRegionBool[a.country_or_region] > countryRegionBool[b.country_or_region]) {
+        return 1
+      } else if (countryRegionBool[a.country_or_region] < countryRegionBool[b.country_or_region]) {
+        return -1
+      } else if (a.country_name > b.country_name) {
+        return 1
+      } else if (a.country_name < b.country_name) {
+        return -1
+      }
+      return 0
+    })
   }
 }
 </script>
