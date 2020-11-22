@@ -34,7 +34,7 @@ A number of pieces of work have provided insights into how IATI data can usefull
 
 * Aid on Spreadsheets[^10] – developed in 2018 by the Overseas Development Institute, makes IATI data available for Uganda and Liberia in Excel format. The data includes quarterly disbursements and MTEF projections. The site is available in English and French, though some pages are not currently working.
 * COVID-19 Prototype Visualisation[^11] – developed in 2020 by Development Initiatives, makes IATI data available for activities tagged according to the IATI COVID-19 Publishing Guidance in Excel format. The data includes actual transactions, disaggregated where there are multiple countries and sectors. The data is updated nightly.
-* Steps for Querying and Processing Data from the IATI Datastore Query Builder[^12] – undertaken in 2020 by UNDP, this presentation to the IATI Data Use Working Group outlined an approach for extracting data for past spending to Chad for 2016-2020, following a request from the Government. Data from the IATI Datastore Query Builder is reprocessed in R (a programming language) and then made available in Excel format.
+* Steps for Querying and Processing Data from the IATI Datastore Query Builder[^12] – undertaken in 2020 by the IATI Secretariat, this presentation to the IATI Data Use Working Group outlined an approach for extracting data for past spending to Chad for 2016-2020, following a request from the Government. Data from the IATI Datastore Query Builder is reprocessed in R (a programming language) and then made available in Excel format.
 
 1.4 Outputs
 -----------

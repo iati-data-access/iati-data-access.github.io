@@ -9,22 +9,6 @@ This methodology outlines steps that will be undertaken to get IATI data into a 
 2.1 Retrieval of IATI data
 --------------------------
 
-A range of different approaches have been used to retrieving data in past work:
-
-
-* Aid on Spreadsheets: downloaded data from the original IATI Datastore;
-* COVID-19 Prototype Visualisation: downloaded data from D-Portal;
-* Steps for Querying and Processing Data: downloaded from the new IATI Datastore API.
-
-This is the part of the methodology that will need to remain the most flexible as it appears to be the most challenging. Given that the Datastore was only launched in September 2020, challenges with using the IATI Datastore may involve the following, or other unforeseen issues:
-
-* Only data that passes schema validation is included in the IATI Datastore. This may exclude some data from publishers that are important to include in this initial exercise.
-* Stability or performance issues could arise as this data access tool will be one of the first to request significant extracts of data from the new Datastore.
-
-During the course of this work, the IATI Technical Team will be informed of any obstacles in using the IATI Datastore. The final methodology from this work will also help to provide information on how the Datastore outputs could be further improved.
-
-### 2.1.1 Download of all IATI data from IATI Registry
-
 After initial experiments with various APIs, the agreed approach is to download all data and then process it without using the IATI Datastore or another API. This approach is preferable given that this exercise will aim to download substantially all IATI data anyway. There are significant increases in performance that can be achieved through this approach.
 
 Downloading data from [IATI Data Dump](https://iati-data-dump.codeforiati.org/) takes 53 seconds for a zipped file of 537 MB (9GB unzipped), which contains all IATI data.
@@ -37,14 +21,6 @@ The data will be retrieved once per day.
 All activities in IATI version 2.01 or above will be included. 94% of files currently published on the IATI Registry use version 2.01 or above. Limiting processing to these files will reduce the cost of maintenance of the software going forward, and is likely to exclude a very small amount of out of date or poor-quality data.
 
 We will not subject the data to any validation processes. That is, we will use both valid and invalid data. Where data quality issues arise, these will generally be raised with the relevant publisher, rather than attempting to implement technical workarounds.
-
-We have discussed various ways to limit the total filesize, including limiting the number of columns that are output and grouping transactions into quarters[^1]. Depending on needs, and based on consultation with the IATI Secretariat, these approaches may be extended to include:
-
-
-* only selecting transactions after a particular date;
-* only including activities from publishers which are updated at least every quarter[^2].
-
-Any such approaches would be applied systematically and according to a clear methodology.
 
 2.3 Extract relevant data
 -------------------------
@@ -107,7 +83,7 @@ The date of the transaction (which would be used to aggregate transactions and i
 transaction/transaction-date/@iso-date
 ```
 
-#### Transaction value date[^3]
+#### Transaction value date[^1]
 
 The transaction value date in the published currency (which would be used as the date for currency conversion):
 
@@ -232,7 +208,7 @@ Care needs to be taken when correcting percentages for countries. The IATI Guida
 2.5 Currency conversion
 -----------------------
 
-As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD using the closest exchange rate date to the transaction value-date. Exchange rates from a range of sources will need to be used in order to ensure as wide a coverage as possible. The existing Exchange Rates Python library will be used, supplemented with IMF and World Bank rates where necessary[^4].
+As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD using the closest exchange rate date to the transaction value-date. Exchange rates from a range of sources will need to be used in order to ensure as wide a coverage as possible. The existing Exchange Rates Python library will be used, supplemented with IMF and World Bank rates where necessary[^2].
 
 2.6 Handling budgets
 --------------------
@@ -249,7 +225,7 @@ This process of calculating the proportion of commitments will be used for:
 
 For the Provider Organisation field, the activity reporting organisation will be used. For the Receiver Organisation field, the activity implementing organisation(s) will be used.
 
-Where budgets span more than one quarter, they will be split into multiple rows that map to exactly one quarter. The value will be split proportionately[^5]. This is necessary in order to maintain comparability between transactions (which are marked with a single date) and budgets (which span a period, and which may not align with the government’s fiscal year).
+Where budgets span more than one quarter, they will be split into multiple rows that map to exactly one quarter. The value will be split proportionately[^3]. This is necessary in order to maintain comparability between transactions (which are marked with a single date) and budgets (which span a period, and which may not align with the government’s fiscal year).
 
 Where revised and original budgets are both published for the same period, revised budgets will be used instead of original budgets.
 
@@ -275,7 +251,7 @@ The date will be set to the last day of the quarter.
 2.8 Conversion to target currency and fiscal period
 ---------------------------------------------------
 
-The target currency will be specified for each recipient country. Where this differs from USD, the total amount will be converted to the target currency. The exchange rate date will be the last day of the quarter. The fiscal quarter and fiscal year will also be added as additional columns. These will reflect the relevant country’s own fiscal calendar[^6]. The target currencies will initially be set as USD for all countries, until otherwise requested by a particular country. Partner countries will also be requested to let us know if they would like a target currency other than USD.
+The target currency will be specified for each recipient country. Where this differs from USD, the total amount will be converted to the target currency. The exchange rate date will be the last day of the quarter. The fiscal quarter and fiscal year will also be added as additional columns. These will reflect the relevant country’s own fiscal calendar[^4]. The target currencies will initially be set as USD for all countries, until otherwise requested by a particular country. Partner countries will also be requested to let us know if they would like a target currency other than USD.
 
 2.9 Language
 ------------
@@ -292,20 +268,15 @@ Given these limits, it will be important to keep file size and processing times 
 2.11 Licensing
 --------------
 
-All outputs will be published on Github and will be openly licensed according to the GNU Affero General Public License (AGPL) v3.0[^7].
+All outputs will be published on Github and will be openly licensed according to the GNU Affero General Public License (AGPL) v3.0[^5].
 
 
-[^1]: This may be relaxed depending on the file size when not grouping transactions into quarters. However, preliminary tests with data from DFID, USAID and the World Bank suggest that it would halve the size of the output datasets.
+[^1]: NB: it appears that some publishers are using the last day they updated their data as the transaction value date. In these cases, we will continue to use the value date, and flag this as an issue to be raised with the publishers by IATI Support.
 
-[^2]: According to the IATI Dashboard, 68% of publishers are publishing annual or less than annual data. This data is not the sort of data that is useful at country level. In some cases, these are also very large datasets by secondary publishers (for example, by AidData), or very small datasets, so it is likely to significantly increase the total file size with limited or no benefit.
-[http://publishingstats.iatistandard.org/timeliness.html](http://publishingstats.iatistandard.org/timeliness.html)
+[^2]: [https://github.com/codeforiati/exchangerates](https://github.com/codeforiati/exchangerates)
 
-[^3]: NB: it appears that some publishers are using the last day they updated their data as the transaction value date. In these cases, we will continue to use the value date, and flag this as an issue to be raised with the publishers by IATI Support.
+[^3]: If a budget does not perfectly span quarters, but instead spans part-quarters, the number of days in that part-quarter will be used to calculate the proportion of value to be attributed to each quarter.
 
-[^4]: [https://github.com/codeforiati/exchangerates](https://github.com/codeforiati/exchangerates)
+[^4]: The CIA World Factbook list of fiscal years will initially be used to determine each country’s fiscal year: [https://www.cia.gov/library/publications/the-world-factbook/fields/228.html](https://www.cia.gov/library/publications/the-world-factbook/fields/228.html)
 
-[^5]: If a budget does not perfectly span quarters, but instead spans part-quarters, the number of days in that part-quarter will be used to calculate the proportion of value to be attributed to each quarter.
-
-[^6]: The CIA World Factbook list of fiscal years will initially be used to determine each country’s fiscal year: [https://www.cia.gov/library/publications/the-world-factbook/fields/228.html](https://www.cia.gov/library/publications/the-world-factbook/fields/228.html)
-
-[^7]: [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html)
+[^5]: [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html)
