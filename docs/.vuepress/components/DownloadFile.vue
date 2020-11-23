@@ -21,6 +21,8 @@
           class="nav-link action-button">Download budgets file →</a>
         <br />Contains forward-looking budget data
       </p>
+      <hr />
+      <p class="last-updated">Last updated: <code>{{ lastUpdated}}</code></p>
     </div>
   </div>
 </template>
@@ -33,7 +35,8 @@ export default {
   data () {
     return {
       countries: [],
-      selectedCountry: null
+      selectedCountry: null,
+      lastUpdated: null
     }
   },
   computed: {
@@ -46,7 +49,8 @@ export default {
   },
   async beforeMount() {
     var data = await axios.get(`https://raw.githubusercontent.com/markbrough/iati-data-access/gh-pages/index.json`)
-    this.countries = data.data.sort((a, b) => {
+    this.lastUpdated = data.data.lastUpdated
+    this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}
       if (countryRegionBool[a.country_or_region] > countryRegionBool[b.country_or_region]) {
         return 1
