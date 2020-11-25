@@ -68,11 +68,12 @@ export default {
         }
       })
 
-      return [{key: 'publisher'}].concat(
+      return [{key: 'publisher', sortable: true}].concat(
         sortedTransactionTypes.map(item => {
           return {
             key: item,
-            formatter: 'valueFormatter'
+            formatter: 'valueFormatter',
+            sortable: true
           }
         })
       )
