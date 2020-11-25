@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "bootstrap-vue": "^2.19.0",
     "markdown-it-footnote": "^3.0.2",
     "vue-select": "^3.10.8",
     "vuepress": "^1.7.1"

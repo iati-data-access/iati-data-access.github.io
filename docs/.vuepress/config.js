@@ -12,7 +12,8 @@ module.exports = {
         "sidebar": [
           ["/", "Home"],
           ["/introduction/", "Introduction"],
-          ["/methodology/", "Methodology"]
+          ["/methodology/", "Methodology"],
+          ["/data-notes/", "Data Notes"]
         ]
       }
     },
