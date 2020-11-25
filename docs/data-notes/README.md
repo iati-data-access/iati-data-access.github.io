@@ -8,11 +8,11 @@ As part of its 2020-2025 Strategic Plan, IATI's first objective is to drive a si
 
 Given the continuing issues around the quality of data currently published by different publishers, IATI data still needs to be handled with caution. However, it is also important to “unpack” this conversation: some publishers’ data is now of a very good quality, and with appropriate care, can be useful. The purpose of this data notes section is to provide a simple overview of publishers’ data.
 
-## 3.1. Fields in output data
+## 3.1 Fields in output data
 
 For each country, two files are published, containing a common set of fields for all activities. The files have been designed so that a pivot table can be added on top of the data, in order to aggregate and summarise the data in various different ways, depending on user needs.
 
-### 3.1.1. Commitments, disbursements and expenditures
+### 3.1.1 Commitments, disbursements and expenditures
 
 Column | Example
 --- | --- | ---
@@ -36,7 +36,7 @@ Fiscal Year | FY19
 Fiscal Quarter | Q4
 Value (USD) | 47,560,000
 
-### 3.1.2. Budgets
+### 3.1.2 Budgets
 
 Column | Example
 --- | ---
