@@ -41,14 +41,14 @@ export default {
   },
   computed: {
     selectedCountryURLBudgets() {
-      return `https://github.com/markbrough/iati-data-access/blob/gh-pages/budget-${this.selectedCountry}.xlsx?raw=true`
+      return `https://iati-data-access.github.io/data/budget-${this.selectedCountry}.xlsx?raw=true`
     },
     selectedCountryURLTransactions() {
-      return `https://github.com/markbrough/iati-data-access/blob/gh-pages/${this.selectedCountry}.xlsx?raw=true`
+      return `https://iati-data-access.github.io/data/${this.selectedCountry}.xlsx?raw=true`
     }
   },
   async beforeMount() {
-    var data = await axios.get(`https://raw.githubusercontent.com/markbrough/iati-data-access/gh-pages/index.json`)
+    var data = await axios.get(`https://iati-data-access.github.io/data/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}
