@@ -81,12 +81,12 @@ export default {
   },
   methods: {
     valueFormatter(value) {
-      var _value = value ? value/1000000000.0 : 0
+      var _value = value ? value/1000000.0 : 0
       _value = _value.toLocaleString(undefined, {
         maximumFractionDigits: 2,
         minimumFractionDigits: 2
       })
-      return `${_value} bn`
+      return `${_value} mn`
     }
   },
   async beforeMount() {
