@@ -83,8 +83,7 @@ export default {
     valueFormatter(value) {
       var _value = value ? value/1000000.0 : 0
       _value = _value.toLocaleString(undefined, {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 2
+        maximumFractionDigits: 0
       })
       return `${_value} mn`
     }
