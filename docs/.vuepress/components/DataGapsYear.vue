@@ -50,7 +50,8 @@ export default {
       const order = {
         'commitments': 0,
         'disbursements': 1,
-        'budget': 2
+        'expenditure': 2,
+        'budget': 3
       }
       var sortedTransactionTypes = this.transactionTypeFields.sort((a, b) => {
         var [_a_type, _a_year] = a.split("_")
@@ -108,6 +109,10 @@ export default {
           var year = dataItem['year']
           if (year > thisYear) { return }
           var transaction_type_key = `disbursements_${year}`
+        } else if (dataItem['transaction_type'] == '4 - Expenditure') {
+          var year = dataItem['year']
+          if (year > thisYear) { return }
+          var transaction_type_key = `expenditure_${year}`
         } else if (dataItem['transaction_type'] == 'budget - Budget') {
           var year = dataItem['year']
           if (year < thisYear) { return }
