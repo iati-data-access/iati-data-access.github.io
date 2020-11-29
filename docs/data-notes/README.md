@@ -63,7 +63,7 @@ Value (USD) | 435,000
 
 ## 3.2 Data gaps by year
 
-The following table shows each publisher and the total amount of funding (in millions of USD) found in their published data after processing, for all countries/regions. It includes the past three years (for commitments and disbursements) and the next three years (for budgets).
+The following table shows each publisher and the total amount of funding (in millions of USD) found in their published data after processing, for all countries/regions. It includes the past three years (for commitments, disbursements and expenditures) and the next three years (for budgets).
 
 This will identify overall data gaps that you may need to be aware of. Data gaps (where USD 0.00 was found) are highlighted in yellow.
 
