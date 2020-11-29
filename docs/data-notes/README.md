@@ -27,13 +27,13 @@ Provider Organisation | 44001 – International Bank for Reconstruction and Deve
 Provider Organisation Type | 40 - Multilateral
 Receiver Organisation | Himachal Pradesh Roads & Infrastructure Development Corporation
 Receiver Organisation Type |
-Country | IN - India
+Recipient Country | IN - India
 Multi Country [^1] | 1
 Sector Category | 210 – Transport & Storage
 Sector | 21020 – Road Transport
 COVID 19 [^2] | 0
-Fiscal Year | FY19
-Fiscal Quarter | Q4
+Calendar Year | FY19
+Calendar Quarter | Q4
 Value (USD) | 47,560,000
 
 ### 3.1.2 Budgets
@@ -51,13 +51,13 @@ Provider Organisation | 44001 – International Bank for Reconstruction and Deve
 Provider Organisation Type |
 Receiver Organisation | Himachal Pradesh Roads & Infrastructure Development Corporation
 Receiver Organisation Type | 
-Country | IN - India
+Recipient Country | IN - India
 Multi Country [^1] | 1
 Sector Category | 210 – Transport & Storage
 Sector | 21020 – Road Transport
 COVID 19 [^2] | 0
-Fiscal Year | FY19
-Fiscal Quarter | Q4
+Calendar Year | FY19
+Calendar Quarter | Q4
 Value (USD) | 435,000
 
 
@@ -65,10 +65,10 @@ Value (USD) | 435,000
 
 The following table shows each publisher and the total amount of funding (in millions of USD) found in their published data after processing, for all countries/regions. It includes the past three years (for commitments and disbursements) and the next three years (for budgets).
 
-This will identify overall data gaps that you may need to be aware of. Data gaps (where USD 0.00 was found) are higlighted in yellow.
+This will identify overall data gaps that you may need to be aware of. Data gaps (where USD 0.00 was found) are highlighted in yellow.
 
 <DataGapsYear />
 
 [^1]: Signifies whether this spending was originally part of a multi-country project, and funding to this country has been calculated, based on the percentage splits of the activity between countries.
 
-[^2]: Signifies whether this spending is related to COVID-19. Only includes transactions specifically tagged with COVID-19 according to the IATI COVID-19 Publishing Guidance.
+[^2]: Signifies whether this spending is related to COVID-19. Only includes transactions specifically tagged with COVID-19 according to the [IATI COVID-19 Publishing Guidance](https://iatistandard.org/en/news/updated-covid-19-guidance-iati-publishers/).
