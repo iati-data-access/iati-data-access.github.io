@@ -65,6 +65,11 @@ The following table shows each publisher and the total amount of funding (in mil
 
 This will identify overall data gaps that you may need to be aware of. Data gaps (where USD 0.00 was found) are highlighted in yellow.
 
+
+<a
+  href="https://github.com/iati-data-access/data/blob/gh-pages/summary_year.xlsx?raw=true"
+  class="download-button">Download this table in Excel format →</a>
+
 <DataGapsYear />
 
 [^1]: Signifies whether this spending was originally part of a multi-country project, and funding to this country has been calculated, based on the percentage splits of the activity between countries.
