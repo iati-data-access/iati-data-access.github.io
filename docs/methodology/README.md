@@ -99,7 +99,7 @@ The transaction type (e.g. commitment, disbursement, expenditure):
 transaction/transaction-type/@code
 ```
 
-Note: initially, transactions other than commitments, disbursements and expenditure have been discarded. This decision could be revised subsequently depending on demand and subject to the need to keep the processing time at a reasonable level.
+Note: initially, transactions other than incoming funds, commitments, disbursements and expenditure have been discarded. This decision could be revised subsequently depending on demand and subject to the need to keep the processing time at a reasonable level.
 
 ### 2.3.3 Extract data from transaction or from activity
 
@@ -216,7 +216,7 @@ Care needs to be taken when correcting percentages for countries. The IATI Guida
 2.5 Currency conversion
 -----------------------
 
-As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD using the closest exchange rate date to the transaction value-date. Exchange rates from a range of sources are used in order to ensure as wide a coverage as possible. The existing Exchange Rates Python library is used, supplemented with IMF and World Bank rates where necessary[^2].
+As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD using the closest exchange rate date to the transaction value-date. Monthly exchange rates for 169 currencies are sourced from the IMF's International Financial Statistics[^2].
 
 2.6 Handling budgets
 --------------------
@@ -281,7 +281,7 @@ All outputs are published on Github and are openly licensed according to the GNU
 
 [^1]: NB: it appears that some publishers are using the last day they updated their data as the transaction value date. In these cases, we have continued to use the value date, and flag this as an issue to be raised with the publishers by IATI Support.
 
-[^2]: [https://github.com/codeforiati/exchangerates](https://github.com/codeforiati/exchangerates) (opens new window)
+[^2]: [https://data.imf.org/?sk=4C514D48-B6BA-49ED-8AB9-52B0C1A0179B](https://data.imf.org/?sk=4C514D48-B6BA-49ED-8AB9-52B0C1A0179B) (opens new window)
 
 [^3]: If a budget does not perfectly span quarters, but instead spans part-quarters, the number of days in that part-quarter arrer used to calculate the proportion of value to be attributed to each quarter.
 
