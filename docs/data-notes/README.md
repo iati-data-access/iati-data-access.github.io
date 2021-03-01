@@ -10,6 +10,10 @@ As outlined in the IATI Strategic Plan 2020-2025, driving a significant improvem
 
 For each country, two files are published, containing a common set of fields for all activities. The files have been designed so that a pivot table can be added on top of the data, in order to aggregate and summarise the data in various different ways, depending on user needs.
 
+Not all fields are published for all activities. Data quality will vary by organisation.
+
+Not all transaction types are published by all organisations. Incoming funds in particular need to be handled with care. They would potentially allow a user to find net disbursements for an activity (as disbursements + expenditure - incoming funds). However, most organisations do not currently publish incoming funds, so "net disbursements" may provide an inaccurate picture of the data, as it will actually be net for *only some* organisations.
+
 ### 3.1.1 Commitments, disbursements and expenditures
 
 Column | Example
