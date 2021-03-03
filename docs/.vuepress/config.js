@@ -2,7 +2,7 @@ module.exports = {
   locales: {
     "/": {
       "lang": "en",
-      "title": "IATI Data Access",
+      "title": "Country Development Finance Data",
       "description": "Methodology and flat files for IATI data"
     }
   },
