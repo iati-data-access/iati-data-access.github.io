@@ -1,8 +1,8 @@
-# IATI Data Access
+# Country Development Finance Data
 
-::: tip Excel-formatted IATI data
-This site provides access to Excel-formatted data published according to the IATI Standard.
-:::
+Download simple Excel-formatted data on commitments, disbursements and expenditures, as well as forward-looking budgets, presented simply by country and region and designed to enable easy analysis in a pivot table.
+
+This tool was created by the IATI Secretariat as an interim measure to support simple access to the kinds of data requested most frequently by IATI partner country governments. Learning from this tool will inform IATI's next steps to develop a new data portal that will simplify access to all IATI data for all users.
 
 ## Access data files
 
