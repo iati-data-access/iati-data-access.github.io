@@ -254,7 +254,7 @@ Transactions are aggregated up into one row per quarter, where the following oth
 * Sector
 * Country
 
-The date is set to the last day of the quarter.
+The transaction date is set to the last day of the quarter.
 
 2.8 Conversion to target currency and fiscal period
 ---------------------------------------------------
