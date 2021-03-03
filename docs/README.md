@@ -9,7 +9,7 @@ This tool was created by the IATI Secretariat as an interim measure to support s
 <DownloadFile />
 
 ## Methodology
-The site also contains a detailed methodology for flattening IATI data into Excel format.
+Detailed information on the methodology for flattening IATI data into Excel format can be found in the Methodology section.
 
 <p class="center-logo">
 	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
