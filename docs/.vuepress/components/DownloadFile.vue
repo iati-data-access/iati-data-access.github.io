@@ -8,14 +8,15 @@
         placeholder="Select a country"
         v-model="selectedCountry"
       ></v-select>
-      <p
-        v-if="selectedCountry">
+      <p v-if="selectedCountry"
+        class="mt-3">
         <a
           :href="selectedCountryURLTransactions"
           class="nav-link action-button">Download transactions file →</a>
         <br />Contains commitments, disbursements and expenditures
       </p>
-      <p v-if="selectedCountry">
+      <p v-if="selectedCountry"
+        class="mt-3">
         <a
           :href="selectedCountryURLBudgets"
           class="nav-link action-button">Download budgets file →</a>
