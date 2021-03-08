@@ -134,7 +134,7 @@ transaction/finance-type/@code or iati-activity/default-finance-type/@code
 The transaction provider organisation, or the activity reporting organisation:
 
 ```xml
-transaction/provider-org/text() or iati-activity/reporting-org/text()
+transaction/provider-org/text()
 ```
 
 #### Receiver organisation
@@ -142,10 +142,39 @@ transaction/provider-org/text() or iati-activity/reporting-org/text()
 The transaction receiver organisation, or the activity implementing organisation(s):
 
 ```xml
-transaction/provider-org/text() or iati-activity/participating-org[@role='4']/text()
+transaction/provider-org/text()
 ```
 
-Where there are multiple implementing organisations, these are concatenated (joined) together with commas.
+#### Activity-level fallbacks for provider and receiver organisations
+
+Where there is no transaction-level provider or receiver organisation, we use an organisation from another part of the activity. We use different fallbacks depending on which transaction type we are processing:
+
+Transaction Type | Provider org | Receiver org
+--- | --- | ---
+1 - Incoming Funds | Funding Org | Reporting Org
+2 - Outgoing Commitment | Reporting Org | Implementing Org
+3 - Disbursement | Reporting Org | Implementing Org
+4 - Expenditure | Reporting Org | Implementing Org
+
+Where there are multiple funding or implementing organisations, these are concatenated (joined) together with commas.
+
+For reporting organisation, we use:
+
+```xml
+iati-activity/reporting-org/text()
+```
+
+For funding organisation:
+
+```xml
+iati-activity/participating-org[@role='1']/text()
+```
+
+For implementing organisation:
+
+```xml
+iati-activity/participating-org[@role='4']/text()
+```
 
 ### 2.3.4 Extract data from transaction or from activity, with potentially multiple values
 
