@@ -14,3 +14,5 @@ Detailed information on the methodology for flattening IATI data into Excel form
 <p class="center-logo">
 	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
 </p>
+
+[Privacy Policy](https://iatistandard.org/en/privacy-policy/)
