@@ -20,7 +20,12 @@ module.exports = {
   },
   markdown: {
     plugins: [
-      ['markdown-it-footnote', {}]
+      ['markdown-it-footnote', {}],
+      ['@vuepress/google-analytics',
+      {
+        'ga': 'UA-191452830'
+      }
+    ]
     ]
   }
 }

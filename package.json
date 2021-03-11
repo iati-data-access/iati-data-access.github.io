@@ -5,11 +5,12 @@
     "deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "@vuepress/plugin-google-analytics": "^1.8.2",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.19.0",
     "markdown-it-footnote": "^3.0.2",
     "vue-select": "^3.10.8",
-    "vuepress": "^1.7.1"
+    "vuepress": "^1.8.2"
   },
   "devDependencies": {
     "push-dir": "^0.4.1"
