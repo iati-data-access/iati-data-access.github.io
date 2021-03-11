@@ -18,14 +18,16 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    ['@vuepress/google-analytics',
+    {
+      'ga': 'UA-191452830'
+    }
+    ]
+  ],
   markdown: {
     plugins: [
-      ['markdown-it-footnote', {}],
-      ['@vuepress/google-analytics',
-      {
-        'ga': 'UA-191452830'
-      }
-    ]
+      ['markdown-it-footnote', {}]
     ]
   }
 }
