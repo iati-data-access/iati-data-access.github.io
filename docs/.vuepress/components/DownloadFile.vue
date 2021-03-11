@@ -42,14 +42,14 @@ export default {
   },
   computed: {
     selectedCountryURLBudgets() {
-      return `https://iati-data-access.github.io/data/budget-${this.selectedCountry}.xlsx?raw=true`
+      return `https://countrydata.iatistandard.org/data/budget-${this.selectedCountry}.xlsx`
     },
     selectedCountryURLTransactions() {
-      return `https://iati-data-access.github.io/data/${this.selectedCountry}.xlsx?raw=true`
+      return `https://countrydata.iatistandard.org/data/${this.selectedCountry}.xlsx`
     }
   },
   async beforeMount() {
-    var data = await axios.get(`https://iati-data-access.github.io/data/index.json`)
+    var data = await axios.get(`https://countrydata.iatistandard.org/data/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}

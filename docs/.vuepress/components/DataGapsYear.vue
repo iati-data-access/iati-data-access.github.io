@@ -90,7 +90,7 @@ export default {
     }
   },
   async beforeMount() {
-    var data = await axios.get(`https://iati-data-access.github.io/data/summary_year.json`)
+    var data = await axios.get(`https://countrydata.iatistandard.org/data/summary_year.json`)
     const thisYear = new Date().getFullYear()
     this.data = Object.entries(data.data.summary).reduce((summary, item)=> {
 

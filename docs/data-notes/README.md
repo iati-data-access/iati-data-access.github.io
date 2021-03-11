@@ -71,7 +71,7 @@ This will identify overall data gaps that you may need to be aware of. Data gaps
 
 
 <a
-  href="https://github.com/iati-data-access/data/blob/gh-pages/summary_year.xlsx?raw=true"
+  href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
   class="download-button">Download this table in Excel format →</a>
 
 <DataGapsYear />
