@@ -13,23 +13,23 @@ This site is developed in [VuePress](https://vuepress.vuejs.org/). It is very si
 ```bash
 git clone git@github.com:iati-data-access/iati-data-access.github.io.git
 cd iati-data-access.github.io
-yarn install
+npm install
 ```
 
 Run a development server:
 
 ```bash
-yarn run docs:dev
+npm run docs:dev
 ```
 
 Build for production:
 
 ```bash
-yarn run docs:build
+npm run docs:build
 ```
 
 Deploy to Github Pages:
 
 ```bash
-yarn run deploy
+npm run deploy
 ```
