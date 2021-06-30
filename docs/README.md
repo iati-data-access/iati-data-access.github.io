@@ -25,7 +25,7 @@ Desarrollo de los Países](Orientación%20para%20la%20CDFD%20de%20IATI_v1_ES.pdf
 * [For use with January-December fiscal year](IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 * [For use with July-June fiscal year](IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun.xlsx)
 
-_Complete examples for Zimbabwe_
+_Complete examples for Zimbabwe:_
 
 * [For use with January-December fiscal year](IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Zimbabwe%20Example.xlsx)
 * [For use with July-June fiscal year](IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun_Zimbabwe%20Example.xlsx)
