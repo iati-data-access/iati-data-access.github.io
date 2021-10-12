@@ -2,6 +2,8 @@
 title: Methodology
 ---
 
+_Updated: 12th October 2021_
+
 # Methodology
 
 This methodology outlines the steps that have been undertaken to get IATI data into a format that is useful for partner country governments. It identifies how data is retrieved, reprocessed and harmonised, and finally output. The steps broadly align with the steps undertaken in the previous work outlined in [subsection 1.3](/introduction/#_1-3-previous-work-to-make-data-available-in-excel-format). This methodology will be further refined and updated during the course of this work, in agreement with the IATI Secretariat.
@@ -129,6 +131,14 @@ The transaction finance type, or the activity default finance type:
 transaction/finance-type/@code or iati-activity/default-finance-type/@code
 ```
 
+#### Flow type
+
+The transaction flow type, or the activity default flow type:
+
+```xml
+transaction/flow-type/@code or iati-activity/default-flow-type/@code
+```
+
 #### Provider organisation
 
 The transaction provider organisation, or the activity reporting organisation:
@@ -202,6 +212,22 @@ The transaction sector, or the list of activity sectors (NB only DAC sectors are
 transaction/sector[not(@vocabulary) or @vocabulary='1']/@code or iati-activity/ sector[not(@vocabulary) or @vocabulary='1']/@code
 ```
 
+#### Humanitarian
+
+The transaction humanitarian flag, or the activity humanitarian flag:
+
+```xml
+transaction/@humanitarian or iati-activity/@humanitarian
+```
+
+* If the transaction has a humanitarian flag (`1`) then `humanitarian` will be marked as `1`.
+* If the transaction has a non-humanitarian flag (`0`) then `humanitarian` will be marked as `0`.
+
+If there are no transaction-level flags:
+
+* If the activity has a humantarian flag (`1`) then `humanitarian` will be marked as `1`.
+* If the activity has a non-humanitarian flag (`0`) then `humanitarian` will be marked as `0`.
+
 2.4 Splitting transactions for multiple sectors and countries
 -------------------------------------------------------------
 
@@ -211,7 +237,7 @@ In some cases, the published percentages may also not be correct. For example, t
 
 Sector | Percentage (published) | Percentage (corrected)
 --- | --- | ---
-12220 Basic health care | 100% | 50%
+12220 Basic health care | 100% | 50%
 11220 Primary education | 100% | 50%
 
 A single transaction of USD 100 would then be split into two rows: one row for USD 50 for basic health care and a second row of USD 50 for primary education. If the same activity were classified with two recipient countries, it would be split again, now into four rows.
@@ -242,10 +268,11 @@ Care needs to be taken when correcting percentages for countries. The IATI Guida
   ```
   * Apply 50% of the transaction value to Chad (TD) and 50% of the transaction value to Africa, South of Sahara (298).
 
+
 2.5 Currency conversion
 -----------------------
 
-As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD using the closest exchange rate date to the transaction value-date. Monthly exchange rates for 169 currencies are sourced from the IMF's International Financial Statistics[^2].
+As data is published in different currencies (depending on the publisher), individual transactions need to be converted to USD, Euro, and local currencies using the closest exchange rate date to the transaction value-date. Monthly exchange rates for 169 currencies are sourced from the IMF's International Financial Statistics[^2].
 
 2.6 Handling budgets
 --------------------
@@ -254,9 +281,9 @@ Forward spending data is also important to capture. It is more challenging, as u
 
 This process of calculating the proportion of commitments is used for:
 
-
 * Aid Type
 * Finance Type
+* Flow Type
 * Sector
 * Country
 
@@ -265,6 +292,7 @@ For the Provider Organisation field, the activity reporting organisation is used
 Where budgets span more than one quarter, they are split into multiple rows that map to exactly one quarter. The value is split proportionately[^3]. This is necessary in order to maintain comparability between transactions (which are marked with a single date) and budgets (which span a period, and which may not align with the government’s fiscal year).
 
 Where revised and original budgets are both published for the same period, revised budgets are used instead of original budgets.
+
 
 2.7 Rolling up transactions
 ---------------------------
@@ -278,6 +306,7 @@ Transactions are aggregated up into one row per quarter, where the following oth
 * Transaction Type
 * Aid Type
 * Finance Type
+* Flow Type
 * Provider Organisation
 * Receiver Organisation
 * Sector
@@ -288,17 +317,17 @@ The transaction date is set to the last day of the quarter.
 2.8 Conversion to target currency and fiscal period
 ---------------------------------------------------
 
-The target currencies are initially set as USD for all countries. Partner countries will be requested to let us know if they would like a target currency other than USD, in which case the total amount will be converted to the target currency. The exchange rate date will be the last day of the quarter. The fiscal quarter and fiscal year may also be added as additional columns. These will reflect the relevant country’s own fiscal calendar[^4], until otherwise requested by a particular country.
+The target currencies are set as USD and Euro for all countries. An additional local currency (e.g. Kenyan shillings for the Kenya output) is also included. The exchange rate date is the last day of the quarter.
 
 2.9 Language
 ------------
 
-The data is available in English by default. However, it is also being explored whether it is possible to publish the data in French for francophone countries.
+The data is available in English and French. All available Titles in these languages are pulled into the outputs along with all codes. Some Titles and Provider and Recipient Organisations are only available in English.
 
 2.10 Processing of data
 -----------------------
 
-The data is processed on Github Actions, which is a free service as long as the processing time is less than six hours. This runs nightly. The resulting data files are published on Github Pages. This is also a free service, as long as no file is larger than 100MB and the total repository size is not larger than 1GB.
+The data is processed on Github Actions, which is a free service as long as the processing time is less than six hours. This runs every 3 hours. The resulting data files are published on Github Pages. This is also a free service, as long as no file is larger than 100MB and the total repository size is not larger than 1GB.
 
 Given these limits, it is important to keep file size and processing times low. Ensuring that the entire workflow can be delivered through free tools also significantly improves the sustainability of the tools.
 
