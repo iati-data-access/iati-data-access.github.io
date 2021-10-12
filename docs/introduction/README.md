@@ -13,14 +13,14 @@ Given the increasing volume and quality of IATI data, attention has shifted to i
 
 A number of tools currently exist to make IATI data accessible to wider audiences. The most commonly known is D-Portal, which provides user-friendly access to IATI data. However, D-Portal offers very limited outputs in terms of Excel-formatted data. The IATI Technical Stocktake in 2020 recommended the creation of “an opinionated semantic data layer”, “a new curated data set that provides an ‘opinionated’ version of the data that is easier to use for” those unfamiliar with IATI-XML[^5]. In July 2020, the IATI Board approved this proposal, and mandated the IATI Secretariat to develop an approach to development, as part of a broader implementation plan[^6].
 
-This new semantic data layer will necessarily take some time to deliver. As an interim and short-term measure, UNDP has engaged a consultant to do some preliminary work that would feed into the process of developing the new semantic layer, exploring how the data should be generated in order to meet the needs of this key constituency, partner country governments. The work provides UNDP with the ability to respond to support requests received from partner countries regarding access to IATI data. The outputs include both a detailed methodology for the transformations that are undertaken, and a series of automatically updated datasets.
+This new semantic data layer will necessarily take some time to deliver. As an interim measure, UNDP engaged a consultant to do some preliminary work to feed into the process of developing the new semantic layer, exploring how the data should be generated in order to meet the needs of this key constituency, partner country governments. The work provides the IATI Secretariat with the ability to respond to support requests received from partner countries regarding access to IATI data. The outputs include both a detailed methodology for the transformations that are undertaken, and a series of automatically updated datasets.
 
 1.2 Rationale
 -------------
 
 It was originally envisaged that the main mechanism for partner countries to access IATI data was through Aid Information Management Systems (AIMS). Three main vendors provide AIMS software: Catalpa International, Development Gateway, and Synergy International Systems. A number of other locally-tailored or homegrown systems exist, for example in Bangladesh, Laos, Liberia and Somalia. A recent effort documented 63 known AIMS implementations[^7]; many other countries have other Excel-based processes for capturing similar data.
 
-Data is generally collected in these systems through periodic data calls (for example, every quarter) to request data from donors on disbursements since the previous data call. These systems also request data on donors’ forward projections (often known as MTEF projections[^8]), which is particularly useful for feeding in to the budget process. Systems normally also request other data, such as the locations of projects, results, and sectoral classifications, depending on the local context and needs. Some governments also request data from implementing partners (for example, NGOs), whereas others focus on official donors.
+Data is generally collected in these systems through periodic data calls (for example, every quarter) to request data from donors on disbursements since the previous data call. These systems also request data on donors’ forward projections (often known as MTEF projections[^8]), which is particularly useful for feeding into the budget process. Systems normally also request other data, such as the locations of projects, results, and sectoral classifications, depending on the local context and needs. Some governments also request data from implementing partners (for example, NGOs), whereas others focus on official donors.
 
 The original intention was for these systems to automatically import IATI data, significantly reducing the amount of manual work that needs to be undertaken through manual data calls. This remains the intention. However, despite substantial work by some governments and vendors[^9], the integration of this data with systems has remained low. The reasons for this are beyond the scope of this consultancy, but a key issue is the difficulty of understanding the nature of IATI data, given its complexity and the fact that it is made available in IATI-XML format. Note that this is not a criticism of the format – the XML format is essential to allowing a rich and detailed set of data to be communicated by development actors. However, in order to strengthen the uptake of IATI data, it needs to be presented in formats that are familiar to potential users. Only then can users make an informed assessment about the potential benefits of moving towards a more automated integration of IATI data into their systems.
 
@@ -30,7 +30,6 @@ Making IATI data available in Excel format also has immediate advantages beyond 
 --------------------------------------------------------
 
 A number of pieces of work have provided insights into how IATI data can usefully be made available in Excel format:
-
 
 * Aid on Spreadsheets[^10] – developed in 2018 by the Overseas Development Institute, makes IATI data available for Uganda and Liberia in Excel format. The data includes quarterly disbursements and MTEF projections. The site is available in English and French, though some pages are not currently working.
 * COVID-19 Prototype Visualisation[^11] – developed in 2020 by Development Initiatives, makes IATI data available for activities tagged according to the IATI COVID-19 Publishing Guidance in Excel format. The data includes actual transactions, disaggregated where there are multiple countries and sectors. The data is updated nightly.
@@ -43,10 +42,11 @@ This work provides a number of outputs to improve the accessibility of IATI data
 
 
 * The methodology for accessing and processing the data;
-* A number of data files for each country, including:
+* One data file for each country in each language, including:
   * Quarterly aggregations of budgets, commitments, disbursements, and expenditures;
   * Aggregations by reporting organisation (and type), sector, aid type, finance, type, and implementing organisation;
 * An interface for accessing the data and methodology.
+
 
 ---------
 
