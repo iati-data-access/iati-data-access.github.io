@@ -190,7 +190,7 @@ iati-activity/participating-org[@role='4']/text()
 
 Finally, two fields (recipient country/region and sector) are extracted either from the transaction or activity. At the activity level, these can be published multiple times with percentage splits. The methodology for handling multiple values is described in the following section.
 
-#### Country or Region
+#### Recipient Country or Region
 
 The transaction recipient country, or the list of activity recipient countries (where there are multiple countries, a column has been added to indicate that the transaction is part of a multi-country project):
 
@@ -285,7 +285,7 @@ This process of calculating the proportion of commitments is used for:
 * Finance Type
 * Flow Type
 * Sector
-* Country
+* Recipient Country or Region
 
 For the Provider Organisation field, the activity reporting organisation is used. For the Receiver Organisation field, the activity implementing organisation(s) is used.
 
@@ -300,7 +300,7 @@ Where revised and original budgets are both published for the same period, revis
 Transactions are aggregated up into one row per quarter, where the following other fields are all identical:
 
 
-* IATI-Identifier
+* IATI Identifier
 * Reporting Organisation
 * Reporting Organisation Type
 * Transaction Type
@@ -310,7 +310,7 @@ Transactions are aggregated up into one row per quarter, where the following oth
 * Provider Organisation
 * Receiver Organisation
 * Sector
-* Country
+* Recipient Country or Region
 
 The transaction date is set to the last day of the quarter.
 

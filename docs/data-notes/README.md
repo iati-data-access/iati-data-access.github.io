@@ -16,11 +16,10 @@ Not all transaction types are published by all organisations. Incoming funds in 
 
 Column | Example (transactions) | Example (budgets)
 --- | --- | --- | ---
-IATI-Identifier | 44000-P163328 | 44000-P163328
+IATI Identifier | 44000-P163328 | 44000-P163328
 Title | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Reporting Organisation | 44000 – World Bank | 44000 – World Bank
 Reporting Organisation Type | 40 – Multilateral | 40 – Multilateral
-Transaction Type | 2 - Outgoing Commitment | budget - Budget
 Aid Type | C01 – Project-type interventions | C01 – Project-type interventions
 Finance Type | 410 – Aid loan excluding debt reorganisation | 410 – Aid loan excluding debt reorganisation
 Flow Type | 10 - ODA | 10 - ODA
@@ -28,17 +27,19 @@ Provider Organisation | 44001 – International Bank for Reconstruction and Deve
 Provider Organisation Type | 40 - Multilateral | 40 - Multilateral
 Receiver Organisation | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
 Receiver Organisation Type | |
-Recipient Country | IN - India | IN - India
+Transaction Type | 2 - Outgoing Commitment | budget - Budget
+Recipient Country or Region | IN - India | IN - India
 Multi Country [^1] | 1 | 1
 Sector Category | 210 – Transport & Storage | 210 – Transport & Storage
 Sector | 21020 – Road Transport | 21020 – Road Transport
 Humanitarian | 0 | 0
-Calendar Year | FY19 | FY19
+Calendar Year | 2019 | 2019
 Calendar Quarter | Q4 | Q4
+Calendar Yeear and Quarter | 2019 Q4 | 2019 Q4
+URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 Value (USD) | 47,560,000 | 435,000
 Value (EUR) | 41,213,347 | 376,951
 Value (Local currrency) | 33,589,335,939 | 32,829,292
-URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 
 ## 3.2 Data gaps by year
 

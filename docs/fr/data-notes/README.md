@@ -16,11 +16,10 @@ Toutes ne publient pas au sujet de tous les types de transactions. Les fonds ent
 
 Colonne | Exemple (transactions) | Exemple (budgets)
 --- | --- | --- | ---
-Identifiant IITA | 44000-P163328 | 44000-P163328
-Intitulé | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
+Identifiant de l’IITA | 44000-P163328 | 44000-P163328
+Titre | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Organisme déclarant | 44000 – Banque mondiale | 44000 – Banque mondiale
 Type d’organisme déclarant | 40 – Multilatéral | 40 – Multilatéral
-Type de transaction | 2 – Engagement sortant | 2 – Engagement sortant
 Type d’aide | C01 – Interventions de type projet | C01 – Interventions de type projet
 Type de financement | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
 Type de flux | 10 – Aide publique au développement | 10 – Aide publique au développement
@@ -28,18 +27,19 @@ Organisme prestataire | 44001 – Banque internationale pour la reconstruction e
 Type d’organisme prestataire | 40 – Multilatéral | 40 – Multilatéral
 Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
 Type d’organisme bénéficiaire | |
-Pays / région bénéficiaire | IN – Inde | IN – Inde
+Type de transaction | 2 – Engagement sortant | 2 – Engagement sortant
+Pays ou région bénéficiaire | IN – Inde | IN – Inde
 Multipays[^1] | 1  | 1
 Catégorie de secteur | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
 Secteur | 21020 – Transport routier | 21020 – Transport routier
-Marqueur humanitaire | 0 | 0
+Humanitaire | 0 | 0
 Année civile | 2019 | 2019
 Trimestre civil | T4 | T4
 Année et trimestre civils | 2019 T4 | 2019 T4
+URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 Valeur (USD) | 47,560,000 | 435,000
 Valeur (EUR) | 41,213,347 | 376,951
 Valeur (Monnaie locale) | 33,589,335,939 | 32,829,292
-URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 
 
 ## 3.2 Synthèse des données par signataire avec analyse des manques de données par an

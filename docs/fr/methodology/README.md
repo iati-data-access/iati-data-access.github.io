@@ -33,7 +33,7 @@ Chaque fichier est traité afin d’extraire un certain nombre de champs de chaq
 
 L’identifiant IITA et l’organisme déclarant sont toujours extraits de l’activité.
 
-#### Identifiant IITA
+#### Identifiant de l’IITA
 
 L’identifiant unique associé à l’activité :
 
@@ -41,7 +41,7 @@ L’identifiant unique associé à l’activité :
 iati-activity/iati-identifier/text()
 ```
 
-#### Intitulé
+#### Titre
 
 L’intitulé de l’activité. N.B. : en cas de version multilingue, nous avons essayé de n’obtenir que la version en anglais dans le produit en anglais et les versions en français, en espagnol et en portugais dans les produits suivants :
 
@@ -190,7 +190,7 @@ iati-activity/participating-org[@role='4']/text()
 
 Enfin, les données de deux champs (pays ou région bénéficiaires et secteur) peuvent être extraites à partir d’une transaction ou d’une activité. Concernant les activités, il est possible que ces données aient été publiées à de multiples reprises avec des répartitions par pourcentage. La section qui suit décrit la manière de gérer les données de valeurs différentes.
 
-#### Pays ou région
+#### Pays ou région bénéficiaire
 
 Le pays bénéficiaire de la transaction, ou la liste de pays bénéficiaires de l’activité (s’il en existe plusieurs, une colonne supplémentaire permet d’indiquer que la transaction s’inscrit dans le cadre d’un projet multipays) :
 
@@ -286,7 +286,7 @@ Cette méthode de calcul de la répartition des fonds accordés au titre d’eng
 * Type de financement
 * Type de flux
 * Secteur
-* Pays
+* Pays ou région bénéficiaire
 
 Dans le champ correspondant à l’organisme prestataire, indiquer l’organisme déclarant de l’activité. Dans le champ correspondant à l’organisme bénéficiaire, inscrire le ou les organismes de mise en œuvre de l’activité.
 
@@ -310,7 +310,7 @@ Les transactions sont regroupées en une ligne par trimestre, l’ensemble des a
 * Organisme prestataire
 * Organisme bénéficiaire
 * Secteur
-* Pays
+* Pays ou région bénéficiaire
 
 La date de la transaction est fixée à celle de la fin du trimestre.
 
