@@ -26,6 +26,10 @@ relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 * [For use with January-December fiscal year](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 
+_Complete example for Malawi:_
+
+* [For use with January-December fiscal year](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+
 ## Methodology
 Detailed information on the methodology for flattening IATI data into Excel format can be found in the Methodology section.
 
