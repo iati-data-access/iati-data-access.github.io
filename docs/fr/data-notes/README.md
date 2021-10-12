@@ -14,8 +14,8 @@ Tous les champs ne sont pas remplis dans toutes les publications d’activités.
 
 Toutes ne publient pas au sujet de tous les types de transactions. Les fonds entrants, en particulier, doivent être traités avec précaution. En théorie, cette catégorie de données permet aux utilisateurs de calculer les décaissements nets dans le cadre d’une activité (en soustrayant les fonds entrants au total des décaissements et des dépenses). Cependant, la plupart des organismes ne fournissent actuellement pas de données au sujet des fonds entrants. Le calcul des « décaissements nets » peut alors donner une image imprécise de la situation, car ils ne seront en réalité « nets » que dans le cas de *certaines* organisations.
 
-Colonne | Exemple
---- | --- | ---
+Colonne | Exemple (transactions) | Exemple (budgets)
+--- | --- | --- | ---
 Identifiant IITA | 44000-P163328 | 44000-P163328
 Intitulé | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Organisme déclarant | 44000 – Banque mondiale | 44000 – Banque mondiale
