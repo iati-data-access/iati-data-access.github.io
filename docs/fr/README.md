@@ -24,13 +24,7 @@ relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 ### Tableau de bord d’analyse Excel
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Pour une utilisation avec un exercice fiscal de juillet à juin](/IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun.xlsx)
-
-_Exemples complets pour le Zimbabwe :_
-
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Zimbabwe%20Example.xlsx)
-* [Pour une utilisation avec un exercice fiscal de juillet à juin](/IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun_Zimbabwe%20Example.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 
 ## Méthodologie
 Des informations détaillées sur la méthodologie employée pour aplatir les données de l’IITA en format Excel sont disponibles dans la section Méthodologie.
