@@ -13,6 +13,7 @@ module.exports = {
     }
   },
   themeConfig: {
+    logo: '/iati-logo.svg',
     locales: {
       "/": {
         language: 'en',
