@@ -5,25 +5,17 @@
         :options="countries"
         label="country_name"
         :reduce="country => country.country_code"
-        placeholder="Select a country"
+        :placeholder="$themeLocaleConfig.translations.selectCountry"
         v-model="selectedCountry"
       ></v-select>
       <p v-if="selectedCountry"
         class="mt-3">
         <a
-          :href="selectedCountryURLTransactions"
-          class="nav-link action-button">Download transactions file →</a>
-        <br />Contains commitments, disbursements and expenditures
-      </p>
-      <p v-if="selectedCountry"
-        class="mt-3">
-        <a
-          :href="selectedCountryURLBudgets"
-          class="nav-link action-button">Download budgets file →</a>
-        <br />Contains forward-looking budget data
+          :href="selectedCountryURL"
+          class="nav-link action-button">{{ this.$themeLocaleConfig.translations.downloadFile }} →</a>
       </p>
       <hr />
-      <p class="last-updated">Last updated: <code>{{ lastUpdated}}</code></p>
+      <p class="last-updated">{{ this.$themeLocaleConfig.translations.lastUpdated }} <code>{{ lastUpdated}}</code></p>
     </div>
   </div>
 </template>
@@ -41,11 +33,8 @@ export default {
     }
   },
   computed: {
-    selectedCountryURLBudgets() {
-      return `https://countrydata.iatistandard.org/data/budget-${this.selectedCountry}.xlsx`
-    },
-    selectedCountryURLTransactions() {
-      return `https://countrydata.iatistandard.org/data/${this.selectedCountry}.xlsx`
+    selectedCountryURL() {
+      return `https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/${this.selectedCountry}.xlsx`
     }
   },
   async beforeMount() {
