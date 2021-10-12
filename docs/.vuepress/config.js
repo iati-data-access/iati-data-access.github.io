@@ -5,17 +5,54 @@ module.exports = {
       "lang": "en",
       "title": "Country Development Finance Data",
       "description": "Methodology and flat files for IATI data"
+    },
+    "/fr/": {
+      "lang": "fr",
+      "title": "Données nationales de l’IITA relatives au financement du développement",
+      "description": "Methodology and flat files for IATI data"
     }
   },
   themeConfig: {
     locales: {
       "/": {
+        language: 'en',
+        // text for the language dropdown
+        selectText: 'Languages',
+        // label for this locale in the language dropdown
+        label: 'English',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Languages',
         "sidebar": [
           ["/", "Home"],
           ["/introduction/", "Introduction"],
           ["/methodology/", "Methodology"],
           ["/data-notes/", "Data Notes"]
-        ]
+        ],
+        translations: {
+          selectCountry: 'Select a country',
+          downloadFile: 'Download file',
+          lastUpdated: 'Last updated:'
+        }
+      },
+      "/fr/": {
+        language: 'fr',
+        // text for the language dropdown
+        selectText: 'Langues',
+        // label for this locale in the language dropdown
+        label: 'Français',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Langues',
+        "sidebar": [
+          ["/fr/", "Accueil"],
+          ["/fr/introduction/", "Introduction"],
+          ["/fr/methodology/", "Méthodologie"],
+          ["/fr/data-notes/", "Notes sur les données"]
+        ],
+        translations: {
+          selectCountry: 'Choisir un pays',
+          downloadFile: 'Télécharger le fichier',
+          lastUpdated: 'Dernière mise à jour :'
+        }
       }
     },
   },
