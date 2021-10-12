@@ -2,15 +2,19 @@
 
 Download simple Excel-formatted data on commitments, disbursements and expenditures, as well as forward-looking budgets, presented simply by country and region and designed to enable easy analysis in a pivot table.
 
-This tool was created by the IATI Secretariat as an interim measure to support simple access to the kinds of data requested most frequently by IATI partner country governments. Learning from this tool will inform IATI's next steps to develop a new data portal that will simplify access to all IATI data for all users.
+This tool was created by the IATI Secretariat as an interim measure to support simple access to the kinds of data requested most frequently by partner country governments. Learning from this tool is informing IATI's next steps to develop a new data portal that will simplify access to all IATI data for all users.
 
 ## Access data files
+
+As of 12th October 2021, all data is now combined into one file per country or region. Minor modifications have also been made to the data files, including the addition of data on whether resources are Humanitarian, the Flow Type, Transaction values in Euro and a customized currency per country, and links to the relevant d-portal activity page. Each file is also now available in French.
 
 <DownloadFile />
 
 ## Guidance and Analysis Dashboard
 
-The following guidance materials outline how to use the Country Development Finance Data tool. The Excel Analysis Dashboard can be used to generate quick analysis in Excel using the outputs from this tool. See the guidance note for more detail.
+The following guidance materials outline how to use the IATI Country Development Finance Data tool. The Excel Analysis Dashboard can be used to generate quick analysis in Excel using the outputs from this tool. See the guidance note for more detail.
+
+As of 12th October 2021, the Guidance and Analysis Dashboards have been updated to work with the updated data files. If you downloaded an Analysis Dashboard before this date, you will need to download a revised one to accommodate the slightly modified structure of the updated data files.
 
 ### Guidance
 
