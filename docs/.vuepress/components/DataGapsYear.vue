@@ -14,6 +14,7 @@
     <b-row>
       <b-col>
         <b-table
+          responsive
           :fields="dataFields"
           :items="filteredData">
         </b-table>
@@ -21,11 +22,6 @@
     </b-row>
   </div>
 </template>
-<style>
-.theme-default-content:not(.custom) {
-  max-width: inherit;
-}
-</style>
 <script>
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
