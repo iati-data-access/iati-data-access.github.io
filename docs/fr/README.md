@@ -18,21 +18,19 @@ Au 12 octobre 2021, les lignes directrices et tableaux d’analyse ont été mis
 
 ### Lignes directrices
 
-* [EN - IATI Country Development Finance Data Guidance](IATI%20CDFD%20Guidance_v1_EN.pdf)
+* [EN - IATI Country Development Finance Data Guidance](/IATI%20CDFD%20Guidance_v2_EN.pdf)
 * [FR - Lignes directrices de l’IITA concernant les données nationales
-relatives au financement du développement](L'IITA%20CDFD%20Lignes%20Directrices_v1_FR.pdf)
-* [ES - Orientación de la IATI relativa a los Datos sobre Financiación para el
-Desarrollo de los Países](Orientación%20para%20la%20CDFD%20de%20IATI_v1_ES.pdf)
+relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 ### Tableau de bord d’analyse Excel
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Pour une utilisation avec un exercice fiscal de juillet à juin](IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [Pour une utilisation avec un exercice fiscal de juillet à juin](/IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun.xlsx)
 
 _Exemples complets pour le Zimbabwe :_
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Zimbabwe%20Example.xlsx)
-* [Pour une utilisation avec un exercice fiscal de juillet à juin](IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun_Zimbabwe%20Example.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Zimbabwe%20Example.xlsx)
+* [Pour une utilisation avec un exercice fiscal de juillet à juin](/IATI%20CDFD%20Analysis%20Dashboard_Jul-Jun_Zimbabwe%20Example.xlsx)
 
 ## Méthodologie
 Des informations détaillées sur la méthodologie employée pour aplatir les données de l’IITA en format Excel sont disponibles dans la section Méthodologie.
