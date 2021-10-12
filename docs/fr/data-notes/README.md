@@ -87,4 +87,9 @@ Cette analyse permet de repérer les absences générales de données dont il pe
 
 <DataGapsYear />
 
+## 3.3 Devise locale pour chaque pays
+
+<CountriesCurrencies />
+
+
 [^1]: Indique si la dépense a initialement été engagée dans le cadre d’un projet multipays, en plus de si les financements accordés au pays ont été calculés en fonction de la répartition en pourcentage de l’activité entre les pays.
