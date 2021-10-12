@@ -8,7 +8,7 @@ module.exports = {
     },
     "/fr/": {
       "lang": "fr",
-      "title": "Données nationales de l’IITA relatives au financement du développement",
+      "title": "Country Development Finance Data",
       "description": "Methodology and flat files for IATI data"
     }
   },
