@@ -14,62 +14,32 @@ Tous les champs ne sont pas remplis dans toutes les publications d’activités.
 
 Toutes ne publient pas au sujet de tous les types de transactions. Les fonds entrants, en particulier, doivent être traités avec précaution. En théorie, cette catégorie de données permet aux utilisateurs de calculer les décaissements nets dans le cadre d’une activité (en soustrayant les fonds entrants au total des décaissements et des dépenses). Cependant, la plupart des organismes ne fournissent actuellement pas de données au sujet des fonds entrants. Le calcul des « décaissements nets » peut alors donner une image imprécise de la situation, car ils ne seront en réalité « nets » que dans le cas de *certaines* organisations.
 
-
-### 3.1.1 Engagements, décaissements et dépenses
-
 Colonne | Exemple
 --- | --- | ---
-Identifiant IITA | 44000-P163328
-Intitulé | Himachal Pradesh State Roads Transformation Project
-Organisme déclarant | 44000 – Banque mondiale
-Type d’organisme déclarant | 40 – Multilatéral
-Type de transaction | 2 – Engagement sortant
-Type d’aide | C01 – Interventions de type projet
-Type de financement | 410 – Prêt d’aide hors réorganisation de la dette
-Type de flux | 10 – Aide publique au développement
-Organisme prestataire | 44001 – Banque internationale pour la reconstruction et le développement
-Type d’organisme prestataire | 40 – Multilatéral
-Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation
-Type d’organisme bénéficiaire |
-Pays / région bénéficiaire | IN – Inde
-Multipays[^1] | 1
-Catégorie de secteur | 210 – Transports et Entreposage
-Secteur | 21020 – Transport routier
-Marqueur humanitaire | 0
-Année civile | 2019
-Trimestre civil | T4
-Année et trimestre civils | 2019 T4
-Valeur (USD) | 47,560,000
-Valeur (EUR) | 41,213,347
-Valeur (Monnaie locale) | 33,589,335,939
-URL | https://d-portal.org/q.html?aid=44000-P163328
-
-### 3.1.2 Budgets
-
-Identifiant IITA | 44000-P163328
-Intitulé | Himachal Pradesh State Roads Transformation Project
-Organisme déclarant | 44000 – Banque mondiale
-Type d’organisme déclarant | 40 – Multilatéral
-Type de transaction | budget - Budget
-Type d’aide | C01 – Interventions de type projet
-Type de financement | 410 – Prêt d’aide hors réorganisation de la dette
-Type de flux | 10 – Aide publique au développement
-Organisme prestataire | 44001 – Banque internationale pour la reconstruction et le développement
-Type d’organisme prestataire |
-Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation
-Type d’organisme bénéficiaire |
-Pays / région bénéficiaire | IN – Inde
-Multipays[^1] | 1
-Catégorie de secteur | 210 – Transports et Entreposage
-Secteur | 21020 – Transport routier
-Marqueur humanitaire | 0
-Année civile | 2019
-Trimestre civil | T4
-Année et trimestre civils | 2019 T4
-Valeur (USD) | 435 000
-Valeur (EUR) | 376,951
-Valeur (Monnaie locale) | 32,829,292
-URL | https://d-portal.org/q.html?aid=44000-P163328
+Identifiant IITA | 44000-P163328 | 44000-P163328
+Intitulé | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
+Organisme déclarant | 44000 – Banque mondiale | 44000 – Banque mondiale
+Type d’organisme déclarant | 40 – Multilatéral | 40 – Multilatéral
+Type de transaction | 2 – Engagement sortant | 2 – Engagement sortant
+Type d’aide | C01 – Interventions de type projet | C01 – Interventions de type projet
+Type de financement | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
+Type de flux | 10 – Aide publique au développement | 10 – Aide publique au développement
+Organisme prestataire | 44001 – Banque internationale pour la reconstruction et le développement | 44001 – Banque internationale pour la reconstruction et le développement
+Type d’organisme prestataire | 40 – Multilatéral | 40 – Multilatéral
+Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
+Type d’organisme bénéficiaire | |
+Pays / région bénéficiaire | IN – Inde | IN – Inde
+Multipays[^1] | 1  | 1
+Catégorie de secteur | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
+Secteur | 21020 – Transport routier | 21020 – Transport routier
+Marqueur humanitaire | 0 | 0
+Année civile | 2019 | 2019
+Trimestre civil | T4 | T4
+Année et trimestre civils | 2019 T4 | 2019 T4
+Valeur (USD) | 47,560,000 | 435,000
+Valeur (EUR) | 41,213,347 | 376,951
+Valeur (Monnaie locale) | 33,589,335,939 | 32,829,292
+URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 
 
 ## 3.2 Synthèse des données par signataire avec analyse des manques de données par an
