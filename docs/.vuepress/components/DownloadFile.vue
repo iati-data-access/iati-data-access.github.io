@@ -38,7 +38,7 @@ export default {
     }
   },
   async beforeMount() {
-    var data = await axios.get(`https://countrydata.iatistandard.org/data/index.json`)
+    var data = await axios.get(`https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}

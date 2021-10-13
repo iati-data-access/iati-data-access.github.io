@@ -33,7 +33,21 @@ module.exports = {
           selectCountry: 'Select a country',
           downloadFile: 'Download file',
           lastUpdated: 'Last updated:'
-        }
+        },
+        countriesCurrenciesFields: [
+          {
+            key: 'countryCode',
+            label: 'Country Code'
+          },
+          {
+            key: 'countryName',
+            label: 'Country Name'
+          },
+          {
+            key: 'currency',
+            label: 'Currency'
+          }
+        ]
       },
       "/fr/": {
         language: 'fr',
@@ -53,7 +67,21 @@ module.exports = {
           selectCountry: 'Choisir un pays',
           downloadFile: 'Télécharger le fichier',
           lastUpdated: 'Dernière mise à jour :'
-        }
+        },
+        countriesCurrenciesFields: [
+          {
+            key: 'countryCode',
+            label: 'Code du pays'
+          },
+          {
+            key: 'countryName',
+            label: 'Nom du pays'
+          },
+          {
+            key: 'currency',
+            label: 'Devise'
+          }
+        ]
       }
     },
   },

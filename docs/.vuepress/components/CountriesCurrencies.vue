@@ -3,6 +3,7 @@
     <b-row>
       <b-col>
         <b-table
+          :fields="$themeLocaleConfig.countriesCurrenciesFields"
           :items="countriesCurrencies">
         </b-table>
       </b-col>
@@ -30,7 +31,7 @@ export default {
   methods: {
   },
   async beforeMount() {
-    const countries = await axios.get(`https://countrydata.iatistandard.org/data/index.json`)
+    const countries = await axios.get(`https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/index.json`)
     const countriesObj = countries.data.countries.reduce((summary, item ) => {
       if (item.country_or_region=='country') {
         summary[item.country_code] = item.country_name
