@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+  repository_dispatch:
+    types: [build]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install javascript dependencies
+      run: |
+        npm install
+    - name: Run build
+      run: |
+        npm run docs:build_subfolder
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/.vuepress/dist
+        force_orphan: true
