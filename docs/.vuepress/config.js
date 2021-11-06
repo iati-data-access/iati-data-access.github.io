@@ -1,3 +1,7 @@
+const base = process.env.DEPLOY_ENV === 'WITH_SUBFOLDER' ? {
+    base: '/docs-beta/'
+} : {}
+
 module.exports = {
   locales: {
     "/": {
@@ -136,5 +140,5 @@ module.exports = {
          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
      })(window,document,'script','dataLayer','GTM-TRBGNFQ');
      `],
-  ]
+  ],...base
 }
