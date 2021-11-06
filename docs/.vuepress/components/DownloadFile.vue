@@ -10,9 +10,17 @@
       ></v-select>
       <p v-if="selectedCountry"
         class="mt-3">
-        <a
+        <b-btn
           :href="selectedCountryURL"
-          class="nav-link action-button">{{ this.$themeLocaleConfig.translations.downloadFile }} →</a>
+          variant="success"
+          size="lg">{{ this.$themeLocaleConfig.translations.downloadFile }} →</b-btn>
+        <b-form-group :label="this.$themeLocaleConfig.translations.language" class="mt-2">
+          <b-form-radio-group
+            v-model="language"
+            :options="languageOptions"
+            name="radio-inline"
+          ></b-form-radio-group>
+        </b-form-group>
       </p>
       <hr />
       <p class="last-updated">{{ this.$themeLocaleConfig.translations.lastUpdated }} <code>{{ lastUpdated}}</code></p>
@@ -29,15 +37,20 @@ export default {
     return {
       countries: [],
       selectedCountry: null,
-      lastUpdated: null
+      lastUpdated: null,
+      language: 'en'
     }
   },
   computed: {
+    languageOptions() {
+      return this.$themeLocaleConfig.languageOptions
+    },
     selectedCountryURL() {
-      return `https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/${this.selectedCountry}.xlsx`
+      return `https://countrydata.iatistandard.org/data-${this.language}/${this.selectedCountry}.xlsx`
     }
   },
   async beforeMount() {
+    this.language = this.$themeLocaleConfig.language
     var data = await axios.get(`https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {

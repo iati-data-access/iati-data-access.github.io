@@ -40,7 +40,8 @@ module.exports = {
         translations: {
           selectCountry: 'Select a country',
           downloadFile: 'Download file',
-          lastUpdated: 'Last updated:'
+          lastUpdated: 'Last updated:',
+          language: 'Language'
         },
         countriesCurrenciesFields: [
           {
@@ -55,6 +56,11 @@ module.exports = {
             key: 'currency',
             label: 'Currency'
           }
+        ],
+        languageOptions: [
+          {'value': 'en', 'text': 'English'},
+          {'value': 'fr', 'text': 'French'},
+          {'value': 'es', 'text': 'Spanish'}
         ]
       },
       "/fr/": {
@@ -74,7 +80,8 @@ module.exports = {
         translations: {
           selectCountry: 'Choisir un pays',
           downloadFile: 'Télécharger le fichier',
-          lastUpdated: 'Dernière mise à jour :'
+          lastUpdated: 'Dernière mise à jour :',
+          language: 'Langue'
         },
         countriesCurrenciesFields: [
           {
@@ -89,6 +96,11 @@ module.exports = {
             key: 'currency',
             label: 'Devise'
           }
+        ],
+        languageOptions: [
+          {'value': 'en', 'text': 'anglais'},
+          {'value': 'fr', 'text': 'français'},
+          {'value': 'es', 'text': 'espagnol'}
         ]
       },
       "/es/": {
@@ -108,7 +120,8 @@ module.exports = {
         translations: {
           selectCountry: 'Seleccionar un país',
           downloadFile: 'Descargar archivo',
-          lastUpdated: 'Última actualización:'
+          lastUpdated: 'Última actualización:',
+          language: 'Idioma'
         },
         countriesCurrenciesFields: [
           {
@@ -123,6 +136,11 @@ module.exports = {
             key: 'currency',
             label: 'Moneda'
           }
+        ],
+        languageOptions: [
+          {'value': 'en', 'text': 'inglés'},
+          {'value': 'fr', 'text': 'francés'},
+          {'value': 'es', 'text': 'español'}
         ]
       }
     },
