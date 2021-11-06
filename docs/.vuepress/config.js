@@ -9,6 +9,11 @@ module.exports = {
       "lang": "fr",
       "title": "Country Development Finance Data",
       "description": "Données nationales de l’IITA relatives au financement du développement"
+    },
+    "/es/": {
+      "lang": "es",
+      "title": "Country Development Finance Data",
+      "description": "Datos de la IATI sobre la financiación para el desarrollo de los países"
     }
   },
   themeConfig: {
@@ -79,6 +84,40 @@ module.exports = {
           {
             key: 'currency',
             label: 'Devise'
+          }
+        ]
+      },
+      "/es/": {
+        language: 'es',
+        // text for the language dropdown
+        selectText: 'Idiomas',
+        // label for this locale in the language dropdown
+        label: 'Español',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Idiomas',
+        "sidebar": [
+          ["/es/", "Página de portada"],
+          ["/es/introduction/", "Antecedentes"],
+          ["/es/methodology/", "Metodología"],
+          ["/es/data-notes/", "Notas sobre datos"]
+        ],
+        translations: {
+          selectCountry: 'Seleccionar un país',
+          downloadFile: 'Descargar archivo',
+          lastUpdated: 'Última actualización:'
+        },
+        countriesCurrenciesFields: [
+          {
+            key: 'countryCode',
+            label: 'Código del país'
+          },
+          {
+            key: 'countryName',
+            label: 'Nombre del país'
+          },
+          {
+            key: 'currency',
+            label: 'Moneda'
           }
         ]
       }
