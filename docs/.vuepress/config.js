@@ -18,6 +18,11 @@ module.exports = {
       "lang": "es",
       "title": "Country Development Finance Data",
       "description": "Datos de la IATI sobre la financiación para el desarrollo de los países"
+    },
+    "/pt/": {
+      "lang": "pt",
+      "title": "Country Development Finance Data",
+      "description": "Dados sobre Financiamento do Desenvolvimento dos Países da IATI"
     }
   },
   themeConfig: {
@@ -60,7 +65,8 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'English'},
           {'value': 'fr', 'text': 'French'},
-          {'value': 'es', 'text': 'Spanish'}
+          {'value': 'es', 'text': 'Spanish'},
+          {'value': 'pt', 'text': 'Portuguese'}
         ]
       },
       "/fr/": {
@@ -100,7 +106,8 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'anglais'},
           {'value': 'fr', 'text': 'français'},
-          {'value': 'es', 'text': 'espagnol'}
+          {'value': 'es', 'text': 'espagnol'},
+          {'value': 'pt', 'text': 'portugais'}
         ]
       },
       "/es/": {
@@ -140,7 +147,49 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'inglés'},
           {'value': 'fr', 'text': 'francés'},
-          {'value': 'es', 'text': 'español'}
+          {'value': 'es', 'text': 'español'},
+          {'value': 'pt', 'text': 'portugués'}
+        ]
+      },
+      "/pt/": {
+        language: 'pt',
+        // text for the language dropdown
+        selectText: 'Idiomas',
+        // label for this locale in the language dropdown
+        label: 'Português',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Idiomas',
+        "sidebar": [
+          ["/pt/", "Página inicial"],
+          ["/pt/introduction/", "Contexto"],
+          ["/pt/methodology/", "Metodologia"],
+          ["/pt/data-notes/", "Notas sobre dados"]
+        ],
+        translations: {
+          selectCountry: 'Selecione um país',
+          downloadFile: 'Descarregar arquivo',
+          lastUpdated: 'Última atualização:',
+          language: 'Idioma'
+        },
+        countriesCurrenciesFields: [
+          {
+            key: 'countryCode',
+            label: 'Código do país'
+          },
+          {
+            key: 'countryName',
+            label: 'Nome do país'
+          },
+          {
+            key: 'currency',
+            label: 'Moeda'
+          }
+        ],
+        languageOptions: [
+          {'value': 'en', 'text': 'inglês'},
+          {'value': 'fr', 'text': 'francés'},
+          {'value': 'es', 'text': 'español'},
+          {'value': 'pt', 'text': 'português'}
         ]
       }
     },
