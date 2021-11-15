@@ -187,8 +187,8 @@ module.exports = {
         ],
         languageOptions: [
           {'value': 'en', 'text': 'inglês'},
-          {'value': 'fr', 'text': 'francés'},
-          {'value': 'es', 'text': 'español'},
+          {'value': 'fr', 'text': 'francês'},
+          {'value': 'es', 'text': 'espanhol'},
           {'value': 'pt', 'text': 'português'}
         ]
       }
