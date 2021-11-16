@@ -21,6 +21,8 @@ As of 12th October 2021, the Guidance and Analysis Dashboards have been updated 
 * [EN - IATI Country Development Finance Data Guidance](/IATI%20CDFD%20Guidance_v2_EN.pdf)
 * [FR - Lignes directrices de l’IITA concernant les données nationales
 relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
+* [ES - Orientación de la IATI relativa a los Datos sobre Financiación para el
+Desarrollo de los Países](/IATI%20CDFD%20Guidance_v2_ES.pdf)
 
 ### Excel Analysis Dashboard
 
