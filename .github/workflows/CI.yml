@@ -15,7 +15,7 @@ jobs:
         npm install
     - name: Run build
       run: |
-        npm run docs:build_subfolder
+        npm run docs:build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
