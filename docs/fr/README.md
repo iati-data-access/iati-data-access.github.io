@@ -30,7 +30,7 @@ relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 _Exemple complet pour le Malawi :_
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx))
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
 
 ## Méthodologie
 Des informations détaillées sur la méthodologie employée pour aplatir les données de l’IITA en format Excel sont disponibles dans la section Méthodologie.
