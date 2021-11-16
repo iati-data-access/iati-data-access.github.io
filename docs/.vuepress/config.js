@@ -18,11 +18,6 @@ module.exports = {
       "lang": "es",
       "title": "Country Development Finance Data",
       "description": "Datos de la IATI sobre la financiación para el desarrollo de los países"
-    },
-    "/pt/": {
-      "lang": "pt",
-      "title": "Country Development Finance Data",
-      "description": "Dados sobre Financiamento do Desenvolvimento dos Países da IATI"
     }
   },
   themeConfig: {
@@ -65,8 +60,7 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'English'},
           {'value': 'fr', 'text': 'French'},
-          {'value': 'es', 'text': 'Spanish'},
-          {'value': 'pt', 'text': 'Portuguese'}
+          {'value': 'es', 'text': 'Spanish'}
         ]
       },
       "/fr/": {
@@ -106,8 +100,7 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'anglais'},
           {'value': 'fr', 'text': 'français'},
-          {'value': 'es', 'text': 'espagnol'},
-          {'value': 'pt', 'text': 'portugais'}
+          {'value': 'es', 'text': 'espagnol'}
         ]
       },
       "/es/": {
@@ -147,8 +140,7 @@ module.exports = {
         languageOptions: [
           {'value': 'en', 'text': 'inglés'},
           {'value': 'fr', 'text': 'francés'},
-          {'value': 'es', 'text': 'español'},
-          {'value': 'pt', 'text': 'portugués'}
+          {'value': 'es', 'text': 'español'}
         ]
       },
       "/pt/": {
