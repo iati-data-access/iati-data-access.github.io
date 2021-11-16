@@ -28,7 +28,9 @@ Desarrollo de los Países](Orientación%20para%20la%20CDFD%20de%20IATI_v1_ES.pdf
 
 _Exemplos completos para o Zimbabwe:_
 
-* [Para utilização com o ano fiscal de janeiro a dezembro](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx))
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em inglês)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx))
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em francês)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example_FR.xlsx))
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example_ES.xlsx))
 
 ## Metodologia
 

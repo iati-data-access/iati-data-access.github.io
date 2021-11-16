@@ -24,7 +24,9 @@ relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 ### Excel Analysis Dashboard
 
-* [For use with January-December fiscal year](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [For use with January-December fiscal year (works with English files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [For use with January-December fiscal year (works with French files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
+* [For use with January-December fiscal year (works with Spanish files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
 
 _Complete example for Malawi:_
 

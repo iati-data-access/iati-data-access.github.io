@@ -24,7 +24,9 @@ Desarrollo de los Países](Orientación%20para%20la%20CDFD%20de%20IATI_v1_ES.pdf
 
 ### Panel de análisis de Excel
 
-* [Para su uso durante el ejercicio económico de enero a diciembre](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos ingléses)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos franceses)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
+* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos españoles)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
 
 _Ejemplos completos para Malawi:_
 
