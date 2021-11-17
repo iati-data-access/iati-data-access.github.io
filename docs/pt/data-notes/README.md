@@ -31,12 +31,12 @@ Tipo de organização destinatária | |
 Tipo de transação | 2 - Compromisso de saída | budget - Budget
 País/região destinatário | IN - Índia | IN - Índia
 Plurinacional [^1] | 1  | 1
-Categoria de sector | 210 – Transportes e armazenamento | 210 – Transportes e armazenamento
-Sector | 21020 - Transporte rodoviário | 21020 - Transporte rodoviário
+Categoria de setor | 210 – Transportes e armazenamento | 210 – Transportes e armazenamento
+Setor | 21020 - Transporte rodoviário | 21020 - Transporte rodoviário
 Humanitária | 0 | 0
-Ano | 2019 | 2019
-Trimestre | T4 | T4
-Ano y trimestre | 2019 T4 | 2019 T4
+Ano civil | 2019 | 2019
+Trimestre civil | T4 | T4
+Ano e trimestre civis | 2019 T4 | 2019 T4
 URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 Valor (USD) | 47,560,000 | 435,000
 Valor (EUR) | 41,213,347 | 376,951
