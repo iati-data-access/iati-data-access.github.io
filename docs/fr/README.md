@@ -26,6 +26,7 @@ relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
 * [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers anglais)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 * [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers français)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
 * [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers espagnols)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers portugais)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
 
 _Exemple complet pour le Malawi :_
 

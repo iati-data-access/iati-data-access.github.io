@@ -27,6 +27,7 @@ Desarrollo de los Países](/IATI%20CDFD%20Guidance_v2_ES.pdf)
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos ingléses)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos franceses)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos españoles)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos portuguéses)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
 
 _Ejemplos completos para Malawi:_
 
