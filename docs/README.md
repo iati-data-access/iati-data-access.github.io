@@ -18,18 +18,20 @@ As of 12th October 2021, the Guidance and Analysis Dashboards have been updated 
 
 ### Guidance
 
-* [EN - IATI Country Development Finance Data Guidance](/IATI%20CDFD%20Guidance_v2_EN.pdf)
+* [EN - IATI Country Development Finance Data Guidance](/guidance/IATI%20CDFD%20Guidance_v2_EN.pdf)
 * [FR - Lignes directrices de l’IITA concernant les données nationales
-relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
+relatives au financement du développement](/guidance/IATI%20CDFD%20Guidance_v2_FR.pdf)
 * [ES - Orientación de la IATI relativa a los Datos sobre Financiación para el
-Desarrollo de los Países](/IATI%20CDFD%20Guidance_v2_ES.pdf)
-* [PT - Orientação para os Dados sobre Financiamento do Desenvolvimento dos Países da IATI](/IATI%20CDFD%20Guidance_v2_PT.pdf)
+Desarrollo de los Países](/guidance/IATI%20CDFD%20Guidance_v2_ES.pdf)
+* [PT - Orientação para os Dados sobre Financiamento do Desenvolvimento dos Países da IATI](/guidance/IATI%20CDFD%20Guidance_v2_PT.pdf)
 
 ### Excel Analysis Dashboard
 
-* [For use with January-December fiscal year (works with English files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [For use with January-December fiscal year (works with French files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
-* [For use with January-December fiscal year (works with Spanish files)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [For use with January-December fiscal year (works with English files)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [For use with January-December fiscal year (works with French files)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
+* [For use with January-December fiscal year (works with Spanish files)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [For use with January-December fiscal year (works with Portuguese files)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
+
 
 _Complete example for Malawi:_
 

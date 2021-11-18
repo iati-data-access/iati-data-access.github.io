@@ -19,18 +19,18 @@ Au 12 octobre 2021, les lignes directrices et tableaux d’analyse ont été mis
 ### Lignes directrices
 
 * [Lignes directrices de l’IITA concernant les données nationales
-relatives au financement du développement](/IATI%20CDFD%20Guidance_v2_FR.pdf)
+relatives au financement du développement](/guidance/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 ### Tableau de bord d’analyse Excel
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers anglais)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers français)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers espagnols)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers portugais)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers anglais)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers français)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers espagnols)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers portugais)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
 
 _Exemple complet pour le Malawi :_
 
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
 
 ## Méthodologie
 Des informations détaillées sur la méthodologie employée pour aplatir les données de l’IITA en format Excel sont disponibles dans la section Méthodologie.

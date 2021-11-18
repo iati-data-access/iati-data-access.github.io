@@ -19,18 +19,18 @@ Em 12 de outubro 2021, a orientação e o painel de análise foram atualizados p
 
 ### Orientação
 
-* [Orientação para os Dados sobre Financiamento do Desenvolvimento dos Países da IATI](/IATI%20CDFD%20Guidance_v2_PT.pdf)
+* [Orientação para os Dados sobre Financiamento do Desenvolvimento dos Países da IATI](/guidance/IATI%20CDFD%20Guidance_v2_PT.pdf)
 
 ### Painel de análise do Excel
 
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em inglês)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em francês)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em português)](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em inglês)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em francês)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_FR.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_ES.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em português)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_PT.xlsx)
 
 _Exemplos completos para o Malawi:_
 
-* [Para utilização com o ano fiscal de janeiro a dezembro](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
 
 ## Metodologia
 
