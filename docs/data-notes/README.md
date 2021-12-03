@@ -35,7 +35,7 @@ Sector | 21020 – Road Transport | 21020 – Road Transport
 Humanitarian | 0 | 0
 Calendar Year | 2019 | 2019
 Calendar Quarter | Q4 | Q4
-Calendar Yeear and Quarter | 2019 Q4 | 2019 Q4
+Calendar Year and Quarter | 2019 Q4 | 2019 Q4
 URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
 Value (USD) | 47,560,000 | 435,000
 Value (EUR) | 41,213,347 | 376,951
