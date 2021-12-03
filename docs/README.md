@@ -33,9 +33,12 @@ Desarrollo de los Países](/guidance/IATI%20CDFD%20Guidance_v2_ES.pdf)
 * [For use with January-December fiscal year (works with Portuguese files)](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT.xlsx)
 
 
-_Complete example for Malawi:_
+_Complete examples:_
 
-* [For use with January-December fiscal year](/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [English: Malawi](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [French: Madagascar](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-Déc_FR_Madagascar.xlsx)
+* [Spanish: Colombia](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES_Colombia.xlsx)
+* [Portuguese: Sao Tome e Prinicipe](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT_São%20Tomé%20e%20Príncipe.xlsx)
 
 ## Methodology
 Detailed information on the methodology for flattening IATI data into Excel format can be found in the Methodology section.

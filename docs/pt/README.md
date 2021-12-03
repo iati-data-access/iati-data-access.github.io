@@ -28,9 +28,12 @@ Em 12 de outubro 2021, a orientação e o painel de análise foram atualizados p
 * [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES.xlsx)
 * [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em português)](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT.xlsx)
 
-_Exemplos completos para o Malawi:_
+_Exemplos completos:_
 
-* [Para utilização com o ano fiscal de janeiro a dezembro](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [inglês: Malawi](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec_Malawi%20Example.xlsx)
+* [francês: Madagáscar](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-Déc_FR_Madagascar.xlsx)
+* [espanhol: Colômbia](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES_Colombia.xlsx)
+* [português: São Tomé e Príncipe](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT_São%20Tomé%20e%20Príncipe.xlsx)
 
 ## Metodologia
 
