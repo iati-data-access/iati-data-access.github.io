@@ -6,7 +6,7 @@ This tool was created by the IATI Secretariat as an interim measure to support s
 
 ## Access data files
 
-As of 12th October 2021, all data is now combined into one file per country or region. Minor modifications have also been made to the data files, including the addition of data on whether resources are Humanitarian, the Flow Type, Transaction values in Euro and a customized currency per country, and links to the relevant d-portal activity page. Each file is also now available in French.
+As of 12th October 2021, all data is now combined into one file per country or region. Minor modifications have also been made to the data files, including the addition of data on whether resources are Humanitarian, the Flow Type, Transaction values in Euro and a customized currency per country, and links to the relevant d-portal activity page. Each file is also now available in French, Spanish and Portuguese.
 
 <DownloadFile />
 
