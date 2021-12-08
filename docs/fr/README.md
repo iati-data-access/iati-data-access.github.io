@@ -18,8 +18,7 @@ Au 12 octobre 2021, les lignes directrices et tableaux d’analyse ont été mis
 
 ### Lignes directrices
 
-* [Lignes directrices de l’IITA concernant les données nationales
-relatives au financement du développement](/guidance/IATI%20CDFD%20Guidance_v2_FR.pdf)
+* [Lignes directrices de l’IITA concernant les données nationales relatives au financement du développement](/guidance/IATI%20CDFD%20Guidance_v2_FR.pdf)
 
 ### Tableau de bord d’analyse Excel
 

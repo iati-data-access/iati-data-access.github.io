@@ -19,8 +19,7 @@ Desde el 12 octubre 2021, se han actualizado los paneles de orientación y anál
 
 ### Orientación
 
-* [Orientación de la IATI relativa a los Datos sobre Financiación para el
-Desarrollo de los Países](/guidance/IATI%20CDFD%20Guidance_v2_ES.pdf)
+* [Orientación de la IATI relativa a los Datos sobre Financiación para el Desarrollo de los Países](/guidance/IATI%20CDFD%20Guidance_v2_ES.pdf)
 
 ### Panel de análisis de Excel
 
