@@ -25,7 +25,7 @@ Desde el 12 octubre 2021, se han actualizado los paneles de orientación y anál
 
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos ingléses)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos franceses)](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-Déc_FR.xlsx)
-* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos españoles)](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES.xlsx)
+* [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos españoles)](/dashboards/v2%20Panel%20de%20ana%CC%81lisis_Eni-Dic_ES.xlsx)
 * [Para su uso durante el ejercicio económico de enero a diciembre (funciona con los archivos portuguéses)](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT.xlsx)
 
 _Ejemplos completos:_
