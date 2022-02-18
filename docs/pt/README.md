@@ -24,8 +24,8 @@ Em 12 de outubro 2021, a orientação e o painel de análise foram atualizados p
 ### Painel de análise do Excel
 
 * [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em inglês)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em francês)](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-D%C3%A9c_FR.xlsx)
-* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/dashboards/v2%20Panel%20de%20ana%CC%81lisis_Eni-Dic_ES.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em francês)](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-Dec_FR.xlsx)
+* [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em espanhol)](/dashboards/v2%20Panel%20de%20analisis_Eni-Dic_ES.xlsx)
 * [Para utilização com o ano fiscal de janeiro a dezembro (funciona com arquivos em português)](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT.xlsx)
 
 _Exemplos completos:_

@@ -23,8 +23,8 @@ Au 12 octobre 2021, les lignes directrices et tableaux d’analyse ont été mis
 ### Tableau de bord d’analyse Excel
 
 * [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers anglais)](/dashboards/v2%20IATI%20CDFD%20Analysis%20Dashboard_Jan-Dec.xlsx)
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers français)](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-D%C3%A9c_FR.xlsx)
-* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers espagnols)](/dashboards/v2%20Panel%20de%20ana%CC%81lisis_Eni-Dic_ES.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers français)](/dashboards/v2%20Tableau%20de%20bord%20d’analyse%20de%20l’outil%20CDFD%20de%20l’IITA_Jan-Dec_FR.xlsx)
+* [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers espagnols)](/dashboards/v2%20Panel%20de%20analisis_Eni-Dic_ES.xlsx)
 * [Pour une utilisation avec un exercice fiscal de janvier à décembre (fonctionne avec des fichiers portugais)](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT.xlsx)
 
 _Exemples complets :_
