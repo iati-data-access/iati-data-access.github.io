@@ -1,5 +1,7 @@
 # Dados sobre Financiamento do Desenvolvimento dos Países da IATI
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kZxxmf8uMEI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="right" style="margin:0px 0px 10px 10px;"></iframe>
+
 Descarregue dados simples em formato Excel sobre compromissos, desembolsos e despesas, bem como orçamentos prospectivos, apresentados de forma simples por país e região e concebidos para possibilitar uma análise fácil numa tabela dinâmica.
 
 Esta ferramenta foi criada pelo Secretariado da IATI como medida provisória para apoiar o acesso simples aos tipos de dados mais frequentemente solicitados pelos governos dos países parceiros. Os ensinamentos desta ferramenta irão fundamentar os passos seguintes da IATI para o desenvolvimento de um novo portal de dados que simplificará o acesso a todos os dados da IATI para todos os utilizadores.
