@@ -10,7 +10,7 @@ Esta ferramenta foi criada pelo Secretariado da IATI como medida provisória par
 
 A partir de 12 de outubro 2021, todos os dados são agora combinados num arquivo por  país ou região. Os arquivos de  dados sofreram também pequenas modificações, incluindo o acréscimo de dados sobre se os recursos são humanitários, o tipo de fluxo, os valores das transações em euros e numa moeda customizada por país, e linkspara a página de atividade do d-portal relevante. Cada arquivo também está disponível em francês, espanhol e português.
 
-<DownloadFile />
+<download-file></download-file>
 
 ## Orientação e painel de análise
 

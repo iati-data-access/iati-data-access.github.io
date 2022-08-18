@@ -10,7 +10,7 @@ Cet outil a été élaboré par le Secrétariat de l’IITA comme mesure proviso
 
 Au 12 octobre 2021, toutes les données ont été rassemblées dans un fichier par pays ou région. Des changements mineurs ont également été apportés aux fichiers de données, notamment l’ajout de données sur le caractère humanitaire des données, le type de flux, les valeurs des transactions en euros et dans une devise personnalisée par pays, ainsi que des liens vers la page d’activité concernée de la plateforme d-portal. De plus, chaque fichier est maintenant disponible en français, en espagnol et en portugais.
 
-<DownloadFile />
+<download-file></download-file>
 
 ## Lignes directrices et tableau de bord d’analyse
 
