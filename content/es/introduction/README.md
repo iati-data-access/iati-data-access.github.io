@@ -48,26 +48,19 @@ Este trabajo ofrece una serie de resultados para mejorar la accesibilidad de los
   * desgloses por organización informante (y tipo), sector, tipo de ayuda, financiación, tipo y organización encargada de la ejecución.
 * Una interfaz para acceder a los datos y a la metodología.
 
----------
-
 [^1]: Registro de la IATI, último acceso el 23‑10‑2020: [https://iatiregistry.org](https://iatiregistry.org)
 
 [^2]: Publish What You Fund (2020) – “Índice de transparencia de la ayuda 2020”: [https://www.publishwhatyoufund.org/the-index/2020/](https://www.publishwhatyoufund.org/the-index/2020/)
 
-[^3]: IATI (2020) – Plan Estratégico de la IATI (2020-2025), pág. 21:
-[https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
+[^3]: IATI (2020) – Plan Estratégico de la IATI (2020-2025), pág. 21: [https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
 
-[^4]: IATI (2008) – Declaración de Accra de la IATI:
-[https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
+[^4]: IATI (2008) – Declaración de Accra de la IATI: [https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
 
-[^5]: IATI (2020) – Reunión del Consejo de Administración (julio de 2020), documento 3, balance técnico:
-[https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
+[^5]: IATI (2020) – Reunión del Consejo de Administración (julio de 2020), documento 3, balance técnico: [https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
 
-[^6]: IATI (2020) – Reunión del Consejo de Administración (julio de 2020), acta:
-[https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
+[^6]: IATI (2020) – Reunión del Consejo de Administración (julio de 2020), acta: [https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
 
-[^7]: Leigh Mitchell (2017) – Systematically Tracking the aid Tracking Systems (actualizado en mayo de 2018):
-[https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
+[^7]: Leigh Mitchell (2017) – Systematically Tracking the aid Tracking Systems (actualizado en mayo de 2018): [https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
 
 [^8]: El marco de gastos a medio plazo o MTEF (Medium Term Expenditure Framework) es un proceso utilizado en varios países para la planificación de gastos a medio plazo (con frecuencia, para períodos continuos de tres años). Los datos del elemento `<budget>` de la IATI están diseñados para contribuir a estos procesos.
 
@@ -77,5 +70,4 @@ Este trabajo ofrece una serie de resultados para mejorar la accesibilidad de los
 
 [^11]: [https://covid19.humportal.org/activities](https://covid19.humportal.org/activities). N. B.: herramienta desarrollada por el autor.
 
-[^12]: PNUD (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”:
-[https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)
+[^12]: PNUD (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”: [https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)

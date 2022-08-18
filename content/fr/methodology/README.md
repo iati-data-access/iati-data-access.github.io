@@ -159,12 +159,16 @@ transaction/provider-org/text()
 
 Dans les cas où il n’existe pas d’organisme prestataire ou bénéficiaire concernant la transaction, d’autres organismes participant à l’activité servent de remplacement. Les organisations utilisées en remplacement varient selon le type de transaction traité :
 
+<div class="table">
+
 Type de transaction | Organisme prestataire | Organisme bénéficiaire
 --- | --- | ---
 1 - Fonds entrants | Organisme de financement | Organisme déclarant
 2 - Engagement sortant | Organisme déclarant | Organisme de mise en œuvre
 3 - Décaissement | Organisme déclarant | Organisme de mise en œuvre
 4 - Dépense | Organisme déclarant | Organisme de mise en œuvre
+
+</div>
 
 S’il existe plusieurs organismes de financement ou de mise en œuvre, ceux-ci sont reliés par des virgules.
 
@@ -236,10 +240,14 @@ Comme expliqué dans la section précédente, une seule transaction peut être l
 
 Dans certains cas, les pourcentages indiqués peuvent être incorrects. Par exemple, il est possible que leur total ne soit pas égal à 100 %, ou qu’aucun pourcentage n’ait été attribué à de multiples secteurs. Les pourcentages sont alors ajustés et leur base de calcul modifiée afin de parvenir à un total égal à 100 %. Par exemple :
 
+<div class="table">
+
 Secteur | Pourcentage (publié) | Pourcentage (corrigé)
 --- | --- | ---
 12220 Soins de santé de base | 100% | 50%
 11220 Éducation primaire | 100% | 50%
+
+</div>
 
 Une transaction de 100 dollars US serait divisée en deux lignes : l’une pour les 50 dollars US affectés aux soins de santé de base, et l’autre pour les 50 dollars US réservés à l’éducation primaire. Si la même activité était publiée avec l’inclusion de deux pays bénéficiaires, la transaction serait de nouveau divisée, cette fois en quatre lignes.
 

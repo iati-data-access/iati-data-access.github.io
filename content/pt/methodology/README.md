@@ -159,12 +159,16 @@ transaction/provider-org/text()
 
 Sempre que não houver uma organização provedora ou destinatária ao nível da transação, utilizamos uma organização de outra parte da atividade. Utilizamos alternativas diferentes, dependendo do tipo de transação que estamos processando:
 
+<div class="table">
+
 Tipo de transação | Org. provedora | Org. destinatária
 --- | --- | ---
 1 - Entrada de fundos | Org. financiadora | Org. relatora
 2 - Compromisso de saída | Org. relatora | Org. implementadora
 3 - Desembolso | Org. relatora | Org. implementadora
 4 - Despesa | Org. relatora | Org. implementadora
+
+</div>
 
 Nos casos em que há várias organizações financiadoras ou implementadoras, estas são concatenadas (ligadas) através de vírgulas.
 
@@ -236,10 +240,14 @@ Conforme descrito na seção anterior, as transações individuais podem ser atr
 
 Em alguns casos, as porcentagens publicadas podem também não estar corretas. Por exemplo, podem não totalizar 100 ou pode haver vários setores sem porcentagem especificada. Em tais casos, as porcentagens foram ajustadas e recalculadas para totalizarem 100%. Por exemplo:
 
+<div class="table">
+
 Setor| Porcentagem (publicada) | Porcentagem (corrigida)
 --- | --- | ---
 12220 Cuidados de saúde básicos | 100% | 50%
 11220 Educação primária | 100% | 50%
+
+</div>
 
 Uma transação única de 100 USD seria então repartida por duas linhas: uma para 50 USD para cuidados de saúde básicos e outra para 50 USD para educação primária. Se a mesma atividade estivesse classificada com dois países destinatários, seria repartida de novo, agora em quatro linhas.
 

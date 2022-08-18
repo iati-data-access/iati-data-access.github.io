@@ -48,26 +48,19 @@ Ce travail fournit des produits visant à améliorer l’accessibilité des donn
   * les agrégations par organisme déclarant (et type), secteur, type d’aide, type de financement, et organisme de mise en œuvre ;
 * une interface permettant l’accès aux données et à la méthodologie.
 
----------
-
 [^1]: IATI Registry, consulté le 2020-10-23 : [https://iatiregistry.org](https://iatiregistry.org)
 
 [^2]: Publish What You Fund, 2020, « Indice de transparence de l’aide 2020 » : [https://www.publishwhatyoufund.org/the-index/2020/](https://www.publishwhatyoufund.org/the-index/2020/)
 
-[^3]: IITA, 2020, Plan stratégique de l’IITA pour la période 2020-2025, p. 21 :
-[https://iatistandard.org/fr/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/fr/governance/iati-strategic-plan-2020-2025/)
+[^3]: IITA, 2020, Plan stratégique de l’IITA pour la période 2020-2025, p. 21 : [https://iatistandard.org/fr/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/fr/governance/iati-strategic-plan-2020-2025/)
 
-[^4]: IITA, 2008, IATI Accra Statement (Déclaration d’Accra de l’IITA) :
-[https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
+[^4]: IITA, 2008, IATI Accra Statement (Déclaration d’Accra de l’IITA) : [https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
 
-[^5]: IITA, 2020, Governing Board Meeting July 2020, paper 3 : Technical Stocktake (Procès-verbal de la réunion du Conseil d’administration de juillet 2020, Document no 3 : Bilan technique) :
-[https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
+[^5]: IITA, 2020, Governing Board Meeting July 2020, paper 3 : Technical Stocktake (Procès-verbal de la réunion du Conseil d’administration de juillet 2020, Document no 3 : Bilan technique) : [https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
 
-[^6]: IITA, 2020, Governing Board Meeting July 2020 – minutes (Procès-verbal de la réunion du Conseil d’administration de juillet 2020) :
-[https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
+[^6]: IITA, 2020, Governing Board Meeting July 2020 – minutes (Procès-verbal de la réunion du Conseil d’administration de juillet 2020) : [https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
 
-[^7]: Leigh Mitchell, 2017, Systematically Tracking the aid Tracking Systems (mis à jour en mai 2018) :
-[https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
+[^7]: Leigh Mitchell, 2017, Systematically Tracking the aid Tracking Systems (mis à jour en mai 2018) : [https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
 
 [^8]: Le MTEF, Medium Term Expenditure Framework (le cadre des dépenses à moyen terme), est un processus utilisé dans un certain nombre de pays pour prévoir les dépenses à moyen terme (souvent, pour des exercices de trois ans). Les données trouvées dans l’élément `<budget>` sont conçues pour être utiles à l’alimentation de ces processus.
 
@@ -77,5 +70,4 @@ Ce travail fournit des produits visant à améliorer l’accessibilité des donn
 
 [^11]: [https://covid19.humportal.org/activities](https://covid19.humportal.org/activities) – N.B. : l’auteur a conçu cet outil.
 
-[^12]: PNUD, 2020, « Past Spending Data: Steps for Querying and Processing Data from the Datastore QB » :
-[https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)
+[^12]: PNUD, 2020, « Past Spending Data: Steps for Querying and Processing Data from the Datastore QB » : [https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)

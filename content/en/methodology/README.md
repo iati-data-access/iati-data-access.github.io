@@ -159,12 +159,16 @@ transaction/provider-org/text()
 
 Where there is no transaction-level provider or receiver organisation, we use an organisation from another part of the activity. We use different fallbacks depending on which transaction type we are processing:
 
+<div class="table">
+
 Transaction Type | Provider org | Receiver org
 --- | --- | ---
 1 - Incoming Funds | Funding Org | Reporting Org
 2 - Outgoing Commitment | Reporting Org | Implementing Org
 3 - Disbursement | Reporting Org | Implementing Org
 4 - Expenditure | Reporting Org | Implementing Org
+
+</div>
 
 Where there are multiple funding or implementing organisations, these are concatenated (joined) together with commas.
 
@@ -235,10 +239,14 @@ As described in the previous section, individual transactions may map to multipl
 
 In some cases, the published percentages may also not be correct. For example, they may not add up to 100, or there may be multiple sectors with no percentage specified. In these cases, the percentages have been adjusted and rebased so that the percentages add up to 100%. For example:
 
+<div class="table">
+
 Sector | Percentage (published) | Percentage (corrected)
 --- | --- | ---
 12220 Basic health care | 100% | 50%
 11220 Primary education | 100% | 50%
+
+</div>
 
 A single transaction of USD 100 would then be split into two rows: one row for USD 50 for basic health care and a second row of USD 50 for primary education. If the same activity were classified with two recipient countries, it would be split again, now into four rows.
 

@@ -48,26 +48,20 @@ Este trabalho fornece vários produtos finais para melhorar a acessibilidade dos
   * Valores agregados por organização relatora (e tipo), setor, tipo de ajuda, financiamento, tipo e organização implementadora;
 * Uma interface para acesso aos dados e à metodologia.
 
----------
 
 [^1]: Registo da IATI, consultado em 23/10/2020: [https://iatiregistry.org](https://iatiregistry.org)
 
 [^2]: Publish What You Fund (2020) – “Índice de Transparência da Ajuda 2020”: [https://www.publishwhatyoufund.org/the-index/2020/](https://www.publishwhatyoufund.org/the-index/2020/)
 
-[^3]: IATI (2020) – Plano Estratégico 2020-2025 da IATI, p. 21:
-[https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
+[^3]: IATI (2020) – Plano Estratégico 2020-2025 da IATI, p. 21: [https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
 
-[^4]: IATI (2008) – Declaração de Acra da IATI:
-[https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
+[^4]: IATI (2008) – Declaração de Acra da IATI: [https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
 
-[^5]: IATI (2020) – Reunião do conselho diretivo de julho de 2020, documento 3, Balanço Técnico:
-[https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
+[^5]: IATI (2020) – Reunião do conselho diretivo de julho de 2020, documento 3, Balanço Técnico: [https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
 
-[^6]: IATI (2020) – Reunião do conselho diretivo de julho de 2020, ata:
-[https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
+[^6]: IATI (2020) – Reunião do conselho diretivo de julho de 2020, ata: [https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
 
-[^7]: Leigh Mitchell (2017) – Systematically Tracking the Aid Tracking Systems (atualizado em maio de 2018):
-[https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
+[^7]: Leigh Mitchell (2017) – Systematically Tracking the Aid Tracking Systems (atualizado em maio de 2018): [https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
 
 [^8]: O QDMP, quadro da despesa de médio prazo, é um processo utilizado em vários países para planejamento dos gastos a médio prazo (muitas vezes em ciclos de 3 anos). Os dados disponíveis no elemento do “orçamento” da IATI estão concebidos para serem úteis no sentido de contribuírem para estes processos.
 
@@ -77,6 +71,4 @@ Este trabalho fornece vários produtos finais para melhorar a acessibilidade dos
 
 [^11]: [https://covid19.humportal.org/activities](https://covid19.humportal.org/activities) – NB: o autor desenvolveu esta ferramenta.
 
-[^12]: PNUD (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”:
-[https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)
-
+[^12]: PNUD (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”: [https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)

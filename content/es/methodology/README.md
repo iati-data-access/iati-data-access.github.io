@@ -159,12 +159,16 @@ transaction/provider-org/text()
 
 En los casos en los que no haya organización proveedora o beneficiaria en el nivel de transacción, se recurre a una organización de otra parte de la actividad. Se utilizan distintas reservas dependiendo del tipo de transacción que se esté procesando:
 
+<div class="table">
+
 Tipo de transacción | Org. proveedora | Org. beneficiaria
 --- | --- | ---
 1 - Ingresos de fondos | Org. de financiación | Org. informante
 2 - Compromiso de pago saliente | Org. informante | Org. encargada de la ejecución
 3 - Desembolso | Org. informante | Org. encargada de la ejecución
 4 - Gasto | Org. informante | Org. encargada de la ejecución
+
+</div>
 
 En los casos en los que hay varias organizaciones de financiación o encargadas de la ejecución, se concatenan (unen) mediante comas.
 
@@ -236,10 +240,14 @@ Como se ha descrito en la sección anterior, hay transacciones individuales que 
 
 En algunos casos también puede ser que los porcentajes publicados no sean correctos. Por ejemplo, puede que sumados no lleguen al 100%, o que haya múltiples sectores sin porcentajes especificados. En dichos casos, los porcentajes se han ajustado y recalculado de modo que al sumarlos den el 100%. Por ejemplo:
 
+<div class="table">
+
 Sector | Porcentaje (publicado) | Porcentaje (corregido)
 --- | --- | ---
 12220 Atención sanitaria básica | 100% | 50%
 11220 Educación primaria | 100% | 50%
+
+</div>
 
 Una única transacción de 100 dólares de los Estados Unidos se divide en dos filas: una que corresponde a 50 dólares de los Estados Unidos para la atención sanitaria básica y otra que corresponde a 50 dólares de los Estados Unidos para la educación primaria. Si la misma actividad estuviera clasificada con dos países beneficiarios, se volvería a dividir de nuevo, ahora en cuatro filas.
 

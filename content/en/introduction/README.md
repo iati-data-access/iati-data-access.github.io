@@ -48,26 +48,19 @@ This work provides a number of outputs to improve the accessibility of IATI data
 * An interface for accessing the data and methodology.
 
 
----------
-
 [^1]: IATI Registry, accessed 2020-10-23: [https://iatiregistry.org](https://iatiregistry.org)
 
 [^2]: Publish What You Fund (2020) – “Aid Transparency Index 2020”: [https://www.publishwhatyoufund.org/the-index/2020/](https://www.publishwhatyoufund.org/the-index/2020/)
 
-[^3]: IATI (2020) – IATI Strategic Plan 2020-2025, p21:
-[https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
+[^3]: IATI (2020) – IATI Strategic Plan 2020-2025, p21: [https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/](https://iatistandard.org/en/governance/iati-strategic-plan-2020-2025/)
 
-[^4]: IATI (2008) – IATI Accra Statement:
-[https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
+[^4]: IATI (2008) – IATI Accra Statement: [https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf](https://iatistandard.org/media/documents/archive/2009/06/iati-accra-statement-p1.pdf)
 
-[^5]: IATI (2020) – Governing Board Meeting July 2020, paper 3: Technical Stocktake:
-[https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
+[^5]: IATI (2020) – Governing Board Meeting July 2020, paper 3: Technical Stocktake: [https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit](https://docs.google.com/document/d/1I44X10hj3dh8dKTSrnCCmfChSfS8NwVa5A7tWm1-7vU/edit)
 
-[^6]: IATI (2020) – Governing Board Meeting July 2020 – minutes:
-[https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
+[^6]: IATI (2020) – Governing Board Meeting July 2020 – minutes: [https://iatistandard.org/documents/10450/Board\_minutes\_15\_July\_2020.pdf](https://iatistandard.org/documents/10450/Board_minutes_15_July_2020.pdf)
 
-[^7]: Leigh Mitchell (2017) – Systematically Tracking the aid Tracking Systems (updated May 2018):
-[https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
+[^7]: Leigh Mitchell (2017) – Systematically Tracking the aid Tracking Systems (updated May 2018): [https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef](https://medium.com/@leighmitchell/tracking-the-tracking-systems-ddd3d6578fef)
 
 [^8]: MTEF, the Medium Term Expenditure Framework, is a process used in a number of countries for medium-term (often 3-year rolling) expenditure planning. Data found in IATI’s `<budget>` element is designed to be useful for feeding into these processes.
 
@@ -77,5 +70,4 @@ This work provides a number of outputs to improve the accessibility of IATI data
 
 [^11]: [https://covid19.humportal.org/activities](https://covid19.humportal.org/activities) – NB the author developed this tool.
 
-[^12]: UNDP (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”:
-[https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)
+[^12]: UNDP (2020) – “Past Spending Data: Steps for Querying and Processing Data from the Datastore QB”: [https://www.yammer.com/undp-externalnetwork/uploaded\_files/752280010752](https://www.yammer.com/undp-externalnetwork/uploaded_files/752280010752)
