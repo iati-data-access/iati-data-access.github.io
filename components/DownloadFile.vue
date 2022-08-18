@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home text-center">
     <div class="hero">
       <v-select
         :options="countries"
         label="country_name"
         :reduce="country => country.country_code"
-        :placeholder="$themeLocaleConfig.translations.selectCountry"
+        :placeholder="$t('translations.selectCountry')"
         v-model="selectedCountry"
       ></v-select>
       <p v-if="selectedCountry"
@@ -13,8 +13,8 @@
         <b-btn
           :href="selectedCountryURL"
           variant="success"
-          size="lg">{{ this.$themeLocaleConfig.translations.downloadFile }} →</b-btn>
-        <b-form-group :label="this.$themeLocaleConfig.translations.language" class="mt-2">
+          size="lg">{{ $t('translations.downloadFile') }} →</b-btn>
+        <b-form-group :label="$t('translations.language')" class="mt-2">
           <b-form-radio-group
             v-model="language"
             :options="languageOptions"
@@ -23,12 +23,10 @@
         </b-form-group>
       </p>
       <hr />
-      <p class="last-updated">{{ this.$themeLocaleConfig.translations.lastUpdated }} <code>{{ lastUpdated}}</code></p>
+      <p class="last-updated">{{ $t('translations.lastUpdated') }} <code>{{ lastUpdated}}</code></p>
     </div>
   </div>
 </template>
-<style>
-</style>
 <script>
 import axios from 'axios'
 export default {
@@ -43,15 +41,15 @@ export default {
   },
   computed: {
     languageOptions() {
-      return this.$themeLocaleConfig.languageOptions
+      return this.$t('languageOptions')
     },
     selectedCountryURL() {
       return `https://countrydata.iatistandard.org/data-${this.language}/${this.selectedCountry}.xlsx`
     }
   },
   async beforeMount() {
-    this.language = this.$themeLocaleConfig.language
-    var data = await axios.get(`https://countrydata.iatistandard.org/data-${this.$themeLocaleConfig.language}/index.json`)
+    this.language = this.$i18n.locale
+    var data = await axios.get(`https://countrydata.iatistandard.org/data-${this.$t('language')}/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}
