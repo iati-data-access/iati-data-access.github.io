@@ -1,22 +1,6 @@
 <template>
   <div>
-    <b-row>
-      <b-col lg="3" class="toc d-none d-lg-block">
-        <ul v-if="page">
-          <li
-            v-for="link of page.toc"
-            v-if="link.depth===2"
-            :key="link.id"
-            :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }"
-          >
-            <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-          </li>
-        </ul>
-      </b-col>
-      <b-col lg="9">
-        <nuxt-content :document="page" />
-      </b-col>
-    </b-row>
+    <nuxt-content :document="page" />
   </div>
 </template>
 <script>
