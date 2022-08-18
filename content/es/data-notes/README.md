@@ -14,9 +14,10 @@ No se publican todos los campos para todas las actividades. La calidad de los da
 
 No se publican todos los tipos de transacción para todas las organizaciones. En particular, los ingresos de fondos deben manejarse con cuidado. Potencialmente permiten a un usuario calcular los desembolsos netos de una actividad (mediante desembolsos + gasto - ingresos de fondos). No obstante, la mayoría de organizaciones actualmente no publica los ingresos de fondos, de modo que los “desembolsos netos” pueden proporcionar una idea inexacta de los datos, pues serán exactos solo en el caso de algunas organizaciones.
 
+<div class="table">
 
 Columna | Ejemplo (transacciones) | Ejemplo (presupuestos)
---- | --- | --- | ---
+--- | --- | ---
 Identificador de la IATI | 44000-P163328 | 44000-P163328
 Título | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Organización informante | 44000 – Banco Mundial | 44000 – Banco Mundial
@@ -42,6 +43,7 @@ Valor (USD) | 47,560,000 | 435,000
 Valor (EUR) | 41,213,347 | 376,951
 Valor (Divisa local) | 33,589,335,939 | 32,829,292
 
+</div>
 
 ## 3.2 Datos de resumen por entidad indicando la falta de datos por año
 

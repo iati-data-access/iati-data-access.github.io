@@ -14,8 +14,10 @@ Tous les champs ne sont pas remplis dans toutes les publications d’activités.
 
 Toutes ne publient pas au sujet de tous les types de transactions. Les fonds entrants, en particulier, doivent être traités avec précaution. En théorie, cette catégorie de données permet aux utilisateurs de calculer les décaissements nets dans le cadre d’une activité (en soustrayant les fonds entrants au total des décaissements et des dépenses). Cependant, la plupart des organismes ne fournissent actuellement pas de données au sujet des fonds entrants. Le calcul des « décaissements nets » peut alors donner une image imprécise de la situation, car ils ne seront en réalité « nets » que dans le cas de *certaines* organisations.
 
+<div class="table">
+
 Colonne | Exemple (transactions) | Exemple (budgets)
---- | --- | --- | ---
+--- | --- | ---
 Identifiant de l’IITA | 44000-P163328 | 44000-P163328
 Titre | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Organisme déclarant | 44000 – Banque mondiale | 44000 – Banque mondiale
@@ -41,6 +43,7 @@ Valeur (USD) | 47,560,000 | 435,000
 Valeur (EUR) | 41,213,347 | 376,951
 Valeur (Monnaie locale) | 33,589,335,939 | 32,829,292
 
+</div>
 
 ## 3.2 Synthèse des données par signataire avec analyse des manques de données par an
 
@@ -55,11 +58,11 @@ Cette analyse permet de repérer les absences générales de données dont il pe
   href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
   class="download-button">Télécharger ce tableau au format Excel →</a>
 
-<DataGapsYear />
+<data-gaps-year></data-gaps-year>
 
 ## 3.3 Devise locale pour chaque pays
 
-<CountriesCurrencies />
+<countries-currencies></countries-currencies>
 
 
 [^1]: Indique si la dépense a initialement été engagée dans le cadre d’un projet multipays, en plus de si les financements accordés au pays ont été calculés en fonction de la répartition en pourcentage de l’activité entre les pays.

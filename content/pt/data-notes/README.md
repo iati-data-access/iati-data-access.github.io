@@ -14,9 +14,10 @@ Nem todos os campos são publicados para todas as atividades. A qualidade dos da
 
 Nem todos os tipos de transações são publicados por todas as organizações. As entradas de fundos em particular têm de ser tratadas com cuidado. Potencialmente, permitem a um utilizador encontrar desembolsos líquidos para uma atividade (como desembolsos + despesas - entradas de fundos). Porém, a maioria das organizações não publica atualmente as entradas de fundos, então os “desembolsos líquidos” podem dar uma imagem inexata dos dados, já que serão líquidos para *apenas algumas* organizações.
 
+<div class="table">
 
 Coluna | Exemplo (compromissos, desembolsos e despesas) | Exemplo (orçamentos)
---- | --- | --- | ---
+--- | --- | ---
 Identificador da IATI | 44000-P163328 | 44000-P163328
 Título | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Organização relatora | 44000 – Banco Mundial | 44000 – Banco Mundial
@@ -42,6 +43,7 @@ Valor (USD) | 47,560,000 | 435,000
 Valor (EUR) | 41,213,347 | 376,951
 Valor (Moeda local) | 33,589,335,939 | 32,829,292
 
+</div>
 
 ## 3.2 Dados resumidos por relator mostrando as lacunas de dados por ano
 

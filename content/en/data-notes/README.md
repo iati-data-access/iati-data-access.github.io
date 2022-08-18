@@ -14,8 +14,10 @@ Not all fields are published for all activities. Data quality will vary by organ
 
 Not all transaction types are published by all organisations. Incoming funds in particular need to be handled with care. They would potentially allow a user to find net disbursements for an activity (as disbursements + expenditure - incoming funds). However, most organisations do not currently publish incoming funds, so "net disbursements" may provide an inaccurate picture of the data, as it will actually be net for *only some* organisations.
 
+<div class="table">
+
 Column | Example (transactions) | Example (budgets)
---- | --- | --- | ---
+--- | --- | ---
 IATI Identifier | 44000-P163328 | 44000-P163328
 Title | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
 Reporting Organisation | 44000 – World Bank | 44000 – World Bank
@@ -40,6 +42,8 @@ URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.htm
 Value (USD) | 47,560,000 | 435,000
 Value (EUR) | 41,213,347 | 376,951
 Value (Local currrency) | 33,589,335,939 | 32,829,292
+
+</div>
 
 ## 3.2 Data gaps by year
 
