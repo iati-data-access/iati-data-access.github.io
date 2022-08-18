@@ -1,0 +1,40 @@
+{
+  "title": "Country Development Finance Data",
+  "description": "Dados sobre Financiamento do Desenvolvimento dos Países da IATI",
+  "language": "pt",
+  "selectText": "Idiomas",
+  "label": "Português",
+  "ariaLabel": "Idiomas",
+  "sidebar": [
+    ["/pt/", "Página inicial"],
+    ["/pt/introduction/", "Contexto"],
+    ["/pt/methodology/", "Metodologia"],
+    ["/pt/data-notes/", "Notas sobre dados"]
+  ],
+  "translations": {
+    "selectCountry": "Selecione um país",
+    "downloadFile": "Descarregar arquivo",
+    "lastUpdated": "Última atualização:",
+    "language": "Idioma"
+  },
+  "countriesCurrenciesFields": [
+    {
+      "key": "countryCode",
+      "label": "Código do país"
+    },
+    {
+      "key": "countryName",
+      "label": "Nome do país"
+    },
+    {
+      "key": "currency",
+      "label": "Moeda"
+    }
+  ],
+  "languageOptions": [
+    {"value": "en", "text": "inglês"},
+    {"value": "fr", "text": "francês"},
+    {"value": "es", "text": "espanhol"},
+    {"value": "pt", "text": "português"}
+  ]
+}
