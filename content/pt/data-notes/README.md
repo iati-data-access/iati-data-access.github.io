@@ -57,11 +57,11 @@ A tabela identificará lacunas gerais de dados das quais possa ser necessário o
   href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
   class="download-button">Descarregar esta tabela em formato Excel →</a>
 
-<DataGapsYear />
+<data-gaps-year></data-gaps-year>
 
 ## 3.3 Moeda local para cada país
 
-<CountriesCurrencies />
+<countries-currencies></countries-currencies>
 
 
 [^1]: Indica se este gasto originalmente fazia parte de um projeto plurinacional e se o financiamento para este país foi calculado com base nas repartições percentuais da atividade entre os países.

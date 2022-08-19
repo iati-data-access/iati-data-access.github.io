@@ -58,11 +58,11 @@ Esto permitirá identificar carencias de datos generales que pueda ser necesario
   href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
   class="download-button">Descargar tabla en formato Excel →</a>
 
-<DataGapsYear />
+<data-gaps-year></data-gaps-year>
 
 ## 3.3 Divisa local para cada país
 
-<CountriesCurrencies />
+<countries-currencies></countries-currencies>
 
 
 [^1]: Indica si este gasto era originariamente parte de un proyecto multinacional y si la financiación del país se ha calculado en función de la división de porcentajes de la actividad entre los países.

@@ -4,7 +4,7 @@ title: Data Notes
 
 # Data Notes
 
-As outlined in the IATI Strategic Plan 2020-2025, driving a significant improvement in the quality of data published is one of IATI’s three key objectives. As noted in the [introduction](/introduction/#11-supporting-partner-country-governments-to-better-access-and-use-iati-data), recent years have already seen a significant improvement in the quality of data, but the quality continues to vary by publisher. This means that data users need to take care when analysing the data, and this data notes section is intended to support users by providing a simple overview of publishers’ data.
+As outlined in the IATI Strategic Plan 2020-2025, driving a significant improvement in the quality of data published is one of IATI’s three key objectives. As noted in the [introduction](/introduction11-supporting-partner-country-governments-to-better-access-and-use-iati-data), recent years have already seen a significant improvement in the quality of data, but the quality continues to vary by publisher. This means that data users need to take care when analysing the data, and this data notes section is intended to support users by providing a simple overview of publishers’ data.
 
 ## 3.1 Fields in output data
 
@@ -58,11 +58,11 @@ This will identify overall data gaps that you may need to be aware of. Data gaps
   href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
   class="download-button">Download this table in Excel format →</a>
 
-<DataGapsYear />
+<data-gaps-year></data-gaps-year>
 
 ## 3.3 Currencies for each country
 
-<CountriesCurrencies />
+<countries-currencies></countries-currencies>
 
 [^1]: Signifies whether this spending was originally part of a multi-country project, and funding to this country has been calculated, based on the percentage splits of the activity between countries.
 
