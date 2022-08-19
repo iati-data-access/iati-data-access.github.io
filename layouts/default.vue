@@ -71,6 +71,35 @@
 .toc3 {
   margin-left: 10px;
 }
+h2 {
+  margin-top: -3.1rem;
+  padding-top: 4.6rem;
+}
+h3 {
+  margin-top: -3.1rem;
+  padding-top: 4.1rem;
+}
+h4 {
+  margin-top: -3.1rem;
+  padding-top: 3.6rem;
+}
+div.footnotes {
+  margin-top: 60px;
+}
+span.icon.icon-link {
+  opacity: 0;
+  font-size: .85em;
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  margin-top: 0.125em;
+}
+span.icon.icon-link::before {
+  content: "#";
+}
+h2:hover .icon.icon-link, h3:hover .icon.icon-link, h4:hover .icon.icon-link, h5:hover .icon.icon-link {
+  opacity: 100;
+}
 </style>
 <script>
 export default {
