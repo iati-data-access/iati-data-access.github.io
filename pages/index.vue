@@ -37,6 +37,7 @@ export default {
       .catch(() => {
         error({ statusCode: 404, message: 'Page not found' })
       })
+    if (page == undefined) { return page }
     fixIds(page.body.children)
     fixIds(page.toc)
     return { page }
