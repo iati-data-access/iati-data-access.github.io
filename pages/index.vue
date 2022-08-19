@@ -1,6 +1,8 @@
 <template>
   <div>
-    <nuxt-content :document="page" />
+    <b-container>
+      <nuxt-content :document="page" />
+    </b-container>
   </div>
 </template>
 <script>

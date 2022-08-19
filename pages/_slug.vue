@@ -3,6 +3,7 @@
     <div v-for="page in pages" :key="page.title">
       <b-row>
         <b-col lg="3" class="toc d-none d-lg-block">
+          <b>{{ page.title }}</b>
           <ul v-if="page">
             <li
               v-for="link of page.toc"

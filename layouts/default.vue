@@ -31,7 +31,7 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <b-container class="page-container">
+    <b-container class="page-container" fluid>
       <Nuxt />
     </b-container>
   </div>
@@ -56,6 +56,23 @@
 }
 .nuxt-content table {
   @extend .table !optional;
+}
+.nuxt-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  ul, ol {
+    padding-left: 20px;
+  }
+  li {
+    padding-left: 5px;
+  }
+}
+.toc {
+  border-right: 1px solid #eeeeee;
+  padding: 0px 20px 20px 20px;
+  ul {
+    padding-left: 5px;
+  }
 }
 .toc2, .toc3 {
   list-style-type: none;
