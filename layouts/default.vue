@@ -39,6 +39,7 @@
 <style lang="scss">
 .page-container {
   margin-top: 100px;
+  word-break: break-word;
 }
 .navbar-brand {
   img {
