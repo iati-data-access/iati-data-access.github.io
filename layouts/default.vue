@@ -56,7 +56,7 @@
   text-align: center;
 }
 .nuxt-content table {
-  @extend .table !optional;
+  word-break: normal;
 }
 .nuxt-content {
   padding-left: 20px;
