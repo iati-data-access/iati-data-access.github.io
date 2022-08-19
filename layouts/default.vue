@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="light" variant="light" fixed="top">
       <b-navbar-brand :to="localePath({path: '/'})">
-        <img src="/iati-logo.svg" /> Country Development Finance Data
+        <img src="/iati-logo.svg" /> <span class="d-none d-md-inline-block">Country Development Finance Data</span>
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
