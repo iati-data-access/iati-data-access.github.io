@@ -342,7 +342,7 @@ Given these limits, it is important to keep file size and processing times low. 
 2.11 Licensing
 --------------
 
-All outputs are published on Github and are openly licensed according to the GNU Affero General Public License (AGPL) v3.0[^5].
+All outputs are published on Github and are openly licensed according to the GNU Affero General Public License (AGPL) v3.0[^4].
 
 
 [^1]: NB: it appears that some publishers are using the last day they updated their data as the transaction value date. In these cases, we have continued to use the value date, and flag this as an issue to be raised with the publishers by IATI Support.
@@ -351,6 +351,4 @@ All outputs are published on Github and are openly licensed according to the GNU
 
 [^3]: If a budget does not perfectly span quarters, but instead spans part-quarters, the number of days in that part-quarter arrer used to calculate the proportion of value to be attributed to each quarter.
 
-[^4]: The CIA World Factbook list of fiscal years is initially used to determine each country’s fiscal year: [https://www.cia.gov/library/publications/the-world-factbook/fields/228.html](https://www.cia.gov/library/publications/the-world-factbook/fields/228.html) (opens new window)
-
-[^5]: [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html) (opens new window)
+[^4]: [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html) (opens new window)
