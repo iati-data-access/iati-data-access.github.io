@@ -1,6 +1,6 @@
 # Datos de la IATI sobre la financiación para el desarrollo de los países
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5774Jc1WXno?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="right" style="margin:0px 0px 10px 10px;"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/5774Jc1WXno?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="right" style="margin:0px 0px 10px 10px;"></iframe>
 
 Puede descargar datos simples en formato Excel sobre compromisos, desembolsos y gastos, así como presupuestos de aplicación futura, clasificados por país y región y diseñados para facilitar un análisis sencillo en una tabla dinámica.
 
