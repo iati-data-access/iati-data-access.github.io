@@ -6,7 +6,7 @@ _Date de modification: 12 octobre 2021_
 
 # Méthodologie
 
-Cette méthodologie résume les étapes suivies pour convertir les données de l’IITA en un format utile aux gouvernements des pays partenaires. Elle permet de déterminer la manière dont les données sont récupérées, retraitées et harmonisées, ainsi que le produit. En règle générale, les étapes s’alignent sur celles suivies au cours du travail précédent détaillé dans la [sous-section 1.3](/fr/introduction/#_1-3-travaux-precedents-pour-rendre-les-donnees-disponibles-au-format-excel). Cette méthodologie sera perfectionnée et mise à jour lors de ce travail, en accord avec le Secrétariat de l’IITA.
+Cette méthodologie résume les étapes suivies pour convertir les données de l’IITA en un format utile aux gouvernements des pays partenaires. Elle permet de déterminer la manière dont les données sont récupérées, retraitées et harmonisées, ainsi que le produit. En règle générale, les étapes s’alignent sur celles suivies au cours du travail précédent détaillé dans la [sous-section 1.3](/fr/introduction/#13-travaux-precedents-pour-rendre-les-donnees-disponibles-au-format-excel). Cette méthodologie sera perfectionnée et mise à jour lors de ce travail, en accord avec le Secrétariat de l’IITA.
 
 2.1 Récupération des données de l’IITA
 --------------------------

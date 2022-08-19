@@ -4,7 +4,7 @@ title: Notas sobre dados
 
 # Notas sobre dados
 
-Conforme descrito no Plano Estratégico 2020-2025 da IATI, a promoção de uma melhoria significativa na qualidade dos dados publicados é um dos três objetivos fundamentais da IATI. Conforme mencionado na [introdução](/pt/introduction/#_1-1-apoio-aos-governos-dos-paises-parceiros-para-melhorar-o-acesso-e-a-utilizacao-de-dados-da-iati), promoveu-se uma melhoria significativa na qualidade dos dados nos últimos anos, mas essa qualidade continua a variar em função do relator. Isto significa que os utilizadores dos dados têm que ser cuidadosos na sua análise, e esta seção de notas sobre dados destina-se a apoiar os utilizadores fornecendo uma panorâmica simples dos dados dos relatores.
+Conforme descrito no Plano Estratégico 2020-2025 da IATI, a promoção de uma melhoria significativa na qualidade dos dados publicados é um dos três objetivos fundamentais da IATI. Conforme mencionado na [introdução](/pt/introduction/#11-apoio-aos-governos-dos-paises-parceiros-para-melhorar-o-acesso-e-a-utilizacao-de-dados-da-iati), promoveu-se uma melhoria significativa na qualidade dos dados nos últimos anos, mas essa qualidade continua a variar em função do relator. Isto significa que os utilizadores dos dados têm que ser cuidadosos na sua análise, e esta seção de notas sobre dados destina-se a apoiar os utilizadores fornecendo uma panorâmica simples dos dados dos relatores.
 
 ## 3.1  Campos de dados do produto final
 

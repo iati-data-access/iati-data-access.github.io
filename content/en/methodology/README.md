@@ -6,7 +6,7 @@ _Updated: 12th October 2021_
 
 # Methodology
 
-This methodology outlines the steps that have been undertaken to get IATI data into a format that is useful for partner country governments. It identifies how data is retrieved, reprocessed and harmonised, and finally output. The steps broadly align with the steps undertaken in the previous work outlined in [subsection 1.3](/introduction/#_1-3-previous-work-to-make-data-available-in-excel-format). This methodology will be further refined and updated during the course of this work, in agreement with the IATI Secretariat.
+This methodology outlines the steps that have been undertaken to get IATI data into a format that is useful for partner country governments. It identifies how data is retrieved, reprocessed and harmonised, and finally output. The steps broadly align with the steps undertaken in the previous work outlined in [subsection 1.3](/introduction/#13-previous-work-to-make-data-available-in-excel-format). This methodology will be further refined and updated during the course of this work, in agreement with the IATI Secretariat.
 
 2.1 Retrieval of IATI data
 --------------------------

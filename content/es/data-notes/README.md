@@ -4,7 +4,7 @@ title: Notas sobre datos
 
 # Notas sobre datos
 
-Como se indica en el Plan Estratégico de la IATI (2020-2025), impulsar una mejora significativa de la calidad de los datos publicados es uno de los tres objetivos principales de la IATI. Como se ha explicado en la [introducción](/es/introduction/#_1-1-ayudar-a-los-gobiernos-de-los-paises-asociados-a-mejorar-su-acceso-a-los-datos-de-la-iati-y-a-usarlos), en los últimos años ha tenido lugar una mejora significativa de la calidad de los datos, si bien esta sigue variando según la entidad. Esto quiere decir que los usuarios de los datos deben analizar los datos con cautela; la presente sección de notas sobre los datos tiene por objetivo ayudar a los usuarios y proporcionarles un resumen sencillo de los datos publicados por cada entidad.
+Como se indica en el Plan Estratégico de la IATI (2020-2025), impulsar una mejora significativa de la calidad de los datos publicados es uno de los tres objetivos principales de la IATI. Como se ha explicado en la [introducción](/es/introduction/#11-ayudar-a-los-gobiernos-de-los-paises-asociados-a-mejorar-su-acceso-a-los-datos-de-la-iati-y-a-usarlos), en los últimos años ha tenido lugar una mejora significativa de la calidad de los datos, si bien esta sigue variando según la entidad. Esto quiere decir que los usuarios de los datos deben analizar los datos con cautela; la presente sección de notas sobre los datos tiene por objetivo ayudar a los usuarios y proporcionarles un resumen sencillo de los datos publicados por cada entidad.
 
 ## 3.1 Campos de los datos de salida
 

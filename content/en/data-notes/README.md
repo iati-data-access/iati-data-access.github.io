@@ -4,7 +4,7 @@ title: Data Notes
 
 # Data Notes
 
-As outlined in the IATI Strategic Plan 2020-2025, driving a significant improvement in the quality of data published is one of IATI’s three key objectives. As noted in the [introduction](/introduction/#_1-1-supporting-partner-country-governments-to-better-access-and-use-iati-data), recent years have already seen a significant improvement in the quality of data, but the quality continues to vary by publisher. This means that data users need to take care when analysing the data, and this data notes section is intended to support users by providing a simple overview of publishers’ data.
+As outlined in the IATI Strategic Plan 2020-2025, driving a significant improvement in the quality of data published is one of IATI’s three key objectives. As noted in the [introduction](/introduction/#11-supporting-partner-country-governments-to-better-access-and-use-iati-data), recent years have already seen a significant improvement in the quality of data, but the quality continues to vary by publisher. This means that data users need to take care when analysing the data, and this data notes section is intended to support users by providing a simple overview of publishers’ data.
 
 ## 3.1 Fields in output data
 

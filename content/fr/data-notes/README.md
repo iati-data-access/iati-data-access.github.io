@@ -4,7 +4,7 @@ title: Notes sur les données
 
 # Notes sur les données
 
-Comme indiqué dans le plan stratégique de l’IITA pour la période 2020-2025, l’un des trois objectifs principaux de l’Initiative est de mener à une amélioration considérable de la qualité des données publiées. Comme le précise l’[introduction](/fr/introduction/#_1-1-aider-les-gouvernements-des-pays-partenaires-a-acceder-aux-donnees-de-l-iita-et-a-mieux-les-utiliser), la qualité des données s’est déjà significativement améliorée au cours des dernières années, mais continue de varier d’un signataire à l’autre. Les utilisateurs doivent donc analyser les données avec précaution. Ces notes sur les données visent à les aider en fournissant une simple vue d’ensemble des données publiées par les signataires.
+Comme indiqué dans le plan stratégique de l’IITA pour la période 2020-2025, l’un des trois objectifs principaux de l’Initiative est de mener à une amélioration considérable de la qualité des données publiées. Comme le précise l’[introduction](/fr/introduction/#11-aider-les-gouvernements-des-pays-partenaires-a-acceder-aux-donnees-de-liita-et-a-mieux-les-utiliser), la qualité des données s’est déjà significativement améliorée au cours des dernières années, mais continue de varier d’un signataire à l’autre. Les utilisateurs doivent donc analyser les données avec précaution. Ces notes sur les données visent à les aider en fournissant une simple vue d’ensemble des données publiées par les signataires.
 
 ## 3.1 Champs de données analysés
 

@@ -6,7 +6,7 @@ _Atualizado: 12 de outubro 2021_
 
 # Metodologia
 
-Esta metodologia descreve as etapas que foram percorridas para obter dados da IATI num formato útil para os governos dos países parceiros. Identifica o modo como os dados são recolhidos, reprocessados, harmonizados e, finalmente, convertidos em produtos finais. As etapas alinham-se amplamente com as percorridas no trabalho prévio descrito na [subsecção 1.3](/pt/introduction/#_1-3-trabalho-previo-para-disponibilizar-dados-no-formato-excel). Esta metodologia será ainda aperfeiçoada e atualizada no decurso deste trabalho, em concordância com o Secretariado da IATI.
+Esta metodologia descreve as etapas que foram percorridas para obter dados da IATI num formato útil para os governos dos países parceiros. Identifica o modo como os dados são recolhidos, reprocessados, harmonizados e, finalmente, convertidos em produtos finais. As etapas alinham-se amplamente com as percorridas no trabalho prévio descrito na [subsecção 1.3](/pt/introduction/#13-trabalho-previo-para-disponibilizar-dados-no-formato-excel). Esta metodologia será ainda aperfeiçoada e atualizada no decurso deste trabalho, em concordância com o Secretariado da IATI.
 
 2.1 Recolhimento de dados da IATI
 --------------------------

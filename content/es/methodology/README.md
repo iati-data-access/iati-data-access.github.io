@@ -6,7 +6,7 @@ _Fecha de actualización: 12 octubre 2021_
 
 # Metodología
 
-La presente metodología explica los pasos necesarios para obtener datos de la IATI en un formato que resulte útil para los gobiernos de los países asociados. Esta metodología identifica cómo recuperar los datos, reprocesarlos y armonizarlos y, finalmente, obtenerlos. A grandes rasgos, los pasos están en consonancia con los de las labores realizadas anteriormente, indicadas en la [subsección 1.3](/es/introduction/#_1-3-labores-realizadas-anteriormente-para-facilitar-los-datos-en-formato-excel). Durante el curso de estas labores, se seguirá perfeccionando y actualizando la metodología de acuerdo con la Secretaría de la IATI.
+La presente metodología explica los pasos necesarios para obtener datos de la IATI en un formato que resulte útil para los gobiernos de los países asociados. Esta metodología identifica cómo recuperar los datos, reprocesarlos y armonizarlos y, finalmente, obtenerlos. A grandes rasgos, los pasos están en consonancia con los de las labores realizadas anteriormente, indicadas en la [subsección 1.3](/es/introduction/#13-labores-realizadas-anteriormente-para-facilitar-los-datos-en-formato-excel). Durante el curso de estas labores, se seguirá perfeccionando y actualizando la metodología de acuerdo con la Secretaría de la IATI.
 
 2.1 Recuperación de datos de la IATI
 --------------------------
