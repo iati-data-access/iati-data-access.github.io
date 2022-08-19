@@ -1,3 +1,4 @@
+import linkFixes from './plugins/link-fixes.js'
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/docs-beta2/'
@@ -48,6 +49,9 @@ export default {
     '@nuxt/content',
     'nuxt-i18n'
   ],
+  hooks: {
+    'content:file:beforeInsert': linkFixes
+  },
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
