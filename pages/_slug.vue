@@ -3,17 +3,20 @@
     <div v-for="page in pages" :key="page.title">
       <b-row>
         <b-col lg="3" class="toc d-none d-lg-block">
-          <b>{{ page.title }}</b>
-          <ul v-if="page">
-            <li
-              v-for="link of page.toc"
-              v-if="link.depth===2"
-              :key="link.id"
-              :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }"
-            >
-              <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-            </li>
-          </ul>
+          <div class="aside-m__header fill-sunrise">
+            <div class="aside-m__heading">{{ page.title }}</div>
+          </div>
+          <nav class="navigation-secondary" id="navigation-secondary">
+            <ul v-if="page" class="navigation-secondary__list">
+              <li
+                v-for="link of page.toc"
+                v-if="link.depth===2"
+                :key="link.id"
+                class="navigation-secondary__item">
+                <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+              </li>
+            </ul>
+          </nav>
         </b-col>
         <b-col lg="9">
           <nuxt-content :document="page" />

@@ -1,0 +1,36 @@
+// ------------------------------------------------------------
+// Asides
+// ------------------------------------------------------------
+
+.aside-m {
+    box-shadow: 0 0 50px 0 rgba(#000, 0.15);
+    +.aside-m {
+        margin-top: 2em;
+    }
+}
+
+.aside-m__header {
+    padding: 1.5em;
+    padding-top: 3em;
+    .button {
+        margin-top: 0.75em;
+    }
+}
+
+.aside-m__heading {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    .fill-sunrise &,
+    .fill-sunset & {
+        color: #fff;
+    }
+}
+
+.fill-sunrise {
+    background-color: $iati-sunrise;
+}

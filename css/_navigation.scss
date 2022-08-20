@@ -1,0 +1,136 @@
+@mixin respond-to-max($media-max) {
+	@media screen and (max-width: $media-max - 1px) {
+	    @content;
+	}
+}
+@mixin font-size($size) 	{ font-size: ($size/$rembase + rem); }
+
+.navigation-secondary {
+	display: block;
+	border-top: 1px solid $iati-sunrise;
+	@include respond-to-max($c-vp) {
+		html.js & {
+			display: none;
+		}
+		&--active {
+			html.js & {
+				display: block;
+			}
+		}
+	}
+	&__item {
+		margin-top: 1px;
+		font-size: 1em;
+		a {
+			border-left: 2px solid $iati-sunrise;
+			padding: 0.75em 1em;
+			margin-top: 1px;
+			color: $heading-color;
+			background-color: #fff;
+			display: block;
+			transition: all, ease-in-out, 0.3s;
+			&:hover {
+				border-left-width: 4px;
+			}
+		}
+		&.active a {
+			background-color: $iati-sunrise;
+			border-left-width: 4px;
+			color: #fff;
+		}
+	}
+}
+
+.navigation-secondary__child-list {
+	display: none;
+	&.open {
+		display: block;
+	}
+}
+
+.navigation-secondary__child {
+	&__item {
+		> a {
+			background-color: lighten($iati-sunrise, 24%);
+			border-left-width: 4px;
+			padding-left: 1.5em;
+			&:hover {
+				border-left-width: 6px;
+			}
+		}
+		&.active > a {
+			background-color: lighten($iati-sunrise, 6%);
+			border-left-color: lighten($iati-sunrise, 6%);
+			color: #fff;
+		}
+		.navigation-secondary--reference & {
+			> a {
+				margin-left: 15px;
+				width: calc(100% - 15px);
+			}
+			> button {
+				left: 15px;
+			}
+		}
+	}
+}
+
+@mixin nested-item($i) {
+	$indent: (15 * $i);
+	.navigation-secondary__child__item--#{$i} {
+		a {
+			margin-left: #{$indent}px;
+			width: calc(100% - #{$indent}px);
+		}
+		button {
+			left: #{$indent}px;
+		}
+	}
+}
+
+.navigation-secondary__child {
+	&__item {
+		> a {
+			background-color: #fff;
+			border-left-width: 6px;
+			color: $heading-color;
+			padding-left: 2em;
+			&:hover {
+				border-left-width: 8px;
+			}
+		}
+		&.active > a {
+			border-left-width: 8px;
+			color: #fff;
+			background-color: lighten($iati-sunrise, 6%);
+		}
+		.navigation-secondary--reference & {
+			position: relative;
+			background-color: #fff;
+			a {
+				background-color: #fff;
+				color: $heading-color;
+			}
+			> a {
+				background-color: #efefef;
+			}
+			&.active > a {
+				background-color: lighten($iati-sunrise, 6%);
+				border-left-color: lighten($iati-sunrise, 6%);
+				color: #fff;
+			}
+			button {
+				background-color: lighten($iati-sunrise, 6%);
+				background-image: url(/svg/source/plus.svg);
+			}
+		}
+		&.open {
+			> button {
+				background-image: url(/svg/source/minus.svg);
+			}
+		}
+		@for $i from 1 through 20 {
+			@include nested-item($i);
+		}
+	}
+}
