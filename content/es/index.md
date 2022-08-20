@@ -1,16 +1,20 @@
 # Datos de la IATI sobre la financiación para el desarrollo de los países
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/5774Jc1WXno?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="right" style="margin:0px 0px 10px 10px;"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/5774Jc1WXno?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin:0px 0px 10px 0px;"></iframe>
 
 Puede descargar datos simples en formato Excel sobre compromisos, desembolsos y gastos, así como presupuestos de aplicación futura, clasificados por país y región y diseñados para facilitar un análisis sencillo en una tabla dinámica.
 
 La Secretaría de la IATI creó esta herramienta como medida provisional para facilitar el acceso sencillo a los tipos de datos que los gobiernos de los países asociados solicitan con más frecuencia. Las lecciones aprendidas de esta herramienta ayudan a la IATI a identificar los siguientes pasos necesarios para desarrollar un nuevo portal de datos que simplificará el acceso a todos los datos de la IATI para todos los usuarios.
+
+<div class="text-md-center ml-md-5 mr-md-5">
 
 ## Acceso a los archivos de datos
 
 Desde el 12 octubre 2021, todos los datos están combinados en un archivo por país o región. Asimismo, se han realizado ligeras modificaciones en los archivos de datos, incluida la incorporación de información sobre si los recursos son humanitarios, el tipo de flujo, valores de transacción en euros y una moneda personalizada por país, así como enlaces a la página pertinente de actividad de d-portal. Además, ahora todos los archivos están disponibles en francés, español y portugués.
 
 <download-file></download-file>
+
+</div>
 
 ## Panel de orientación y análisis
 

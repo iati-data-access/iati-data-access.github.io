@@ -1,16 +1,20 @@
 # Données nationales de l’IITA relatives au financement du développement
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/jhrAWVlAKLI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="right" style="margin:0px 0px 10px 10px;"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jhrAWVlAKLI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin:0px 0px 10px 0px;"></iframe>
 
 Téléchargez des données simples au format Excel sur les engagements, les décaissements et les dépenses, ainsi que des budgets prospectifs, présentés en toute simplicité par pays et région, et conçus pour permettre une analyse facile dans un tableau croisé dynamique.
 
 Cet outil a été élaboré par le Secrétariat de l’IITA comme mesure provisoire pour simplifier l’accès aux types de données demandés le plus souvent par les gouvernements des pays partenaires. L’apprentissage issu de cet outil informe les prochaines étapes qui seront suivies par l’IITA dans la conception d’un nouveau portail de données, lequel simplifiera l’accès à l’ensemble des données de l’IITA pour tous les utilisateurs.
+
+<div class="text-md-center ml-md-5 mr-md-5">
 
 ## Accès aux fichiers de données
 
 Au 12 octobre 2021, toutes les données ont été rassemblées dans un fichier par pays ou région. Des changements mineurs ont également été apportés aux fichiers de données, notamment l’ajout de données sur le caractère humanitaire des données, le type de flux, les valeurs des transactions en euros et dans une devise personnalisée par pays, ainsi que des liens vers la page d’activité concernée de la plateforme d-portal. De plus, chaque fichier est maintenant disponible en français, en espagnol et en portugais.
 
 <download-file></download-file>
+
+</div>
 
 ## Lignes directrices et tableau de bord d’analyse
 
