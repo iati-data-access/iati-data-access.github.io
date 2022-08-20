@@ -121,12 +121,12 @@
 			}
 			button {
 				background-color: lighten($iati-sunrise, 6%);
-				background-image: url(/svg/source/plus.svg);
+				background-image: url(~/static/svg/source/plus.svg);
 			}
 		}
 		&.open {
 			> button {
-				background-image: url(/svg/source/minus.svg);
+				background-image: url(~/static/svg/source/minus.svg);
 			}
 		}
 		@for $i from 1 through 20 {

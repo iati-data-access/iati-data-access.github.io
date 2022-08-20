@@ -17,7 +17,7 @@
 
   &:after {
     content: "";
-    background-image: url('/svg/source/marque-white-animated.svg');
+    background-image: url('~/static/svg/source/marque-white-animated.svg');
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: top right;
@@ -32,13 +32,18 @@
 
   .main-title {
     position: relative;
-    border-left: 5px solid #81c3d6;
-    font-size: 60px;
+    h2 {
+      border-left: 5px solid #81c3d6;
+      padding-left: 20px;
+      font-size: 60px;
+    }
     color: #fff;
     padding-left: 20px;
 
     @media (max-width: 600px) {
-      font-size: 45px;
+      h2 {
+        font-size: 45px;
+      }
     }
   }
 
@@ -47,5 +52,13 @@
     margin: 0em auto 3em auto;
     z-index: 10;
     padding: 1em 1.5em;
+
   }
+  @media (max-width: 1200px) {
+    nav {
+      margin-right: 2em;
+      margin-left: 2em;
+    }
+  }
+
 }
