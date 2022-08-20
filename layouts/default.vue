@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header _ngcontent-gfk-c30 class="header" role="header">
+    <header class="header" role="header">
       <b-navbar toggleable="lg" type="light" variant="light">
         <b-navbar-brand :to="localePath({path: '/'})" class="branding">
         </b-navbar-brand>
@@ -31,9 +31,9 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-      <div _ngcontent-gfk-c30 class="container main-title-container">
-        <h2 _ngcontent-gfk-c30 class="main-title">Country Development Finance Data</h2>
-      </div>
+      <b-container class="main-title">
+        <h2>Country Development Finance Data</h2>
+      </b-container>
     </header>
     <b-container class="page-container pr-md-5 pl-md-5 pb-md-5" fluid>
       <Nuxt />
