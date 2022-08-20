@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'docs-new',
+    title: 'Country Development Finance Data',
     htmlAttrs: {
       lang: 'en'
     },

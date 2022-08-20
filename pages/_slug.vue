@@ -35,6 +35,26 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
     return { pages }
+  },
+  computed: {
+    pageTitle() {
+      return this.pages.map(page => { return page.title }).join()
+    }
+  },
+  head() {
+    return {
+      title: `${this.pageTitle} - ${this.$t('title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('description')
+        }
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
   }
 }
 </script>
