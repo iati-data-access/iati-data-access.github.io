@@ -1,6 +1,6 @@
 <template>
-  <div class="home text-center">
-    <div class="hero">
+  <div>
+    <div>
       <v-select
         :options="countries"
         label="country_name"
@@ -12,6 +12,7 @@
         class="mt-3">
         <b-btn
           :href="selectedCountryURL"
+          class="w-100"
           variant="success"
           size="lg">{{ $t('translations.downloadFile') }} →</b-btn>
         <b-form-group :label="$t('translations.language')" class="mt-2">
