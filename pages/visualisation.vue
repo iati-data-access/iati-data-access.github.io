@@ -15,7 +15,13 @@
           summary="recipient_country_or_region"
          />
       </b-tab>
-      <b-tab title="by Reporting Organisation"><p>I'm a disabled tab!</p></b-tab>
+      <b-tab title="by Reporting Organisation">
+        <DataBrowser
+          drilldown="recipient_country_or_region"
+          :setFields="reportingOrganisationSetFields"
+          summary="reporting_organisation"
+         />
+      </b-tab>
     </b-tabs>
   </div>
 </template>
@@ -46,6 +52,17 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: ['AF'],
+        year: ['2020']
+      },
+      reportingOrganisationSetFields: {
+        reporting_organisation: ['44000'],
+        aid_type: [],
+        finance_type: [],
+        flow_type: [],
+        transaction_type: ['3'],
+        sector_category: [],
+        sector: [],
+        recipient_country_or_region: [],
         year: ['2020']
       }
     }
