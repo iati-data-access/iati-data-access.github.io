@@ -12,13 +12,13 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
+      <b-col xs="3">
         <b-button
           @click="showFilters = !showFilters"
           variant="outline-secondary"
           size="sm">Filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
       </b-col>
-      <b-col class="text-md-right">
+      <b-col xs="9" class="text-right">
         <b-form-group>
           <b-form-radio-group
             v-model="displayAs"
