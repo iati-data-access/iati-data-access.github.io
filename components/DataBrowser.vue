@@ -48,6 +48,7 @@
             </b-col>
             <b-col v-if="displayAs=='table'">
               <b-table
+                small
                 :items="cells"
                 :fields="tableFields">
               </b-table>
