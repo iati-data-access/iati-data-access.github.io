@@ -1,0 +1,111 @@
+<template>
+  <div>
+    <client-only>
+      <l-map
+        class="region-map"
+        :zoom="zoom"
+        :center="center"
+        :options="mapControls"
+      >
+      <MapFeature
+        v-for="region in regions"
+        v-bind:key="region.region"
+        :region-colours="regionColours"
+        :data="data"
+        :geojson="region.features"
+        :opacity="opacity"
+        :region="region.region"
+        :iso2="region.iso2"
+        :regionName="region.regionName"
+        :selectedRegions.sync="filterRegions" />
+      </l-map>
+    </client-only>
+  </div>
+</template>
+<style>
+.region-map {
+  height: 350px !important;
+  width: 100%;
+  background: none;
+}
+</style>
+<script>
+
+import axios from 'axios'
+import MapFeature from './MapFeature.vue'
+export default {
+  data() {
+    return {
+      zoom: 1.5,
+      center: [0, 0],
+      regions: [],
+      url: "https://api.mapbox.com/styles/v1/markbrough/ckhe9jol304hs19pd9xkkswsf/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFya2Jyb3VnaCIsImEiOiJUZXFjRHowIn0.8e3Fq018PP1x5QMTxa8n_A",
+      mapControls: {
+        scrollWheelZoom: false,
+        touchZoom: false,
+        /*
+        zoomControl: false,
+        attributionControl: false,
+        dragging: false,
+        keyboard: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        tap: false
+        */
+      }
+    }
+  },
+  props: ['data', 'total', 'selected-regions'],
+  components: {
+    MapFeature
+  },
+  computed: {
+    filterRegions: {
+      get() {
+        return this.selectedRegions
+      },
+      set: function(newValue) {
+        this.$emit('update:selectedRegions', newValue)
+      }
+    },
+    opacity() {
+      return this.data.reduce((summary, item) => {
+        summary[item["recipient_country_or_region.code"]] = (item['value_usd.sum'] / this.total)*100
+        return summary
+      }, {})
+    },
+    regionColours() {
+      return this.regions.reduce((summary, item) => {
+        summary[item.name] = '#124555'
+        return summary
+      }, {})
+    }
+  },
+  methods: {
+    getGeoJSON() {
+      axios.get(`/custom.geo.json`)
+      .then(response => {
+        this.regions = response.data.features.map(item => {
+          return {
+            type: 'FeatureCollection',
+            name: item.properties.name,
+            region: item.properties.name,
+            regionName: item.properties.name,
+            iso2: item.properties.iso_a2,
+            features: {
+              type: 'Feature',
+              properties: {
+                Region: item.properties.name
+              },
+              geometry: item.geometry
+            }
+          }
+        })
+      })
+    }
+  },
+  mounted() {
+    this.getGeoJSON()
+  }
+}
+</script>
