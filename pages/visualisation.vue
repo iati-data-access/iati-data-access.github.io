@@ -1,28 +1,45 @@
 <template>
   <div>
-    <b-tabs content-class="mt-3">
-      <b-tab title="by Sector" active>
+    <h2>
+      Country dashboard for <b>Afghanistan</b>
+    </h2>
+    <b-row>
+      <b-col>
+        <h3>by Reporting Organisation</h3>
         <DataBrowser
-          drilldown="recipient_country_or_region"
-          :setFields="sectorSetFields"
-          summary="sector_category"
+          drilldown="reporting_organisation"
+          :setFields="setFields"
          />
-      </b-tab>
-      <b-tab title="by Country">
+      </b-col>
+      <b-col>
+        <h3>by Sector</h3>
         <DataBrowser
           drilldown="sector_category"
-          :setFields="countrySetFields"
-          summary="recipient_country_or_region"
+          :setFields="setFields"
          />
-      </b-tab>
-      <b-tab title="by Reporting Organisation">
+     </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <hr />
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <h3>by Finance Type</h3>
         <DataBrowser
-          drilldown="recipient_country_or_region"
-          :setFields="reportingOrganisationSetFields"
-          summary="reporting_organisation"
+          drilldown="finance_type"
+          :setFields="setFields"
          />
-      </b-tab>
-    </b-tabs>
+      </b-col>
+      <b-col>
+        <h3>by Aid Type</h3>
+        <DataBrowser
+          drilldown="aid_type"
+          :setFields="setFields"
+         />
+      </b-col>
+    </b-row>
   </div>
 </template>
 <script>
@@ -32,37 +49,15 @@ export default {
   components: { DataBrowser },
   data() {
     return {
-      sectorSetFields: {
+      setFields: {
         reporting_organisation: [],
         aid_type: [],
         finance_type: [],
         flow_type: [],
-        transaction_type: ['3'],
-        sector_category: ['110'],
-        sector: [],
-        recipient_country_or_region: [],
-        year: ['2020']
-      },
-      countrySetFields: {
-        reporting_organisation: [],
-        aid_type: [],
-        finance_type: [],
-        flow_type: [],
-        transaction_type: ['3'],
+        transaction_type: ['3', '4'],
         sector_category: [],
         sector: [],
         recipient_country_or_region: ['AF'],
-        year: ['2020']
-      },
-      reportingOrganisationSetFields: {
-        reporting_organisation: ['44000'],
-        aid_type: [],
-        finance_type: [],
-        flow_type: [],
-        transaction_type: ['3'],
-        sector_category: [],
-        sector: [],
-        recipient_country_or_region: [],
         year: ['2020']
       }
     }
