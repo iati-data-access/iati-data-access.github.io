@@ -221,6 +221,7 @@ export default {
       ],
       codelistLookups: {
         reporting_organisation: 'ReportingOrganisation',
+        'reporting_organisation.type': 'OrganisationType',
         aid_type: 'AidType',
         finance_type: 'FinanceType',
         flow_type: 'FlowType',
@@ -231,6 +232,7 @@ export default {
       },
       fields: {
         reporting_organisation: [],
+        'reporting_organisation.type': [],
         aid_type: [],
         finance_type: [],
         flow_type: [],
@@ -241,6 +243,7 @@ export default {
       },
       fieldNames: {
         reporting_organisation: {'en': 'Reporting Organisation'},
+        'reporting_organisation.type': {'en': 'Reporting Organisation Type'},
         aid_type:  {'en': 'Aid Type'},
         finance_type:  {'en': 'Finance Type'},
         flow_type:  {'en': 'Flow Type'},
@@ -292,6 +295,8 @@ export default {
         if (field[1].length > 0) {
           const values = field[1].map(item => { return `"${item}"`})
           if (field[0] == 'year') {
+            summary.push(`${field[0]}:${values.join(';')}`)
+          } else if (field[0].includes('.')) {
             summary.push(`${field[0]}:${values.join(';')}`)
           } else {
             summary.push(`${field[0]}.code:${values.join(';')}`)
