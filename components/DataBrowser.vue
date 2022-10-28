@@ -52,6 +52,11 @@
             buttons
           ></b-form-radio-group>
         </b-form-group>
+        <b-row>
+          <b-col>
+            <b-btn :href="CSVSummaryURL">Download summary</b-btn>
+          </b-col>
+        </b-row>
       </b-col>
       <b-col md="9">
         <template v-if="isBusy==false">
@@ -240,6 +245,23 @@ export default {
           sortable: true
         }
       ]
+    },
+    summaryURL() {
+      const cuts = Object.entries(this.setFields).reduce((summary, field) => {
+        if (field[1].length > 0) {
+          const values = field[1].map(item => { return `"${item}"`})
+          if (field[0] == 'year') {
+            summary.push(`${field[0]}:${values.join(';')}`)
+          } else {
+            summary.push(`${field[0]}.code:${values.join(';')}`)
+          }
+        }
+        return summary
+      }, []).join('|')
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${cuts}&pagesize=${this.pageSize}`
+    },
+    CSVSummaryURL() {
+      return `${this.summaryURL}&format=csv`
     }
   },
   components: { BarChartComponent, Map },
@@ -278,18 +300,8 @@ export default {
     },
     loadData() {
       this.isBusy = true
-      const cuts = Object.entries(this.setFields).reduce((summary, field) => {
-        if (field[1].length > 0) {
-          const values = field[1].map(item => { return `"${item}"`})
-          if (field[0] == 'year') {
-            summary.push(`${field[0]}:${values.join(';')}`)
-          } else {
-            summary.push(`${field[0]}.code:${values.join(';')}`)
-          }
-        }
-        return summary
-      }, []).join('|')
-      axios.get(`${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${cuts}&pagesize=${this.pageSize}`)
+
+      axios.get(this.summaryURL)
       .then(response => {
         this.cells = response.data.cells.map(item => {
           if (this.drilldown.includes(".")) {
