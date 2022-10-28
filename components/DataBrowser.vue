@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row>
+    <b-row v-if="true==false">
       <b-col>
         <h2>
           <v-select
@@ -12,7 +12,57 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col md="3">
+      <b-col>
+        <b-button
+          @click="showFilters = !showFilters"
+          variant="outline-secondary"
+          size="sm">Filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
+      </b-col>
+      <b-col class="text-md-right">
+        <b-form-group>
+          <b-form-radio-group
+            v-model="displayAs"
+            :options="displayOptions"
+            button-variant="outline-primary"
+            size="sm"
+            buttons></b-form-radio-group>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <template v-if="isBusy==false">
+          <b-row>
+            <b-col v-if="displayAs=='map'">
+              <Map
+                :data="cells"
+                :total="total"
+              />
+            </b-col>
+            <b-col v-if="displayAs=='barChart'">
+              <bar-chart-component
+                :currency="currency"
+                :cells="cells"
+                :drilldown="drilldown"
+              />
+            </b-col>
+            <b-col v-if="displayAs=='table'">
+              <b-table
+                :items="cells"
+                :fields="tableFields">
+              </b-table>
+            </b-col>
+          </b-row>
+        </template>
+        <template v-else>
+          <div class="text-center">
+            <b-spinner variant="secondary" />
+          </div>
+        </template>
+      </b-col>
+    </b-row>
+    <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="lg">
+      <b-col>
         <b-form-group
           label="Drilldown by">
           <b-select
@@ -58,48 +108,14 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col md="9">
-        <template v-if="isBusy==false">
-          <b-row v-if="drilldown=='recipient_country_or_region'">
-            <b-col>
-              <Map
-                :data="cells"
-                :total="total"
-              />
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col>
-              <hr />
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col>
-              <bar-chart-component
-                :currency="currency"
-                :cells="cells"
-                :drilldown="drilldown"
-              />
-            </b-col>
-          </b-row>
-          <b-row class="mt-4">
-            <b-col>
-              <b-table
-                :items="cells"
-                :fields="tableFields">
-              </b-table>
-            </b-col>
-          </b-row>
-        </template>
-        <template v-else>
-          <div class="text-center">
-            <b-spinner variant="secondary" />
-          </div>
-        </template>
-      </b-col>
-    </b-row>
+    </b-modal>
   </div>
 </template>
+<style scoped>
+.table {
+  word-break: normal;
+}
+</style>
 <script>
 import axios from 'axios'
 import BarChartComponent from '~/components/BarChartComponent'
@@ -130,6 +146,22 @@ export default {
   },
   data() {
     return {
+      displayAs: "barChart",
+      displayOptions: [
+        {
+          value: 'barChart',
+          text: 'Bar Chart'
+        },
+        {
+          value: 'map',
+          text: 'Map'
+        },
+        {
+          value: 'table',
+          text: 'Table'
+        }
+      ],
+      showFilters: false,
       cells: [],
       total: 0.00,
       isBusy: true,
@@ -176,6 +208,14 @@ export default {
         {
           value: 'recipient_country_or_region',
           text: 'Country or Region'
+        },
+        {
+          value: 'aid_type',
+          text: 'Aid Type'
+        },
+        {
+          value: 'finance_type',
+          text: 'Finance Type'
         }
       ],
       codelistLookups: {
@@ -214,7 +254,7 @@ export default {
         '2018', '2019', '2020', '2021', '2022',
         '2023', '2024', '2025', '2026', '2027',
         '2028', '2029', '2030'],
-      pageSize: '10'
+      pageSize: 10
     }
   },
   computed: {
@@ -246,8 +286,8 @@ export default {
         }
       ]
     },
-    summaryURL() {
-      const cuts = Object.entries(this.setFields).reduce((summary, field) => {
+    cuts() {
+      return Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
           const values = field[1].map(item => { return `"${item}"`})
           if (field[0] == 'year') {
@@ -258,7 +298,12 @@ export default {
         }
         return summary
       }, []).join('|')
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${cuts}&pagesize=${this.pageSize}`
+    },
+    summaryURL() {
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
+    },
+    granularURL() {
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&format=csv`
@@ -300,7 +345,6 @@ export default {
     },
     loadData() {
       this.isBusy = true
-
       axios.get(this.summaryURL)
       .then(response => {
         this.cells = response.data.cells.map(item => {
