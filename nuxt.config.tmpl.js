@@ -53,8 +53,17 @@ export default {
     '@nuxtjs/axios',
     '@nuxt/content',
     'nuxt-i18n',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    '@nuxtjs/fontawesome'
   ],
+
+  fontawesome: {
+    icons: {
+      solid: ['faCog'],
+      regular: []
+    }
+  },
+
   hooks: {
     'content:file:beforeInsert': linkFixes,
     // Fix anchors issue
