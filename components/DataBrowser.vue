@@ -20,7 +20,7 @@
             v-model="drilldown"></b-select>
         </b-form-group>
         <b-form-group
-          :label="field"
+          :label="fieldNames[field][lang]"
           v-for="field in Object.keys(fields)"
           v-bind:key="field">
           <v-select
@@ -192,6 +192,16 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: []
+      },
+      fieldNames: {
+        reporting_organisation: {'en': 'Reporting Organisation'},
+        aid_type:  {'en': 'Aid Type'},
+        finance_type:  {'en': 'Finance Type'},
+        flow_type:  {'en': 'Flow Type'},
+        transaction_type:  {'en': 'Transaction Type'},
+        sector_category:  {'en': 'Sector Category'},
+        sector:  {'en': 'Sector'},
+        recipient_country_or_region:  {'en': 'Recipient Country or Region'}
       },
       reportingOrganisationType: '10',
       reportingOrganisationTypes: [],
