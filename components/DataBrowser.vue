@@ -7,18 +7,21 @@
             multiple
             :options="fields[summary]"
             v-model="setFields[summary]"
-            :reduce="item => item.code"></v-select>
+            :reduce="item => item.code">
+          </v-select>
         </h2>
       </b-col>
     </b-row>
     <b-row>
-      <b-col xs="3">
-        <b-button
-          @click="showFilters = !showFilters"
-          variant="outline-secondary"
-          size="sm">Filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
+      <b-col>
+        <b-form-group
+          label-cols-md="6"
+          label="Number of results">
+          <b-input
+            v-model="pageSize" type="number" step="1" debounce="500" />
+        </b-form-group>
       </b-col>
-      <b-col xs="9" class="text-right">
+      <b-col class="text-right">
         <b-form-group>
           <b-form-radio-group
             v-model="displayAs"
@@ -26,6 +29,12 @@
             button-variant="outline-primary"
             size="sm"
             buttons></b-form-radio-group>
+            <b-btn
+              :href="CSVSummaryURL"
+              variant="outline-secondary"
+              size="sm">
+              <font-awesome-icon :icon="['fa', 'download']" /> CSV
+            </b-btn>
         </b-form-group>
       </b-col>
     </b-row>
@@ -62,54 +71,6 @@
         </template>
       </b-col>
     </b-row>
-    <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="lg">
-      <b-col>
-        <b-form-group
-          label="Drilldown by">
-          <b-select
-            :options="drilldowns"
-            v-model="drilldown"></b-select>
-        </b-form-group>
-        <b-form-group
-          :label="fieldNames[field][lang]"
-          v-for="field in Object.keys(fields)"
-          v-bind:key="field">
-          <v-select
-            multiple
-            :options="fields[field]"
-            v-model="setFields[field]"
-            :reduce="item => item.code"></v-select>
-        </b-form-group>
-        <b-form-group
-          label="Year">
-          <v-select
-            multiple
-            :options="years"
-            v-model="setFields.year"></v-select>
-        </b-form-group>
-        <b-form-group
-          label="Number of results">
-          <b-input
-            v-model="pageSize" type="number" step="1" debounce="500" />
-        </b-form-group>
-        <b-form-group
-          label="Currency">
-          <b-form-radio-group
-            id="btn-currency"
-            v-model="currency"
-            :options="currencyOptions"
-            button-variant="outline-primary"
-            name="radio-btn-outline"
-            buttons
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-row>
-          <b-col>
-            <b-btn :href="CSVSummaryURL">Download summary</b-btn>
-          </b-col>
-        </b-row>
-      </b-col>
-    </b-modal>
   </div>
 </template>
 <style scoped>
@@ -119,6 +80,7 @@
 </style>
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
 import Map from '~/components/Map'
 export default {
@@ -143,115 +105,20 @@ export default {
     },
     summary: {
       default: 'sector_category'
+    },
+    displayAs: {
+      default: 'barChart'
+    },
+    currency: {
+      default: 'usd'
     }
   },
   data() {
     return {
-      displayAs: "barChart",
-      displayOptions: [
-        {
-          value: 'barChart',
-          text: 'Bar Chart'
-        },
-        {
-          value: 'map',
-          text: 'Map'
-        },
-        {
-          value: 'table',
-          text: 'Table'
-        }
-      ],
       showFilters: false,
       cells: [],
       total: 0.00,
       isBusy: true,
-      currency: 'usd',
-      currencyOptions: [
-        {
-          value: 'usd',
-          text: 'USD'
-        },
-        {
-          value: 'eur',
-          text: 'EUR'
-        }
-      ],
-      drilldowns: [
-        {
-          value: 'reporting_organisation',
-          text: 'Reporting Organisation'
-        },
-        {
-          value: 'sector_category',
-          text: 'Sector Category'
-        },
-        {
-          value: 'sector',
-          text: 'Sector'
-        },
-        {
-          value: 'activity.title',
-          text: 'Activity Title'
-        },
-        {
-          value: 'activity.iati_identifier',
-          text: 'Activity IATI Identifier'
-        },
-        {
-          value: 'reporting_organisation',
-          text: 'Reporting Organisation'
-        },
-        {
-          value: 'reporting_organisation.type',
-          text: 'Reporting Organisation Type'
-        },
-        {
-          value: 'recipient_country_or_region',
-          text: 'Country or Region'
-        },
-        {
-          value: 'aid_type',
-          text: 'Aid Type'
-        },
-        {
-          value: 'finance_type',
-          text: 'Finance Type'
-        }
-      ],
-      codelistLookups: {
-        reporting_organisation: 'ReportingOrganisation',
-        'reporting_organisation.type': 'OrganisationType',
-        aid_type: 'AidType',
-        finance_type: 'FinanceType',
-        flow_type: 'FlowType',
-        transaction_type: 'TransactionType',
-        sector_category: 'SectorGroup',
-        sector: 'Sector',
-        recipient_country_or_region: 'Country'
-      },
-      fields: {
-        reporting_organisation: [],
-        'reporting_organisation.type': [],
-        aid_type: [],
-        finance_type: [],
-        flow_type: [],
-        transaction_type: [],
-        sector_category: [],
-        sector: [],
-        recipient_country_or_region: []
-      },
-      fieldNames: {
-        reporting_organisation: {'en': 'Reporting Organisation'},
-        'reporting_organisation.type': {'en': 'Reporting Organisation Type'},
-        aid_type:  {'en': 'Aid Type'},
-        finance_type:  {'en': 'Finance Type'},
-        flow_type:  {'en': 'Flow Type'},
-        transaction_type:  {'en': 'Transaction Type'},
-        sector_category:  {'en': 'Sector Category'},
-        sector:  {'en': 'Sector'},
-        recipient_country_or_region:  {'en': 'Recipient Country or Region'}
-      },
       reportingOrganisationType: '10',
       reportingOrganisationTypes: [],
       years: ['2014', '2015', '2016', '2017',
@@ -262,6 +129,35 @@ export default {
     }
   },
   computed: {
+    displayOptions() {
+      if (this.drilldown === 'recipient_country_or_region') {
+        return [
+          {
+            value: 'barChart',
+            text: 'Bar Chart'
+          },
+          {
+            value: 'map',
+            text: 'Map'
+          },
+          {
+            value: 'table',
+            text: 'Table'
+          }
+        ]
+      } else {
+        return [
+          {
+            value: 'barChart',
+            text: 'Bar Chart'
+          },
+          {
+            value: 'table',
+            text: 'Table'
+          }
+        ]
+      }
+    },
     lang() {
       return 'en' // this.$i18n.locale
     },
@@ -293,12 +189,14 @@ export default {
     cuts() {
       return Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
-          const values = field[1].map(item => { return `"${item}"`})
           if (field[0] == 'year') {
-            summary.push(`${field[0]}:${values.join(';')}`)
+            const values = `"${field[1]}"`
+            summary.push(`${field[0]}:${values}`)
           } else if (field[0].includes('.')) {
+            const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else {
+            const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}.code:${values.join(';')}`)
           }
         }
@@ -313,41 +211,12 @@ export default {
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&format=csv`
-    }
+    },...mapState(['drilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
   methods: {
     numberFormatter(value) {
       return value.toLocaleString(undefined, {maximumFractionDigits: 0})
-    },
-    async getCodelists() {
-      Object.keys(this.fields).forEach(field => {
-        const codelist = this.codelistLookups[field]
-        this.getCodelistData(field, codelist)
-      })
-    },
-    async getCodelistData(field, codelist) {
-      const response = await axios.get(`https://codelists.codeforiati.org/api/json/en/${codelist}.json`
-        )
-      const data = response.data.data
-      var codes = data.reduce((summary, item) => {
-        var code = null
-        var name = null
-        if (field == 'sector_category') {
-          var code = item['codeforiati:group-code']
-          var name = item['codeforiati:group-name']
-        } else {
-          var code = String(item.code)
-          var name = String(item.name)
-        }
-        summary[code] = {
-          code: String(code),
-          label: `${code} - ${name}`
-        }
-        return summary
-      }, {})
-
-      this.$set(this.fields, field, Object.values(codes))
     },
     loadData() {
       this.isBusy = true
@@ -356,6 +225,8 @@ export default {
         this.cells = response.data.cells.map(item => {
           if (this.drilldown.includes(".")) {
             return item
+          } else if (this.drilldown == 'humanitarian') {
+            item[this.drilldown] = (item[`${this.drilldown}.code`] === "1") ? 'Humanitarian' : 'Development'
           } else {
             item[this.drilldown] = item[`${this.drilldown}.code`] + " - " + item[`${this.drilldown}.name_${this.lang}`]
           }
@@ -367,15 +238,6 @@ export default {
     }
   },
   watch: {
-    drilldown() {
-      this.loadData()
-    },
-    transactionType() {
-      this.loadData()
-    },
-    reportingOrganisationType() {
-      this.loadData()
-    },
     year() {
       this.loadData()
     },
@@ -388,15 +250,11 @@ export default {
       },
       deep: true
     },
-    lang() {
-      this.getCodelists()
-    },
     currency() {
       this.loadData()
     }
   },
   mounted: function() {
-    this.getCodelists()
     this.loadData()
   }
 }
