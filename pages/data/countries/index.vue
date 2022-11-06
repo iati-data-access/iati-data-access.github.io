@@ -7,6 +7,7 @@
     <b-row>
       <b-col md="12" class="mt-2">
         <DataBrowserAggregates
+          :pageSize="null"
           displayAs="map"
           drilldown="recipient_country_or_region"
          />

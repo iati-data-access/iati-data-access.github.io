@@ -214,7 +214,7 @@ export default {
           if (this.drilldown.includes(".")) {
             return item
           } else if (this.drilldown == 'humanitarian') {
-            item[this.drilldown] = (item[`${this.drilldown}.code`] === "1") ? 'Humanitarian' : 'Development'
+            item[this.drilldown] = (item[`${this.drilldown}.code`] === true) ? 'Humanitarian' : 'Development'
           } else {
             item[this.drilldown] = item[`${this.drilldown}.code`] + " - " + item[`${this.drilldown}.name_${this.lang}`]
           }

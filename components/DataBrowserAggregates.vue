@@ -30,9 +30,23 @@
           <b-row>
             <b-col v-if="displayAs=='map'">
               <Map
-                :data="cells"
+                :data="filteredCells"
                 :total="total"
               />
+            </b-col>
+            <b-col v-if="displayAs=='barChart'">
+              <bar-chart-component
+                :currency="currency"
+                :cells="filteredCells"
+                :drilldown="drilldown"
+              />
+            </b-col>
+            <b-col v-if="displayAs=='table'">
+              <b-table
+                small
+                :items="filteredCells"
+                :fields="tableFields">
+              </b-table>
             </b-col>
           </b-row>
         </template>
@@ -60,6 +74,9 @@ export default {
     },
     drilldown: {
       default: 'recipient_country_or_region'
+    },
+    pageSize: {
+      default: 10
     }
   },
   data() {
@@ -75,7 +92,25 @@ export default {
       {
         value: ['budget'],
         text: 'Budgets'
-      }]
+      }],
+      pageSizeOptions: [
+        {
+          value: 10,
+          text: '10'
+        },
+        {
+          value: 50,
+          text: '50'
+        },
+        {
+          value: 100,
+          text: '100'
+        },
+        {
+          value: null,
+          text: 'All'
+        }
+      ]
     }
   },
   computed: {
@@ -107,6 +142,12 @@ export default {
           }
         ]
       }
+    },
+    filteredCells() {
+      if (this.pageSize == null) {
+        return this.cells
+      }
+      return this.cells.slice(0, this.pageSize)
     },
     lang() {
       return 'en' // this.$i18n.locale
@@ -142,8 +183,16 @@ export default {
       const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
       return range(year-5, year)
     },
+    drilldownEndpoint() {
+      return {
+        'recipient_country_or_region': 'by_country',
+        'reporting_organisation': 'by_provider',
+        'sector_category': 'by_sector'
+      }[this.drilldown]
+    },
     spendSummaryURL() {
-      return `${this.$config.baseURL}/aggregates/by_country/?calendar_year=${this.calendarYear}&transaction_type=${this.budgetsSpending}`
+
+      return `${this.$config.baseURL}/aggregates/${this.drilldownEndpoint}/?calendar_year=${this.calendarYear}&transaction_type=${this.budgetsSpending}`
     },...mapState(['drilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
@@ -156,10 +205,20 @@ export default {
       axios.get(this.spendSummaryURL)
       .then(response => {
         this.cells = response.data.cells.reduce((summary, item) => {
-          summary.push({
-            'recipient_country_or_region.code': item.code,
-            'value_usd.sum': item.value_usd
-          })
+          var out = {}
+          if (this.drilldown=="recipient_country_or_region") {
+            summary.push({
+              'recipient_country_or_region.code': item.code,
+              'recipient_country_or_region.name': item.name_en,
+              'value_usd.sum': item.value_usd
+            })
+          } else {
+            out[`${this.drilldown}.code`] = item.code
+            out[`${this.drilldown}`] = item.name_en
+            out[`${this.drilldown}.name`] = item.name
+            out['value_usd.sum'] = item.value_usd
+            summary.push(out)
+          }
           return summary
         }, [])
         this.total = this.cells.reduce((total, item) => {

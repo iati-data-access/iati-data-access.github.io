@@ -7,7 +7,7 @@
     <b-row>
       <b-col md="12" class="mt-2">
         <DataBrowser
-          displayAs="map"
+          displayAs="barChart"
           :setFields="setFields"
           drilldown="sector_category"
          />

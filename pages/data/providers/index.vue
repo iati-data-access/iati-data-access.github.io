@@ -6,9 +6,8 @@
     </h2>
     <b-row>
       <b-col md="12" class="mt-2">
-        <DataBrowser
-          displayAs="map"
-          :setFields="setFields"
+        <DataBrowserAggregates
+          displayAs="barChart"
           drilldown="reporting_organisation"
          />
       </b-col>
