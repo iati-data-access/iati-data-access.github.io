@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>
-      All countries
+      All Countries
     </h2>
     <DataBrowserNavbar />
     <b-row>

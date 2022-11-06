@@ -5,6 +5,18 @@
       Country dashboard for <b>{{ drilldownLabel }}</b>
     </h2>
     <b-row>
+      <b-col>
+        <DataBrowserSpendSummary
+          drilldown="recipient_country_or_region"
+          :drilldown-value="drilldownValue" />
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <hr />
+      </b-col>
+    </b-row>
+    <b-row>
       <b-col md="12" class="mt-2">
         <DataBrowserFilter
           :exclude-filters="['recipient_country_or_region', 'transaction_type']"
@@ -118,8 +130,9 @@ import { mapState } from 'vuex'
 import DataBrowser from '~/components/DataBrowser'
 import DataBrowserFilter from '~/components/DataBrowserFilter'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
+import DataBrowserSpendSummary from '~/components/DataBrowserSpendSummary'
 export default {
-  components: { DataBrowser, DataBrowserFilter },
+  components: { DataBrowser, DataBrowserFilter, DataBrowserSpendSummary },
   data() {
     return {
       drilldown: 'recipient_country_or_region',
