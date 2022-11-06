@@ -1,17 +1,5 @@
 <template>
   <div>
-    <b-row v-if="true==false">
-      <b-col>
-        <h2>
-          <v-select
-            multiple
-            :options="fields[summary]"
-            v-model="setFields[summary]"
-            :reduce="item => item.code">
-          </v-select>
-        </h2>
-      </b-col>
-    </b-row>
     <b-row>
       <b-col>
         <b-form-group

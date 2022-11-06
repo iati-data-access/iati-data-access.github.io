@@ -1,9 +1,9 @@
 <template>
   <div>
+    <DataBrowserNavbar />
     <h2>
       All Providers
     </h2>
-    <DataBrowserNavbar />
     <b-row>
       <b-col md="12" class="mt-2">
         <DataBrowser

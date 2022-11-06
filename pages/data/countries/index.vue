@@ -1,14 +1,13 @@
 <template>
   <div>
+    <DataBrowserNavbar />
     <h2>
       All Countries
     </h2>
-    <DataBrowserNavbar />
     <b-row>
       <b-col md="12" class="mt-2">
-        <DataBrowser
+        <DataBrowserAggregates
           displayAs="map"
-          :setFields="setFields"
           drilldown="recipient_country_or_region"
          />
       </b-col>
@@ -36,10 +35,10 @@
 <script>
 
 import { mapState } from 'vuex'
-import DataBrowser from '~/components/DataBrowser'
+import DataBrowserAggregates from '~/components/DataBrowserAggregates'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
 export default {
-  components: { DataBrowser, DataBrowserNavbar },
+  components: { DataBrowserAggregates, DataBrowserNavbar },
   data() {
     return {
       drilldown: 'recipient_country_or_region',
