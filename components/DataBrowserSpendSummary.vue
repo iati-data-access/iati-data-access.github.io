@@ -8,6 +8,7 @@
               :currency="currency"
               :cells="cells"
               :drilldown="drilldown"
+              :barChartDatasets="barChartDatasets"
             />
           </b-col>
           <b-col v-if="displayAs=='table'">
@@ -55,7 +56,19 @@ export default {
         '2018', '2019', '2020', '2021', '2022',
         '2023', '2024', '2025', '2026', '2027',
         '2028', '2029', '2030'],
-      pageSize: 10
+      pageSize: 10,
+      barChartDatasets: [
+        {
+          label: 'Budgets',
+          backgroundColor: '#155366',
+          valueField: 'budget'
+        },
+        {
+          label: 'Spending',
+          backgroundColor: '#06DBE4',
+          valueField: 'spending'
+        }
+      ]
     }
   },
   computed: {
