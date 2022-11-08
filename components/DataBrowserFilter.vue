@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-row>
-      <b-col xs="9">
+      <b-col md="10">
         <!-- Budgets or spending -->
         <b-form inline>
           <b-form-group
@@ -29,18 +29,30 @@
           </b-form-group>
 
           <b-form-group
-            label="Year"
-            style="width: 200px;">
+            label="Calendar Year"
+            style="width: 200px;"
+            class="mr-4">
             <v-select
               :options="years"
               multiple
               v-model="setFields.year"
               style="width: 200px;"></v-select>
           </b-form-group>
+
+          <b-form-group
+            label="Calendar Year and Quarter"
+            style="width: 200px;">
+            <v-select
+              :options="calendar_years_and_quarters"
+              multiple
+              v-model="setFields.calendar_year_and_quarter"
+              style="width: 200px;"></v-select>
+          </b-form-group>
+
         </b-form>
         <!-- Year -->
       </b-col>
-      <b-col xs="3" class="text-right">
+      <b-col md="2" class="text-right">
         <b-button
           @click="showFilters = !showFilters"
           variant="outline-secondary"
@@ -126,11 +138,7 @@ export default {
           value: 'eur',
           text: 'EUR'
         }
-      ],
-      years: ['2014', '2015', '2016', '2017',
-        '2018', '2019', '2020', '2021', '2022',
-        '2023', '2024', '2025', '2026', '2027',
-        '2028', '2029', '2030'],
+      ]
     }
   },
   computed: {
@@ -144,7 +152,8 @@ export default {
     },
     lang() {
       return 'en' // this.$i18n.locale
-    },...mapState(['codelistLookups', 'fields', 'fieldNames'])
+    },...mapState(['codelistLookups', 'fields',
+      'fieldNames', 'years', 'calendar_years_and_quarters'])
   },
   components: {
     DataBrowserFilterItem
