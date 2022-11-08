@@ -1,16 +1,23 @@
 <template>
   <div>
     <b-row>
-      <b-col>
+      <b-col md="4">
         <b-form-group
-          label-cols-md="6"
+          label-size="sm"
           label="Number of results">
-          <b-input
-            v-model="pageSize" type="number" step="1" debounce="500" />
+          <b-input-group size="sm">
+            <b-input
+              v-model="pageSize" type="number" step="1" debounce="500" />
+            <b-input-group-append>
+              <b-btn @click="pageSize=null" :disabled="pageSize==null">Show all</b-btn>
+            </b-input-group-append>
+          </b-input-group>
         </b-form-group>
       </b-col>
-      <b-col class="text-right">
-        <b-form-group>
+      <b-col lg="8" class="text-lg-right">
+        <b-form-group
+          label-size="sm"
+          label="Display options">
           <b-form-radio-group
             v-model="displayAs"
             :options="displayOptions"
