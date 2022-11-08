@@ -6,7 +6,7 @@
         <b-form inline>
           <b-form-group
             label="Currency"
-            class="mr-4">
+            class="mr-4 mt-2">
             <b-form-radio-group
               id="btn-currency"
               v-model="_currency"
@@ -19,7 +19,7 @@
 
           <b-form-group
             label="Spending type"
-            class="mr-4">
+            class="mr-4 mt-2">
             <b-form-radio-group
               v-model="budgetsSpending"
               :options="budgetsSpendingOptions"
@@ -30,23 +30,24 @@
 
           <b-form-group
             label="Calendar Year"
-            style="width: 200px;"
-            class="mr-4">
+            style="min-width: 200px;"
+            class="mr-4 mt-2">
             <v-select
               :options="years"
               multiple
               v-model="setFields.year"
-              style="width: 200px;"></v-select>
+              style="min-width: 200px;"></v-select>
           </b-form-group>
 
           <b-form-group
             label="Calendar Year and Quarter"
-            style="width: 200px;">
+            style="min-width: 200px;"
+            class="mt-2">
             <v-select
               :options="calendar_years_and_quarters"
               multiple
               v-model="setFields.calendar_year_and_quarter"
-              style="width: 200px;"></v-select>
+              style="min-width: 200px;"></v-select>
           </b-form-group>
 
         </b-form>
