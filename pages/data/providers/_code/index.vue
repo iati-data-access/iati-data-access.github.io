@@ -100,6 +100,7 @@
         <h3>by Activity</h3>
         <DataBrowser
           drilldown="activity.title"
+          displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"
          />

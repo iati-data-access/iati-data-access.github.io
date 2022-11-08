@@ -30,6 +30,7 @@
         <h3>by Country</h3>
         <DataBrowser
           drilldown="recipient_country_or_region"
+          displayAs="map"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -99,6 +100,7 @@
         <h3>by Activity</h3>
         <DataBrowser
           drilldown="activity.title"
+          displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"
          />
