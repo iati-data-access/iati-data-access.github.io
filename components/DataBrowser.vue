@@ -108,12 +108,6 @@ export default {
       cells: [],
       total: 0.00,
       isBusy: true,
-      reportingOrganisationType: '10',
-      reportingOrganisationTypes: [],
-      years: ['2014', '2015', '2016', '2017',
-        '2018', '2019', '2020', '2021', '2022',
-        '2023', '2024', '2025', '2026', '2027',
-        '2028', '2029', '2030'],
       pageSize: 10
     }
   },
@@ -195,7 +189,7 @@ export default {
     cuts() {
       return Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
-          if (field[0] == 'year') {
+          if (['year', 'quarter', 'calendar_year_and_quarter'].includes(field[0])) {
             const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else if (field[0].includes('.')) {
