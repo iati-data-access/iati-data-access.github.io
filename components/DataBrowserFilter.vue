@@ -33,6 +33,7 @@
             style="width: 200px;">
             <v-select
               :options="years"
+              multiple
               v-model="setFields.year"
               style="width: 200px;"></v-select>
           </b-form-group>

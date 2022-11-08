@@ -196,8 +196,8 @@ export default {
       return Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
           if (field[0] == 'year') {
-            const values = `"${field[1]}"`
-            summary.push(`${field[0]}:${values}`)
+            const values = field[1].map(item => { return `"${item}"`})
+            summary.push(`${field[0]}:${values.join(';')}`)
           } else if (field[0].includes('.')) {
             const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
