@@ -23,7 +23,20 @@ export default {
       valueLabel: `Amount (${this.currency.toUpperCase()})`
     }
   },
-  props: ['cells', 'drilldown', 'currency'],
+  props: {
+    'cells': {
+      default() { return [] }
+    },
+    'drilldown': {
+      default: null
+    },
+    'currency': {
+      default: null
+    },
+    'bar-chart-datasets': {
+      default() { return [] }
+    }
+  },
   components: {
     BarChart
   },
@@ -91,22 +104,16 @@ export default {
     },
     chartData() {
       return {
-        datasets: [{
-          label: 'Budgets',
-          fill: true,
-          data: Object.values(this.cells).map(item => {
-            return item.budget
-          }),
-          backgroundColor: '#6e40aa'
-        },
-        {
-          label: 'Spending',
-          fill: true,
-          data: Object.values(this.cells).map(item=> {
-            return item.spending
-          }),
-          backgroundColor: '#4479df'
-        }],
+        datasets: this.barChartDatasets.map(dataset => {
+          return {
+            label: dataset.label,
+            fill: true,
+            data: Object.values(this.cells).map(item => {
+              return item[dataset.valueField]
+            }),
+            backgroundColor: dataset.backgroundColor
+          }
+        }),
         labels: Object.keys(this.cells)
       }
     }

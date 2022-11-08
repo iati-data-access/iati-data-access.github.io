@@ -23,7 +23,20 @@ export default {
       valueLabel: `Amount (${this.currency.toUpperCase()})`
     }
   },
-  props: ['cells', 'drilldown', 'currency'],
+  props: {
+    'cells' : {
+      default() { return [] }
+    },
+    'drilldown': {
+      default: null
+    },
+    'currency': {
+      default: 'usd'
+    },
+    'barChartDatasets': {
+      default() { return [] }
+    }
+  },
   components: {
     BarChart
   },
@@ -90,17 +103,20 @@ export default {
       }
     },
     chartData() {
-      const colours = [
-        "#6e40aa", "#6849b9", "#6153c7", "#585fd2", "#4e6cda", "#4479df", "#3988e1", "#2f96e0", "#26a5db", "#1fb3d3", "#1bc1c8", "#19cdbb", "#1bd9ac", "#20e29d", "#28ea8d", "#34f07e", "#44f470", "#56f665", "#6bf75c", "#81f558", "#98f357", "#aff05b"
-      ]
       return {
-        datasets: [{
-          label: 'Value',
-          fill: true,
-          data: this.cells.map((ds) => { return ds[`value_${this.currency}.sum`] }),
-          backgroundColor: colours
-        }],
-        labels: this.cells.map((ds) => { return ds[this.drilldown] })
+        datasets: this.barChartDatasets.map(dataset => {
+          return {
+            label: dataset.label,
+            fill: true,
+            data: this.cells.map(item => {
+              return item[`value_${this.currency}.sum`]
+            }),
+            backgroundColor: dataset.backgroundColor
+          }
+        }),
+        labels: this.cells.map((item) => {
+          return item[this.drilldown]
+        })
       }
     }
   }
