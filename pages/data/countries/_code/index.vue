@@ -146,7 +146,7 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: [this.$route.params.code],
-        year: ['2020']
+        year: ['2021']
       },
       currency: 'usd'
     }
