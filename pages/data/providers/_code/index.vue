@@ -30,6 +30,7 @@
         <h3>by Country</h3>
         <DataBrowser
           drilldown="recipient_country_or_region"
+          displayAs="map"
           :setFields="setFields"
           :currency.sync="currency"
          />
