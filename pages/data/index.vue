@@ -18,6 +18,10 @@
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
 export default {
   components: { DataBrowserNavbar },
-  data() {}
+  data() {
+    return {
+
+    }
+  },
 }
 </script>
