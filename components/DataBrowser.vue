@@ -21,7 +21,7 @@
           <b-form-radio-group
             v-model="displayAs"
             :options="displayOptions"
-            button-variant="outline-success"
+            button-variant="outline-secondary"
             size="sm"
             buttons></b-form-radio-group>
             <b-btn

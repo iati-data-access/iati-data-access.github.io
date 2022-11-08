@@ -11,7 +11,7 @@
               id="btn-currency"
               v-model="_currency"
               :options="currencyOptions"
-              button-variant="outline-success"
+              button-variant="outline-secondary"
               name="radio-btn-outline"
               buttons
             ></b-form-radio-group>
@@ -23,7 +23,7 @@
             <b-form-radio-group
               v-model="budgetsSpending"
               :options="budgetsSpendingOptions"
-              button-variant="outline-success"
+              button-variant="outline-secondary"
               size="md"
               buttons></b-form-radio-group>
           </b-form-group>
