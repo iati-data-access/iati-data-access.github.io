@@ -109,21 +109,24 @@ export const mutations = {
   setFields(state, { field, values }) {
     Vue.set(state.fields, field, values);
     state.codelistsRetrieved = true
+  },
+  setCodelistsRetrieved(state, value) {
+    state.codelistsRetrieved = value
   }
 };
 
 export const actions = {
   async getCodelists({commit, state, dispatch}) {
-    if (state.codelistsRetrieved == true) {
-      return
+    if (state.codelistsRetrieved == false) {
+      commit('setCodelistsRetrieved', null)
+      Object.keys(state.fields).forEach(field => {
+        const codelist = state.codelistLookups[field]
+        if (codelist == undefined) {
+          return
+        }
+        dispatch('getCodelistData', {field: field, codelist: codelist})
+      })
     }
-    Object.keys(state.fields).forEach(field => {
-      const codelist = state.codelistLookups[field]
-      if (codelist == undefined) {
-        return
-      }
-      dispatch('getCodelistData', {field: field, codelist: codelist})
-    })
   },
   async getCodelistData({ commit }, { field, codelist }) {
     const response = await axios.get(`https://codelists.codeforiati.org/api/json/en/${codelist}.json`
