@@ -53,11 +53,12 @@
         </b-form>
         <!-- Year -->
       </b-col>
-      <b-col md="2" class="text-right">
+      <b-col md="2" class="text-right d-flex align-items-end">
         <b-button
+          class="ml-md-auto"
           @click="showFilters = !showFilters"
-          variant="outline-secondary"
-          size="sm">More filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
+          variant="secondary"
+          >More filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
       </b-col>
     </b-row>
     <b-row>
