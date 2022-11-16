@@ -33,6 +33,7 @@
           displayAs="map"
           :setFields="setFields"
           :currency.sync="currency"
+          :pageSize="null"
          />
       </b-col>
       <b-col md="6" class="mt-2">
