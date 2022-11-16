@@ -136,8 +136,7 @@ export const actions = {
       if (item['status'] != 'active') {
         return summary
       }
-      var code = null
-      var name = null
+      var code, name, label = null
       if (field == 'sector_category') {
         var code = String(item['codeforiati:group-code'])
         var name = item['codeforiati:group-name']
@@ -145,9 +144,15 @@ export const actions = {
         var code = String(item.code)
         var name = String(item.name).trim()
       }
+      if (['sector_category', 'sector'].includes(field)) {
+        var label = `${code} - ${name}`
+      } else {
+        var label = name
+      }
+
       summary[code] = {
         code: code,
-        label: `${code} - ${name}`,
+        label: label,
         name: name
       }
       return summary
