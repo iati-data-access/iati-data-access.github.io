@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar class="navbar-secondary mb-4" variant="secondary" toggleable="lg">
+    <b-navbar class="navbar-secondary mb-4" variant="light" type="light" toggleable="lg">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
@@ -11,7 +11,8 @@
           <b-dropdown
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
-            :text="dropdown.label">
+            :text="dropdown.label"
+            variant="link">
             <div class="scrollable-menu">
               <v-select
                 :options="fields[dropdown.field]"
@@ -27,6 +28,11 @@
     </b-navbar>
   </div>
 </template>
+<style>
+.navbar-secondary {
+  background-color: #eee !important;
+}
+</style>
 <script>
 
 import { mapState } from 'vuex'
