@@ -4,9 +4,9 @@
       <b-col>
         <b-form inline>
           <b-form-group
+            class="mr-4"
             label="Spending type">
             <b-form-radio-group
-              class="mr-4"
               :options="budgetsSpendingOptions"
               v-model="budgetsSpending"
               button-variant="outline-primary"
@@ -15,11 +15,23 @@
             </b-form-radio-group>
           </b-form-group>
           <b-form-group
+            class="mr-4"
             label="Year">
             <b-form-select
               :options="calendarYears"
               v-model="calendarYear">
             </b-form-select>
+          </b-form-group>
+          <b-form-group
+            label-size="sm"
+            label="Number of results">
+            <b-input-group>
+              <b-input
+                v-model="pageSize" type="number" step="1" debounce="500" />
+              <b-input-group-append>
+                <b-btn @click="pageSize=null" :disabled="pageSize==null">Show all</b-btn>
+              </b-input-group-append>
+            </b-input-group>
           </b-form-group>
         </b-form>
       </b-col>
