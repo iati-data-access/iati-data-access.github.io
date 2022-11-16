@@ -1,8 +1,8 @@
 <template>
   <div>
     <b-navbar class="navbar-secondary mb-4" variant="light" type="light" toggleable="lg">
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-toggle target="nav-secondary-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-secondary-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item
             v-for="(item) in $t('dataSidebarOverview')"
@@ -13,15 +13,13 @@
             v-bind:key="dropdown.name"
             :text="dropdown.label"
             variant="link">
-            <div class="scrollable-menu">
-              <v-select
-                :options="fields[dropdown.field]"
-                v-model="navbar[dropdown.name]"
-                style="min-width: 300px;"
-                placeholder="Type or select one..."
-                :dropdown-should-open="function() { return true}"
-                ></v-select>
-            </div>
+            <v-select
+              :options="fields[dropdown.field]"
+              v-model="navbar[dropdown.name]"
+              style="min-width: 300px;"
+              placeholder="Type or select one..."
+              :dropdown-should-open="function() { return true}"
+              ></v-select>
           </b-dropdown>
         </b-navbar-nav>
       </b-collapse>
