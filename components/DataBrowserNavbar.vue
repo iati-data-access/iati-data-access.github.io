@@ -13,13 +13,13 @@
             v-bind:key="dropdown.name"
             :text="dropdown.label">
             <div class="scrollable-menu">
-              <b-dropdown-item :to="localePath({name: dropdown.name})" exact-active-class="active">
-                {{ dropdown.all }}
-              </b-dropdown-item>
-              <b-dropdown-divider></b-dropdown-divider>
-              <b-dropdown-item :to="localePath({name: `${dropdown.name}-code`, params: { code: item.code }})" v-for="item in fields[dropdown.field]" :key="item.code" active-class="active">
-                {{ item.label }}
-              </b-dropdown-item>
+              <v-select
+                :options="fields[dropdown.field]"
+                v-model="navbar[dropdown.name]"
+                style="min-width: 300px;"
+                placeholder="Type or select one..."
+                :dropdown-should-open="function() { return true}"
+                ></v-select>
             </div>
           </b-dropdown>
         </b-navbar-nav>
@@ -34,6 +34,11 @@ export default {
   components: {  },
   data() {
     return {
+      navbar: {
+        'data-countries': null,
+        'data-providers': null,
+        'data-sectors': null
+      }
     }
   },
   computed: {
@@ -41,6 +46,21 @@ export default {
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
+  },
+  watch: {
+    navbar: {
+      handler(value) {
+        Object.entries(value).forEach(item => {
+          console.log('item is', item)
+          if (item[1] != null) {
+            this.$router.push(this.localePath({
+              name: `${item[0]}-code`, params: { code: item[1].code }
+            }))
+          }
+        })
+      },
+      deep: true
+    }
   }
 }
 </script>

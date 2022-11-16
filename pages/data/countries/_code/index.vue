@@ -108,22 +108,6 @@
   </div>
 </template>
 <style>
-
-@media (min-width: 768px) {
-  .scrollable-menu {
-      height: auto;
-      max-height: calc(100vh - 140px);
-      overflow-x: hidden;
-  }
-}
-
-@media (max-width: 767px) {
-  .scrollable-menu {
-    height: auto;
-    max-height: calc(100vh - 320px);
-    overflow-x: hidden;
-  }
-}
 </style>
 <script>
 
