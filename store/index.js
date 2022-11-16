@@ -152,9 +152,9 @@ export const actions = {
       }
       return summary
     }, {}))
-    codes = codes.sort((a,b) => a.name > b.name ? 1 : -1);
-    console.log('codes', codes)
-
+    if (['recipient_country_or_region', 'reporting_organisation'].includes(field)) {
+      codes = codes.sort((a,b) => a.name > b.name ? 1 : -1);
+    }
 
     commit('setFields', {field: field, values: codes})
   }
