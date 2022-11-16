@@ -55,7 +55,7 @@ export const state = () => ({
   ],
   codelistLookups: {
     reporting_organisation: 'ReportingOrganisation',
-    'reporting_organisation.type': 'OrganisationType',
+    reporting_organisation_type: 'OrganisationType',
     aid_type: 'AidType',
     finance_type: 'FinanceType',
     flow_type: 'FlowType',
@@ -66,7 +66,7 @@ export const state = () => ({
   },
   fields: {
     reporting_organisation: [],
-    'reporting_organisation.type': [],
+    reporting_organisation_type: [],
     aid_type: [],
     finance_type: [],
     flow_type: [],
@@ -87,7 +87,7 @@ export const state = () => ({
   },
   fieldNames: {
     reporting_organisation: {'en': 'Reporting Organisation'},
-    'reporting_organisation.type': {'en': 'Reporting Organisation Type'},
+    reporting_organisation_type: {'en': 'Reporting Organisation Type'},
     aid_type:  {'en': 'Aid Type'},
     finance_type:  {'en': 'Finance Type'},
     flow_type:  {'en': 'Flow Type'},
@@ -144,10 +144,10 @@ export const actions = {
         var code = String(item.code)
         var name = String(item.name).trim()
       }
-      if (['sector_category', 'sector'].includes(field)) {
-        var label = `${code} - ${name}`
-      } else {
+      if (['recipient_country_or_region', 'reporting_organisation', 'reporting_organisation_type'].includes(field)) {
         var label = name
+      } else {
+        var label = `${code} - ${name}`
       }
 
       summary[code] = {
