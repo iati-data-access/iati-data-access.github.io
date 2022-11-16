@@ -9,15 +9,15 @@
       >
       <MapFeature
         v-for="region in regions"
-        v-bind:key="region.region"
+        v-bind:key="region.iso2"
+        v-if="region.iso2!='-99'"
         :region-colours="regionColours"
-        :data="data"
         :geojson="region.features"
-        :opacity="opacity"
         :region="region.region"
         :iso2="region.iso2"
         :regionName="region.regionName"
-        :selectedRegions.sync="filterRegions" />
+        :selectedRegion.sync="filterRegion"
+        :regionData="regionData" />
       </l-map>
     </client-only>
   </div>
@@ -55,22 +55,28 @@ export default {
       }
     }
   },
-  props: ['data', 'total', 'selected-regions'],
+  props: ['data', 'total', 'selected-region'],
   components: {
     MapFeature
   },
   computed: {
-    filterRegions: {
+    filterRegion: {
       get() {
-        return this.selectedRegions
+        return this.selectedRegion
       },
       set: function(newValue) {
-        this.$emit('update:selectedRegions', newValue)
+        this.$emit('update:selectedRegion', newValue)
       }
     },
-    opacity() {
+    regionData() {
       return this.data.reduce((summary, item) => {
-        summary[item["recipient_country_or_region.code"]] = (item['value_usd.sum'] / this.total)*100
+        summary[item["recipient_country_or_region.code"]] = {
+          opacity: (item['value_usd.sum'] / this.total)*100,
+          value: item['value_usd.sum'].toLocaleString(undefined, {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+          })
+        }
         return summary
       }, {})
     },

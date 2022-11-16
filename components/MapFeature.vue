@@ -21,9 +21,10 @@ export default {
       },
     }
   },
-  props: ['region-colours', 'data',
-    'opacity', 'region', 'region-name',
-    'geojson', 'iso2'],
+  props: ['region-colours',
+    'region', 'region-name',
+    'geojson', 'iso2', 'selected-region',
+    'region-data'],
   components: {
   },
   computed: {
@@ -32,12 +33,12 @@ export default {
         onEachFeature: this.onEachFeatureFunction
       };
     },
-    filterRegions: {
+    filterRegion: {
       get() {
-        return this.selectedRegions
+        return this.selectedRegion
       },
       set: function(newValue) {
-        this.$emit('update:selectedRegions', newValue)
+        this.$emit('update:selectedRegion', newValue)
       }
     },
     onEachFeatureFunction() {
@@ -56,13 +57,17 @@ export default {
           this.clickRegion()
         })
         layer.bindTooltip(
-          this.regionName,
-          { permanent: false, sticky: true }
+          `<b>${this.regionName}</b><br />Amount (USD): ${this.value}`,
+          { permanent: false,
+            sticky: true}
         );
       };
     },
+    value () {
+      return this.regionData[this.iso2] ? this.regionData[this.iso2].value : 0
+    },
     fillOpacity() {
-      return this.opacity[this.iso2] || 0
+      return this.regionData[this.iso2] ? this.regionData[this.iso2].opacity : 0
     },
     optionsStyle() {
       const _fillColor = this.regionColours[this.regionName] || "#ffffff"
@@ -77,12 +82,7 @@ export default {
   },
   methods: {
     clickRegion() {
-      const index = this.filterRegions.indexOf(this.regionName);
-      if (index > -1) {
-        this.filterRegions.splice(index, 1);
-      } else {
-        this.filterRegions.push(this.regionName)
-      }
+      this.filterRegion = this.iso2
     }
   },
   mounted() {
