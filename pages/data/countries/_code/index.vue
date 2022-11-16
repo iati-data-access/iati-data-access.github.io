@@ -107,8 +107,6 @@
     </b-row>
   </div>
 </template>
-<style>
-</style>
 <script>
 
 import { mapState } from 'vuex'

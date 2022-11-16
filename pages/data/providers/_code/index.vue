@@ -77,7 +77,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Organisation Type</h3>
         <DataBrowser
-          drilldown="reporting_organisation.type"
+          drilldown="reporting_organisation_type"
           :setFields="setFields"
           :currency.sync="currency"
          />
