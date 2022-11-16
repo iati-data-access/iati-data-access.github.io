@@ -40,6 +40,7 @@
                 :currency="currency"
                 :cells="filteredCells"
                 :drilldown="drilldown"
+                :barChartDatasets="barChartDatasets"
               />
             </b-col>
             <b-col v-if="displayAs=='table'">
@@ -121,6 +122,23 @@ export default {
     }
   },
   computed: {
+    barChartDatasets() {
+      if (this.budgetsSpending.includes('budget')) {
+        return [
+          {
+            label: 'Budgets',
+            backgroundColor: '#155366'
+          }
+        ]
+      } else {
+        return [
+          {
+            label: 'Spending',
+            backgroundColor: '#06DBE4'
+          }
+        ]
+      }
+    },
     displayOptions() {
       if (this.drilldown === 'recipient_country_or_region') {
         return [
