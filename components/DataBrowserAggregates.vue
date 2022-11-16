@@ -32,6 +32,7 @@
               <Map
                 :data="filteredCells"
                 :total="total"
+                :selectedRegion.sync="selectedRegion"
               />
             </b-col>
             <b-col v-if="displayAs=='barChart'">
@@ -51,7 +52,7 @@
           </b-row>
         </template>
         <template v-else>
-          <div class="text-center">
+          <div class="text-center map-min-height">
             <b-spinner variant="secondary" />
           </div>
         </template>
@@ -59,6 +60,11 @@
     </b-row>
   </div>
 </template>
+<style>
+.map-min-height {
+  height: 350px
+}
+</style>
 <script>
 import axios from 'axios'
 import { mapState } from 'vuex'
@@ -85,6 +91,7 @@ export default {
       isBusy: true,
       calendarYear: 2021,
       budgetsSpending: ['3', '4'],
+      selectedRegion: null,
       budgetsSpendingOptions: [{
         value: ['3', '4'],
         text: 'Spending'
@@ -238,6 +245,9 @@ export default {
     },
     currency() {
       this.loadData()
+    },
+    selectedRegion(code) {
+      this.$router.push(this.localePath({name: 'data-countries-code', params: { code: code }}))
     }
   },
   mounted: function() {
