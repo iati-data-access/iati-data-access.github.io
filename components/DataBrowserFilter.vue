@@ -22,10 +22,17 @@
             class="mr-4 mt-2">
             <b-form-radio-group
               v-model="budgetsSpending"
-              :options="budgetsSpendingOptions"
-              button-variant="outline-secondary"
               size="md"
-              buttons></b-form-radio-group>
+              button-variant="outline-secondary"
+              buttons>
+              <b-form-radio
+                :class="option.class"
+                :value="option.value"
+                v-for="option in budgetsSpendingOptions"
+                v-bind:key="option.value">
+                {{ option.text }}
+              </b-form-radio>
+            </b-form-radio-group>
           </b-form-group>
 
           <b-form-group
@@ -58,7 +65,7 @@
           class="ml-md-auto"
           @click="showFilters = !showFilters"
           variant="secondary"
-          >More filters <font-awesome-icon :icon="['fa', 'cog']" /></b-button>
+          >More filters <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
       </b-col>
     </b-row>
     <b-row>
@@ -83,6 +90,16 @@
     </b-modal>
   </div>
 </template>
+<style>
+.active.budgets, .budgets:hover {
+  background-color: #155366 !important;
+  border-color: #155366 !important;
+}
+.active.spending, .spending:hover {
+  background-color: #06DBE4 !important;
+  border-color: #06DBE4 !important;
+}
+</style>
 <script>
 import axios from 'axios'
 import { mapState } from 'vuex'
@@ -122,11 +139,13 @@ export default {
       budgetsSpendingOptions: [
         {
           value: 'budgets',
-          text: 'Budgets'
+          text: 'Budgets',
+          class: 'budgets'
         },
         {
           value: 'spending',
-          text: 'Spending'
+          text: 'Spending',
+          class: 'spending'
         }
       ],
       showFilters: false,
