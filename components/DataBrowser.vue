@@ -20,16 +20,23 @@
           label="Display options">
           <b-form-radio-group
             v-model="displayAs"
-            :options="displayOptions"
             button-variant="outline-secondary"
             size="sm"
-            buttons></b-form-radio-group>
-            <b-btn
-              :href="CSVSummaryURL"
-              variant="outline-secondary"
-              size="sm">
-              <font-awesome-icon :icon="['fa', 'download']" /> CSV
-            </b-btn>
+            buttons>
+            <b-form-radio
+              :value="option.value"
+              v-for="option in displayOptions"
+              v-bind:key="option.value">
+              <font-awesome-icon :icon="['fa', option.icon]" />
+              {{ option.text }}
+            </b-form-radio>
+          </b-form-radio-group>
+          <b-btn
+            :href="CSVSummaryURL"
+            variant="outline-secondary"
+            size="sm">
+            <font-awesome-icon :icon="['fa', 'download']" /> CSV
+          </b-btn>
         </b-form-group>
       </b-col>
     </b-row>
@@ -141,26 +148,31 @@ export default {
         return [
           {
             value: 'barChart',
-            text: 'Bar Chart'
+            text: 'Bar Chart',
+            icon: 'chart-simple'
           },
           {
             value: 'map',
-            text: 'Map'
+            text: 'Map',
+            icon: 'map'
           },
           {
             value: 'table',
-            text: 'Table'
+            text: 'Table',
+            icon: 'table'
           }
         ]
       } else {
         return [
           {
             value: 'barChart',
-            text: 'Bar Chart'
+            text: 'Bar Chart',
+            icon: 'chart-simple'
           },
           {
             value: 'table',
-            text: 'Table'
+            text: 'Table',
+            icon: 'table'
           }
         ]
       }
