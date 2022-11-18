@@ -9,12 +9,12 @@
     ["/", "Home"],
     ["/introduction/", "Introduction"],
     ["/methodology/", "Methodology"],
-    ["/data-notes/", "Data Notes"],
-    ["/data/", "Data"]
+    ["/data-notes/", "Data Notes"]
   ],
   "dataSidebarOverview": [
     ["/data/", "Summary"]
   ],
+  "dataDashboards": "Data Dashboards",
   "dataSidebarDropdowns": [
     {
       "path": "/data/countries/",

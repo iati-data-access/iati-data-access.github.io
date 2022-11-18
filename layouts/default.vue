@@ -17,6 +17,10 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
+            <b-btn
+              pill
+              class="data-navbar-button"
+              :to="localePath({path: '/data/'})">{{ $t('dataDashboards') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 
             <b-nav-item-dropdown :text="$t('selectText')" right>
               <b-dropdown-item
@@ -41,6 +45,14 @@
   </div>
 </template>
 <style lang="scss">
+.data-navbar-button {
+  background-color: #155366;
+  border-color: #155366;
+}
+.data-navbar-button:hover {
+  background-color: #06DBE4;
+  border-color: #06DBE4;
+}
 .page-container {
   word-break: break-word;
 }
