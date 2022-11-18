@@ -133,7 +133,7 @@ export default {
       var years = []
       const year = new Date().getFullYear()
       const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
-      return range(year-5, year)
+      return range(year-3, year+3)
     },
     spendSummaryURL() {
       return `${this.$config.baseURL}/aggregates/spend_summary/?drilldown=${this.drilldown}&${this.drilldown}=${this.drilldownValue}&calendar_year=${this.calendarYears.join(',')}`
