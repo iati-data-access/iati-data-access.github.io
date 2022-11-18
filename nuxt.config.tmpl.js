@@ -59,7 +59,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faCog'],
+      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap'],
       regular: []
     }
   },
