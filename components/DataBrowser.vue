@@ -28,15 +28,22 @@
               v-for="option in displayOptions"
               v-bind:key="option.value">
               <font-awesome-icon :icon="['fa', option.icon]" />
-              {{ option.text }}
             </b-form-radio>
           </b-form-radio-group>
-          <b-btn
-            :href="CSVSummaryURL"
+          <b-dropdown
+            right
             variant="outline-secondary"
             size="sm">
-            <font-awesome-icon :icon="['fa', 'download']" /> CSV
-          </b-btn>
+            <template #button-content>
+              <font-awesome-icon :icon="['fa', 'download']" />
+            </template>
+            <b-dropdown-item
+              :href="summaryURL+'&format=csv'"><font-awesome-icon :icon="['fa', 'download']" /> CSV
+            </b-dropdown-item>
+            <b-dropdown-item
+              :href="summaryURL+'&format=xlsx'"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
+            </b-dropdown-item>
+          </b-dropdown>
         </b-form-group>
       </b-col>
     </b-row>
@@ -147,14 +154,14 @@ export default {
       if (this.drilldown === 'recipient_country_or_region') {
         return [
           {
-            value: 'barChart',
-            text: 'Bar Chart',
-            icon: 'chart-simple'
-          },
-          {
             value: 'map',
             text: 'Map',
             icon: 'map'
+          },
+          {
+            value: 'barChart',
+            text: 'Bar Chart',
+            icon: 'chart-simple'
           },
           {
             value: 'table',
@@ -223,13 +230,21 @@ export default {
       }, []).join('|')
     },
     summaryURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
+      const basicURL = `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}&aggregates=value_${this.currency}.sum`
+      if (this.displayAs != 'map') {
+        return basicURL + "&simple"
+      } else {
+        return basicURL
+      }
     },
     granularURL() {
       return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&format=csv`
+    },
+    XLSXSummaryURL() {
+      return `${this.summaryURL}&format=xlsx`
     },...mapState(['drilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
@@ -253,7 +268,9 @@ export default {
           }
           return item
         })
-        this.total = response.data.summary[`value_${this.currency}.sum`]
+        if (`value_${this.currency}.sum` in response.data.summary) {
+          this.total = response.data.summary[`value_${this.currency}.sum`]
+        }
         this.isBusy = false
       })
     }
