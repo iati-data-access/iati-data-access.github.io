@@ -130,7 +130,9 @@ export default {
       default: 'usd'
     },
     excludeFilters: {
-      default: []
+      default() {
+        return []
+      }
     }
   },
   data() {
