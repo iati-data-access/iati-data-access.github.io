@@ -100,6 +100,7 @@ export default {
     },
     setFields: {
       default() {
+        const lastYear = new Date().getFullYear()-1
         return {
           reporting_organisation: [],
           aid_type: [],
@@ -109,7 +110,7 @@ export default {
           sector_category: [],
           sector: [],
           recipient_country_or_region: ['AF'],
-          year: ['2020']
+          year: [lastYear]
         }
       }
     },
@@ -121,6 +122,9 @@ export default {
     },
     currency: {
       default: 'usd'
+    },
+    pageSize: {
+      default: 10
     }
   },
   data() {
@@ -128,8 +132,7 @@ export default {
       showFilters: false,
       cells: [],
       total: 0.00,
-      isBusy: true,
-      pageSize: 10
+      isBusy: true
     }
   },
   computed: {
@@ -230,12 +233,7 @@ export default {
       }, []).join('|')
     },
     summaryURL() {
-      const basicURL = `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}&aggregates=value_${this.currency}.sum`
-      if (this.displayAs != 'map') {
-        return basicURL + "&simple"
-      } else {
-        return basicURL
-      }
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}&aggregates=value_${this.currency}.sum&simple`
     },
     granularURL() {
       return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
@@ -268,9 +266,10 @@ export default {
           }
           return item
         })
-        if (`value_${this.currency}.sum` in response.data.summary) {
-          this.total = response.data.summary[`value_${this.currency}.sum`]
-        }
+        this.total = this.cells.reduce((summary, item) => {
+          summary += item[`value_${this.currency}.sum`]
+          return summary
+        }, 0.0)
         this.isBusy = false
       })
     }
