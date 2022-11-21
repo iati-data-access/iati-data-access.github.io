@@ -29,7 +29,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Reporting Organisation</h3>
         <DataBrowser
-          drilldown="reporting_organisation"
+          :drilldowns="['reporting_organisation']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -37,7 +37,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Sector</h3>
         <DataBrowser
-          drilldown="sector_category"
+          :drilldowns="['sector_category']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -52,7 +52,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Finance Type</h3>
         <DataBrowser
-          drilldown="finance_type"
+          :drilldowns="['finance_type']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -60,7 +60,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Aid Type</h3>
         <DataBrowser
-          drilldown="aid_type"
+          :drilldowns="['aid_type']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -75,7 +75,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Organisation Type</h3>
         <DataBrowser
-          drilldown="reporting_organisation_type"
+          :drilldowns="['reporting_organisation_type']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -83,7 +83,7 @@
       <b-col md="6" class="mt-2">
         <h3>by Humanitarian / Development</h3>
         <DataBrowser
-          drilldown="humanitarian"
+          :drilldowns="['humanitarian']"
           :setFields="setFields"
           :currency.sync="currency"
          />
@@ -98,7 +98,7 @@
       <b-col md="12" class="mt-2">
         <h3>by Activity</h3>
         <DataBrowser
-          drilldown="activity.title"
+          :drilldowns="['activity.title']"
           displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"
