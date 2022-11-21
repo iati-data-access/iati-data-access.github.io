@@ -240,10 +240,14 @@ export default {
       }, []).join('|')
     },
     summaryURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${this.pageSize}&aggregates=value_${this.currency}.sum&simple`
+      // NB the API limits to a maximum of 10,000 responses without paginating
+      const pageSize = this.pageSize != null ? this.pageSize : 10000
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple`
     },
     granularURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${this.pageSize}`
+      // NB the API limits to a maximum of 10,000 responses without paginating
+      const pageSize = this.pageSize != null ? this.pageSize : 10000
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${pageSize}`
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&format=csv`
