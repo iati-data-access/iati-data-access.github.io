@@ -117,6 +117,7 @@ import DataBrowserSpendSummary from '~/components/DataBrowserSpendSummary'
 export default {
   components: { DataBrowser, DataBrowserFilter, DataBrowserSpendSummary },
   data() {
+    const lastYear = new Date().getFullYear()-1
     return {
       drilldown: 'recipient_country_or_region',
       drilldownValue: this.$route.params.code,
@@ -129,7 +130,7 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: [this.$route.params.code],
-        year: ['2021']
+        year: [lastYear]
       },
       currency: 'usd'
     }
