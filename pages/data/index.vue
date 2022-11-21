@@ -15,7 +15,7 @@
       <b-col md="6" class="mt-2">
         <h2>By country</h2>
         <DataBrowser
-          drilldown="recipient_country_or_region"
+          :drilldowns="['recipient_country_or_region']"
           displayAs="map"
           :setFields="setFields"
           :currency.sync="currency"
@@ -26,7 +26,7 @@
       <b-col md="6" class="mt-2">
         <h2>By provider</h2>
         <DataBrowser
-          drilldown="reporting_organisation"
+          :drilldowns="['reporting_organisation']"
           displayAs="barChart"
           :setFields="setFields"
           :currency.sync="currency"
@@ -37,7 +37,7 @@
       <b-col md="6" class="mt-2">
         <h2>By sector</h2>
         <DataBrowser
-          drilldown="sector_category"
+          :drilldowns="['sector_category']"
           displayAs="barChart"
           :setFields="setFields"
           :currency.sync="currency"
