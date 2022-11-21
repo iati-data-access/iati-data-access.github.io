@@ -64,7 +64,7 @@
               <bar-chart-component
                 :currency="currency"
                 :cells="cells"
-                :drilldown="drilldown"
+                :drilldown="drilldowns[0]"
                 :datasets="barChartDatasets"
               />
             </b-col>
@@ -76,6 +76,13 @@
               </b-table>
             </b-col>
           </b-row>
+        </template>
+        <template v-else-if="(notYetLoaded==true)&&(autoReload==false)">
+          <div lass="text-center">
+            <b-alert show variant="info">
+              Select some options, and then click Run on the left.
+            </b-alert>
+          </div>
         </template>
         <template v-else>
           <div class="text-center">
@@ -98,8 +105,10 @@ import BarChartComponent from '~/components/BarChartComponent'
 import Map from '~/components/Map'
 export default {
   props: {
-    drilldown: {
-      default: 'recipient_country_or_region'
+    drilldowns: {
+      default() {
+        return ['recipient_country_or_region']
+      }
     },
     setFields: {
       default() {
@@ -131,6 +140,9 @@ export default {
     },
     clickable: {
       default: false
+    },
+    autoReload: {
+      default: true
     }
   },
   data() {
@@ -140,6 +152,7 @@ export default {
       total: 0.00,
       isBusy: true,
       selectedRegion: null,
+      notYetLoaded: true
     }
   },
   computed: {
@@ -161,7 +174,15 @@ export default {
       }
     },
     displayOptions() {
-      if (this.drilldown === 'recipient_country_or_region') {
+      if (this.drilldowns.length > 1) {
+        return [
+          {
+            value: 'table',
+            text: 'Table',
+            icon: 'table'
+          }
+        ]
+      } else if (this.drilldowns[0] === 'recipient_country_or_region') {
         return [
           {
             value: 'map',
@@ -197,30 +218,21 @@ export default {
     lang() {
       return 'en' // this.$i18n.locale
     },
-    drilldownSlotName() {
-      return `#cell(sector_category)`
-    },
-    drilldownLabel() {
-      return this.drilldowns.filter(drilldown => {
-        return drilldown.value === this.drilldown
-      })[0].text
-    },
     tableFields() {
-      return [
-        {
-          key: this.drilldown,
-          label: this.drilldownLabel,
-          sortable: true
-        },
-        {
-          key: `value_${this.currency}.sum`,
-          label: `Value (${this.currency.toUpperCase()})`,
-          formatter: this.numberFormatter,
-          thClass: "text-right",
-          tdClass: "text-right",
+      return this.drilldowns.map(item => {
+        return {
+          key: item,
+          label: this.availableDrilldowns[item],
           sortable: true
         }
-      ]
+      }).concat({
+        key: `value_${this.currency}.sum`,
+        label: `Value (${this.currency.toUpperCase()})`,
+        formatter: this.numberFormatter,
+        thClass: "text-right",
+        tdClass: "text-right",
+        sortable: true
+      })
     },
     cuts() {
       return Object.entries(this.setFields).reduce((summary, field) => {
@@ -242,7 +254,7 @@ export default {
     summaryURL() {
       // NB the API limits to a maximum of 10,000 responses without paginating
       const pageSize = this.pageSize != null ? this.pageSize : 10000
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldown}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple`
     },
     granularURL() {
       // NB the API limits to a maximum of 10,000 responses without paginating
@@ -254,7 +266,7 @@ export default {
     },
     XLSXSummaryURL() {
       return `${this.summaryURL}&format=xlsx`
-    },...mapState(['drilldowns', 'codelistLookups', 'fields', 'fieldNames'])
+    },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
   methods: {
@@ -266,15 +278,17 @@ export default {
       axios.get(this.summaryURL)
       .then(response => {
         this.cells = response.data.cells.map(item => {
-          if (this.drilldown.includes(".")) {
-            return item
-          } else if (this.drilldown == 'humanitarian') {
-            item[this.drilldown] = (item[`${this.drilldown}.code`] === true) ? 'Humanitarian' : 'Development'
-          } else if (['recipient_country_or_region', 'reporting_organisation', 'reporting_organisation_type'].includes(this.drilldown)) {
-            item[this.drilldown] = item[`${this.drilldown}.name_${this.lang}`]
-          } else {
-            item[this.drilldown] = item[`${this.drilldown}.code`] + " - " + item[`${this.drilldown}.name_${this.lang}`]
-          }
+          this.drilldowns.forEach(drilldown => {
+            if (drilldown.includes(".")) {
+              return item
+            } else if (drilldown == 'humanitarian') {
+              item[drilldown] = (item[`${drilldown}.code`] === true) ? 'Humanitarian' : 'Development'
+            } else if (['recipient_country_or_region', 'reporting_organisation', 'reporting_organisation_type'].includes(drilldown)) {
+              item[drilldown] = item[`${drilldown}.name_${this.lang}`]
+            } else {
+              item[drilldown] = item[`${drilldown}.code`] + " - " + item[`${drilldown}.name_${this.lang}`]
+            }
+          })
           return item
         })
         this.total = this.cells.reduce((summary, item) => {
@@ -282,24 +296,33 @@ export default {
           return summary
         }, 0.0)
         this.isBusy = false
+        this.notYetLoaded = false
       })
     }
   },
   watch: {
     year() {
-      this.loadData()
+      if (this.autoReload) {
+        this.loadData()
+      }
     },
     pageSize() {
-      this.loadData()
+      if (this.autoReload) {
+        this.loadData()
+      }
     },
     setFields: {
       handler() {
-        this.loadData()
+        if (this.autoReload) {
+          this.loadData()
+        }
       },
       deep: true
     },
     currency() {
-      this.loadData()
+      if (this.autoReload) {
+        this.loadData()
+      }
     },
     selectedRegion(code) {
       if (this.clickable) {
@@ -308,7 +331,9 @@ export default {
     }
   },
   mounted: function() {
-    this.loadData()
+    if (this.autoReload) {
+      this.loadData()
+    }
   }
 }
 </script>
