@@ -9,7 +9,7 @@ const analyticsURL =
 export const state = () => ({
   availableDrilldowns: {
     "reporting_organisation": "Reporting Organisation",
-    "reporting_organisation.type": "Reporting Organisation Type",
+    "reporting_organisation_type": "Reporting Organisation Type",
     "recipient_country_or_region": "Country or Region",
     "sector_category": "Sector Category",
     "sector": "Sector",
