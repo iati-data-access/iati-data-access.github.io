@@ -53,8 +53,11 @@
           <b-row>
             <b-col v-if="displayAs=='map'">
               <Map
+                :currency="currency"
                 :data="cells"
                 :total="total"
+                :selectedRegion.sync="selectedRegion"
+                :datasets="barChartDatasets"
               />
             </b-col>
             <b-col v-if="displayAs=='barChart'">
@@ -62,7 +65,7 @@
                 :currency="currency"
                 :cells="cells"
                 :drilldown="drilldown"
-                :bar-chart-datasets="barChartDatasets"
+                :datasets="barChartDatasets"
               />
             </b-col>
             <b-col v-if="displayAs=='table'">
@@ -125,6 +128,9 @@ export default {
     },
     pageSize: {
       default: 10
+    },
+    clickable: {
+      default: false
     }
   },
   data() {
@@ -132,7 +138,8 @@ export default {
       showFilters: false,
       cells: [],
       total: 0.00,
-      isBusy: true
+      isBusy: true,
+      selectedRegion: null,
     }
   },
   computed: {
@@ -289,6 +296,11 @@ export default {
     },
     currency() {
       this.loadData()
+    },
+    selectedRegion(code) {
+      if (this.clickable) {
+        this.$router.push(this.localePath({name: 'data-countries-code', params: { code: code }}))
+      }
     }
   },
   mounted: function() {
