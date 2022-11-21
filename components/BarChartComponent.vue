@@ -33,8 +33,11 @@ export default {
     'currency': {
       default: 'usd'
     },
-    'barChartDatasets': {
+    'datasets': {
       default() { return [] }
+    },
+    'clickable': {
+      default: false
     }
   },
   components: {
@@ -104,7 +107,7 @@ export default {
     },
     chartData() {
       return {
-        datasets: this.barChartDatasets.map(dataset => {
+        datasets: this.datasets.map(dataset => {
           return {
             label: dataset.label,
             fill: true,
