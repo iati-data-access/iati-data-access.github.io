@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="custom-data-browser">
     <DataBrowserNavbar />
     <h1>Custom data download</h1>
     <b-row>
@@ -40,6 +40,11 @@
     </b-row>
   </div>
 </template>
+<style>
+.custom-data-browser {
+  min-height: 650px;
+}
+</style>
 <script>
 
 import { mapState } from 'vuex'
