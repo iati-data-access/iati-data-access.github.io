@@ -77,7 +77,7 @@
             </b-col>
           </b-row>
         </template>
-        <template v-else-if="(notYetLoaded==true)&&(autoReload==false)">
+        <template v-else-if="optionsToBeSelected">
           <div lass="text-center">
             <b-alert show variant="info">
               Select some options, and then click Run on the left.
@@ -152,10 +152,13 @@ export default {
       total: 0.00,
       isBusy: true,
       selectedRegion: null,
-      notYetLoaded: true
+      startedLoading: false
     }
   },
   computed: {
+    optionsToBeSelected() {
+      return (this.startedLoading==false) && (this.autoReload==false)
+    },
     barChartDatasets() {
       if (this.setFields.transaction_type.includes('budget')) {
         return [
@@ -274,6 +277,7 @@ export default {
       return value.toLocaleString(undefined, {maximumFractionDigits: 0})
     },
     loadData() {
+      this.startedLoading = true
       this.isBusy = true
       axios.get(this.summaryURL)
       .then(response => {
@@ -296,7 +300,6 @@ export default {
           return summary
         }, 0.0)
         this.isBusy = false
-        this.notYetLoaded = false
       })
     }
   },
