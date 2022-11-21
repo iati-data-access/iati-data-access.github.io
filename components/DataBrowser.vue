@@ -304,7 +304,8 @@ export default {
         this.$bvToast.toast(`${error}`, {
           title: 'Error',
           autoHideDelay: 5000,
-          append: true
+          append: true,
+          variant: 'danger'
         })
       })
     }
