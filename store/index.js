@@ -7,52 +7,18 @@ const analyticsURL =
   "https://raw.githubusercontent.com/codeforIATI/IATI-Stats-public/gh-pages";
 
 export const state = () => ({
-  drilldowns: [
-    {
-      value: 'reporting_organisation',
-      text: 'Reporting Organisation'
-    },
-    {
-      value: 'sector_category',
-      text: 'Sector Category'
-    },
-    {
-      value: 'sector',
-      text: 'Sector'
-    },
-    {
-      value: 'activity.title',
-      text: 'Activity Title'
-    },
-    {
-      value: 'activity.iati_identifier',
-      text: 'Activity IATI Identifier'
-    },
-    {
-      value: 'reporting_organisation',
-      text: 'Reporting Organisation'
-    },
-    {
-      value: 'reporting_organisation.type',
-      text: 'Reporting Organisation Type'
-    },
-    {
-      value: 'recipient_country_or_region',
-      text: 'Country or Region'
-    },
-    {
-      value: 'aid_type',
-      text: 'Aid Type'
-    },
-    {
-      value: 'finance_type',
-      text: 'Finance Type'
-    },
-    {
-      value: 'humanitarian',
-      text: 'Humanitarian'
-    }
-  ],
+  availableDrilldowns: {
+    "reporting_organisation": "Reporting Organisation",
+    "sector_category": "Sector Category",
+    "sector": "Sector",
+    "activity.title": "Activity Title",
+    "activity.iati_identifier": "Activity IATI Identifier",
+    "reporting_organisation.type": "Reporting Organisation Type",
+    "recipient_country_or_region": "Country or Region",
+    "aid_type": "Aid Type",
+    "finance_type": "Finance Type",
+    "humanitarian": "Humanitarian"
+  },
   codelistLookups: {
     reporting_organisation: 'ReportingOrganisation',
     reporting_organisation_type: 'OrganisationType',
