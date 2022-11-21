@@ -11,30 +11,26 @@
     ["/methodology/", "Methodology"],
     ["/data-notes/", "Data Notes"]
   ],
-  "dataSidebarOverview": [
-    ["/data/", "Summary"]
-  ],
+  "dataOverview": "Summary",
   "dataDashboards": "Data Dashboards",
+  "dataCustomDownload": "Custom Data",
   "dataSidebarDropdowns": [
     {
       "path": "/data/countries/",
       "name": "data-countries",
       "label": "by Country",
-      "all": "All Countries",
       "field": "recipient_country_or_region"
     },
     {
       "path": "/data/providers/",
       "name": "data-providers",
       "label": "by Provider",
-      "all": "All Providers",
       "field": "reporting_organisation"
     },
     {
       "path": "/data/sectors/",
       "name": "data-sectors",
       "label": "by Sector",
-      "all": "All Sectors",
       "field": "sector_category"
     }
   ],

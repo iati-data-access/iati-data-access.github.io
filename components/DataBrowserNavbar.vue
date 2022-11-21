@@ -5,9 +5,8 @@
       <b-collapse id="nav-secondary-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item
-            v-for="(item) in $t('dataSidebarOverview')"
-            v-bind:key="item[0]"
-            :to="localePath({path: item[0]})">{{ item[1] }}</b-nav-item>
+            link-classes="btn btn-link"
+            :to="localePath({path: '/data/'})">{{ $t('dataOverview') }}</b-nav-item>
           <b-dropdown
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
@@ -21,14 +20,23 @@
               :dropdown-should-open="function() { return true}"
               ></v-select>
           </b-dropdown>
+          <b-nav-item
+            link-classes="btn btn-link"
+            :to="localePath({path: '/data/custom/'})">{{ $t('dataCustomDownload') }}</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
 </template>
-<style>
+<style lang="scss">
 .navbar-secondary {
   background-color: #eee !important;
+  .nav-item .btn-link {
+    color: #007bff;
+    &:hover, &:focus {
+      color: #0056b3;
+    }
+  }
 }
 </style>
 <script>
