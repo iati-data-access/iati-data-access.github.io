@@ -20,6 +20,7 @@
           :setFields="setFields"
           :currency.sync="currency"
           :pageSize="null"
+          :clickable="true"
          />
       </b-col>
       <b-col md="6" class="mt-2">
