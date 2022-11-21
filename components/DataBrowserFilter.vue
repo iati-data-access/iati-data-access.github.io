@@ -135,7 +135,7 @@ export default {
   },
   data() {
     return {
-      budgetsSpending: 'spending',
+      budgetsSpending: this.setFields.transaction_type.includes('budget') ? 'budgets' : 'spending',
       budgetsSpendingOptions: [
         {
           value: 'budgets',
