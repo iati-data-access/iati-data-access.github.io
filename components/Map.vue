@@ -17,7 +17,8 @@
         :iso2="region.iso2"
         :regionName="region.regionName"
         :selectedRegion.sync="filterRegion"
-        :regionData="regionData" />
+        :regionData="regionData"
+        :currency="currency" />
       </l-map>
     </client-only>
   </div>
@@ -55,7 +56,13 @@ export default {
       }
     }
   },
-  props: ['data', 'total', 'selected-region'],
+  props: [
+    'data',
+    'total',
+    'selected-region',
+    'datasets',
+    'currency'
+  ],
   components: {
     MapFeature
   },
@@ -71,8 +78,8 @@ export default {
     regionData() {
       return this.data.reduce((summary, item) => {
         summary[item["recipient_country_or_region.code"]] = {
-          opacity: (item['value_usd.sum'] / this.total)*100,
-          value: item['value_usd.sum'].toLocaleString(undefined, {
+          opacity: (item[`value_${this.currency}.sum`] / this.total)*100,
+          value: item[`value_${this.currency}.sum`].toLocaleString(undefined, {
             maximumFractionDigits: 2,
             minimumFractionDigits: 2
           })
@@ -82,7 +89,7 @@ export default {
     },
     regionColours() {
       return this.regions.reduce((summary, item) => {
-        summary[item.name] = '#124555'
+        summary[item.name] = this.datasets[0].backgroundColor
         return summary
       }, {})
     }
