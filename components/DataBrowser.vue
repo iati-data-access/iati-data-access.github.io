@@ -300,6 +300,12 @@ export default {
           return summary
         }, 0.0)
         this.isBusy = false
+      }).catch(error => {
+        this.$bvToast.toast(`${error}`, {
+          title: 'Error',
+          autoHideDelay: 5000,
+          append: true
+        })
       })
     }
   },
