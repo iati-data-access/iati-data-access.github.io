@@ -113,7 +113,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseURL: 'http://countrydata.brough.io/api'
+    baseURL: 'https://countrydata.brough.io/api'
   },
 
   // Google Tag Manager
