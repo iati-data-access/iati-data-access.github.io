@@ -242,7 +242,7 @@ export default {
           sortable: true
         }
       })
-      if (this.rolllups != '') {
+      if (this.setFields.transaction_type.length == 3) {
         return _fields.concat({
           key: `value_${this.currency}.sum_3-4`,
           label: `Value (${this.currency.toUpperCase()}): Spending`,
@@ -258,16 +258,16 @@ export default {
           tdClass: "text-right",
           sortable: true
         })
+      } else {
+        return _fields.concat({
+          key: `value_${this.currency}.sum`,
+          label: `Value (${this.currency.toUpperCase()})`,
+          formatter: this.numberFormatter,
+          thClass: "text-right",
+          tdClass: "text-right",
+          sortable: true
+        })
       }
-
-      return _fields.concat({
-        key: `value_${this.currency}.sum`,
-        label: `Value (${this.currency.toUpperCase()})`,
-        formatter: this.numberFormatter,
-        thClass: "text-right",
-        tdClass: "text-right",
-        sortable: true
-      })
     },
     cuts() {
       return Object.entries(this.setFields).reduce((summary, field) => {
