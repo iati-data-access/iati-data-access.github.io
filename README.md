@@ -1,12 +1,11 @@
 # IATI Country Development Finance Data front-end
 
-This repository contains the files for the front-end of IATI Country Development Finance Data. It is visible at:
-https://countrydata.iatistandard.org/docs-beta2/
+This repository provides a front-end interface to access the files for the IATI Country Development Finance Data tool. It is visible at:
+https://countrydata.iatistandard.org/
 
-The data behind this repository is generated in the following repository:
-https://github.com/iati-data-access/data-beta
+It also communicates with a back-end API for
 
-The data is then saved into repositories for each language:
+The data behind this repository is generated in the following repositories for each language:
 
   * English: https://github.com/iati-data-access/data-en
   * French: https://github.com/iati-data-access/data-fr
@@ -38,5 +37,3 @@ $ npm run generate
 For detailed explanation on how things work, check out the NuxtJS [documentation](https://nuxtjs.org).
 
 When pushing to the repository [only the main branch, eventually], Github Actions automatically builds and deploys the front end.
-
-## Setup
