@@ -194,6 +194,20 @@ export default {
       } else {
         this.updateField('transaction_type', ['budget'])
       }
+    },
+    'setFields.year': {
+      handler(value) {
+        if (value.length>0) {
+          this.$set(this.setFields, 'calendar_year_and_quarter', [])
+        }
+      }
+    },
+    'setFields.calendar_year_and_quarter': {
+      handler(value) {
+        if (value.length>0) {
+          this.$set(this.setFields, 'year', [])
+        }
+      }
     }
   },
   mounted: function() {
