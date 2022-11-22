@@ -34,10 +34,6 @@ _Exemplos completos:_
 * [espanhol: Colômbia](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES_Colombia.xlsx)
 * [português: São Tomé e Príncipe](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT_São%20Tomé%20e%20Príncipe.xlsx)
 
-## Metodologia
-
-Na seção Metodologia, são encontradas informações detalhadas sobre a metodologia para nivelar os dados da IATI no formato Excel.
-
 <p class="center-logo">
 	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
 </p>

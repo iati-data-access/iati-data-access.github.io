@@ -38,9 +38,6 @@ _Complete examples:_
 * [Spanish: Colombia](/dashboards/v2%20Panel%20de%20análisis_Eni-Dic_ES_Colombia.xlsx)
 * [Portuguese: Sao Tome e Prinicipe](/dashboards/v2%20Painel%20de%20Análise%20de%20DFDP%20da%20IATI_Jan-Dez_PT_São%20Tomé%20e%20Príncipe.xlsx)
 
-## Methodology
-Detailed information on the methodology for flattening IATI data into Excel format can be found in the Methodology section.
-
 <p class="center-logo">
 	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
 </p>
