@@ -1,4 +1,9 @@
 import linkFixes from './plugins/link-fixes.js'
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/docs-beta2/'
+  }
+} : {}
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -59,6 +64,14 @@ export default {
     }
   },
 
+  hooks: {
+    'content:file:beforeInsert': linkFixes,
+    // Fix anchors issue
+    // https://github.com/nuxt/content/issues/376#issuecomment-702193217
+    'vue-renderer:ssr:templateParams': function (params) {
+      params.HEAD = params.HEAD.replace('<base href="/docs-beta2/">', "");
+    }
+  },
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
@@ -110,5 +123,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  ...routerBase
 }
