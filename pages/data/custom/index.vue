@@ -13,7 +13,7 @@
     <b-row>
       <b-col md="3" class="mt-2">
         <b-form-group
-          label="Summarise by">
+          label="Select columns">
           <v-select
             multiple
             :options="drilldownOptions"
