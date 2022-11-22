@@ -163,12 +163,12 @@ export default {
           {
             label: 'Budgets',
             backgroundColor: '#155366',
-            field: `value_${this.currency}.sum_3-4`
+            field: `value_${this.currency}.sum_budget`
           },
           {
             label: 'Spending',
             backgroundColor: '#06DBE4',
-            field: `value_${this.currency}.sum_budget`
+            field: `value_${this.currency}.sum_3-4`
           }
         ]
       } else if (this.setFields.transaction_type.includes('budget')) {
