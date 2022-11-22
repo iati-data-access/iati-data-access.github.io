@@ -8,7 +8,7 @@
             link-classes="btn btn-link"
             :to="localePath({path: '/data/'})">{{ $t('dataOverview') }}</b-nav-item>
           <b-nav-text class="ml-2 mr-3 hide-on-collapse">&sdot;</b-nav-text>
-          <b-nav-text>{{ $t('dataDashboards') }}</b-nav-text>
+          <b-nav-text class="mr-2">{{ $t('dataDashboards') }}</b-nav-text>
           <b-dropdown
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
