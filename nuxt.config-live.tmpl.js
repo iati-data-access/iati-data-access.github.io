@@ -1,9 +1,14 @@
 import linkFixes from './plugins/link-fixes.js'
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/docs-beta2/'
+    base: '/docs-beta2/',
+    trailingSlash: true
   }
-} : {}
+} : {
+  router: {
+    trailingSlash: true
+  }
+}
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
