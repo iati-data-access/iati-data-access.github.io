@@ -102,7 +102,7 @@
       <b-col md="12" class="mt-2">
         <h3>by Activity</h3>
         <DataBrowser
-          :drilldowns="['activity.title']"
+          :drilldowns="['activity.iati_identifier', 'activity.title']"
           displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"

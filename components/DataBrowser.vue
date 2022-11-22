@@ -65,6 +65,11 @@
                 small
                 :items="cells"
                 :fields="tableFields">
+                <template #[iatiIdentifierSlotName]="data">
+                  <a
+                  :href="`https://d-portal.org/savi/?aid=${data.item['activity.iati_identifier']}`"
+                  target="_blank">{{ data.item['activity.iati_identifier'] }}</a>
+                </template>
               </b-table>
             </b-col>
           </b-row>
@@ -154,6 +159,9 @@ export default {
     }
   },
   computed: {
+    iatiIdentifierSlotName() {
+      return `cell(activity.iati_identifier)`
+    },
     optionsToBeSelected() {
       return (this.startedLoading==false) && (this.autoReload==false)
     },
