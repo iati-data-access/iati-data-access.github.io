@@ -1,0 +1,27 @@
+// -----------------------------------------------------------
+// Add brand items such as logos here
+// -----------------------------------------------------------
+
+.branding {
+    position: relative;
+    background-image: url(~/static/svg/source/logo-colour.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 230px;
+    height: 60px;
+    display: block;
+    margin-bottom: auto;
+    span {
+        visibility: hidden;
+    }
+}
+
+.branding-footer {
+    position: relative;
+    background-image: url(~/static/svg/source/logo-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 171px * 1.25;
+    height: 40px * 1.25;
+    display: block;
+}

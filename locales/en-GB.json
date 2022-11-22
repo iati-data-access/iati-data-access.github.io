@@ -1,0 +1,63 @@
+{
+  "title": "Country Development Finance Data",
+  "description": "Methodology and flat files for IATI data",
+  "language": "en",
+  "selectText": "Languages",
+  "label": "English",
+  "ariaLabel": "Languages",
+  "sidebar": [
+    ["/", "Home"],
+    ["/introduction/", "Introduction"],
+    ["/methodology/", "Methodology"],
+    ["/data-notes/", "Data Notes"]
+  ],
+  "dataOverview": "Summary Dashboard",
+  "dataDashboards": "Dashboards",
+  "dataCustomDownload": "Custom Data Download",
+  "dataSidebarDropdowns": [
+    {
+      "path": "/data/countries/",
+      "name": "data-countries",
+      "label": "by Country",
+      "field": "recipient_country_or_region"
+    },
+    {
+      "path": "/data/providers/",
+      "name": "data-providers",
+      "label": "by Provider",
+      "field": "reporting_organisation"
+    },
+    {
+      "path": "/data/sectors/",
+      "name": "data-sectors",
+      "label": "by Sector",
+      "field": "sector_category"
+    }
+  ],
+  "translations": {
+    "selectCountry": "Select a country",
+    "downloadFile": "Download file",
+    "lastUpdated": "Last updated",
+    "language": "Language"
+  },
+  "countriesCurrenciesFields": [
+    {
+      "key": "countryCode",
+      "label": "Country Code"
+    },
+    {
+      "key": "countryName",
+      "label": "Country Name"
+    },
+    {
+      "key": "currency",
+      "label": "Currency"
+    }
+  ],
+  "languageOptions": [
+    {"value": "en", "text": "English"},
+    {"value": "fr", "text": "French"},
+    {"value": "es", "text": "Spanish"},
+    {"value": "pt", "text": "Portuguese"}
+  ]
+}

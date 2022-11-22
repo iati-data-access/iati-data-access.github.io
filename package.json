@@ -1,18 +1,43 @@
 {
+  "name": "Country Development Finance Data documentation",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:build_subfolder": "DEPLOY_ENV=WITH_SUBFOLDER vuepress build docs",
-    "deploy": "push-dir --dir=docs/.vuepress/dist --branch=gh-pages --cleanup"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "gen-gh": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "axios": "^0.23.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/gtm": "^2.4.0",
+    "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.19.3",
+    "leaflet": "^1.9.2",
     "markdown-it-footnote": "^3.0.3",
-    "vue-select": "^3.13.2",
-    "vuepress": "^1.8.2"
+    "nuxt": "^2.15.8",
+    "nuxt-i18n": "^6.28.1",
+    "nuxt-leaflet": "^0.0.27",
+    "transliteration": "^2.3.5",
+    "vue": "^2.6.14",
+    "vue-chartjs": "^3.5.1",
+    "vue-select": "^3.20.0",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "vue2-leaflet": "^2.7.1",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "push-dir": "^0.4.1"
+    "@nuxt/content": "^1.15.1",
+    "push-dir": "^0.4.1",
+    "sass": "^1.54.4",
+    "sass-loader": "^10.3.1"
   }
 }

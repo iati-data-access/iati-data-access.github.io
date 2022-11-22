@@ -9,16 +9,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - name: Copy config file
+      run: |
+        cp nuxt.config-live.tmpl.js nuxt.config.js
     - name: Install javascript dependencies
       run: |
         npm install
     - name: Run build
       run: |
-        npm run docs:build
+        npm run generate
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/.vuepress/dist
+        publish_dir: ./dist
         force_orphan: true
