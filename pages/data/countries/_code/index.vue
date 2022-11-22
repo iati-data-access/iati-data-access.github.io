@@ -130,7 +130,8 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: [this.$route.params.code],
-        year: [lastYear]
+        year: [lastYear],
+        calendar_year_and_quarter: []
       },
       currency: 'usd'
     }

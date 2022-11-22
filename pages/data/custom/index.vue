@@ -59,7 +59,8 @@ export default {
       drilldowns: ['recipient_country_or_region'],
       setFields: {
         year: [lastYear],
-        transaction_type: ['budget']
+        transaction_type: ['budget'],
+        calendar_year_and_quarter: []
       },
       currency: 'usd'
     }

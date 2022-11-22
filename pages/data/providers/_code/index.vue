@@ -132,7 +132,8 @@ export default {
         sector_category: [],
         sector: [],
         recipient_country_or_region: [],
-        year: [lastYear]
+        year: [lastYear],
+        calendar_year_and_quarter: []
       },
       currency: 'usd'
     }

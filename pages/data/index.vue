@@ -60,8 +60,9 @@ export default {
       drilldown: 'recipient_country_or_region',
       drilldownValue: this.$route.params.code,
       setFields: {
+        transaction_type: ['3', '4'],
         year: [lastYear],
-        transaction_type: ['3', '4']
+        calendar_year_and_quarter: [],
       },
       currency: 'usd'
     }
