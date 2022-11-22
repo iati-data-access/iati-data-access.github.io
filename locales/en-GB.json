@@ -11,9 +11,9 @@
     ["/methodology/", "Methodology"],
     ["/data-notes/", "Data Notes"]
   ],
-  "dataOverview": "Summary",
-  "dataDashboards": "Data Dashboards",
-  "dataCustomDownload": "Custom Data",
+  "dataOverview": "Summary Dashboard",
+  "dataDashboards": "Dashboards",
+  "dataCustomDownload": "Custom Data Download",
   "dataSidebarDropdowns": [
     {
       "path": "/data/countries/",
