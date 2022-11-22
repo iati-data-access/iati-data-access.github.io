@@ -9,7 +9,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Copy config file
       run: |
         cp nuxt.config-live.tmpl.js nuxt.config.js
