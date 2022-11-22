@@ -3,7 +3,7 @@
 This repository provides a front-end interface to access the files for the IATI Country Development Finance Data tool. It is visible at:
 https://countrydata.iatistandard.org/
 
-It also communicates with a back-end API for
+It also communicates with a back-end API for visualising data in a new data browser: https://countrydata.iatistandard.org/
 
 The data behind this repository is generated in the following repositories for each language:
 
