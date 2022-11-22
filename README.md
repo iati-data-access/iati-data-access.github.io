@@ -1,40 +1,42 @@
 # IATI Country Development Finance Data front-end
 
 This repository contains the files for the front-end of IATI Country Development Finance Data. It is visible at:
-https://countrydata.iatistandard.org/
+https://countrydata.iatistandard.org/docs-beta2/
 
 The data behind this repository is generated in the following repository:
 https://github.com/iati-data-access/data-beta
 
-The data is then saved into repositories for each language, e.g.
+The data is then saved into repositories for each language:
 
   * English: https://github.com/iati-data-access/data-en
   * French: https://github.com/iati-data-access/data-fr
+  * Spanish: https://github.com/iati-data-access/data-es
+  * Portuguese: https://github.com/iati-data-access/data-pt
 
-## Installation
 
-This site is developed in [VuePress](https://vuepress.vuejs.org/). It is very simple to manage and install.
-
-```bash
-git clone git@github.com:iati-data-access/iati-data-access.github.io.git
-cd iati-data-access.github.io
-npm install
-```
-
-Run a development server:
+## Build Setup
 
 ```bash
-npm run docs:dev
+# clone repository
+$ git clone git@github.com:iati-data-access/docs-beta2.git
+$ cd docs-beta2
+
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
 ```
 
-Build for production:
+For detailed explanation on how things work, check out the NuxtJS [documentation](https://nuxtjs.org).
 
-```bash
-npm run docs:build
-```
+When pushing to the repository [only the main branch, eventually], Github Actions automatically builds and deploys the front end.
 
-Deploy to Github Pages:
-
-```bash
-npm run deploy
-```
+## Setup
