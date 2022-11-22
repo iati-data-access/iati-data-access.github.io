@@ -4,6 +4,8 @@
       :data="chartData"
       :options="barChartOptions"
       class="bar-chart"
+      :style="barChartHeight"
+      ref="barChart"
       ></BarChart>
   </div>
 </template>
@@ -38,12 +40,18 @@ export default {
     },
     'clickable': {
       default: false
+    },
+    'height': {
+      default: '400px'
     }
   },
   components: {
     BarChart
   },
   computed: {
+    barChartHeight() {
+      return `height: ${this.height};`
+    },
     barChartOptions(){
       return {
         maintainAspectRatio: false,
@@ -112,7 +120,7 @@ export default {
             label: dataset.label,
             fill: true,
             data: this.cells.map(item => {
-              return item[`value_${this.currency}.sum`]
+              return item[dataset.field]
             }),
             backgroundColor: dataset.backgroundColor
           }
