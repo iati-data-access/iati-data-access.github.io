@@ -49,10 +49,9 @@
 
 import { mapState } from 'vuex'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
-import DataBrowserAggregates from '~/components/DataBrowserAggregates'
 import DataBrowser from '~/components/DataBrowser'
 export default {
-  components: { DataBrowserNavbar, DataBrowserAggregates, DataBrowser },
+  components: { DataBrowserNavbar, DataBrowser },
   data() {
     const lastYear = new Date().getFullYear()-1
     return {
