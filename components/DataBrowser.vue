@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row>
+    <b-row v-if="showNumberResults">
       <b-col md="4">
         <b-form-group
           label-size="sm"
@@ -57,6 +57,7 @@
                 :cells="cells"
                 :drilldown="drilldowns[0]"
                 :datasets="barChartDatasets"
+                :height="barChartHeight"
               />
             </b-col>
             <b-col v-if="displayAs=='table'">
@@ -134,6 +135,12 @@ export default {
     },
     autoReload: {
       default: true
+    },
+    barChartHeight: {
+      default: '400px'
+    },
+    showNumberResults: {
+      default: true
     }
   },
   data() {
@@ -151,18 +158,33 @@ export default {
       return (this.startedLoading==false) && (this.autoReload==false)
     },
     barChartDatasets() {
-      if (this.setFields.transaction_type.includes('budget')) {
+      if (this.setFields.transaction_type.length == 3) {
         return [
           {
             label: 'Budgets',
-            backgroundColor: '#155366'
+            backgroundColor: '#155366',
+            field: `value_${this.currency}.sum_3-4`
+          },
+          {
+            label: 'Spending',
+            backgroundColor: '#06DBE4',
+            field: `value_${this.currency}.sum_budget`
+          }
+        ]
+      } else if (this.setFields.transaction_type.includes('budget')) {
+        return [
+          {
+            label: 'Budgets',
+            backgroundColor: '#155366',
+            field: `value_${this.currency}.sum`
           }
         ]
       } else {
         return [
           {
             label: 'Spending',
-            backgroundColor: '#06DBE4'
+            backgroundColor: '#06DBE4',
+            field: `value_${this.currency}.sum`
           }
         ]
       }
@@ -213,13 +235,32 @@ export default {
       return 'en' // this.$i18n.locale
     },
     tableFields() {
-      return this.drilldowns.map(item => {
+      const _fields = this.drilldowns.map(item => {
         return {
           key: item,
           label: this.availableDrilldowns[item],
           sortable: true
         }
-      }).concat({
+      })
+      if (this.rolllups != '') {
+        return _fields.concat({
+          key: `value_${this.currency}.sum_3-4`,
+          label: `Value (${this.currency.toUpperCase()}): Spending`,
+          formatter: this.numberFormatter,
+          thClass: "text-right",
+          tdClass: "text-right",
+          sortable: true
+        }).concat({
+          key: `value_${this.currency}.sum_budget`,
+          label: `Value (${this.currency.toUpperCase()}): Budget`,
+          formatter: this.numberFormatter,
+          thClass: "text-right",
+          tdClass: "text-right",
+          sortable: true
+        })
+      }
+
+      return _fields.concat({
         key: `value_${this.currency}.sum`,
         label: `Value (${this.currency.toUpperCase()})`,
         formatter: this.numberFormatter,
@@ -231,6 +272,9 @@ export default {
     cuts() {
       return Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
+          if ((field[0] == 'transaction_type') && field[1].length == 3) {
+            return summary
+          }
           if (['year', 'quarter', 'calendar_year_and_quarter'].includes(field[0])) {
             const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
@@ -245,10 +289,16 @@ export default {
         return summary
       }, []).join('|')
     },
+    rollups() {
+      if (this.setFields.transaction_type.length == 3) {
+        return '&rollup=transaction_type.code:[["3","4"],["budget"]]'
+      }
+      return ''
+    },
     summaryURL() {
       // NB the API limits to a maximum of 10,000 responses without paginating
       const pageSize = this.pageSize != null ? this.pageSize : 10000
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
     },
     granularURL() {
       // NB the API limits to a maximum of 10,000 responses without paginating
@@ -265,6 +315,7 @@ export default {
   components: { BarChartComponent, Map },
   methods: {
     numberFormatter(value) {
+      if (value == null) { value = 0 }
       return value.toLocaleString(undefined, {maximumFractionDigits: 0})
     },
     loadData() {
