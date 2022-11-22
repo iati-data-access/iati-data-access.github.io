@@ -3,10 +3,12 @@
     <b-navbar class="navbar-secondary mb-4" variant="light" type="light" toggleable="lg">
       <b-navbar-toggle target="nav-secondary-collapse"></b-navbar-toggle>
       <b-collapse id="nav-secondary-collapse" is-nav>
-        <b-navbar-nav>
+        <b-navbar-nav class="align-items-start">
           <b-nav-item
             link-classes="btn btn-link"
             :to="localePath({path: '/data/'})">{{ $t('dataOverview') }}</b-nav-item>
+          <b-nav-text class="ml-2 mr-3 hide-on-collapse">&sdot;</b-nav-text>
+          <b-nav-text>{{ $t('dataDashboards') }}</b-nav-text>
           <b-dropdown
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
@@ -20,6 +22,8 @@
               :dropdown-should-open="function() { return true}"
               ></v-select>
           </b-dropdown>
+        </b-navbar-nav>
+        <b-navbar-nav class="ml-auto">
           <b-nav-item
             link-classes="btn btn-link"
             :to="localePath({path: '/data/custom/'})">{{ $t('dataCustomDownload') }}</b-nav-item>
@@ -37,6 +41,9 @@
       color: #0056b3;
     }
   }
+}
+.collapse.show .hide-on-collapse {
+  display: none;
 }
 </style>
 <script>
