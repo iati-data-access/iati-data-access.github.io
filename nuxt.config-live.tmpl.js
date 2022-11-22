@@ -7,7 +7,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  trailingSlash: true,
   generate: {
     fallback: true
   },
