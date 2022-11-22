@@ -149,6 +149,11 @@ export default {
           value: 'spending',
           text: 'Spending',
           class: 'spending'
+        },
+        {
+          value: 'both',
+          text: 'Both',
+          class: 'secondary'
         }
       ],
       showFilters: false,
@@ -190,7 +195,9 @@ export default {
   },
   watch: {
     budgetsSpending(value) {
-      if (value == 'spending') {
+      if (value == 'both') {
+        this.updateField('transaction_type', ['3', '4', 'budget'])
+      } else if (value == 'spending') {
         this.updateField('transaction_type', ['3', '4'])
       } else {
         this.updateField('transaction_type', ['budget'])
