@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Copy config file
+      run: |
+        cp nuxt.config-live.tmpl.js nuxt.config.js
     - name: Install javascript dependencies
       run: |
         npm install
