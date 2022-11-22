@@ -6,9 +6,13 @@
     </h2>
     <b-row>
       <b-col>
-        <DataBrowserSpendSummary
-          drilldown="recipient_country_or_region"
-          :drilldown-value="drilldownValue" />
+        <DataBrowser
+          :drilldowns="['year.year']"
+          :setFields="summarySetFields"
+          :currency.sync="currency"
+          bar-chart-height="300px"
+          :show-number-results="false"
+          :pageSize="null" />
       </b-col>
     </b-row>
     <b-row>
@@ -113,9 +117,8 @@ import { mapState } from 'vuex'
 import DataBrowser from '~/components/DataBrowser'
 import DataBrowserFilter from '~/components/DataBrowserFilter'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
-import DataBrowserSpendSummary from '~/components/DataBrowserSpendSummary'
 export default {
-  components: { DataBrowser, DataBrowserFilter, DataBrowserSpendSummary },
+  components: { DataBrowser, DataBrowserFilter },
   data() {
     const lastYear = new Date().getFullYear()-1
     return {
@@ -137,6 +140,19 @@ export default {
     }
   },
   computed: {
+    summarySetFields() {
+      return {
+        recipient_country_or_region: [this.$route.params.code],
+        transaction_type: ['3', '4', 'budget'],
+        year: this.calendarYears
+      }
+    },
+    calendarYears() {
+      var years = []
+      const year = new Date().getFullYear()
+      const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+      return range(year-3, year+3).map(year => { return `${year}` })
+    },
     drilldownLabel() {
       if (this.fields[this.drilldown].length == 0) {
         return ''
