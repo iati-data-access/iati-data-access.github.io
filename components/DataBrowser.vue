@@ -30,20 +30,11 @@
               <font-awesome-icon :icon="['fa', option.icon]" />
             </b-form-radio>
           </b-form-radio-group>
-          <b-dropdown
-            right
+          <b-btn
             variant="outline-secondary"
-            size="sm">
-            <template #button-content>
-              <font-awesome-icon :icon="['fa', 'download']" />
-            </template>
-            <b-dropdown-item
-              :href="summaryURL+'&format=csv'"><font-awesome-icon :icon="['fa', 'download']" /> CSV
-            </b-dropdown-item>
-            <b-dropdown-item
-              :href="summaryURL+'&format=xlsx'"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
-            </b-dropdown-item>
-          </b-dropdown>
+            size="sm"
+            :href="summaryURL+'&format=xlsx'"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
+          </b-btn>
         </b-form-group>
       </b-col>
     </b-row>
