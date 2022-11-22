@@ -75,11 +75,14 @@ export default {
         this.$emit('update:selectedRegion', newValue)
       }
     },
+    dataset() {
+      return this.datasets[0]
+    },
     regionData() {
       return this.data.reduce((summary, item) => {
         summary[item["recipient_country_or_region.code"]] = {
-          opacity: (item[`value_${this.currency}.sum`] / this.total)*100,
-          value: item[`value_${this.currency}.sum`].toLocaleString(undefined, {
+          opacity: (item[this.dataset.field] / this.total)*100,
+          value: item[this.dataset.field] == null ? "0.00" : item[this.dataset.field].toLocaleString(undefined, {
             maximumFractionDigits: 2,
             minimumFractionDigits: 2
           })
@@ -89,7 +92,7 @@ export default {
     },
     regionColours() {
       return this.regions.reduce((summary, item) => {
-        summary[item.name] = this.datasets[0].backgroundColor
+        summary[item.name] = this.dataset.backgroundColor
         return summary
       }, {})
     }
