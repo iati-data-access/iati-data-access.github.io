@@ -252,15 +252,15 @@ export default {
       })
       if (this.setFields.transaction_type.length == 3) {
         return _fields.concat({
-          key: `value_${this.currency}.sum_3-4`,
-          label: `Value (${this.currency.toUpperCase()}): Spending`,
+          key: `value_${this.currency}.sum_budget`,
+          label: `Value (${this.currency.toUpperCase()}): Budget`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",
           sortable: true
         }).concat({
-          key: `value_${this.currency}.sum_budget`,
-          label: `Value (${this.currency.toUpperCase()}): Budget`,
+          key: `value_${this.currency}.sum_3-4`,
+          label: `Value (${this.currency.toUpperCase()}): Spending`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",
