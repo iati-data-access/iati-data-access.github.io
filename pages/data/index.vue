@@ -5,7 +5,7 @@
     <b-row>
       <b-col>
         <DataBrowserFilter
-          :exclude-filters="['recipient_country_or_region', 'reporting_organisation', 'sector', 'transaction_type']"
+          :exclude-filters="['transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
         />
@@ -61,7 +61,7 @@ export default {
       drilldownValue: this.$route.params.code,
       setFields: {
         year: [lastYear],
-        transaction_type: ['budget']
+        transaction_type: ['3', '4']
       },
       currency: 'usd'
     }
