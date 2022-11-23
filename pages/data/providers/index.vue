@@ -1,9 +1,9 @@
 <template>
   <div>
     <DataBrowserNavbar />
-    <h2>
+    <h1>
       Providers
-    </h2>
+    </h1>
     <p class="lead">Select a provider to explore the data.</p>
     <template v-if="fields.reporting_organisation.length >0 ">
       <b-card-group columns>
