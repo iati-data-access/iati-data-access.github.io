@@ -74,19 +74,24 @@
       </b-col>
     </b-row>
     <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="lg">
-      <b-col>
-        <DataBrowserFilterItem
-          :field="field"
-          :fieldOptions="fields[field]"
-          :fieldLabel="fieldNames[field][lang]"
-          :lang="lang"
-          :updateField="updateField"
-          :value="setFields[field]"
+      <b-card-group columns>
+        <b-card
+          border-variant="light"
+          body-class="p-2"
+          class="p-0"
           v-for="field in Object.keys(fields)"
           v-if="!excludeFilters.includes(field)"
           v-bind:key="field">
-        </DataBrowserFilterItem>
-      </b-col>
+          <DataBrowserFilterItem
+            :field="field"
+            :fieldOptions="fields[field]"
+            :fieldLabel="fieldNames[field][lang]"
+            :lang="lang"
+            :updateField="updateField"
+            :value="setFields[field]">
+          </DataBrowserFilterItem>
+        </b-card>
+      </b-card-group>
     </b-modal>
   </div>
 </template>
