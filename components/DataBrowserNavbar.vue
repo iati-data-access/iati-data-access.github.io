@@ -5,15 +5,19 @@
       <b-collapse id="nav-secondary-collapse" is-nav>
         <b-navbar-nav class="align-items-start">
           <b-nav-item
-            link-classes="btn btn-link"
-            :to="localePath({path: '/data/'})">{{ $t('dataOverview') }}</b-nav-item>
-          <b-nav-text class="ml-2 mr-3 hide-on-collapse">&sdot;</b-nav-text>
+            class="mr-4"
+            link-classes="btn btn-link btn-outline-primary"
+            exact-active-class="btn-primary"
+            :to="localePath('/data/')">{{ $t('dataOverview') }}</b-nav-item>
           <b-nav-text class="mr-2">{{ $t('dataDashboards') }}</b-nav-text>
           <b-dropdown
+            split
+            :split-to="localePath({path: dropdown.path})"
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
             :text="dropdown.label"
-            variant="link">
+            variant="outline-primary"
+            class="mr-2">
             <v-select
               :options="fields[dropdown.field]"
               v-model="navbar[dropdown.name]"
@@ -40,8 +44,11 @@
   .nav-item .btn-link {
     color: #007bff;
     &:hover, &:focus {
-      color: #0056b3;
+      color: #ffffff;
     }
+  }
+  .nav-item .btn-link.btn-primary {
+    color: #ffffff;
   }
 }
 .collapse.show .hide-on-collapse {

@@ -12,7 +12,7 @@
     ["/data-notes/", "Data Notes"]
   ],
   "dataOverview": "Summary Dashboard",
-  "dataDashboards": "Dashboards",
+  "dataDashboards": "Dashboards:",
   "dataCustomDownload": "Custom Data Download",
   "dataSidebarDropdowns": [
     {

@@ -1,29 +1,33 @@
 <template>
   <div>
     <b-row>
-      <b-col md="10">
+      <b-col :md="horizontal ? 10 : 12">
         <!-- Budgets or spending -->
-        <b-form inline>
+        <b-form :inline="horizontal">
           <b-form-group
             label="Currency"
-            class="mr-4 mt-2">
+            :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
               id="btn-currency"
               v-model="_currency"
               :options="currencyOptions"
               button-variant="outline-secondary"
               name="radio-btn-outline"
+              :stacked="!horizontal"
+              :class="!horizontal ? 'w-100': null"
               buttons
             ></b-form-radio-group>
           </b-form-group>
 
           <b-form-group
             label="Spending type"
-            class="mr-4 mt-2">
+            :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
               v-model="budgetsSpending"
               size="md"
               button-variant="outline-secondary"
+              :stacked="!horizontal"
+              :class="!horizontal ? 'w-100': null"
               buttons>
               <b-form-radio
                 :class="option.class"
@@ -38,7 +42,7 @@
           <b-form-group
             label="Calendar Year"
             style="min-width: 200px;"
-            class="mr-4 mt-2">
+            :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <v-select
               :options="years"
               multiple
@@ -60,15 +64,16 @@
         </b-form>
         <!-- Year -->
       </b-col>
-      <b-col md="2" class="text-right d-flex align-items-end">
+      <b-col :md="horizontal ? 2 : 12" :class="horizontal ? 'text-right d-flex align-items-end' : null">
         <b-button
           class="ml-md-auto"
           @click="showFilters = !showFilters"
           variant="secondary"
+          :block="!horizontal"
           >More filters <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row v-if="horizontal">
       <b-col>
         <hr />
       </b-col>
@@ -139,6 +144,9 @@ export default {
       default() {
         return []
       }
+    },
+    horizontal: {
+      default: true
     }
   },
   data() {

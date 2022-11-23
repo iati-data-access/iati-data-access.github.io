@@ -47,9 +47,19 @@ export const state = () => ({
     finance_type: [],
     flow_type: [],
     transaction_type: [],
+    recipient_country_or_region: [],
+    multi_country: [
+      {
+        code: 0,
+        label: "Not Multi Country"
+      },
+      {
+        code: 1,
+        label: "Multi Country"
+      }
+    ],
     sector_category: [],
     sector: [],
-    recipient_country_or_region: [],
     humanitarian: [
       {
         code: 0,
@@ -71,7 +81,8 @@ export const state = () => ({
     sector_category:  {'en': 'Sector Category'},
     sector:  {'en': 'Sector'},
     recipient_country_or_region:  {'en': 'Recipient Country or Region'},
-    humanitarian:  {'en': 'Humanitarian'}
+    humanitarian:  {'en': 'Humanitarian'},
+    multi_country:  {'en': 'Multi Country'}
   },
   codelistsRetrieved: false,
   years: ['2014', '2015', '2016', '2017',
