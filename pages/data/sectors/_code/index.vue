@@ -1,11 +1,13 @@
 <template>
   <div>
     <DataBrowserNavbar />
-    <h2>
-      Sector dashboard for <b>{{ drilldownLabel }}</b>
-    </h2>
+    <h1>
+      <b>{{ drilldownLabel }}</b> <span class="text-muted">Sector Dashboard</span>
+    </h1>
+    <hr />
     <b-row>
       <b-col>
+        <h2>Summary</h2>
         <DataBrowser
           :drilldowns="['year.year']"
           :setFields="summarySetFields"
@@ -22,6 +24,7 @@
     </b-row>
     <b-row>
       <b-col md="12" class="mt-2">
+        <h2>Explore the data</h2>
         <DataBrowserFilter
           :exclude-filters="['sector_category', 'transaction_type']"
           :setFields.sync="setFields"

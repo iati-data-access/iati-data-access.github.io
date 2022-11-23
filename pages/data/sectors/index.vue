@@ -1,9 +1,9 @@
 <template>
   <div>
     <DataBrowserNavbar />
-    <h2>
+    <h1>
       Sectors
-    </h2>
+    </h1>
     <p class="lead">Select a sector to explore the data.</p>
     <template v-if="fields.recipient_country_or_region.length >0 ">
       <b-card-group columns>
