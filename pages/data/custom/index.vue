@@ -3,15 +3,8 @@
     <DataBrowserNavbar />
     <h1>Custom data download</h1>
     <b-row>
-      <b-col>
-        <DataBrowserFilter
-          :setFields.sync="setFields"
-          :currency.sync="currency"
-        />
-      </b-col>
-    </b-row>
-    <b-row>
       <b-col md="3" class="mt-2">
+        <h2>Columns and Filters</h2>
         <b-form-group
           label="Select columns">
           <v-select
@@ -21,10 +14,11 @@
             :reduce="drilldown => drilldown.value"
             ></v-select>
         </b-form-group>
-        <b-form-group>
-          <b-btn variant="primary"
-            @click="runData">Run</b-btn>
-        </b-form-group>
+        <DataBrowserFilter
+          :setFields.sync="setFields"
+          :currency.sync="currency"
+          :horizontal="false"
+        />
       </b-col>
       <b-col md="9" class="mt-2">
         <h2>Preview</h2>
@@ -34,7 +28,6 @@
           displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"
-          :auto-reload="false"
          />
       </b-col>
     </b-row>
@@ -55,7 +48,7 @@ export default {
   data() {
     const lastYear = new Date().getFullYear()-1
     return {
-      drilldowns: ['recipient_country_or_region'],
+      drilldowns: ['recipient_country_or_region', 'activity.iati_identifier', 'activity.title'],
       setFields: {
         year: [lastYear],
         transaction_type: ['budget'],
