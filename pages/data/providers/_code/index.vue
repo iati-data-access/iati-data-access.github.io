@@ -2,7 +2,7 @@
   <div>
     <DataBrowserNavbar />
     <h1>
-      <b>{{ drilldownLabel }}</b> <span class="text-muted">Provider Dashboard</span>
+      <span class="text-muted">Provider Dashboard for</span> <b>{{ drilldownLabel }}</b>
     </h1>
     <hr />
     <b-row>
