@@ -3,13 +3,15 @@
     <b-navbar class="navbar-secondary mb-4" variant="light" type="light" toggleable="lg">
       <b-navbar-toggle target="nav-secondary-collapse"></b-navbar-toggle>
       <b-collapse id="nav-secondary-collapse" is-nav>
-        <b-navbar-nav class="align-items-start">
+        <b-navbar-nav>
           <b-nav-item
-            class="mr-4"
+            class="m-1"
             link-classes="btn btn-link btn-outline-primary"
             exact-active-class="btn-primary"
             :to="localePath('/data/')">{{ $t('dataOverview') }}</b-nav-item>
-          <b-nav-text class="mr-2">{{ $t('dataDashboards') }}</b-nav-text>
+        </b-navbar-nav>
+        <b-navbar-nav class="align-items-start">
+          <b-nav-text class="ml-4 mr-2">{{ $t('dataDashboards') }}</b-nav-text>
           <b-dropdown
             split
             :split-to="localePath({path: dropdown.path})"
@@ -17,7 +19,7 @@
             v-bind:key="dropdown.name"
             :text="dropdown.label"
             variant="outline-primary"
-            class="mr-2">
+            class="m-1">
             <v-select
               :options="fields[dropdown.field]"
               v-model="navbar[dropdown.name]"
