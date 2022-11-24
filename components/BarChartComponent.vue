@@ -61,7 +61,8 @@ export default {
               return this.chartData.labels[tooltipItem[0].index]
             }),
             label: ((tooltipItem, data) => {
-              var label = this.valueLabel || '';
+              const datasetLabel = data.datasets[tooltipItem.datasetIndex].label
+              var label = `${datasetLabel} (${this.currency.toUpperCase()})` || '';
 
               if (label) {
                   label += ': ';
