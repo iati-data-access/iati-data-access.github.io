@@ -29,13 +29,13 @@
               ></v-select>
           </b-dropdown>
         </b-navbar-nav>
-        <!--
         <b-navbar-nav class="ml-auto">
           <b-nav-item
-            link-classes="btn btn-link"
-            :to="localePath({path: '/data/custom/'})">{{ $t('dataCustomDownload') }}</b-nav-item>
+            class="m-1"
+            link-classes="btn btn-link btn-outline-primary"
+            exact-active-class="btn-primary"
+            :to="localePath('/data/custom/')">{{ $t('dataCustomDownload') }}</b-nav-item>
         </b-navbar-nav>
-        -->
       </b-collapse>
     </b-navbar>
   </div>
