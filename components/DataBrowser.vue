@@ -142,6 +142,9 @@ export default {
     },
     showNumberResults: {
       default: true
+    },
+    orderBy: {
+      default: null
     }
   },
   data() {
@@ -407,6 +410,9 @@ export default {
           })
           return item
         })
+        if (this.orderBy) {
+          this.cells = this.cells.sort((a, b) => a[this.orderBy].localeCompare(b[this.orderBy]));
+        }
         this.total = this.cells.reduce((summary, item) => {
           summary += item[`value_${this.currency}.sum`]
           return summary
