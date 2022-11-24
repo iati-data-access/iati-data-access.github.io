@@ -388,6 +388,11 @@ export default {
       if (this.clickable) {
         this.$router.push(this.localePath({name: 'data-countries-code', params: { code: code }}))
       }
+    },
+    drilldowns() {
+      if (this.autoReload) {
+        this.loadData()
+      }
     }
   },
   mounted: function() {
