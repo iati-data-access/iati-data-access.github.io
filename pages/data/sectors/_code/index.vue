@@ -14,7 +14,8 @@
           :currency.sync="currency"
           bar-chart-height="300px"
           :show-number-results="false"
-          :pageSize="null" />
+          :pageSize="null"
+          orderBy="year.year"  />
       </b-col>
     </b-row>
     <b-row>
