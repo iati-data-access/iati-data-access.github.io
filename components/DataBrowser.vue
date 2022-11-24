@@ -29,7 +29,7 @@
           <b-btn
             variant="outline-secondary"
             size="sm"
-            :href="summaryURL+'&format=xlsx'"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
+            :href="XLSXSummaryURL"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
           </b-btn>
         </b-form-group>
       </b-col>
