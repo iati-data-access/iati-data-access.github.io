@@ -149,5 +149,10 @@ export const actions = {
     }
 
     commit('setFields', {field: field, values: codes})
+  },
+  async nuxtServerInit({commit, state, dispatch}) {
+    this.dispatch('getCodelistData', { field: 'recipient_country_or_region', codelist: 'Country' })
+    this.dispatch('getCodelistData', { field: 'sector_category', codelist: 'SectorGroup' })
+    this.dispatch('getCodelistData', { field: 'reporting_organisation', codelist: 'ReportingOrganisation' })
   }
 };
