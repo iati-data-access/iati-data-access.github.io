@@ -6,11 +6,7 @@
           label-size="sm"
           label="Number of results">
           <b-input-group size="sm">
-            <b-input
-              v-model="pageSize" type="number" step="1" debounce="500" />
-            <b-input-group-append>
-              <b-btn @click="pageSize=null" :disabled="pageSize==null">Show all</b-btn>
-            </b-input-group-append>
+            <b-select v-model="pageSize" :options="pageSizeOptions" debounce="500"></b-select>
           </b-input-group>
         </b-form-group>
       </b-col>
@@ -150,12 +146,36 @@ export default {
   },
   data() {
     return {
+      request: null,
       showFilters: false,
       cells: [],
       total: 0.00,
       isBusy: true,
       selectedRegion: null,
-      startedLoading: false
+      startedLoading: false,
+      maxPageSize: 1048576,
+      pageSizeOptions: [
+        {
+          value: 10,
+          text: 10
+        },
+        {
+          value: 50,
+          text: 50
+        },
+        {
+          value: 100,
+          text: 100
+        },
+        {
+          value: 500,
+          text: 500
+        },
+        {
+          value: 1000,
+          text: 1000
+        }
+      ]
     }
   },
   computed: {
@@ -304,20 +324,23 @@ export default {
       return ''
     },
     summaryURL() {
-      // NB the API limits to a maximum of 10,000 responses without paginating
-      const pageSize = this.pageSize != null ? this.pageSize : 10000
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&pagesize=${pageSize}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
+    },
+    JSONSummaryURL() {
+      // NB the API limits to a maximum of 1,048,576 responses without paginating, because this is the Excel maximum number of rows. But we only want to show a maximum of 1000 on the preview.
+      const pageSize = this.pageSize != null ? this.pageSize : this.maxPageSize
+      return `${this.summaryURL}&pagesize=${pageSize}`
     },
     granularURL() {
-      // NB the API limits to a maximum of 10,000 responses without paginating
-      const pageSize = this.pageSize != null ? this.pageSize : 10000
+      // NB the API limits to a maximum of 1,048,576 responses without paginating. But we only want to show a maximum of 1000 on the preview.
+      const pageSize = this.pageSize != null ? this.pageSize : this.maxPageSize
       return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${pageSize}`
     },
     CSVSummaryURL() {
-      return `${this.summaryURL}&format=csv`
+      return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=csv`
     },
     XLSXSummaryURL() {
-      return `${this.summaryURL}&format=xlsx`
+      return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=xlsx`
     },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
@@ -329,7 +352,13 @@ export default {
     loadData() {
       this.startedLoading = true
       this.isBusy = true
-      axios.get(this.summaryURL)
+      // Stop any current requests
+      this.cancel();
+      let axiosSource = axios.CancelToken.source();
+      this.request = { cancel: axiosSource.cancel };
+      axios.get(this.JSONSummaryURL, {
+        cancelToken: axiosSource.token,
+      })
       .then(response => {
         this.cells = response.data.cells.map(item => {
           this.drilldowns.forEach(drilldown => {
@@ -351,6 +380,7 @@ export default {
         }, 0.0)
         this.isBusy = false
       }).catch(error => {
+        if (error == 'Cancel') { return }
         this.$bvToast.toast(`${error}`, {
           title: 'Error',
           autoHideDelay: 5000,
@@ -358,6 +388,12 @@ export default {
           variant: 'danger'
         })
       })
+    },
+    cancel() {
+      if (this.request) {
+        this.request.cancel()
+        this.request = null;
+      }
     }
   },
   watch: {
