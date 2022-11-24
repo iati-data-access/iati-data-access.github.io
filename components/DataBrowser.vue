@@ -200,21 +200,41 @@ export default {
           }
         ]
       } else if (this.setFields.transaction_type.includes('budget')) {
-        return [
-          {
-            label: 'Budgets',
-            backgroundColor: '#155366',
-            field: `value_${this.currency}.sum`
-          }
-        ]
+        if (this.setFields.year.length > 1) {
+          return this.setFields.year.map(year => {
+            return {
+              label: `Budgets (${year})`,
+              backgroundColor: '#155366',
+              field: `value_${this.currency}.sum_${year}`
+            }
+          })
+        } else {
+          return [
+            {
+              label: 'Budgets',
+              backgroundColor: '#155366',
+              field: `value_${this.currency}.sum`
+            }
+          ]
+        }
       } else {
-        return [
-          {
-            label: 'Spending',
-            backgroundColor: '#06DBE4',
-            field: `value_${this.currency}.sum`
-          }
-        ]
+        if (this.setFields.year.length > 1) {
+          return this.setFields.year.map(year => {
+            return {
+              label: `Spending (${year})`,
+              backgroundColor: '#06DBE4',
+              field: `value_${this.currency}.sum_${year}`
+            }
+          })
+        } else {
+          return [
+            {
+              label: 'Spending',
+              backgroundColor: '#06DBE4',
+              field: `value_${this.currency}.sum`
+            }
+          ]
+        }
       }
     },
     displayOptions() {
@@ -286,6 +306,17 @@ export default {
           tdClass: "text-right",
           sortable: true
         })
+      } else if (this.setFields.year.length > 1) {
+        return _fields.concat(this.setFields.year.map(year => {
+          return {
+            key: `value_${this.currency}.sum_${year}`,
+            label: `Value (${this.currency.toUpperCase()}): ${year}`,
+            formatter: this.numberFormatter,
+            thClass: "text-right",
+            tdClass: "text-right",
+            sortable: true
+          }
+        }))
       } else {
         return _fields.concat({
           key: `value_${this.currency}.sum`,
@@ -320,6 +351,8 @@ export default {
     rollups() {
       if (this.setFields.transaction_type.length == 3) {
         return '&rollup=transaction_type.code:[["3","4"],["budget"]]'
+      } else if (this.setFields.year.length > 1) {
+        return `&rollup=year.year:[${this.setFields.year.map(item => { return `["${item}"]`}).join(',')}]`
       }
       return ''
     },
