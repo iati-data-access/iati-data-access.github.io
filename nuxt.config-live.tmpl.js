@@ -122,7 +122,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseURL: 'https://countrydata.brough.io/api'
+    baseURL: 'https://cdfd.iati.opendataservices.coop/api'
   },
 
   // Google Tag Manager
