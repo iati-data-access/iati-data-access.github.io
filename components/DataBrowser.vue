@@ -37,7 +37,14 @@
     <b-row>
       <b-col>
         <template v-if="isBusy==false">
-          <b-row>
+          <b-row v-if="cells.length==0">
+            <b-col>
+              <b-alert show variant="warning">
+                There are no results for your selected filters.
+              </b-alert>
+            </b-col>
+          </b-row>
+          <b-row v-else>
             <b-col v-if="displayAs=='map'">
               <Map
                 :currency="currency"
