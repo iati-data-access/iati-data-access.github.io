@@ -339,7 +339,7 @@ export default {
       }
     },
     cuts() {
-      return Object.entries(this.setFields).reduce((summary, field) => {
+      const _cuts = Object.entries(this.setFields).reduce((summary, field) => {
         if (field[1].length > 0) {
           if ((field[0] == 'transaction_type') && field[1].length == 3) {
             return summary
@@ -357,6 +357,8 @@ export default {
         }
         return summary
       }, []).join('|')
+      if (_cuts != '') { return `&cut=${_cuts}` }
+      return ''
     },
     rollups() {
       if (this.setFields.transaction_type.length == 3) {
@@ -367,7 +369,7 @@ export default {
       return ''
     },
     summaryURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc&cut=${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
     },
     JSONSummaryURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating, because this is the Excel maximum number of rows. But we only want to show a maximum of 1000 on the preview.
@@ -377,7 +379,7 @@ export default {
     granularURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating. But we only want to show a maximum of 1000 on the preview.
       const pageSize = this.pageSize != null ? this.pageSize : this.maxPageSize
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc&cut=${this.cuts}&pagesize=${pageSize}`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc${this.cuts}&pagesize=${pageSize}`
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=csv`
