@@ -70,7 +70,7 @@ export default {
       return this.regionData[this.iso2] ? this.regionData[this.iso2].opacity : 0
     },
     optionsStyle() {
-      const _fillColor = this.regionColours[this.regionName] || "#ffffff"
+      const _fillColor = this.regionColours || "#ffffff"
       return {
         fillColor: _fillColor,
         weight: 1,

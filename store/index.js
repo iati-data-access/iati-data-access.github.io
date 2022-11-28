@@ -19,7 +19,7 @@ export const state = () => ({
     "provider_organisation_type": "Provider Organisation Type",
     "receiver_organisation": "Receiver Organisation",
     "receiver_organisation_type": "Receiver Organisation Type",
-    "transaction_type": "Transaction Type",
+    // "transaction_type": "Transaction Type", # Reconsider later.
     "recipient_country_or_region": "Recipient Country or Region",
     "multi_country": "Multi Country",
     "sector_category": "Sector Category",

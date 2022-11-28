@@ -7,18 +7,32 @@
         :center="center"
         :options="mapControls"
       >
-      <MapFeature
-        v-for="region in regions"
-        v-bind:key="region.iso2"
-        v-if="region.iso2!='-99'"
-        :region-colours="regionColours"
-        :geojson="region.features"
-        :region="region.region"
-        :iso2="region.iso2"
-        :regionName="region.regionName"
-        :selectedRegion.sync="filterRegion"
-        :regionData="regionData"
-        :currency="currency" />
+      <l-control-layers
+        position="topright"
+        :collapsed="false"
+      ></l-control-layers>
+      <l-layer-group
+        :name="dataset.label"
+        pane="overlayPane"
+        :ref="dataset.label"
+        v-for="(dataset, i) in datasets"
+        v-bind:key="dataset.label"
+        :dataset="dataset"
+        layerType="base"
+        :visible="i==0">
+        <MapFeature
+          v-for="region in regions"
+          v-bind:key="region.iso2"
+          v-if="region.iso2!='-99'"
+          :region-colours="dataset.backgroundColor"
+          :geojson="region.features"
+          :region="region.region"
+          :iso2="region.iso2"
+          :regionName="region.regionName"
+          :selectedRegion.sync="filterRegion"
+          :regionData="regionData[i]"
+          :currency="currency" />
+        </l-layer-group>
       </l-map>
     </client-only>
   </div>
@@ -56,13 +70,29 @@ export default {
       }
     }
   },
-  props: [
-    'data',
-    'total',
-    'selected-region',
-    'datasets',
-    'currency'
-  ],
+  props: {
+    data: {
+      default() {
+        return []
+      }
+    },
+    total: {
+      default: 0.0
+    },
+    selectedRegion: {
+      default() {
+        return []
+      }
+    },
+    datasets: {
+      default() {
+        return []
+      }
+    },
+    currency: {
+      default: 'usd'
+    },
+  },
   components: {
     MapFeature
   },
@@ -75,26 +105,23 @@ export default {
         this.$emit('update:selectedRegion', newValue)
       }
     },
-    dataset() {
-      return this.datasets[0]
-    },
     regionData() {
-      return this.data.reduce((summary, item) => {
-        summary[item["recipient_country_or_region.code"]] = {
-          opacity: (item[this.dataset.field] / this.total)*100,
-          value: item[this.dataset.field] == null ? "0.00" : item[this.dataset.field].toLocaleString(undefined, {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2
-          })
-        }
-        return summary
-      }, {})
-    },
-    regionColours() {
-      return this.regions.reduce((summary, item) => {
-        summary[item.name] = this.dataset.backgroundColor
-        return summary
-      }, {})
+      return this.datasets.map(dataset => {
+        const total = this.data.reduce((total, item) => {
+          total += item[dataset.field] ? item[dataset.field] : 0.0
+          return total
+        }, 0.0)
+        return this.data.reduce((summary, item) => {
+          summary[item["recipient_country_or_region.code"]] = {
+            opacity: (item[dataset.field] / total)*100,
+            value: item[dataset.field] == null ? "0.00" : item[dataset.field].toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+              minimumFractionDigits: 2
+            })
+          }
+          return summary
+        }, {})
+      })
     }
   },
   methods: {
