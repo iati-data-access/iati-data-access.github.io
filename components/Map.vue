@@ -7,7 +7,10 @@
         :center="center"
         :options="mapControls"
       >
-      <l-control-layers position="topright"></l-control-layers>
+      <l-control-layers
+        position="topright"
+        :collapsed="false"
+      ></l-control-layers>
       <l-layer-group
         :name="dataset.label"
         pane="overlayPane"
