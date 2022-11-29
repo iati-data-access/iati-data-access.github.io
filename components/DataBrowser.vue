@@ -412,7 +412,7 @@ export default {
             } else if (drilldown == 'humanitarian') {
               item[drilldown] = (item[`${drilldown}.code`] === true) ? 'Humanitarian' : 'Development'
             } else if (drilldown == 'multi_country') {
-              item[drilldown] = (item[`${drilldown}.code`] === true) ? 'Multi-Country' : null
+              item[drilldown] = (item[`${drilldown}.code`] === true) ? 'Multi-Country' : 'Not Multi-Country'
             } else if (['recipient_country_or_region', 'reporting_organisation', 'reporting_organisation_type', 'receiver_organisation', 'provider_organisation'].includes(drilldown)) {
               item[drilldown] = item[`${drilldown}.name_${this.lang}`]
             } else {
