@@ -11,7 +11,11 @@
         button-variant="outline-secondary"
       ></b-form-radio-group>
     </b-form-group>
-    <iframe width="100%" height="315" :src="`https://www.youtube.com/embed/${this.accessAnalyse}?controls=0`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin:0px 0px 10px 0px;"></iframe>
+    <iframe
+      v-if="option.value == accessAnalyse"
+      v-for="option in $t('accessAnalyseOptions')"
+      v-bind:key="option.value"
+      width="100%" height="315" :src="`https://www.youtube.com/embed/${option.value}?controls=0`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin:0px 0px 10px 0px;"></iframe>
   </div>
 </template>
 <style>
