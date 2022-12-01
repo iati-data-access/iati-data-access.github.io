@@ -34,7 +34,7 @@ export default {
       selectedCountry: null,
       lastUpdated: null,
       language: 'en',
-      accessAnalyse: null
+      accessAnalyse: 'C9lZ-axeDMA'
     }
   },
   computed: {
