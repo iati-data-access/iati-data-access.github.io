@@ -14,6 +14,8 @@
 
 ## Guidance and Analysis Dashboard
 
+<access-analyse></access-analyse>
+
 The following guidance materials outline how to use the IATI Country Development Finance Data tool. The Excel Analysis Dashboard can be used to generate quick analysis in Excel using the outputs from this tool. See the guidance note for more detail.
 
 ### Guidance

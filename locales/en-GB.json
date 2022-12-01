@@ -11,6 +11,17 @@
     ["/methodology/", "Methodology"],
     ["/data-notes/", "Data Notes"]
   ],
+  "accessAnalyseOptions": [
+    {
+      "value": "C9lZ-axeDMA",
+      "text": "Access and Understand Data"
+    },
+    {
+      "value": "xlLq9Gurtf0",
+      "text": "Analyse Data"
+    }
+  ],
+  "dashboards": "Data Dashboards",
   "dataOverview": "Summary Dashboard",
   "dataDashboards": "Dashboards:",
   "dataCustomDownload": "Custom Data Download",
