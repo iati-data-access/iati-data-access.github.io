@@ -46,7 +46,8 @@
         <DataBrowserFilter
           :exclude-filters="['recipient_country_or_region',
             'reporting_organisation',
-            'sector_category']"
+            'sector_category',
+            'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           :horizontal="false"
