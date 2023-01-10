@@ -61,6 +61,8 @@
                 :drilldown="drilldowns[0]"
                 :datasets="barChartDatasets"
                 :height="barChartHeight"
+                :clickable="clickable"
+                :selectedDrilldown.sync="selectedDrilldown"
               />
             </b-col>
             <b-col v-if="displayAs=='table'">
@@ -72,6 +74,12 @@
                   <a
                   :href="`https://d-portal.org/savi/?aid=${data.item['activity.iati_identifier']}`"
                   target="_blank">{{ data.item['activity.iati_identifier'] }}</a>
+                </template>
+                <template #[clickableDrilldownSlotName]="data">
+                  <nuxt-link :to="localePath({
+                    name: selectedDrilldownPath,
+                    params: { code: data.item[`${drilldowns[0]}.code`] }
+                  })">{{ data.item[`${drilldowns[0]}.name_${lang}`] }}</nuxt-link>
                 </template>
               </b-table>
             </b-col>
@@ -189,8 +197,25 @@ export default {
     }
   },
   computed: {
+    selectedDrilldownPath() {
+      const d = this.drilldowns.join('')
+      if (d == 'reporting_organisation') {
+        return 'data-providers-code'
+      }
+      else if (d == 'recipient_country_or_region') {
+        return 'data-countries-code'
+      }
+      else if (d == 'sector_category') {
+        return 'data-sectors-code'
+      }
+    },
     iatiIdentifierSlotName() {
       return `cell(activity.iati_identifier)`
+    },
+    clickableDrilldownSlotName() {
+      if ((this.drilldowns.length == 1) && (this.clickable == true)) {
+        return `cell(${this.drilldowns[0]})`
+      }
     },
     optionsToBeSelected() {
       return (this.startedLoading==false) && (this.autoReload==false)
@@ -443,6 +468,12 @@ export default {
       if (this.request) {
         this.request.cancel()
         this.request = null;
+      }
+    },
+    selectedDrilldown(code) {
+      const path = this.selectedDrilldownPath
+      if (path) {
+        this.$router.push(this.localePath({name: path, params: { code: code }}))
       }
     }
   },
