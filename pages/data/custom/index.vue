@@ -6,7 +6,10 @@
       <b-col md="3" class="mt-2">
         <h3>Columns</h3>
         <b-form-group
-          label="Select columns">
+          label="Select columns"
+          :state="drilldowns.length == 0 ? false : true"
+          invalid-feedback="You must select at least one column"
+          :description="drilldowns.length > 1 ? 'Drag columns to reorder output' : null">
           <v-select
             multiple
             :options="drilldownOptions"
