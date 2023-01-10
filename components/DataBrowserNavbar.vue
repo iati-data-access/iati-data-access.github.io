@@ -43,14 +43,29 @@
 <style lang="scss">
 .navbar-secondary {
   background-color: #eee !important;
-  .nav-item .btn-link {
-    color: #007bff;
-    &:hover, &:focus {
+  .btn-link {
+    color: #155366 !important;
+    &:hover, &:focus, &:active {
       color: #ffffff;
     }
   }
-  .nav-item .btn-link.btn-primary {
-    color: #ffffff;
+  .btn-outline-primary {
+    color: #155366 !important;
+    border-color: #155366;
+    &:hover, &:focus, &:active {
+      color: #ffffff !important;
+      border-color: #06DBE4 !important;
+      background-color: #06DBE4 !important;
+    }
+  }
+  .btn-primary {
+    color: #ffffff !important;
+    background-color: #155366;
+    border-color: #155366;
+    &:hover, &:focus, &:active {
+      background-color: #06DBE4 !important;
+      border-color: #06DBE4 !important;
+    }
   }
 }
 .collapse.show .hide-on-collapse {

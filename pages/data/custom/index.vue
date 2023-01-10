@@ -6,13 +6,35 @@
       <b-col md="3" class="mt-2">
         <h3>Columns</h3>
         <b-form-group
-          label="Select columns">
+          label="Select columns"
+          :state="drilldowns.length == 0 ? false : true"
+          invalid-feedback="You must select at least one column"
+          :description="drilldowns.length > 1 ? 'Drag columns to reorder output' : null">
           <v-select
             multiple
             :options="drilldownOptions"
-            v-model="drilldowns"
-            :reduce="drilldown => drilldown.value"
-            ></v-select>
+            v-model="drilldownsWithLabels"
+            >
+            <template #selected-option-container="{ option }">
+              <div class="hidden-option">{{ option }}</div>
+            </template>
+          </v-select>
+          <draggable v-model="drilldownsWithLabels"
+            ghost-class="hidden" @start="drag=true" @end="drag=false">
+            <div class="vs__selected draggable-item"
+              v-for="(drilldown, index) in drilldownsWithLabels"
+              :key="drilldown.value">
+                {{ drilldown.label }}
+                <button
+                  type="button"
+                  :title="`Deselect ${drilldown.label}`"
+                  :aria-label="`Deselect ${drilldown.label}`"
+                  class="vs__deselect"
+                 @click="$delete(drilldownsWithLabels, index)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg>
+                </button>
+              </div>
+          </draggable>
         </b-form-group>
         <hr />
         <h3>Filters</h3>
@@ -46,7 +68,8 @@
         <DataBrowserFilter
           :exclude-filters="['recipient_country_or_region',
             'reporting_organisation',
-            'sector_category']"
+            'sector_category',
+            'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           :horizontal="false"
@@ -70,6 +93,12 @@
 .custom-data-browser {
   min-height: 650px;
 }
+.draggable-item {
+  cursor:  grab;
+}
+.hidden-option {
+  display: none;
+}
 </style>
 <script>
 
@@ -88,7 +117,8 @@ export default {
         calendar_year_and_quarter: []
       },
       currency: 'usd',
-      autoReload: true
+      autoReload: true,
+      drilldownsWithLabels: []
     }
   },
   methods: {
@@ -97,6 +127,14 @@ export default {
     },
     updateField(field, values) {
       this.$set(this.setFields, field, values)
+    },
+    setDrilldownsWithLabels() {
+      this.drilldownsWithLabels = this.drilldowns.map(item => {
+        return {
+          value: item,
+          label: this.availableDrilldowns[item]
+        }
+      })
     }
   },
   computed: {
@@ -114,6 +152,16 @@ export default {
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
+    this.setDrilldownsWithLabels()
+  },
+  watch: {
+    drilldownsWithLabels: {
+      handler() {
+        this.drilldowns = this.drilldownsWithLabels.map(item => {
+          return item.value
+        })
+      }
+    }
   }
 }
 </script>

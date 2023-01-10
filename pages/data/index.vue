@@ -30,6 +30,7 @@
           displayAs="barChart"
           :setFields="setFields"
           :currency.sync="currency"
+          :clickable="true"
          />
       </b-col>
     </b-row>
@@ -41,6 +42,7 @@
           displayAs="barChart"
           :setFields="setFields"
           :currency.sync="currency"
+          :clickable="true"
          />
       </b-col>
     </b-row>

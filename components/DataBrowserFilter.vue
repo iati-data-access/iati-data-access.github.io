@@ -79,11 +79,9 @@
       </b-col>
     </b-row>
     <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="lg">
-      <b-card-group columns>
-        <b-card
-          border-variant="light"
-          body-class="p-2"
-          class="p-0"
+      <b-row cols="3" class="p-3">
+        <b-col
+          class="p-2"
           v-for="field in Object.keys(fields)"
           v-if="!excludeFilters.includes(field)"
           v-bind:key="field">
@@ -95,8 +93,8 @@
             :updateField="updateField"
             :value="setFields[field]">
           </DataBrowserFilterItem>
-        </b-card>
-      </b-card-group>
+        </b-col>
+      </b-row>
     </b-modal>
   </div>
 </template>
