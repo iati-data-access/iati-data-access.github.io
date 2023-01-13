@@ -20,7 +20,7 @@
             <b-btn
               pill
               class="data-navbar-button"
-              :to="localePath({path: '/data/'})">{{ $t('dashboards') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+              :to="localePath({path: '/data/'})">{{ $t('dataDashboards.label') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 
             <b-nav-item-dropdown :text="$t('selectText')" right>
               <b-dropdown-item
@@ -53,6 +53,7 @@
   background-color: #06DBE4;
   border-color: #06DBE4;
 }
+
 .page-container {
   word-break: break-word;
 }
