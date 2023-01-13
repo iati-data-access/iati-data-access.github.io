@@ -57,7 +57,7 @@ export default {
           this.clickRegion()
         })
         layer.bindTooltip(
-          `<b>${this.regionName}</b><br />Amount (${this.currency.toUpperCase()}): ${this.value}`,
+          `<b>${this.regionName}</b><br />${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.value}`,
           { permanent: false,
             sticky: true}
         );

@@ -1,7 +1,7 @@
 <template>
   <div>
     <DataBrowserNavbar />
-    <h1>Summary</h1>
+    <h1>{{ $t('dataDashboards.summary') }}</h1>
     <b-row>
       <b-col>
         <DataBrowserFilter
@@ -13,7 +13,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h2>By country</h2>
+        <h2>{{ $t('dataDashboards.countries.by') }}</h2>
         <DataBrowser
           :drilldowns="['recipient_country_or_region']"
           displayAs="map"
@@ -24,7 +24,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h2>By provider</h2>
+        <h2>{{ $t('dataDashboards.providers.by') }}</h2>
         <DataBrowser
           :drilldowns="['reporting_organisation']"
           displayAs="barChart"
@@ -36,7 +36,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h2>By sector</h2>
+        <h2>{{ $t('dataDashboards.sectors.by') }}</h2>
         <DataBrowser
           :drilldowns="['sector_category']"
           displayAs="barChart"
@@ -72,6 +72,26 @@ export default {
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
+  },
+  head() {
+    return {
+      title: `${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('description')
+        }
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
+  },
+  watch: {
+    '$i18n.locale'() {
+      this.$store.dispatch('getCodelists')
+    }
   }
 }
 </script>

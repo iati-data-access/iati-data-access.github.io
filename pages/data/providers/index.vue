@@ -2,9 +2,9 @@
   <div>
     <DataBrowserNavbar />
     <h1>
-      Providers
+      {{ $t('dataDashboards.providers.label') }}
     </h1>
-    <p class="lead">Select a provider to explore the data.</p>
+    <p class="lead">{{ $t('dataDashboards.providers.select') }}</p>
     <template v-if="fields.reporting_organisation.length >0 ">
       <b-card-group columns>
         <b-card
@@ -39,6 +39,26 @@ export default {
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
+  },
+  head() {
+    return {
+      title: `${this.$t('dataDashboards.providers.by')} - ${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('description')
+        }
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
+  },
+  watch: {
+    '$i18n.locale'() {
+      this.$store.dispatch('getCodelists')
+    }
   }
 }
 </script>

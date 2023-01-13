@@ -8,10 +8,10 @@
             class="m-1"
             link-classes="btn btn-link btn-outline-primary"
             exact-active-class="btn-primary"
-            :to="localePath('/data/')">{{ $t('dataOverview') }}</b-nav-item>
+            :to="localePath('/data/')">{{ $t('dataDashboards.overview') }}</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="align-items-start">
-          <b-nav-text class="ml-4 mr-2">{{ $t('dataDashboards') }}</b-nav-text>
+          <b-nav-text class="ml-4 mr-2">{{ $t('dataDashboards.dashboards') }}</b-nav-text>
           <b-dropdown
             split
             :split-to="localePath({path: dropdown.path})"
@@ -34,7 +34,7 @@
             class="m-1"
             link-classes="btn btn-link btn-outline-primary"
             exact-active-class="btn-primary"
-            :to="localePath('/data/custom/')">{{ $t('dataCustomDownload') }}</b-nav-item>
+            :to="localePath('/data/custom/')">{{ $t('dataDashboards.customDownload') }}</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

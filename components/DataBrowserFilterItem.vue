@@ -12,8 +12,8 @@
 <script>
 export default {
   props: ['field', 'fieldLabel',
-    'fieldOptions', 'lang',
-    'updateField', 'value'],
+    'fieldOptions', 'updateField',
+    'value'],
   data() {
     return {
     }
