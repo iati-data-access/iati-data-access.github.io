@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       isBusy: true,
-      valueLabel: `Amount (${this.currency.toUpperCase()})`
+      valueLabel: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`
     }
   },
   props: {
