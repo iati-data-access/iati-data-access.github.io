@@ -19,7 +19,6 @@ export const state = () => ({
     "provider_organisation_type": "Provider Organisation Type",
     "receiver_organisation": "Receiver Organisation",
     "receiver_organisation_type": "Receiver Organisation Type",
-    // "transaction_type": "Transaction Type", # Reconsider later.
     "recipient_country_or_region": "Recipient Country or Region",
     "multi_country": "Multi Country",
     "sector_category": "Sector Category",
@@ -71,20 +70,7 @@ export const state = () => ({
       }
     ]
   },
-  fieldNames: {
-    reporting_organisation: {'en': 'Reporting Organisation'},
-    reporting_organisation_type: {'en': 'Reporting Organisation Type'},
-    aid_type:  {'en': 'Aid Type'},
-    finance_type:  {'en': 'Finance Type'},
-    flow_type:  {'en': 'Flow Type'},
-    transaction_type:  {'en': 'Transaction Type'},
-    sector_category:  {'en': 'Sector Category'},
-    sector:  {'en': 'Sector'},
-    recipient_country_or_region:  {'en': 'Recipient Country or Region'},
-    humanitarian:  {'en': 'Humanitarian'},
-    multi_country:  {'en': 'Multi Country'}
-  },
-  codelistsRetrieved: false,
+  codelistsRetrieved: null,
   years: ['2014', '2015', '2016', '2017',
         '2018', '2019', '2020', '2021', '2022',
         '2023', '2024', '2025', '2026', '2027',
@@ -95,17 +81,20 @@ export const state = () => ({
 export const mutations = {
   setFields(state, { field, values }) {
     Vue.set(state.fields, field, values);
-    state.codelistsRetrieved = true
   },
   setCodelistsRetrieved(state, value) {
     state.codelistsRetrieved = value
+  },
+  setAvailableDrilldowns(state, value) {
+    state.availableDrilldowns = value
   }
 };
 
 export const actions = {
   async getCodelists({commit, state, dispatch}) {
-    if (state.codelistsRetrieved == false) {
-      commit('setCodelistsRetrieved', null)
+    if (state.codelistsRetrieved != this.$i18n.locale) {
+      commit('setCodelistsRetrieved', this.$i18n.locale)
+      commit('setAvailableDrilldowns', this.$i18n.t('dataDashboards.availableDrilldowns'))
       Object.keys(state.fields).forEach(field => {
         const codelist = state.codelistLookups[field]
         if (codelist == undefined) {
@@ -116,7 +105,7 @@ export const actions = {
     }
   },
   async getCodelistData({ commit }, { field, codelist }) {
-    const response = await axios.get(`https://codelists.codeforiati.org/api/json/en/${codelist}.json`
+    const response = await axios.get(`https://codelists.codeforiati.org/api/json/${this.$i18n.locale}/${codelist}.json`
       )
     const data = response.data.data
     var codes = Object.values(data.reduce((summary, item) => {
