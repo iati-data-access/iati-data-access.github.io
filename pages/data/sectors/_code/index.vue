@@ -170,6 +170,21 @@ export default {
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
+  },
+  head() {
+    return {
+      title: `${this.drilldownLabel} - ${this.$t('bySector')} - ${this.$t('dashboards')} - ${this.$t('title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('description')
+        }
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
   }
 }
 </script>

@@ -25,6 +25,9 @@
   "dataOverview": "Summary Dashboard",
   "dataDashboards": "Dashboards:",
   "dataCustomDownload": "Custom Data Download",
+  "byCountry": "by Country",
+  "byProvider": "by Provider",
+  "bySector": "by Sector",
   "dataSidebarDropdowns": [
     {
       "path": "/data/countries/",
