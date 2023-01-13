@@ -2,12 +2,12 @@
   <div>
     <DataBrowserNavbar />
     <h1>
-      <span class="text-muted">Sector Dashboard for</span> <b>{{ drilldownLabel }}</b>
+      <span class="text-muted">{{ $t('dataDashboards.sectors.for') }}</span> <b>{{ drilldownLabel }}</b>
     </h1>
     <hr />
     <b-row>
       <b-col>
-        <h2>Summary</h2>
+        <h2>{{ $t('dataDashboards.summary') }}</h2>
         <DataBrowser
           :drilldowns="['year.year']"
           :setFields="summarySetFields"
@@ -25,7 +25,7 @@
     </b-row>
     <b-row>
       <b-col md="12" class="mt-2">
-        <h2>Explore the data</h2>
+        <h2>{{ $t('dataDashboards.exploreTheData') }}</h2>
         <DataBrowserFilter
           :exclude-filters="['sector_category', 'transaction_type']"
           :setFields.sync="setFields"
@@ -35,7 +35,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h3>by Country</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.recipient_country_or_region') }}</h3>
         <DataBrowser
           :drilldowns="['recipient_country_or_region']"
           displayAs="map"
@@ -45,7 +45,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>by Reporting Organisation</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.reporting_organisation') }}</h3>
         <DataBrowser
           :drilldowns="['reporting_organisation']"
           :setFields="setFields"
@@ -60,7 +60,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h3>by Finance Type</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.finance_type') }}</h3>
         <DataBrowser
           :drilldowns="['finance_type']"
           :setFields="setFields"
@@ -68,7 +68,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>by Aid Type</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.aid_type') }}</h3>
         <DataBrowser
           :drilldowns="['aid_type']"
           :setFields="setFields"
@@ -83,7 +83,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h3>by Organisation Type</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.reporting_organisation_type') }}</h3>
         <DataBrowser
           :drilldowns="['reporting_organisation_type']"
           :setFields="setFields"
@@ -91,7 +91,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>by Humanitarian / Development</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.humanitarian') }}</h3>
         <DataBrowser
           :drilldowns="['humanitarian']"
           :setFields="setFields"
@@ -106,7 +106,7 @@
     </b-row>
     <b-row>
       <b-col md="12" class="mt-2">
-        <h3>by Activity</h3>
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.activity') }}</h3>
         <DataBrowser
           :drilldowns="['activity.iati_identifier', 'activity.title']"
           displayAs="table"
@@ -173,7 +173,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.drilldownLabel} - ${this.$t('bySector')} - ${this.$t('dashboards')} - ${this.$t('title')}`,
+      title: `${this.drilldownLabel} - ${this.$t('dataDashboards.sectors.by')} - ${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
       meta: [
         {
           hid: 'description',
@@ -184,6 +184,11 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale
       }
+    }
+  },
+  watch: {
+    '$i18n.locale'() {
+      this.$store.dispatch('getCodelists')
     }
   }
 }
