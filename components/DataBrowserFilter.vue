@@ -5,7 +5,7 @@
         <!-- Budgets or spending -->
         <b-form :inline="horizontal">
           <b-form-group
-            label="Currency"
+            :label="$t('dataDashboards.currency')"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
               id="btn-currency"
@@ -20,7 +20,7 @@
           </b-form-group>
 
           <b-form-group
-            label="Spending type"
+            :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
               v-model="budgetsSpending"
@@ -40,7 +40,7 @@
           </b-form-group>
 
           <b-form-group
-            label="Calendar Year"
+            :label="$t('dataDashboards.calendarYear')"
             style="min-width: 200px;"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <v-select
@@ -51,7 +51,7 @@
           </b-form-group>
 
           <b-form-group
-            label="Calendar Year and Quarter"
+            :label="$t('dataDashboards.calendarYearAndQuarter')"
             style="min-width: 200px;"
             class="mt-2">
             <v-select
@@ -70,7 +70,7 @@
           @click="showFilters = !showFilters"
           variant="secondary"
           :block="!horizontal"
-          >More filters <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
+          >{{ $t('dataDashboards.moreFilters') }} <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
       </b-col>
     </b-row>
     <b-row v-if="horizontal">
@@ -88,8 +88,7 @@
           <DataBrowserFilterItem
             :field="field"
             :fieldOptions="fields[field]"
-            :fieldLabel="fieldNames[field][lang]"
-            :lang="lang"
+            :fieldLabel="availableDrilldowns[field]"
             :updateField="updateField"
             :value="setFields[field]">
           </DataBrowserFilterItem>
@@ -153,17 +152,17 @@ export default {
       budgetsSpendingOptions: [
         {
           value: 'budgets',
-          text: 'Budgets',
+          text: this.$t('dataDashboards.budgetsSpending.budgets'),
           class: 'budgets'
         },
         {
           value: 'spending',
-          text: 'Spending',
+          text: this.$t('dataDashboards.budgetsSpending.spending'),
           class: 'spending'
         },
         {
           value: 'both',
-          text: 'Both',
+          text: this.$t('dataDashboards.budgetsSpending.both'),
           class: 'secondary'
         }
       ],
@@ -189,11 +188,8 @@ export default {
       set(value) {
         this.$emit('update:currency', value)
       }
-    },
-    lang() {
-      return 'en' // this.$i18n.locale
     },...mapState(['codelistLookups', 'fields',
-      'fieldNames', 'years', 'calendar_years_and_quarters'])
+      'availableDrilldowns', 'years', 'calendar_years_and_quarters'])
   },
   components: {
     DataBrowserFilterItem
