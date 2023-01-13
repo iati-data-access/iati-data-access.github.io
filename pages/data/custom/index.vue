@@ -1,15 +1,15 @@
 <template>
   <div class="custom-data-browser">
     <DataBrowserNavbar />
-    <h1>Custom data download</h1>
+    <h1>{{ $t('dataDashboards.customDownload') }}</h1>
     <b-row>
       <b-col md="3" class="mt-2">
-        <h3>Columns</h3>
+        <h3>{{ $t('dataDashboards.columns') }}</h3>
         <b-form-group
-          label="Select columns"
+          :label="$t('dataDashboards.selectColumns')"
           :state="drilldowns.length == 0 ? false : true"
-          invalid-feedback="You must select at least one column"
-          :description="drilldowns.length > 1 ? 'Drag columns to reorder output' : null">
+          :invalid-feedback="$t('dataDashboards.selectAtLeastOneColumn')"
+          :description="drilldowns.length > 1 ? $t('dataDashboards.dragColumnsToReorder') : null">
           <v-select
             multiple
             :options="drilldownOptions"
@@ -27,8 +27,8 @@
                 {{ drilldown.label }}
                 <button
                   type="button"
-                  :title="`Deselect ${drilldown.label}`"
-                  :aria-label="`Deselect ${drilldown.label}`"
+                  :title="`${$t('dataDashboards.deselect')} ${drilldown.label}`"
+                  :aria-label="`${$t('dataDashboards.deselect')} ${drilldown.label}`"
                   class="vs__deselect"
                  @click="$delete(drilldownsWithLabels, index)">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg>
@@ -37,11 +37,11 @@
           </draggable>
         </b-form-group>
         <hr />
-        <h3>Filters</h3>
+        <h3>{{ $t('dataDashboards.filters') }}</h3>
         <DataBrowserFilterItem
           field="recipient_country_or_region"
           :fieldOptions="fields.recipient_country_or_region"
-          :fieldLabel="fieldNames.recipient_country_or_region[lang]"
+          :fieldLabel="availableDrilldowns.recipient_country_or_region"
           :lang="lang"
           :value="setFields.recipient_country_or_region"
           :updateField="updateField">
@@ -50,7 +50,7 @@
         <DataBrowserFilterItem
           field="reporting_organisation"
           :fieldOptions="fields.reporting_organisation"
-          :fieldLabel="fieldNames.reporting_organisation[lang]"
+          :fieldLabel="availableDrilldowns.reporting_organisation"
           :lang="lang"
           :value="setFields.reporting_organisation"
           :updateField="updateField">
@@ -59,7 +59,7 @@
         <DataBrowserFilterItem
           field="sector_category"
           :fieldOptions="fields.sector_category"
-          :fieldLabel="fieldNames.sector_category[lang]"
+          :fieldLabel="availableDrilldowns.sector_category"
           :lang="lang"
           :value="setFields.sector_category"
           :updateField="updateField">
@@ -76,7 +76,7 @@
         />
       </b-col>
       <b-col md="9" class="mt-2">
-        <h2>Preview</h2>
+        <h2>{{ $t('dataDashboards.preview') }}</h2>
         <DataBrowser
           ref="dataBrowser"
           :drilldowns="drilldowns"
@@ -148,7 +148,7 @@ export default {
           label: item[1]
         }
       })
-    },...mapState(['availableDrilldowns', 'fields', 'fieldNames'])
+    },...mapState(['availableDrilldowns', 'fields'])
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')
@@ -165,7 +165,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$t('dataCustomDownload')} - ${this.$t('dashboards')} - ${this.$t('title')}`,
+      title: `${this.$t('dataDashboards.customDownload')} - ${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
       meta: [
         {
           hid: 'description',
@@ -176,6 +176,11 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale
       }
+    }
+  },
+  watch: {
+    '$i18n.locale'() {
+      this.$store.dispatch('getCodelists')
     }
   }
 }
