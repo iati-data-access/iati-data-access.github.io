@@ -4,7 +4,7 @@
       <b-col md="4">
         <b-form-group
           label-size="sm"
-          label="Number of results">
+          :label="$t('dataDashboards.numberOfResults')">
           <b-input-group size="sm">
             <b-select v-model="pageSize" :options="pageSizeOptions" debounce="500"></b-select>
           </b-input-group>
@@ -13,7 +13,7 @@
       <b-col lg="8" class="text-lg-right">
         <b-form-group
           label-size="sm"
-          label="Display options">
+          :label="$t('dataDashboards.displayOptions')">
           <b-form-radio-group
             v-model="displayAs"
             button-variant="outline-secondary"
@@ -40,7 +40,7 @@
           <b-row v-if="cells.length==0">
             <b-col>
               <b-alert show variant="warning">
-                There are no results for your selected filters.
+                {{ $t('dataDashboards.noResults') }}
               </b-alert>
             </b-col>
           </b-row>
@@ -52,6 +52,7 @@
                 :total="total"
                 :selectedRegion.sync="selectedRegion"
                 :datasets="barChartDatasets"
+                :clickable="clickable"
               />
             </b-col>
             <b-col v-if="displayAs=='barChart'">
@@ -88,7 +89,7 @@
         <template v-else-if="optionsToBeSelected">
           <div lass="text-center">
             <b-alert show variant="info">
-              Select some options, and then click Run on the left.
+              {{ $t('dataDashboards.selectSomeOptions') }}
             </b-alert>
           </div>
         </template>
@@ -224,12 +225,12 @@ export default {
       if (this.setFields.transaction_type.length == 3) {
         return [
           {
-            label: 'Budgets',
+            label: this.$t('dataDashboards.budgetsSpending.budgets'),
             backgroundColor: '#155366',
             field: `value_${this.currency}.sum_budget`
           },
           {
-            label: 'Spending',
+            label: this.$t('dataDashboards.budgetsSpending.spending'),
             backgroundColor: '#06DBE4',
             field: `value_${this.currency}.sum_3-4`
           }
@@ -238,7 +239,7 @@ export default {
         if (this.setFields.year.length > 1) {
           return this.setFields.year.map(year => {
             return {
-              label: `Budgets (${year})`,
+              label: `${this.$t('dataDashboards.budgetsSpending.budgets')} (${year})`,
               backgroundColor: '#155366',
               field: `value_${this.currency}.sum_${year}`
             }
@@ -246,7 +247,7 @@ export default {
         } else {
           return [
             {
-              label: 'Budgets',
+              label: this.$t('dataDashboards.budgetsSpending.budgets'),
               backgroundColor: '#155366',
               field: `value_${this.currency}.sum`
             }
@@ -256,7 +257,7 @@ export default {
         if (this.setFields.year.length > 1) {
           return this.setFields.year.map(year => {
             return {
-              label: `Spending (${year})`,
+              label: `${this.$t('dataDashboards.budgetsSpending.spending')} (${year})`,
               backgroundColor: '#06DBE4',
               field: `value_${this.currency}.sum_${year}`
             }
@@ -264,7 +265,7 @@ export default {
         } else {
           return [
             {
-              label: 'Spending',
+              label: this.$t('dataDashboards.budgetsSpending.spending'),
               backgroundColor: '#06DBE4',
               field: `value_${this.currency}.sum`
             }
@@ -315,7 +316,8 @@ export default {
       }
     },
     lang() {
-      return 'en' // this.$i18n.locale
+      // Don't yet load ES or PT as the interface is not yet translated.
+      return ['en', 'fr'].includes(this.$i18n.locale) ? this.$i18n.locale : 'en'
     },
     tableFields() {
       const _fields = this.drilldowns.map(item => {
@@ -328,14 +330,14 @@ export default {
       if (this.setFields.transaction_type.length == 3) {
         return _fields.concat({
           key: `value_${this.currency}.sum_budget`,
-          label: `Value (${this.currency.toUpperCase()}): Budget`,
+          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.$t('dataDashboards.budgetsSpending.budgets')}`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",
           sortable: true
         }).concat({
           key: `value_${this.currency}.sum_3-4`,
-          label: `Value (${this.currency.toUpperCase()}): Spending`,
+          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.$t('dataDashboards.budgetsSpending.spending')}`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",
@@ -345,7 +347,7 @@ export default {
         return _fields.concat(this.setFields.year.map(year => {
           return {
             key: `value_${this.currency}.sum_${year}`,
-            label: `Value (${this.currency.toUpperCase()}): ${year}`,
+            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${year}`,
             formatter: this.numberFormatter,
             thClass: "text-right",
             tdClass: "text-right",
@@ -355,7 +357,7 @@ export default {
       } else {
         return _fields.concat({
           key: `value_${this.currency}.sum`,
-          label: `Value (${this.currency.toUpperCase()})`,
+          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",
