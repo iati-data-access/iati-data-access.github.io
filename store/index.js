@@ -105,7 +105,9 @@ export const actions = {
     }
   },
   async getCodelistData({ commit }, { field, codelist }) {
-    const response = await axios.get(`https://codelists.codeforiati.org/api/json/${this.$i18n.locale}/${codelist}.json`
+    // Don't yet load ES or PT as the interface is not yet translated.
+    const locale = ['en', 'fr'].includes(this.$i18n.locale) ? this.$i18n.locale : 'en'
+    const response = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/${codelist}.json`
       )
     const data = response.data.data
     var codes = Object.values(data.reduce((summary, item) => {
