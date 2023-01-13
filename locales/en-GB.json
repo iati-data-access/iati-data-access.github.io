@@ -21,13 +21,77 @@
       "text": "Analyse Data"
     }
   ],
-  "dashboards": "Data Dashboards",
-  "dataOverview": "Summary Dashboard",
-  "dataDashboards": "Dashboards:",
-  "dataCustomDownload": "Custom Data Download",
-  "byCountry": "by Country",
-  "byProvider": "by Provider",
-  "bySector": "by Sector",
+  "by": "by",
+  "dataDashboards": {
+    "label": "Data Dashboards",
+    "overview": "Summary Dashboard",
+    "dashboards": "Dashboards:",
+    "customDownload": "Custom Data Download",
+    "columns": "Columns",
+    "selectColumns": "Select columns",
+    "selectAtLeastOneColumn": "You must select at least one column",
+    "dragColumnsToReorder": "Drag columns to reorder output",
+    "deselect": "Deselect",
+    "filters": "Filters",
+    "preview": "Preview",
+    "currency": "Currency",
+    "calendarYear": "Calendar Year",
+    "calendarYearAndQuarter": "Calendar Year and Quarter",
+    "moreFilters": "More Filters",
+    "numberOfResults": "Number of results",
+    "displayOptions": "Display options",
+    "noResults": "There are no results for your selected filters.",
+    "selectSomeOptions": "Select some options, and then click Run on the left.",
+    "amount": "Value",
+    "budgetsSpending": {
+      "budgetsOrSpending": "Spending Type",
+      "budgets": "Budgets",
+      "spending": "Spending",
+      "both": "Both"
+    },
+    "countries": {
+      "by": "by Country",
+      "label": "Countries",
+      "for": "Country Dashboard for",
+      "select": "Select a country to explore the data."
+    },
+    "providers": {
+      "by": "by Provider",
+      "label": "Providers",
+      "for": "Provider Dashboard for",
+      "select": "Select a provider to explore the data."
+    },
+    "sectors": {
+      "by": "by Sector",
+      "label": "Sectors",
+      "for": "Sector Dashboard for",
+      "select": "Select a sector to explore the data."
+    },
+    "summary": "Summary",
+    "exploreTheData": "Explore the data",
+    "availableDrilldowns": {
+      "activity.iati_identifier": "Activity IATI Identifier",
+      "activity.title": "Activity Title",
+      "reporting_organisation": "Reporting Organisation",
+      "reporting_organisation_type": "Reporting Organisation Type",
+      "aid_type": "Aid Type",
+      "finance_type": "Finance Type",
+      "flow_type": "Flow Type",
+      "provider_organisation": "Provider Organisation",
+      "provider_organisation_type": "Provider Organisation Type",
+      "receiver_organisation": "Receiver Organisation",
+      "receiver_organisation_type": "Receiver Organisation Type",
+      "recipient_country_or_region": "Recipient Country or Region",
+      "multi_country": "Multi Country",
+      "sector_category": "Sector Category",
+      "sector": "Sector",
+      "humanitarian": "Humanitarian / Development",
+      "year.year": "Calendar Year",
+      "quarter.quarter": "Calendar Quarter",
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter"
+    },
+    "activity": "Activity"
+  },
   "dataSidebarDropdowns": [
     {
       "path": "/data/countries/",

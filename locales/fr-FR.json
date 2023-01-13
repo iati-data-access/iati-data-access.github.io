@@ -17,6 +17,98 @@
     "lastUpdated": "Dernière mise à jour :",
     "language": "Langue"
   },
+  "by": "par",
+  "dataDashboards": {
+    "label": "Tableaux de bords",
+    "overview": "Vue d’ensemble",
+    "dashboards": "Tableaux de bords:",
+    "customDownload": "Personnaliser les données à télécharger",
+    "columns": "Colonne",
+    "selectColumns": "Sélectionnez les colonnes",
+    "selectAtLeastOneColumn": "Il faut sélectionner au moins une colonne",
+    "dragColumnsToReorder": "Faites glisser les colonnes pour réorganiser la sortie des données.",
+    "deselect": "Désélectionner",
+    "filters": "Filtres",
+    "preview": "Aperçu",
+    "currency": "Monnaie",
+    "spendingType": "Spending Type",
+    "calendarYear": "Année civile",
+    "calendarYearAndQuarter": "Année et trimestre civils",
+    "moreFilters": "Plus de filtres",
+    "numberOfResults": "Nombre de résultats",
+    "displayOptions": "Options d’affichage",
+    "noResults": "Aucun résultat.",
+    "selectSomeOptions": "Select some options, and then click Run on the left.",
+    "amount": "Valeur",
+    "budgetsSpending": {
+      "budgetsOrSpending": "Type de dépenses",
+      "budgets": "Budgets",
+      "spending": "Dépenses",
+      "both": "les deux"
+    },
+    "countries": {
+      "by": "par Pays",
+      "label": "Pays",
+      "for": "Tableau de bord du pays pour",
+      "select": "Choisir un pays pour explorer les données."
+    },
+    "providers": {
+      "by": "par Prestataire",
+      "label": "Prestataires",
+      "for": "Tableau de bord du prestataire pour",
+      "select": "Choisir un prestataire pour explorer les données."
+    },
+    "sectors": {
+      "by": "par Secteur",
+      "label": "Secteurs",
+      "for": "Tableau de bord du secteur pour",
+      "select": "Choisir un secteur pour explorer les données."
+    },
+    "summary": "Vue d’ensemble",
+    "exploreTheData": "Explorez les données",
+    "availableDrilldowns": {
+      "activity.iati_identifier": "Identifiant de l’IITA",
+      "activity.title": "Titre",
+      "reporting_organisation": "Organisme déclarant",
+      "reporting_organisation_type": "Type d’organisme déclarant",
+      "aid_type": "Type d’aide",
+      "finance_type": "Type de financement",
+      "flow_type": "Type de flux",
+      "provider_organisation": "Organisme prestataire",
+      "provider_organisation_type": "Type d’organisme prestataire",
+      "receiver_organisation": "Organisme bénéficiaire",
+      "receiver_organisation_type": "Type d’organisme bénéficiaire",
+      "recipient_country_or_region": "Pays ou région bénéficiaire",
+      "multi_country": "Multipays",
+      "sector_category": "Catégorie de secteur",
+      "sector": "Secteur",
+      "humanitarian": "Humanitaire ou Développement",
+      "year.year": "Année civile",
+      "quarter.quarter": "Trimestre civil",
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils"
+    },
+    "activity": "Activité"
+  },
+  "dataSidebarDropdowns": [
+    {
+      "path": "/fr/data/countries/",
+      "name": "data-countries",
+      "label": "par Pays",
+      "field": "recipient_country_or_region"
+    },
+    {
+      "path": "/fr/data/providers/",
+      "name": "data-providers",
+      "label": "par Prestataire",
+      "field": "reporting_organisation"
+    },
+    {
+      "path": "/fr/data/sectors/",
+      "name": "data-sectors",
+      "label": "par Secteur",
+      "field": "sector_category"
+    }
+  ],
   "countriesCurrenciesFields": [
     {
       "key": "countryCode",
