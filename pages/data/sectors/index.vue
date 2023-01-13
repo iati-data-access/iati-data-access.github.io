@@ -2,9 +2,9 @@
   <div>
     <DataBrowserNavbar />
     <h1>
-      Sectors
+      {{ $t('dataDashboards.sectors.label') }}
     </h1>
-    <p class="lead">Select a sector to explore the data.</p>
+    <p class="lead">{{ $t('dataDashboards.sectors.select') }}</p>
     <template v-if="fields.recipient_country_or_region.length >0 ">
       <b-card-group columns>
         <b-card
@@ -41,7 +41,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$t('bySector')} - ${this.$t('dashboards')} - ${this.$t('title')}`,
+      title: `${this.$t('dataDashboards.sectors.by')} - ${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
       meta: [
         {
           hid: 'description',
@@ -52,6 +52,11 @@ export default {
       htmlAttrs: {
         lang: this.$i18n.locale
       }
+    }
+  },
+  watch: {
+    '$i18n.locale'() {
+      this.$store.dispatch('getCodelists')
     }
   }
 }
