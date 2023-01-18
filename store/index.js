@@ -79,37 +79,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setFields(state, { field, values }) {
-    Vue.set(state.fields, field, values);
-  },
-  setCodelistsRetrieved(state, value) {
-    state.codelistsRetrieved = value
-  },
-  setAvailableDrilldowns(state, value) {
-    state.availableDrilldowns = value
-  }
-};
-
-export const actions = {
-  async getCodelists({commit, state, dispatch}) {
-    if (state.codelistsRetrieved != this.$i18n.locale) {
-      commit('setCodelistsRetrieved', this.$i18n.locale)
-      commit('setAvailableDrilldowns', this.$i18n.t('dataDashboards.availableDrilldowns'))
-      Object.keys(state.fields).forEach(field => {
-        const codelist = state.codelistLookups[field]
-        if (codelist == undefined) {
-          return
-        }
-        dispatch('getCodelistData', {field: field, codelist: codelist})
-      })
-    }
-  },
-  async getCodelistData({ commit }, { field, codelist }) {
-    // Don't yet load ES or PT as the interface is not yet translated.
-    const locale = ['en', 'fr'].includes(this.$i18n.locale) ? this.$i18n.locale : 'en'
-    const response = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/${codelist}.json`
-      )
-    const data = response.data.data
+  setFields(state, {field, data}) {
     var codes = Object.values(data.reduce((summary, item) => {
       if (item['status'] != 'active') {
         return summary
@@ -138,8 +108,44 @@ export const actions = {
     if (['recipient_country_or_region', 'reporting_organisation'].includes(field)) {
       codes = codes.sort((a,b) => a.name > b.name ? 1 : -1);
     }
+    Vue.set(state.fields, field, codes);
+  },
+  setCodelistsRetrieved(state, value) {
+    state.codelistsRetrieved = value
+  },
+  setAvailableDrilldowns(state, value) {
+    state.availableDrilldowns = value
+  }
+};
 
-    commit('setFields', {field: field, values: codes})
+export const actions = {
+  async getCodelists({commit, state, dispatch}) {
+    if (state.codelistsRetrieved != this.$i18n.locale) {
+      commit('setCodelistsRetrieved', this.$i18n.locale)
+      commit('setAvailableDrilldowns', this.$i18n.t('dataDashboards.availableDrilldowns'))
+      Object.keys(state.fields).forEach(field => {
+        const codelist = state.codelistLookups[field]
+        if (codelist == undefined) {
+          return
+        }
+        dispatch('getCodelistData', {field: field, codelist: codelist})
+      })
+    }
+  },
+  async getCodelistData({ commit }, { field, codelist }) {
+    // Don't yet load ES or PT as the interface is not yet translated.
+    const locale = ['en', 'fr'].includes(this.$i18n.locale) ? this.$i18n.locale : 'en'
+    const response = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/${codelist}.json`
+      )
+    var data = response.data.data
+    if (field == 'recipient_country_or_region') {
+      const response_regions = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/Region.json`
+      )
+      var data_regions = response_regions.data.data
+      commit('setFields', {field: field, data: data.concat(data_regions)})
+    } else {
+      commit('setFields', {field: field, data: data})
+    }
   },
   async nuxtServerInit({commit, state, dispatch}) {
     this.dispatch('getCodelistData', { field: 'recipient_country_or_region', codelist: 'Country' })
