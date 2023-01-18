@@ -42,7 +42,6 @@
           field="recipient_country_or_region"
           :fieldOptions="fields.recipient_country_or_region"
           :fieldLabel="availableDrilldowns.recipient_country_or_region"
-          :lang="lang"
           :value="setFields.recipient_country_or_region"
           :updateField="updateField">
         </DataBrowserFilterItem>
@@ -51,7 +50,6 @@
           field="reporting_organisation"
           :fieldOptions="fields.reporting_organisation"
           :fieldLabel="availableDrilldowns.reporting_organisation"
-          :lang="lang"
           :value="setFields.reporting_organisation"
           :updateField="updateField">
         </DataBrowserFilterItem>
@@ -60,7 +58,6 @@
           field="sector_category"
           :fieldOptions="fields.sector_category"
           :fieldLabel="availableDrilldowns.sector_category"
-          :lang="lang"
           :value="setFields.sector_category"
           :updateField="updateField">
         </DataBrowserFilterItem>
@@ -138,9 +135,6 @@ export default {
     }
   },
   computed: {
-    lang() {
-      return 'en' // this.$i18n.locale
-    },
     drilldownOptions() {
       return Object.entries(this.availableDrilldowns).map(item => {
         return {
