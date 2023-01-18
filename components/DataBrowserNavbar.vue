@@ -96,7 +96,6 @@ export default {
     navbar: {
       handler(value) {
         Object.entries(value).forEach(item => {
-          console.log('item is', item)
           if (item[1] != null) {
             this.$router.push(this.localePath({
               name: `${item[0]}-code`, params: { code: item[1].code }
