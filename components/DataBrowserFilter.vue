@@ -23,7 +23,7 @@
             :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
-              v-model="budgetsSpending"
+              v-model="setFields.transaction_type"
               size="md"
               button-variant="outline-secondary"
               :stacked="!horizontal"
@@ -33,7 +33,7 @@
                 :class="option.class"
                 :value="option.value"
                 v-for="option in budgetsSpendingOptions"
-                v-bind:key="option.value">
+                v-bind:key="option.text">
                 {{ option.text }}
               </b-form-radio>
             </b-form-radio-group>
@@ -122,7 +122,7 @@ export default {
           aid_type: [],
           finance_type: [],
           flow_type: [],
-          transaction_type: ['2'],
+          transaction_type: ['3', '4'],
           sector_category: [],
           sector: [],
           recipient_country_or_region: ['AF'],
@@ -148,20 +148,19 @@ export default {
   },
   data() {
     return {
-      budgetsSpending: this.setFields.transaction_type.includes('budget') ? 'budgets' : 'spending',
       budgetsSpendingOptions: [
         {
-          value: 'budgets',
+          value: ['budget'],
           text: this.$t('dataDashboards.budgetsSpending.budgets'),
           class: 'budgets'
         },
         {
-          value: 'spending',
+          value: ['3', '4'],
           text: this.$t('dataDashboards.budgetsSpending.spending'),
           class: 'spending'
         },
         {
-          value: 'both',
+          value: ['budget', '3', '4'],
           text: this.$t('dataDashboards.budgetsSpending.both'),
           class: 'secondary'
         }
@@ -201,15 +200,6 @@ export default {
     },
   },
   watch: {
-    budgetsSpending(value) {
-      if (value == 'both') {
-        this.updateField('transaction_type', ['3', '4', 'budget'])
-      } else if (value == 'spending') {
-        this.updateField('transaction_type', ['3', '4'])
-      } else {
-        this.updateField('transaction_type', ['budget'])
-      }
-    },
     'setFields.year': {
       handler(value) {
         if (value.length>0) {
