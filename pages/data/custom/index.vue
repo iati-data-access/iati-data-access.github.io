@@ -154,15 +154,6 @@ export default {
     this.$store.dispatch('getCodelists')
     this.setDrilldownsWithLabels()
   },
-  watch: {
-    drilldownsWithLabels: {
-      handler() {
-        this.drilldowns = this.drilldownsWithLabels.map(item => {
-          return item.value
-        })
-      }
-    }
-  },
   head() {
     return {
       title: `${this.$t('dataDashboards.customDownload')} - ${this.$t('dataDashboards.label')} - ${this.$t('title')}`,
@@ -181,6 +172,13 @@ export default {
   watch: {
     '$i18n.locale'() {
       this.$store.dispatch('getCodelists')
+    },
+    drilldownsWithLabels: {
+      handler() {
+        this.drilldowns = this.drilldownsWithLabels.map(item => {
+          return item.value
+        })
+      }
     }
   }
 }
