@@ -5,11 +5,13 @@
   "selectText": "Languages",
   "label": "English",
   "ariaLabel": "Languages",
-  "sidebar": [
-    ["/", "Home"],
+  "home": "Home",
+  "about": "About",
+  "aboutNav": [
     ["/introduction/", "Introduction"],
     ["/methodology/", "Methodology"],
-    ["/data-notes/", "Data Notes"]
+    ["/data-notes/", "Data Notes"],
+    ["/guidance-analysis/", "Guidance and Excel Analysis Dashboards"]
   ],
   "accessAnalyseOptions": [
     {
@@ -26,6 +28,7 @@
     "label": "Data Dashboards",
     "overview": "Summary Dashboard",
     "dashboards": "Dashboards:",
+    "customise": "Customise",
     "customDownload": "Custom Data Download",
     "columns": "Columns",
     "selectColumns": "Select columns",

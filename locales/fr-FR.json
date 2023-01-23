@@ -5,8 +5,9 @@
   "selectText": "Langues",
   "label": "Français",
   "ariaLabel": "Langues",
-  "sidebar": [
-    ["/fr/", "Accueil"],
+  "home": "Accueil",
+  "about": "À propos",
+  "aboutNav": [
     ["/fr/introduction/", "Introduction"],
     ["/fr/methodology/", "Méthodologie"],
     ["/fr/data-notes/", "Notes sur les données"]
@@ -22,6 +23,7 @@
     "label": "Tableaux de bords",
     "overview": "Vue d’ensemble",
     "dashboards": "Tableaux de bords:",
+    "customise": "Personnaliser",
     "customDownload": "Personnaliser les données à télécharger",
     "columns": "Colonne",
     "selectColumns": "Sélectionnez les colonnes",
