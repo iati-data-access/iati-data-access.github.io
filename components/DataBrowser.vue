@@ -6,7 +6,7 @@
           label-size="sm"
           :label="$t('dataDashboards.numberOfResults')">
           <b-input-group size="sm">
-            <b-select v-model="pageSize" :options="pageSizeOptions" debounce="500"></b-select>
+            <b-select v-model="pageSize_" :options="pageSizeOptions" debounce="500"></b-select>
           </b-input-group>
         </b-form-group>
       </b-col>
@@ -15,7 +15,7 @@
           label-size="sm"
           :label="$t('dataDashboards.displayOptions')">
           <b-form-radio-group
-            v-model="displayAs"
+            v-model="displayAs_"
             button-variant="outline-secondary"
             size="sm"
             buttons>
@@ -29,8 +29,17 @@
           <b-btn
             variant="outline-secondary"
             size="sm"
-            :href="XLSXSummaryURL"><font-awesome-icon :icon="['fa', 'download']" /> XLSX
+            :href="XLSXSummaryURL">XLSX <font-awesome-icon :icon="['fa', 'download']" />
           </b-btn>
+          <b-btn
+            v-if="customise"
+            size="sm"
+            :to="localePath({
+              path: '/data/custom/',
+              query: {
+                drilldowns: this.drilldownsForQuery,
+                filters: this.fieldsForQuery
+              }})">{{ $t('dataDashboards.customise') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
         </b-form-group>
       </b-col>
     </b-row>
@@ -45,7 +54,7 @@
             </b-col>
           </b-row>
           <b-row v-else>
-            <b-col v-if="displayAs=='map'">
+            <b-col v-if="displayAs_=='map'">
               <Map
                 :currency="currency"
                 :data="cells"
@@ -55,7 +64,7 @@
                 :clickable="clickable"
               />
             </b-col>
-            <b-col v-if="displayAs=='barChart'">
+            <b-col v-if="displayAs_=='barChart'">
               <bar-chart-component
                 :currency="currency"
                 :cells="cells"
@@ -66,7 +75,7 @@
                 :selectedDrilldown.sync="selectedDrilldown"
               />
             </b-col>
-            <b-col v-if="displayAs=='table'">
+            <b-col v-if="displayAs_=='table'">
               <b-table
                 small
                 :items="cells"
@@ -161,6 +170,9 @@ export default {
     },
     orderBy: {
       default: null
+    },
+    customise: {
+      default: true
     }
   },
   data() {
@@ -193,11 +205,28 @@ export default {
         {
           value: 1000,
           text: 1000
+        },
+        {
+          value: null,
+          text: 'All'
         }
-      ]
+      ],
+      displayAs_: this.displayAs,
+      pageSize_: this.pageSize
     }
   },
   computed: {
+    drilldownsForQuery() {
+      return this.drilldowns.join(";")
+    },
+    fieldsForQuery() {
+      return Object.entries(this.setFields).reduce((summary, item) => {
+        if (item[1].length > 0) {
+          summary.push(`${item[0]}:${item[1].join(",")}`)
+        }
+        return summary
+      }, []).sort().join(";")
+    },
     selectedDrilldownPath() {
       const d = this.drilldowns.join('')
       if (d == 'reporting_organisation') {
@@ -400,19 +429,19 @@ export default {
     },
     JSONSummaryURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating, because this is the Excel maximum number of rows. But we only want to show a maximum of 1000 on the preview.
-      const pageSize = this.pageSize != null ? this.pageSize : this.maxPageSize
+      const pageSize = this.pageSize_ != null ? this.pageSize_ : this.maxPageSize
       return `${this.summaryURL}&pagesize=${pageSize}`
     },
     granularURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating. But we only want to show a maximum of 1000 on the preview.
-      const pageSize = this.pageSize != null ? this.pageSize : this.maxPageSize
+      const pageSize = this.pageSize_ != null ? this.pageSize_ : this.maxPageSize
       return `${this.$config.baseURL}/babbage/cubes/iatiline/facts/?order=value_${this.currency}:desc${this.cuts}&pagesize=${pageSize}`
     },
     CSVSummaryURL() {
       return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=csv`
     },
     XLSXSummaryURL() {
-      return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=xlsx`
+      return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=xlsx&lang=${this.lang}`
     },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
@@ -485,7 +514,7 @@ export default {
         this.loadData()
       }
     },
-    pageSize() {
+    pageSize_() {
       if (this.autoReload) {
         this.loadData()
       }
