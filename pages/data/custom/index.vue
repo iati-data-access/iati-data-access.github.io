@@ -42,7 +42,6 @@
           field="recipient_country_or_region"
           :fieldOptions="fields.recipient_country_or_region"
           :fieldLabel="availableDrilldowns.recipient_country_or_region"
-          :lang="lang"
           :value="setFields.recipient_country_or_region"
           :updateField="updateField">
         </DataBrowserFilterItem>
@@ -51,7 +50,6 @@
           field="reporting_organisation"
           :fieldOptions="fields.reporting_organisation"
           :fieldLabel="availableDrilldowns.reporting_organisation"
-          :lang="lang"
           :value="setFields.reporting_organisation"
           :updateField="updateField">
         </DataBrowserFilterItem>
@@ -60,19 +58,20 @@
           field="sector_category"
           :fieldOptions="fields.sector_category"
           :fieldLabel="availableDrilldowns.sector_category"
-          :lang="lang"
           :value="setFields.sector_category"
           :updateField="updateField">
         </DataBrowserFilterItem>
 
         <DataBrowserFilter
-          :exclude-filters="['recipient_country_or_region',
+          :hide-filters="['recipient_country_or_region',
             'reporting_organisation',
             'sector_category',
             'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           :horizontal="false"
+          pageName="data-custom"
+          :drilldowns.sync="drilldowns"
         />
       </b-col>
       <b-col md="9" class="mt-2">
@@ -84,6 +83,7 @@
           :setFields="setFields"
           :currency.sync="currency"
           :autoReload="autoReload"
+          :customise="false"
          />
       </b-col>
     </b-row>
@@ -106,6 +106,7 @@ import { mapState } from 'vuex'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
 import DataBrowser from '~/components/DataBrowser'
 export default {
+  name: 'DataCustom',
   components: { DataBrowserNavbar, DataBrowser },
   data() {
     const lastYear = new Date().getFullYear()-1
@@ -138,9 +139,6 @@ export default {
     }
   },
   computed: {
-    lang() {
-      return 'en' // this.$i18n.locale
-    },
     drilldownOptions() {
       return Object.entries(this.availableDrilldowns).map(item => {
         return {

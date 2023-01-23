@@ -23,7 +23,7 @@
             :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
             <b-form-radio-group
-              v-model="budgetsSpending"
+              v-model="setFields.transaction_type"
               size="md"
               button-variant="outline-secondary"
               :stacked="!horizontal"
@@ -33,7 +33,7 @@
                 :class="option.class"
                 :value="option.value"
                 v-for="option in budgetsSpendingOptions"
-                v-bind:key="option.value">
+                v-bind:key="option.text">
                 {{ option.text }}
               </b-form-radio>
             </b-form-radio-group>
@@ -83,7 +83,7 @@
         <b-col
           class="p-2"
           v-for="field in Object.keys(fields)"
-          v-if="!excludeFilters.includes(field)"
+          v-if="!excludeFilters.includes(field) && !hideFilters.includes(field)"
           v-bind:key="field">
           <DataBrowserFilterItem
             :field="field"
@@ -122,7 +122,7 @@ export default {
           aid_type: [],
           finance_type: [],
           flow_type: [],
-          transaction_type: ['2'],
+          transaction_type: ['3', '4'],
           sector_category: [],
           sector: [],
           recipient_country_or_region: ['AF'],
@@ -142,26 +142,38 @@ export default {
         return []
       }
     },
+    hideFilters: {
+      default() {
+        return []
+      }
+    },
     horizontal: {
       default: true
+    },
+    pageName: {
+      default: 'data-countries-code'
+    },
+    drilldowns: {
+      default() {
+        return ['sector_category']
+      }
     }
   },
   data() {
     return {
-      budgetsSpending: this.setFields.transaction_type.includes('budget') ? 'budgets' : 'spending',
       budgetsSpendingOptions: [
         {
-          value: 'budgets',
+          value: ['budget'],
           text: this.$t('dataDashboards.budgetsSpending.budgets'),
           class: 'budgets'
         },
         {
-          value: 'spending',
+          value: ['3', '4'],
           text: this.$t('dataDashboards.budgetsSpending.spending'),
           class: 'spending'
         },
         {
-          value: 'both',
+          value: ['budget', '3', '4'],
           text: this.$t('dataDashboards.budgetsSpending.both'),
           class: 'secondary'
         }
@@ -181,6 +193,27 @@ export default {
     }
   },
   computed: {
+    customPage() {
+      return this.pageName.includes('data-custom')
+    },
+    specificPage() {
+      return this.pageName.includes('-code')
+    },
+    drilldownsForQuery() {
+      return this.drilldowns.join(";")
+    },
+    fieldsForQuery() {
+      return Object.entries(this.setFields).reduce((summary, item) => {
+        // We only want to exclude e.g. the country name when on the country page
+        if (this.specificPage) {
+          if (item[0] == this.excludeFilters[0]) { return summary }
+        }
+        if (item[1].length > 0) {
+          summary.push(`${item[0]}:${item[1].join(",")}`)
+        }
+        return summary
+      }, []).sort().join(";")
+    },
     _currency: {
       get() {
         return this.currency
@@ -199,17 +232,35 @@ export default {
       this.$set(this.setFields, field, value)
       this.$emit('update:setFields', this.setFields)
     },
+    updateDrilldowns(drilldowns) {
+      this.$emit('update:drilldowns', drilldowns)
+    },
+    customiseFromQuery() {
+      if (Object.keys(this.$route.query).length>0) {
+        if (this.customPage) {
+          if (this.$route.query.drilldowns) {
+            const _drilldowns = this.$route.query.drilldowns.split(";")
+            this.updateDrilldowns(_drilldowns)
+          }
+        }
+        if (this.$route.query.filters) {
+          const queryFilters = this.$route.query.filters.split(";")
+          const filtersInQuery = queryFilters.reduce((summary, item) => {
+            const [field, values] = item.split(":")
+            this.$set(this.setFields, field, values.split(","))
+            summary.push(field)
+            return summary
+          }, [])
+          Object.keys(this.setFields).forEach(item => {
+            if (!filtersInQuery.includes(item) && (!this.excludeFilters.includes(item))) {
+              this.$set(this.setFields, item, [])
+            }
+          })
+        }
+      }
+    }
   },
   watch: {
-    budgetsSpending(value) {
-      if (value == 'both') {
-        this.updateField('transaction_type', ['3', '4', 'budget'])
-      } else if (value == 'spending') {
-        this.updateField('transaction_type', ['3', '4'])
-      } else {
-        this.updateField('transaction_type', ['budget'])
-      }
-    },
     'setFields.year': {
       handler(value) {
         if (value.length>0) {
@@ -223,9 +274,51 @@ export default {
           this.$set(this.setFields, 'year', [])
         }
       }
+    },
+    '$route.query'() {
+      this.customiseFromQuery()
+    },
+    drilldowns: {
+      handler() {
+        if (this.customPage) {
+          this.$router.push(this.localePath({
+            name: this.pageName,
+            query: {
+              drilldowns: this.drilldownsForQuery,
+              filters: this.fieldsForQuery
+            }
+          }))
+        }
+      }
+    },
+    setFields: {
+      handler() {
+        if (this.customPage) {
+          this.$router.push(this.localePath({
+            name: this.pageName,
+            query: {
+              drilldowns: this.drilldownsForQuery,
+              filters: this.fieldsForQuery
+            }
+          }))
+        } else if (this.specificPage) {
+          this.$router.push(this.localePath({
+            name: this.pageName,
+            params: { code: this.$route.params.code},
+            query: { filters: this.fieldsForQuery}
+          }))
+        } else {
+          this.$router.push(this.localePath({
+            name: this.pageName,
+            query: { filters: this.fieldsForQuery}
+          }))
+        }
+      },
+      deep: true
     }
   },
   mounted: function() {
+    this.customiseFromQuery()
     this.$store.dispatch('getCodelists')
   }
 }

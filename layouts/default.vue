@@ -4,24 +4,31 @@
       <b-navbar toggleable="lg" type="light" variant="light">
         <b-navbar-brand :to="localePath({path: '/'})" class="branding">
         </b-navbar-brand>
-
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
+
             <b-nav-item
-              v-for="(item) in $t('sidebar')"
-              v-bind:key="item[0]"
-              :to="localePath({path: item[0]})">{{ item[1] }}</b-nav-item>
+              :to="localePath({path: '/'})">{{ $t('home') }}</b-nav-item>
+
+            <b-nav-item
+              :to="localePath({path: '/data/'})">{{ $t('dataDashboards.label') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-nav-item>
+            <b-nav-item
+              :to="localePath({path: '/data/custom/'})"
+              active-class="nuxt-link-exact-active">{{ $t('dataDashboards.customDownload') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']"/></b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-btn
-              pill
-              class="data-navbar-button"
-              :to="localePath({path: '/data/'})">{{ $t('dataDashboards.label') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
-
+          <b-navbar-nav class="ml-lg-auto">
+            <b-nav-item-dropdown :text="$t('about')" right>
+              <b-dropdown-item
+                v-for="item in $t('aboutNav')"
+                v-bind:key="item[0]"
+                :to="localePath({path: item[0]})">
+                {{ item[1] }}
+              </b-dropdown-item>
+            </b-nav-item-dropdown>
             <b-nav-item-dropdown :text="$t('selectText')" right>
               <b-dropdown-item
                 v-for="locale in $t('languageOptions')"
@@ -45,13 +52,29 @@
   </div>
 </template>
 <style lang="scss">
-.data-navbar-button {
+.btn-outline-primary {
+  color: #155366 !important;
+  border-color: #155366;
+  &:hover, &:focus, &:active {
+    color: #ffffff !important;
+    border-color: #06DBE4 !important;
+    background-color: #06DBE4 !important;
+  }
+}
+.btn-primary {
+  color: #ffffff !important;
   background-color: #155366;
   border-color: #155366;
+  &:hover, &:focus, &:active {
+    background-color: #06DBE4 !important;
+    border-color: #06DBE4 !important;
+  }
 }
-.data-navbar-button:hover {
-  background-color: #06DBE4;
-  border-color: #06DBE4;
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  &:hover {
+    color: #06DBE4;
+  }
 }
 
 .page-container {

@@ -18,7 +18,8 @@
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
             v-bind:key="dropdown.name"
             :text="dropdown.label"
-            variant="outline-primary"
+            :variant="$route.path.includes(localePath({path: dropdown.path})) ? 'primary' : 'outline-primary'"
+            exact-active-class="btn-primary"
             class="m-1">
             <v-select
               :options="fields[dropdown.field]"
@@ -28,13 +29,6 @@
               :dropdown-should-open="function() { return true}"
               ></v-select>
           </b-dropdown>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item
-            class="m-1"
-            link-classes="btn btn-link btn-outline-primary"
-            exact-active-class="btn-primary"
-            :to="localePath('/data/custom/')">{{ $t('dataDashboards.customDownload') }}</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -96,7 +90,6 @@ export default {
     navbar: {
       handler(value) {
         Object.entries(value).forEach(item => {
-          console.log('item is', item)
           if (item[1] != null) {
             this.$router.push(this.localePath({
               name: `${item[0]}-code`, params: { code: item[1].code }

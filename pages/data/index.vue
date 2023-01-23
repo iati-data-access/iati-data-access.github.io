@@ -8,11 +8,12 @@
           :exclude-filters="['transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
+          pageName="data"
         />
       </b-col>
     </b-row>
     <b-row>
-      <b-col md="6" class="mt-2">
+      <b-col class="mt-2">
         <h2>{{ $t('dataDashboards.countries.by') }}</h2>
         <DataBrowser
           :drilldowns="['recipient_country_or_region']"
@@ -23,7 +24,9 @@
           :clickable="true"
          />
       </b-col>
-      <b-col md="6" class="mt-2">
+    </b-row>
+    <b-row>
+      <b-col class="mt-2">
         <h2>{{ $t('dataDashboards.providers.by') }}</h2>
         <DataBrowser
           :drilldowns="['reporting_organisation']"
@@ -35,7 +38,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col md="6" class="mt-2">
+      <b-col class="mt-2">
         <h2>{{ $t('dataDashboards.sectors.by') }}</h2>
         <DataBrowser
           :drilldowns="['sector_category']"

@@ -30,6 +30,7 @@
           :exclude-filters="['sector_category', 'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
+          pageName="data-sectors-code"
          />
       </b-col>
     </b-row>

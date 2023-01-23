@@ -30,6 +30,7 @@
           :exclude-filters="['recipient_country_or_region', 'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
+          pageName="data-countries-code"
          />
       </b-col>
     </b-row>
