@@ -72,7 +72,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap'],
+      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap', 'faWandMagicSparkles'],
       regular: []
     }
   },
