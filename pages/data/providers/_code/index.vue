@@ -30,6 +30,7 @@
           :exclude-filters="['reporting_organisation', 'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
+          pageName="data-providers-code"
          />
       </b-col>
     </b-row>
