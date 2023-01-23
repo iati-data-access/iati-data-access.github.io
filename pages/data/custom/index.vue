@@ -63,13 +63,15 @@
         </DataBrowserFilterItem>
 
         <DataBrowserFilter
-          :exclude-filters="['recipient_country_or_region',
+          :hide-filters="['recipient_country_or_region',
             'reporting_organisation',
             'sector_category',
             'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           :horizontal="false"
+          pageName="data-custom"
+          :drilldowns.sync="drilldowns"
         />
       </b-col>
       <b-col md="9" class="mt-2">
@@ -81,6 +83,7 @@
           :setFields="setFields"
           :currency.sync="currency"
           :autoReload="autoReload"
+          :customise="false"
          />
       </b-col>
     </b-row>
@@ -103,6 +106,7 @@ import { mapState } from 'vuex'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
 import DataBrowser from '~/components/DataBrowser'
 export default {
+  name: 'DataCustom',
   components: { DataBrowserNavbar, DataBrowser },
   data() {
     const lastYear = new Date().getFullYear()-1
