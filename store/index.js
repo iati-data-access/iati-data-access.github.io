@@ -108,6 +108,23 @@ export const mutations = {
     if (['recipient_country_or_region', 'reporting_organisation'].includes(field)) {
       codes = codes.sort((a,b) => a.name > b.name ? 1 : -1);
     }
+    if (field == 'transaction_type') {
+      codes = codes.filter(code => {
+        return ['1','2', '3','4'].includes(code.code)
+      })
+      const budgetTranslations = {
+        'en': 'Budget',
+        'fr': 'Budget',
+        'es': 'Presupuesto',
+        'pt': 'Orçamento',
+      }
+      const budgetName = budgetTranslations[this.$i18n.locale]
+      codes.push({
+        code: 'budget',
+        label: budgetName,
+        name: budgetName
+      })
+    }
     Vue.set(state.fields, field, codes);
   },
   setCodelistsRetrieved(state, value) {
