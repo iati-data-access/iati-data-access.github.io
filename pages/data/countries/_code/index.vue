@@ -134,7 +134,7 @@ export default {
         aid_type: [],
         finance_type: [],
         flow_type: [],
-        transaction_type: ['3', '4'],
+        transaction_type: ['3', '4', 'budget'],
         sector_category: [],
         sector: [],
         recipient_country_or_region: [this.$route.params.code],
