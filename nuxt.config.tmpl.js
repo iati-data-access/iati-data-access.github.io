@@ -63,7 +63,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap'],
+      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap', 'faWandMagicSparkles'],
       regular: []
     }
   },
@@ -86,22 +86,22 @@ export default {
       {
         code: 'en',
         iso: 'en-GB',
-        file: 'en-GB.json'
+        file: 'en.json'
       },
       {
         code: 'fr',
         iso: 'fr-FR',
-        file: 'fr-FR.json'
+        file: 'fr.json'
       },
       {
         code: 'es',
         iso: 'es-ES',
-        file: 'es-ES.json'
+        file: 'es.json'
       },
       {
         code: 'pt',
         iso: 'pt-PT',
-        file: 'pt-PT.json'
+        file: 'pt.json'
       }
     ],
     langDir: 'locales/',
