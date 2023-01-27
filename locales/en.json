@@ -23,6 +23,8 @@
       "text": "Analyse Data"
     }
   ],
+  "homepageLookingGuidanceAnalysis": "Looking for the guidance and analysis dashboards? We've moved this content to the About section.",
+  "exploreDataDashboards": "Explore Data Dashboards",
   "by": "by",
   "dataDashboards": {
     "label": "Data Dashboards",
@@ -52,6 +54,7 @@
       "spending": "Spending",
       "both": "Both"
     },
+    "transactionTypes": "Transaction Type",
     "countries": {
       "by": "by Country",
       "label": "Countries",
