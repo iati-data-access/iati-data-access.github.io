@@ -48,6 +48,11 @@
       "spending": "Dépenses",
       "both": "les deux"
     },
+    "transactionTypes": "Type de transaction",
+    "switchTransactionTypes": {
+      "toAdvanced": "Switch to advanced: select transaction types",
+      "toSimple": "Switch to simple: select budget and/or spending"
+    },
     "countries": {
       "by": "par Pays",
       "label": "Pays",

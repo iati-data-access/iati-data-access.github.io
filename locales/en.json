@@ -55,6 +55,10 @@
       "both": "Both"
     },
     "transactionTypes": "Transaction Type",
+    "switchTransactionTypes": {
+      "toAdvanced": "Switch to advanced: select transaction types",
+      "toSimple": "Switch to simple: select budget and/or spending"
+    },
     "countries": {
       "by": "by Country",
       "label": "Countries",
