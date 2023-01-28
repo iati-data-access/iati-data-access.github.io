@@ -59,6 +59,12 @@
       "toAdvanced": "Switch to advanced: select transaction types",
       "toSimple": "Switch to simple: select budget and/or spending"
     },
+    "reportingOrganisationGroup": {
+      "select": "Select groups of reporting organisations",
+      "apply": "Apply",
+      "label": "Reporting Organisation Group",
+      "selectOne": "Select one..."
+    },
     "countries": {
       "by": "by Country",
       "label": "Countries",
