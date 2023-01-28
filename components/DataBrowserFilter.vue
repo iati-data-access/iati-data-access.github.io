@@ -39,12 +39,14 @@
                 </b-form-radio>
               </b-form-radio-group>
             </b-form-group>
+            <!--
             <b-btn
               v-if="customPage"
               class="mt-0"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=false">{{ $t('dataDashboards.switchTransactionTypes.toAdvanced') }}</b-btn>
+            -->
           </template>
           <template v-else>
             <b-form-group
