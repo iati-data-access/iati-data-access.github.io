@@ -27,7 +27,7 @@
       <b-col md="12" class="mt-2">
         <h2>{{ $t('dataDashboards.exploreTheData') }}</h2>
         <DataBrowserFilter
-          :exclude-filters="['reporting_organisation', 'transaction_type']"
+          :exclude-filters="['reporting_organisation', 'reporting_organisation_type', 'transaction_type']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           pageName="data-providers-code"
@@ -136,7 +136,7 @@ export default {
         aid_type: [],
         finance_type: [],
         flow_type: [],
-        transaction_type: ['3', '4'],
+        transaction_type: ['3', '4', 'budget'],
         sector_category: [],
         sector: [],
         recipient_country_or_region: [],

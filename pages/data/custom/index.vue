@@ -114,7 +114,7 @@ export default {
       drilldowns: ['recipient_country_or_region', 'activity.iati_identifier', 'activity.title'],
       setFields: {
         year: [lastYear],
-        transaction_type: ['budget'],
+        transaction_type: ['3', '4', 'budget'],
         calendar_year_and_quarter: []
       },
       currency: 'usd',

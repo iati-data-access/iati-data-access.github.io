@@ -39,6 +39,7 @@ export const state = () => ({
     sector: 'Sector',
     recipient_country_or_region: 'Country'
   },
+  reportingOrganisationGroup: [],
   fields: {
     reporting_organisation: [],
     reporting_organisation_type: [],
@@ -108,6 +109,23 @@ export const mutations = {
     if (['recipient_country_or_region', 'reporting_organisation'].includes(field)) {
       codes = codes.sort((a,b) => a.name > b.name ? 1 : -1);
     }
+    if (field == 'transaction_type') {
+      codes = codes.filter(code => {
+        return ['1','2', '3','4'].includes(code.code)
+      })
+      const budgetTranslations = {
+        'en': 'Budget',
+        'fr': 'Budget',
+        'es': 'Presupuesto',
+        'pt': 'Orçamento',
+      }
+      const budgetName = budgetTranslations[this.$i18n.locale]
+      codes.push({
+        code: 'budget',
+        label: budgetName,
+        name: budgetName
+      })
+    }
     Vue.set(state.fields, field, codes);
   },
   setCodelistsRetrieved(state, value) {
@@ -115,6 +133,24 @@ export const mutations = {
   },
   setAvailableDrilldowns(state, value) {
     state.availableDrilldowns = value
+  },
+  setReportingOrganisationGroup(state, data) {
+    state.reportingOrganisationGroup = Object.values(
+      data.reduce((summary, item) => {
+        const group_code = String(item['codeforiati:group-code'])
+        const group_name = item['codeforiati:group-name']
+        if (!(group_code in summary)) {
+          summary[group_code] = {
+            code: group_code,
+            label: group_name,
+            name: group_name,
+            items: []
+          }
+        }
+        summary[group_code].items.push(item.code)
+        return summary
+      }, {})
+    ).sort((a,b) => a.name > b.name ? 1 : -1)
   }
 };
 
@@ -130,6 +166,7 @@ export const actions = {
         }
         dispatch('getCodelistData', {field: field, codelist: codelist})
       })
+      dispatch('getCodelistData', { field: 'reporting_organisation_group', codelist: 'ReportingOrganisationGroup' })
     }
   },
   async getCodelistData({ commit }, { field, codelist }) {
@@ -143,6 +180,8 @@ export const actions = {
       )
       var data_regions = response_regions.data.data
       commit('setFields', {field: field, data: data.concat(data_regions)})
+    } else if (field == 'reporting_organisation_group') {
+      commit('setReportingOrganisationGroup', data)
     } else {
       commit('setFields', {field: field, data: data})
     }
@@ -151,5 +190,6 @@ export const actions = {
     this.dispatch('getCodelistData', { field: 'recipient_country_or_region', codelist: 'Country' })
     this.dispatch('getCodelistData', { field: 'sector_category', codelist: 'SectorGroup' })
     this.dispatch('getCodelistData', { field: 'reporting_organisation', codelist: 'ReportingOrganisation' })
+    this.dispatch('getCodelistData', { field: 'reporting_organisation_group', codelist: 'ReportingOrganisationGroup' })
   }
 };
