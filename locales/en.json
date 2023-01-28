@@ -66,20 +66,20 @@
       "selectOne": "Select one..."
     },
     "countries": {
-      "by": "by Country",
-      "label": "Countries",
-      "for": "Country Dashboard for",
-      "select": "Select a country to explore the data."
+      "by": "by Recipient Country or Region",
+      "label": "Country / Region",
+      "for": "Country / Region Dashboard for",
+      "select": "Select a country or region to explore the data."
     },
     "providers": {
-      "by": "by Provider",
-      "label": "Providers",
-      "for": "Provider Dashboard for",
-      "select": "Select a provider to explore the data."
+      "by": "by Reporting Organisation",
+      "label": "Reporting Organisation",
+      "for": "Reporting Organisation Dashboard for",
+      "select": "Select a reporting organisation to explore the data."
     },
     "sectors": {
-      "by": "by Sector",
-      "label": "Sectors",
+      "by": "by Sector Category",
+      "label": "Sector",
       "for": "Sector Dashboard for",
       "select": "Select a sector to explore the data."
     },
@@ -112,19 +112,19 @@
     {
       "path": "/data/countries/",
       "name": "data-countries",
-      "label": "by Country",
+      "label": "by Recipient Country or Region",
       "field": "recipient_country_or_region"
     },
     {
       "path": "/data/providers/",
       "name": "data-providers",
-      "label": "by Provider",
+      "label": "by Reporting Organisation",
       "field": "reporting_organisation"
     },
     {
       "path": "/data/sectors/",
       "name": "data-sectors",
-      "label": "by Sector",
+      "label": "by Sector Category",
       "field": "sector_category"
     }
   ],
