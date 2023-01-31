@@ -110,20 +110,20 @@
   },
   "dataSidebarDropdowns": [
     {
-      "path": "/data/countries/",
-      "name": "data-countries",
+      "path": "/data/recipient-country-or-region/",
+      "name": "data-recipient-country-or-region",
       "label": "by Recipient Country or Region",
       "field": "recipient_country_or_region"
     },
     {
-      "path": "/data/providers/",
-      "name": "data-providers",
+      "path": "/data/reporting-organisation/",
+      "name": "data-reporting-organisation",
       "label": "by Reporting Organisation",
       "field": "reporting_organisation"
     },
     {
-      "path": "/data/sectors/",
-      "name": "data-sectors",
+      "path": "/data/sector-category/",
+      "name": "data-sector-category",
       "label": "by Sector Category",
       "field": "sector_category"
     }

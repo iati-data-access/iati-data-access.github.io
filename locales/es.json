@@ -5,11 +5,128 @@
   "selectText": "Idiomas",
   "label": "Español",
   "ariaLabel": "Idiomas",
-  "sidebar": [
-    ["/es/", "Página de portada"],
+  "home": "Página de inicio",
+  "about": "Acerca de",
+  "aboutNav": [
     ["/es/introduction/", "Antecedentes"],
     ["/es/methodology/", "Metodología"],
-    ["/es/data-notes/", "Notas sobre datos"]
+    ["/es/data-notes/", "Notas sobre datos"],
+    ["/es/guidance-analysis/", "Paneles de orientación y análisis en Excel"]
+  ],
+  "accessAnalyseOptions": [
+    {
+      "value": "suD8WMo5BXs",
+      "text": "Acceder y comprender los datos"
+    },
+    {
+      "value": "sqJRWU7QJKI",
+      "text": "Analizar los datos"
+    }
+  ],
+  "homepageLookingGuidanceAnalysis": "¿Busca los paneles de orientación y análisis? Los hemos trasladado a la sección “Acerca de”.",
+  "exploreDataDashboards": "Explorar los paneles de datos",
+  "by": "por",
+  "dataDashboards": {
+    "label": "Paneles de datos",
+    "overview": "Panel de síntesis",
+    "dashboards": "Paneles:",
+    "customise": "Personalizar",
+    "customDownload": "Descarga de datos personalizados",
+    "columns": "Columnas",
+    "selectColumns": "Seleccionar columnas",
+    "selectAtLeastOneColumn": "Debe seleccionar al menos una columna",
+    "dragColumnsToReorder": "Arrastre las columnas para cambiar el orden de los productos",
+    "deselect": "Deseleccionar",
+    "filters": "Filtros",
+    "preview": "Vista previa",
+    "currency": "Moneda",
+    "calendarYear": "Año natural",
+    "calendarYearAndQuarter": "Año y trimestre natural",
+    "moreFilters": "Más filtros",
+    "numberOfResults": "Número de resultados",
+    "displayOptions": "Opciones de presentación",
+    "noResults": "Los filtros seleccionados no han arrojado resultados.",
+    "selectSomeOptions": "Seleccione algunas opciones y haga clic en “Ejecutar” a la izquierda.",
+    "amount": "Valor",
+    "budgetsSpending": {
+      "budgetsOrSpending": "Tipo de gasto",
+      "budgets": "Presupuestos",
+      "spending": "Gasto",
+      "both": "Ambos"
+    },
+    "transactionTypes": "Transaction Type",
+    "switchTransactionTypes": {
+      "toAdvanced": "Switch to advanced: select transaction types",
+      "toSimple": "Switch to simple: select budget and/or spending"
+    },
+    "reportingOrganisationGroup": {
+      "select": "Select groups of reporting organisations",
+      "apply": "Apply",
+      "label": "Reporting Organisation Group",
+      "selectOne": "Select one..."
+    },
+    "countries": {
+      "by": "por País o región receptores",
+      "label": "Países y regiónes",
+      "for": "Panel de país para",
+      "select": "Seleccione un país o región para explorar los datos."
+    },
+    "providers": {
+      "by": "por Organización notificadora",
+      "label": "Organizaciónes notificadoras",
+      "for": "Panel de organización notificadora para",
+      "select": "Seleccione un organización notificadora para explorar los datos."
+    },
+    "sectors": {
+      "by": "por Categoría de sector",
+      "label": "Categorías de sectores",
+      "for": "Panel de sector para",
+      "select": "Seleccione un sector para explorar los datos."
+    },
+    "summary": "Resumen",
+    "exploreTheData": "Explorar los datos",
+    "availableDrilldowns": {
+      "activity.iati_identifier": "Identificador de la IATI de la actividad",
+      "activity.title": "Título de la actividad",
+      "reporting_organisation": "Organización notificadora",
+      "reporting_organisation_type": "Tipo de organización notificadora",
+      "aid_type": "Tipo de ayuda",
+      "finance_type": "Tipo de financiación",
+      "flow_type": "Tipo de flujo",
+      "provider_organisation": "Organización proveedora",
+      "provider_organisation.type": "Tipo de organización proveedora",
+      "receiver_organisation": "Organización receptora",
+      "receiver_organisation.type": "Tipo de organización receptora",
+      "recipient_country_or_region": "País o región receptores",
+      "multi_country": "Multinacional",
+      "sector_category": "Categoría de sector",
+      "sector": "Sector",
+      "humanitarian": "Asistencia humanitaria / desarrollo",
+      "year.year": "Año natural",
+      "quarter.quarter": "Trimestre natural",
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural"
+    },
+    "activity": "Actividad"
+  },
+  "dataSidebarDropdowns": [
+    {
+      "path": "/es/data/recipient-country-or-region/",
+      "name": "data-recipient-country-or-region",
+      "label": "por País o Région",
+      "field": "recipient_country_or_region"
+    },
+    {
+      "path": "/es/data/reporting-organisation/",
+      "name": "data-reporting-organisation",
+      "label": "por Organización notificadora",
+      "field": "reporting_organisation"
+    },
+    {
+      "path": "/es/data/sector-category/",
+      "name": "data-sector-category",
+      "label": "por Sector",
+      "field": "sector_category"
+    }
   ],
   "translations": {
     "selectCountry": "Seleccionar un país",
