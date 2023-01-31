@@ -181,7 +181,7 @@ export default {
       default: true
     },
     pageName: {
-      default: 'data-countries-code'
+      default: 'data-recipient-country-or-region-code'
     },
     drilldowns: {
       default() {

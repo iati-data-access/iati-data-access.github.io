@@ -74,9 +74,9 @@ export default {
   data() {
     return {
       navbar: {
-        'data-countries': null,
-        'data-providers': null,
-        'data-sectors': null
+        'data-recipient-country-or-region': null,
+        'data-reporting-organisation': null,
+        'data-sector-category': null
       }
     }
   },

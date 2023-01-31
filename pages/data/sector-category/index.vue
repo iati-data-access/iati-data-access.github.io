@@ -12,7 +12,7 @@
           v-bind:key="sector_category.code">
           <nuxt-link
           :to="localePath({
-            name: `data-sectors-code`, params: { code: sector_category.code }
+            name: `data-sector-category-code`, params: { code: sector_category.code }
           })">{{ sector_category.code }} - {{ sector_category.name }}</nuxt-link>
         </b-card>
       </b-card-group>

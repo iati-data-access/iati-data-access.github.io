@@ -13,7 +13,7 @@
           <nuxt-link
           variant="link"
           :to="localePath({
-            name: `data-providers-code`, params: { code: provider.code }
+            name: `data-reporting-organisation-code`, params: { code: provider.code }
           })">{{ provider.name }}</nuxt-link>
         </b-card>
       </b-card-group>
