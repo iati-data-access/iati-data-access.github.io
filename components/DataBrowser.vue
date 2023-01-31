@@ -230,13 +230,13 @@ export default {
     selectedDrilldownPath() {
       const d = this.drilldowns.join('')
       if (d == 'reporting_organisation') {
-        return 'data-providers-code'
+        return 'data-reporting-organisation-code'
       }
       else if (d == 'recipient_country_or_region') {
-        return 'data-countries-code'
+        return 'data-recipient-country-or-region-code'
       }
       else if (d == 'sector_category') {
-        return 'data-sectors-code'
+        return 'data-sector-category-code'
       }
     },
     iatiIdentifierSlotName() {
@@ -534,7 +534,7 @@ export default {
     },
     selectedRegion(code) {
       if (this.clickable) {
-        this.$router.push(this.localePath({name: 'data-countries-code', params: { code: code }}))
+        this.$router.push(this.localePath({name: 'data-recipient-country-or-region-code', params: { code: code }}))
       }
     },
     drilldowns() {

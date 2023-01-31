@@ -5,11 +5,128 @@
   "selectText": "Idiomas",
   "label": "Português",
   "ariaLabel": "Idiomas",
-  "sidebar": [
-    ["/pt/", "Página inicial"],
-    ["/pt/introduction/", "Contexto"],
+  "home": "Página inicial",
+  "about": "Acerca de",
+  "aboutNav": [
+    ["/pt/introduction/", "Introdução"],
     ["/pt/methodology/", "Metodologia"],
-    ["/pt/data-notes/", "Notas sobre dados"]
+    ["/pt/data-notes/", "Notas sobre os dados"],
+    ["/pt/guidance-analysis/", "Orientações e painéis de análise Excel"]
+  ],
+  "accessAnalyseOptions": [
+    {
+      "value": "8WXdwNmZY18",
+      "text": "Acessar e compreender dados"
+    },
+    {
+      "value": "_2KpvSiZTQY",
+      "text": "Analisar dados"
+    }
+  ],
+  "homepageLookingGuidanceAnalysis": "Procura orientações e painéis de análise? Transferimos este conteúdo para a secção “Acerca de”",
+  "exploreDataDashboards": "Explorar os painéis de dados",
+  "by": "por",
+  "dataDashboards": {
+    "label": "Painéis de dados",
+    "overview": "Painel de síntese",
+    "dashboards": "Painéis",
+    "customise": "Personalizar",
+    "customDownload": "Descarregar dados personalizados",
+    "columns": "Colunas",
+    "selectColumns": "Selecionar colunas",
+    "selectAtLeastOneColumn": "Tem de selecionar pelo menos uma coluna",
+    "dragColumnsToReorder": "Arraste as colunas para reordenar o resultado",
+    "deselect": "Anular a seleção",
+    "filters": "Filtros",
+    "preview": "Pré-visualização",
+    "currency": "Moeda",
+    "calendarYear": "Ano civil",
+    "calendarYearAndQuarter": "Ano e trimestre civis",
+    "moreFilters": "Ano e trimestre civis",
+    "numberOfResults": "Número de resultados",
+    "displayOptions": "Opções de apresentação",
+    "noResults": "Não há resultados para os filtros que selecionou",
+    "selectSomeOptions": "Selecione algumas opções e clique em Executar à esquerda.",
+    "amount": "Valor",
+    "budgetsSpending": {
+      "budgetsOrSpending": "Tipo de despesa",
+      "budgets": "Orçamentos",
+      "spending": "Despesa",
+      "both": "Ambos"
+    },
+    "transactionTypes": "Transaction Type",
+    "switchTransactionTypes": {
+      "toAdvanced": "Switch to advanced: select transaction types",
+      "toSimple": "Switch to simple: select budget and/or spending"
+    },
+    "reportingOrganisationGroup": {
+      "select": "Select groups of reporting organisations",
+      "apply": "Apply",
+      "label": "Reporting Organisation Group",
+      "selectOne": "Select one..."
+    },
+    "countries": {
+      "by": "por País ou região recetor",
+      "label": "País ou região recetor",
+      "for": "Painel do país para",
+      "select": "Selecione um país ou região para explorar os dados."
+    },
+    "providers": {
+      "by": "por Organização relatora",
+      "label": "Organizaçãos relatoras",
+      "for": "Painel do organização relatora para",
+      "select": "Selecione um organização relatora para explorar os dados."
+    },
+    "sectors": {
+      "by": "por Sector",
+      "label": "Sectores",
+      "for": "Painel do sector para",
+      "select": "Selecione um sector para explorar os dados."
+    },
+    "summary": "Resumo",
+    "exploreTheData": "Explore os dados",
+    "availableDrilldowns": {
+      "activity.iati_identifier": "Identificador de atividade da IATI",
+      "activity.title": "Título da atividade",
+      "reporting_organisation": "Organização relatora",
+      "reporting_organisation_type": "Tipo de organização relatora",
+      "aid_type": "Tipo de ajuda",
+      "finance_type": "Tipo de financiamento",
+      "flow_type": "Tipo de fluxo",
+      "provider_organisation": "Organização prestadora",
+      "provider_organisation.type": "Tipo de organização prestadora",
+      "receiver_organisation": "Organização recetora",
+      "receiver_organisation.type": "Tipo de organização recetora",
+      "recipient_country_or_region": "País ou região recetor",
+      "multi_country": "Plurinacional",
+      "sector_category": "Categoria de sector",
+      "sector": "Sector",
+      "humanitarian": "Humanitário / desenvolvimento",
+      "year.year": "Ano civil",
+      "quarter.quarter": "Trimestre civil",
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis"
+    },
+    "activity": "Atividade"
+  },
+  "dataSidebarDropdowns": [
+    {
+      "path": "/pt/data/recipient-country-or-region/",
+      "name": "data-recipient-country-or-region",
+      "label": "por País ou região recetor",
+      "field": "recipient_country_or_region"
+    },
+    {
+      "path": "/pt/data/reporting-organisation/",
+      "name": "data-reporting-organisation",
+      "label": "por Organização relatora",
+      "field": "reporting_organisation"
+    },
+    {
+      "path": "/data/sector-category/",
+      "name": "data-sector-category",
+      "label": "por Sector",
+      "field": "sector_category"
+    }
   ],
   "translations": {
     "selectCountry": "Selecione um país",

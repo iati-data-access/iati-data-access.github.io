@@ -8,13 +8,13 @@
 </b-card>
 <b-row class="mt-2">
     <b-col>
-        <b-btn block variant="outline-primary" to="/data/countries/">by Country</b-btn>
+        <b-btn block variant="outline-primary" to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
     </b-col>
     <b-col>
-        <b-btn block variant="outline-primary" to="/data/providers/">by Provider</b-btn>
+        <b-btn block variant="outline-primary" to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
     </b-col>
     <b-col>
-        <b-btn block variant="outline-primary" to="/data/sectors/">by Sector</b-btn>
+        <b-btn block variant="outline-primary" to="/data/sector-category/">by Sector</b-btn>
     </b-col>
 </b-row>
 
