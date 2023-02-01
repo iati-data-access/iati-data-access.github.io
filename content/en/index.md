@@ -7,14 +7,23 @@
   <b-btn block variant="primary" to="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/sector-category/">by Sector</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/sector-category/">by Sector Category</b-btn>
     </b-col>
 </b-row>
 

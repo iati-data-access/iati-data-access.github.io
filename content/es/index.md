@@ -6,14 +6,26 @@
   <b-btn block variant="primary" to="/es/data/">Explorar los paneles de datos<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
-    <b-col>
-        <b-btn block variant="outline-primary" to="/es/data/recipient-country-or-region/">por País o región receptores</b-btn>
+    <b-col lg="4">
+        <b-btn
+            block
+            variant="outline-primary"
+            class="mb-2"
+            to="/es/data/recipient-country-or-region/">por País o región receptores</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/es/data/reporting-organisation/">por Organización notificadora</b-btn>
+    <b-col lg="4">
+        <b-btn
+            block
+            variant="outline-primary"
+            class="mb-2"
+            to="/es/data/reporting-organisation/">por Organización notificadora</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/es/data/sector-category/">por Categoría de sector</b-btn>
+    <b-col lg="4">
+        <b-btn
+            block
+            variant="outline-primary"
+            class="mb-2"
+            to="/es/data/sector-category/">por Categoría de sector</b-btn>
     </b-col>
 </b-row>
 
@@ -34,12 +46,12 @@
 </b-card-group>
 <hr />
 <b-alert show variant="secondary" class="text-center">
-	<p>¿Busca los paneles de orientación y análisis? Los hemos trasladado a la sección “Acerca de”.</p>
-	<b-btn variant="secondary" to="/es/guidance-analysis/">Paneles de orientación y análisis en Excel &raquo;</b-btn>
+    <p>¿Busca los paneles de orientación y análisis? Los hemos trasladado a la sección “Acerca de”.</p>
+    <b-btn variant="secondary" to="/es/guidance-analysis/">Paneles de orientación y análisis en Excel &raquo;</b-btn>
 </b-alert>
 
 <p class="center-logo">
-	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
+    <img src="/powered-by-iati.png" alt="Powered by IATI Data" />
 </p>
 
 [Política de privacidad - en inglés](https://iatistandard.org/en/privacy-policy/)
