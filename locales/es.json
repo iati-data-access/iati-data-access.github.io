@@ -68,19 +68,19 @@
     "countries": {
       "by": "por País o región receptores",
       "label": "Países y regiónes",
-      "for": "Panel de país para",
+      "for": "Panel para",
       "select": "Seleccione un país o región para explorar los datos."
     },
     "providers": {
       "by": "por Organización notificadora",
       "label": "Organizaciónes notificadoras",
-      "for": "Panel de organización notificadora para",
+      "for": "Panel para",
       "select": "Seleccione un organización notificadora para explorar los datos."
     },
     "sectors": {
       "by": "por Categoría de sector",
       "label": "Categorías de sectores",
-      "for": "Panel de sector para",
+      "for": "Panel para",
       "select": "Seleccione un sector para explorar los datos."
     },
     "summary": "Resumen",

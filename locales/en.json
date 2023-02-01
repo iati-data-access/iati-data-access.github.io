@@ -68,19 +68,19 @@
     "countries": {
       "by": "by Recipient Country or Region",
       "label": "Country / Region",
-      "for": "Country / Region Dashboard for",
+      "for": "Dashboard for",
       "select": "Select a country or region to explore the data."
     },
     "providers": {
       "by": "by Reporting Organisation",
       "label": "Reporting Organisation",
-      "for": "Reporting Organisation Dashboard for",
+      "for": "Dashboard for",
       "select": "Select a reporting organisation to explore the data."
     },
     "sectors": {
       "by": "by Sector Category",
       "label": "Sector",
-      "for": "Sector Dashboard for",
+      "for": "Dashboard for",
       "select": "Select a sector to explore the data."
     },
     "summary": "Summary",

@@ -68,19 +68,19 @@
     "countries": {
       "by": "par Pays ou région bénéficiaire ",
       "label": "Pays ou région bénéficiare",
-      "for": "Tableau de bord du pays pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un pays ou région pour explorer les données."
     },
     "providers": {
       "by": "par Organisme déclarant",
       "label": "Organismes déclarants",
-      "for": "Tableau de bord d'organisme déclarant pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un prestataire pour explorer les données."
     },
     "sectors": {
       "by": "par Secteur",
       "label": "Secteurs",
-      "for": "Tableau de bord du secteur pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un secteur pour explorer les données."
     },
     "summary": "Vue d’ensemble",
