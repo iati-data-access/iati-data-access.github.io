@@ -21,8 +21,8 @@
         layerType="base"
         :visible="i==0">
         <MapFeature
-          v-for="region in regions"
-          v-bind:key="region.iso2"
+          v-for="(region, ir) in regions"
+          v-bind:key="ir"
           v-if="region.iso2!='-99'"
           :region-colours="dataset.backgroundColor"
           :geojson="region.features"
@@ -126,19 +126,20 @@ export default {
   },
   methods: {
     getGeoJSON() {
-      axios.get(`/custom.geo.json`)
+      axios.get(`/worldbank.geo.json`)
       .then(response => {
         this.regions = response.data.features.map(item => {
+          const name = item.properties[`NAME_${this.$i18n.locale.toUpperCase()}`]
           return {
             type: 'FeatureCollection',
-            name: item.properties.name,
-            region: item.properties.name,
-            regionName: item.properties.name,
-            iso2: item.properties.iso_a2,
+            name: name,
+            region: name,
+            regionName: name,
+            iso2: item.properties.WB_A2,
             features: {
               type: 'Feature',
               properties: {
-                Region: item.properties.name
+                Region: name
               },
               geometry: item.geometry
             }
