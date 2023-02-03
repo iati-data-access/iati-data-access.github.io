@@ -68,19 +68,19 @@
     "countries": {
       "by": "por País o región receptores",
       "label": "Países y regiónes",
-      "for": "Panel de país para",
+      "for": "Panel para",
       "select": "Seleccione un país o región para explorar los datos."
     },
     "providers": {
       "by": "por Organización notificadora",
       "label": "Organizaciónes notificadoras",
-      "for": "Panel de organización notificadora para",
+      "for": "Panel para",
       "select": "Seleccione un organización notificadora para explorar los datos."
     },
     "sectors": {
       "by": "por Categoría de sector",
       "label": "Categorías de sectores",
-      "for": "Panel de sector para",
+      "for": "Panel para",
       "select": "Seleccione un sector para explorar los datos."
     },
     "summary": "Resumen",
@@ -88,15 +88,16 @@
     "availableDrilldowns": {
       "activity.iati_identifier": "Identificador de la IATI de la actividad",
       "activity.title": "Título de la actividad",
+      "activity.description": "Activity Description",
       "reporting_organisation": "Organización notificadora",
       "reporting_organisation_type": "Tipo de organización notificadora",
       "aid_type": "Tipo de ayuda",
       "finance_type": "Tipo de financiación",
       "flow_type": "Tipo de flujo",
       "provider_organisation": "Organización proveedora",
-      "provider_organisation.type": "Tipo de organización proveedora",
+      "provider_organisation_type": "Tipo de organización proveedora",
       "receiver_organisation": "Organización receptora",
-      "receiver_organisation.type": "Tipo de organización receptora",
+      "receiver_organisation_type": "Tipo de organización receptora",
       "recipient_country_or_region": "País o región receptores",
       "multi_country": "Multinacional",
       "sector_category": "Categoría de sector",

@@ -68,19 +68,19 @@
     "countries": {
       "by": "por País ou região recetor",
       "label": "País ou região recetor",
-      "for": "Painel do país para",
+      "for": "Painel para",
       "select": "Selecione um país ou região para explorar os dados."
     },
     "providers": {
       "by": "por Organização relatora",
       "label": "Organizaçãos relatoras",
-      "for": "Painel do organização relatora para",
+      "for": "Painel para",
       "select": "Selecione um organização relatora para explorar os dados."
     },
     "sectors": {
       "by": "por Sector",
       "label": "Sectores",
-      "for": "Painel do sector para",
+      "for": "Painel para",
       "select": "Selecione um sector para explorar os dados."
     },
     "summary": "Resumo",
@@ -88,15 +88,16 @@
     "availableDrilldowns": {
       "activity.iati_identifier": "Identificador de atividade da IATI",
       "activity.title": "Título da atividade",
+      "activity.description": "Activity Description",
       "reporting_organisation": "Organização relatora",
       "reporting_organisation_type": "Tipo de organização relatora",
       "aid_type": "Tipo de ajuda",
       "finance_type": "Tipo de financiamento",
       "flow_type": "Tipo de fluxo",
       "provider_organisation": "Organização prestadora",
-      "provider_organisation.type": "Tipo de organização prestadora",
+      "provider_organisation_type": "Tipo de organização prestadora",
       "receiver_organisation": "Organização recetora",
-      "receiver_organisation.type": "Tipo de organização recetora",
+      "receiver_organisation_type": "Tipo de organização recetora",
       "recipient_country_or_region": "País ou região recetor",
       "multi_country": "Plurinacional",
       "sector_category": "Categoria de sector",

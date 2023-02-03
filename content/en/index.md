@@ -1,20 +1,29 @@
 # Country Development Finance Data
 
-<p class="lead">Download simple Excel-formatted data on commitments, disbursements and expenditures, as well as forward-looking budgets, presented simply by country and region and designed to enable easy analysis in a pivot table.</p>
+<p class="lead">Access data on development and humanitarian activities, presented simply by country, reporting organisation and sector. Visualise or download the data for easy analysis.</p>
 
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
   <b-btn block variant="primary" to="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
     </b-col>
-    <b-col>
-        <b-btn block variant="outline-primary" to="/data/sector-category/">by Sector</b-btn>
+    <b-col lg="4">
+        <b-btn block
+            variant="outline-primary"
+            class="mb-2"
+            to="/data/sector-category/">by Sector Category</b-btn>
     </b-col>
 </b-row>
 

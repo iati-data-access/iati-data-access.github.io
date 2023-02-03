@@ -216,6 +216,16 @@ export default {
     }
   },
   computed: {
+    localeSensitiveDrilldowns() {
+      return this.drilldowns.reduce((summary, item) => {
+        if (['activity.title', 'activity.description'].includes(item)) {
+          summary.push(`${item}_${this.lang}`)
+        } else {
+          summary.push(item)
+        }
+        return summary
+      }, [])
+    },
     drilldownsForQuery() {
       return this.drilldowns.join(";")
     },
@@ -424,7 +434,7 @@ export default {
       return ''
     },
     summaryURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.drilldowns.join("|")}&order=value_${this.currency}.sum:desc${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.localeSensitiveDrilldowns.join("|")}&order=value_${this.currency}.sum:desc${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
     },
     JSONSummaryURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating, because this is the Excel maximum number of rows. But we only want to show a maximum of 1000 on the preview.
@@ -462,7 +472,11 @@ export default {
       .then(response => {
         this.cells = response.data.cells.map(item => {
           this.drilldowns.forEach(drilldown => {
-            if (drilldown.includes(".")) {
+            if (['activity.title', 'activity.description'].includes(drilldown)) {
+              item[drilldown] = item[`${drilldown}_${this.lang}`]
+            } else if (['provider_organisation_type', 'receiver_organisation_type'].includes(drilldown)) {
+              item[drilldown] = item[`${drilldown}.code`]
+            } else if (drilldown.includes(".")) {
               return item
             } else if (drilldown == 'humanitarian') {
               item[drilldown] = (item[`${drilldown}.code`] === true) ? 'Humanitarian' : 'Development'

@@ -68,19 +68,19 @@
     "countries": {
       "by": "par Pays ou région bénéficiaire ",
       "label": "Pays ou région bénéficiare",
-      "for": "Tableau de bord du pays pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un pays ou région pour explorer les données."
     },
     "providers": {
       "by": "par Organisme déclarant",
       "label": "Organismes déclarants",
-      "for": "Tableau de bord d'organisme déclarant pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un prestataire pour explorer les données."
     },
     "sectors": {
       "by": "par Secteur",
       "label": "Secteurs",
-      "for": "Tableau de bord du secteur pour",
+      "for": "Tableau de bord pour",
       "select": "Choisir un secteur pour explorer les données."
     },
     "summary": "Vue d’ensemble",
@@ -88,15 +88,16 @@
     "availableDrilldowns": {
       "activity.iati_identifier": "Identifiant de l’IITA",
       "activity.title": "Titre",
+      "activity.description": "Activity Description",
       "reporting_organisation": "Organisme déclarant",
       "reporting_organisation_type": "Type d’organisme déclarant",
       "aid_type": "Type d’aide",
       "finance_type": "Type de financement",
       "flow_type": "Type de flux",
       "provider_organisation": "Organisme prestataire",
-      "provider_organisation.type": "Type d’organisme prestataire",
+      "provider_organisation_type": "Type d’organisme prestataire",
       "receiver_organisation": "Organisme bénéficiaire",
-      "receiver_organisation.type": "Type d’organisme bénéficiaire",
+      "receiver_organisation_type": "Type d’organisme bénéficiaire",
       "recipient_country_or_region": "Pays ou région bénéficiaire",
       "multi_country": "Multipays",
       "sector_category": "Catégorie de secteur",
