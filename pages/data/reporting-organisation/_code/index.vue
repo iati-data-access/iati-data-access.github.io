@@ -109,7 +109,7 @@
       <b-col md="12" class="mt-2">
         <h3>{{ $t('by') }} {{ $t('dataDashboards.activity') }}</h3>
         <DataBrowser
-          :drilldowns="['activity.iati_identifier', 'activity.title']"
+          :drilldowns="['activity.iati_identifier', 'activity.title', 'reporting_organisation']"
           displayAs="table"
           :setFields="setFields"
           :currency.sync="currency"
