@@ -7,6 +7,7 @@
         :center="center"
         :options="mapControls"
       >
+      <l-control-attribution position="bottomright" :prefix="mapAttribution"></l-control-attribution>
       <l-control-layers
         position="topright"
         :collapsed="false"
@@ -52,12 +53,13 @@ export default {
   data() {
     return {
       zoom: 1.5,
-      center: [0, 0],
+      center: [10, 0],
       regions: [],
-      url: "https://api.mapbox.com/styles/v1/markbrough/ckhe9jol304hs19pd9xkkswsf/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFya2Jyb3VnaCIsImEiOiJUZXFjRHowIn0.8e3Fq018PP1x5QMTxa8n_A",
+      mapAttribution: '<a href="https://datacatalog.worldbank.org/search/dataset/0038272/World-Bank-Official-Boundaries">Map data</a> &copy; World Bank Group | <a href="https://leafletjs.com/">Leaflet</a>',
       mapControls: {
         scrollWheelZoom: false,
         touchZoom: false,
+        attributionControl: false
         /*
         zoomControl: false,
         attributionControl: false,
@@ -130,12 +132,13 @@ export default {
       .then(response => {
         this.regions = response.data.features.map(item => {
           const name = item.properties[`NAME_${this.$i18n.locale.toUpperCase()}`]
+          const iso2 = (item.properties.WB_A2 == 'FR') ? item.properties.WB_A2 : item.properties.ISO_A2
           return {
             type: 'FeatureCollection',
             name: name,
             region: name,
             regionName: name,
-            iso2: item.properties.WB_A2,
+            iso2: iso2,
             features: {
               type: 'Feature',
               properties: {
