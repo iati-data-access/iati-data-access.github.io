@@ -32,12 +32,18 @@
     "dashboards": "Paneles:",
     "customise": "Personalizar",
     "customDownload": "Descarga de datos personalizados",
+    "customDownloadText": "Elija las columnas que se incluirán en su hoja de cálculo y seleccione los filtros para restringir su búsqueda. Descargue el conjunto personalizado de datos en Excel.",
+    "dataSource": "La fuente de estos datos son las organizaciones que publican datos en la IATI. Los datos se actualizan una vez al día para capturar datos nuevos o actualizados publicados en el Registro de la IATI. Se pueden encontrar detalles adicionales en la sección {methodology}.",
+    "dataSourceContact": "Para soporte o capacitación, comuníquese con {emailContact}",
+    "emailContact": "support@iatistandard.org",
     "columns": "Columnas",
     "selectColumns": "Seleccionar columnas",
     "selectAtLeastOneColumn": "Debe seleccionar al menos una columna",
     "dragColumnsToReorder": "Arrastre las columnas para cambiar el orden de los productos",
     "deselect": "Deseleccionar",
     "filters": "Filtros",
+    "filtersText": "Seleccione filtros para personalizar la visualización.",
+    "selectedFilters": "Filtros aplicados",
     "preview": "Vista previa",
     "currency": "Moneda",
     "calendarYear": "Año natural",
@@ -49,9 +55,9 @@
     "selectSomeOptions": "Seleccione algunas opciones y haga clic en “Ejecutar” a la izquierda.",
     "amount": "Valor",
     "budgetsSpending": {
-      "budgetsOrSpending": "Tipo de gasto",
+      "budgetsOrSpending": "Flujos de Recursos",
       "budgets": "Presupuestos",
-      "spending": "Gasto",
+      "spending": "Gastos",
       "both": "Ambos"
     },
     "transactionTypes": "Transaction Type",
@@ -60,10 +66,10 @@
       "toSimple": "Switch to simple: select budget and/or spending"
     },
     "reportingOrganisationGroup": {
-      "select": "Select groups of reporting organisations",
+      "select": "Seleccione grupos de organizaciones notificadoras para organizaciones que publican datos bajo varias organizaciones notificadoras.",
       "apply": "Apply",
-      "label": "Reporting Organisation Group",
-      "selectOne": "Select one..."
+      "label": "Grupos de Organizaciones Notificadoras",
+      "selectOne": "Seleccione un grupo..."
     },
     "countries": {
       "by": "por País o región receptores",
@@ -84,6 +90,7 @@
       "select": "Seleccione un sector para explorar los datos."
     },
     "summary": "Resumen",
+    "spendSummaryChartText": "Este gráfico muestra los presupuestos y gastos de los tres años anteriores, el año en curso y los tres años siguientes. Los filtros sobre flujos de recursos y años y trimestres naturales no se han aplicado a este gráfico.",
     "exploreTheData": "Explorar los datos",
     "availableDrilldowns": {
       "activity.iati_identifier": "Identificador de la IATI de la actividad",
@@ -106,6 +113,12 @@
       "year.year": "Año natural",
       "quarter.quarter": "Trimestre natural",
       "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural"
+    },
+    "unavailableDrilldowns": {
+      "transaction_type": "Flujos de Recursos",
+      "year": "Año natural",
+      "quarter": "Trimestre natural",
+      "calendar_year_and_quarter": "Año y trimestre naturales"
     },
     "activity": "Actividad"
   },
