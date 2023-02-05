@@ -7,25 +7,6 @@
     <hr />
     <b-row>
       <b-col>
-        <h2>{{ $t('dataDashboards.summary') }}</h2>
-        <DataBrowser
-          :drilldowns="['year.year']"
-          :setFields="summarySetFields"
-          :currency.sync="currency"
-          bar-chart-height="300px"
-          :show-number-results="false"
-          :pageSize="null"
-          orderBy="year.year"  />
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <hr />
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col md="12" class="mt-2">
-        <h2>{{ $t('dataDashboards.exploreTheData') }}</h2>
         <DataBrowserFilter
           :exclude-filters="['sector_category', 'transaction_type']"
           :setFields.sync="setFields"
@@ -35,8 +16,32 @@
       </b-col>
     </b-row>
     <b-row>
+      <b-col>
+        <h2>{{ $t('dataDashboards.summary') }}</h2>
+        <DataBrowser
+          :drilldowns="['year.year']"
+          :setFields="summarySetFields"
+          :currency.sync="currency"
+          bar-chart-height="300px"
+          :show-number-results="false"
+          :pageSize="null"
+          orderBy="year.year" />
+        <p class="text-muted font-italic">{{ $t('dataDashboards.spendSummaryChartText') }}</p>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <hr />
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col class="mt-2">
+        <h2>{{ $t('dataDashboards.exploreTheData') }}</h2>
+      </b-col>
+    </b-row>
+    <b-row>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.recipient_country_or_region') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.recipient_country_or_region') }}</h3>
         <DataBrowser
           :drilldowns="['recipient_country_or_region']"
           displayAs="map"
@@ -46,7 +51,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.reporting_organisation') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.reporting_organisation') }}</h3>
         <DataBrowser
           :drilldowns="['reporting_organisation']"
           :setFields="setFields"
@@ -61,7 +66,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.finance_type') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.finance_type') }}</h3>
         <DataBrowser
           :drilldowns="['finance_type']"
           :setFields="setFields"
@@ -69,7 +74,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.aid_type') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.aid_type') }}</h3>
         <DataBrowser
           :drilldowns="['aid_type']"
           :setFields="setFields"
@@ -84,7 +89,7 @@
     </b-row>
     <b-row>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.reporting_organisation_type') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.reporting_organisation_type') }}</h3>
         <DataBrowser
           :drilldowns="['reporting_organisation_type']"
           :setFields="setFields"
@@ -92,7 +97,7 @@
          />
       </b-col>
       <b-col md="6" class="mt-2">
-        <h3>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns.humanitarian') }}</h3>
+        <h3>{{ $t('by') }} {{ $tc('dataDashboards.availableDrilldowns.humanitarian') }}</h3>
         <DataBrowser
           :drilldowns="['humanitarian']"
           :setFields="setFields"
@@ -116,6 +121,7 @@
          />
       </b-col>
     </b-row>
+    <DataBrowserSource />
   </div>
 </template>
 <script>
@@ -149,9 +155,11 @@ export default {
   computed: {
     summarySetFields() {
       return {
-        sector_category: [this.$route.params.code],
-        transaction_type: ['3', '4', 'budget'],
-        year: this.calendarYears
+        ...this.setFields,
+        ...{
+          year: this.calendarYears,
+          transaction_type: ['3', '4', 'budget']
+        }
       }
     },
     calendarYears() {
