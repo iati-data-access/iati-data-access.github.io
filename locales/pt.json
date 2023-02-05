@@ -32,12 +32,18 @@
     "dashboards": "Painéis",
     "customise": "Personalizar",
     "customDownload": "Descarregar dados personalizados",
+    "customDownloadText": "Escolha as colunas a serem incluídas em sua planilha e selecione os filtros para refinar sua pesquisa. Baixe o conjunto personalizado de dados no Excel.",
+    "dataSource": "A fonte desses dados são as organizações que publicam dados para a IATI. Os dados são atualizados uma vez por dia para capturar dados novos ou atualizados publicados no Registo da IATI. Detalhes adicionais podem ser encontrados na seção {methodology}.",
+    "dataSourceContact": "Para suporte ou treinamento, entre em contato com {emailContact}",
+    "emailContact": "support@iatistandard.org",
     "columns": "Colunas",
     "selectColumns": "Selecionar colunas",
     "selectAtLeastOneColumn": "Tem de selecionar pelo menos uma coluna",
     "dragColumnsToReorder": "Arraste as colunas para reordenar o resultado",
     "deselect": "Anular a seleção",
     "filters": "Filtros",
+    "filtersText": "Selecione os filtros para personalizar a visualização.",
+    "selectedFilters": "Filtros aplicados",
     "preview": "Pré-visualização",
     "currency": "Moeda",
     "calendarYear": "Ano civil",
@@ -49,9 +55,9 @@
     "selectSomeOptions": "Selecione algumas opções e clique em Executar à esquerda.",
     "amount": "Valor",
     "budgetsSpending": {
-      "budgetsOrSpending": "Tipo de despesa",
+      "budgetsOrSpending": "Fluxos de Recursos",
       "budgets": "Orçamentos",
-      "spending": "Despesa",
+      "spending": "Despesas",
       "both": "Ambos"
     },
     "transactionTypes": "Transaction Type",
@@ -60,10 +66,10 @@
       "toSimple": "Switch to simple: select budget and/or spending"
     },
     "reportingOrganisationGroup": {
-      "select": "Select groups of reporting organisations",
+      "select": "Selecione grupos de organizações relatórios para organizações que publicam dados em várias organizações relatórios.",
       "apply": "Apply",
-      "label": "Reporting Organisation Group",
-      "selectOne": "Select one..."
+      "label": "Grupos Organizacionais Relatórios",
+      "selectOne": "Selecione um grupo..."
     },
     "countries": {
       "by": "por País ou região recetor",
@@ -84,6 +90,7 @@
       "select": "Selecione um sector para explorar os dados."
     },
     "summary": "Resumo",
+    "spendSummaryChartText": "Este gráfico mostra orçamentos e despesas para os três anos anteriores, para o ano corrente e para os três anos seguintes. Filtros sobre fluxos de recursos e anos civis e trimestres não foram aplicados a este gráfico.",
     "exploreTheData": "Explore os dados",
     "availableDrilldowns": {
       "activity.iati_identifier": "Identificador de atividade da IATI",
@@ -106,6 +113,12 @@
       "year.year": "Ano civil",
       "quarter.quarter": "Trimestre civil",
       "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis"
+    },
+    "unavailableDrilldowns": {
+      "transaction_type": "Fluxos de Recurso",
+      "year": "Ano civil",
+      "quarter": "Trimestre civil",
+      "calendar_year_and_quarter": "Ano e trimestre civis"
     },
     "activity": "Atividade"
   },
