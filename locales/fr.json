@@ -23,7 +23,7 @@
       "text": "Analyser les données"
     }
   ],
-  "homepageLookingGuidanceAnalysis": "À la recherche des lignes directrices et des tableaux de bord d’analyse ? Nous avons déplacé ce contenu dans la section À propos.",
+  "homepageLookingGuidanceAnalysis": "À la recherche des lignes directrices et des tableaux de bord d’analyse? Nous avons déplacé ce contenu dans la section À propos.",
   "exploreDataDashboards": "Découvrez les tableaux de bord de données",
   "by": "par",
   "dataDashboards": {
@@ -32,12 +32,18 @@
     "dashboards": "Tableaux de bord :",
     "customise": "Personnaliser",
     "customDownload": "Téléchargement de données personnalisées",
+    "customDownloadText": "Choisissez les colonnes à inclure dans votre feuille de calcul et sélectionnez les filtres pour affiner votre recherche. Téléchargez l'ensemble de données personnalisé dans Excel.",
+    "dataSource": "La source de ces données sont les organisations qui publient des données à l'IITA. Les données sont mises à jour une fois par jour pour capturer les données nouvelles ou mises à jour publiées dans le Registre de l'IITA. Des détails supplémentaires peuvent être trouvés dans la section {methodology}.",
+    "dataSourceContact": "Pour le soutien ou une formation, contactez {emailContact}",
+    "emailContact": "support@iatistandard.org",
     "columns": "Colonnes",
     "selectColumns": "Sélectionner les colonnes",
     "selectAtLeastOneColumn": "Veuillez sélectionner au moins une colonne.",
     "dragColumnsToReorder": "Faites glisser les colonnes pour réorganiser la présentation des données.",
     "deselect": "Désélectionner",
     "filters": "Filtres",
+    "filtersText": "Sélectionnez des filtres pour personnaliser la visualisation.",
+    "selectedFilters": "Filtres appliqués ",
     "preview": "Aperçu",
     "currency": "Devise",
     "calendarYear": "Année civile",
@@ -49,10 +55,10 @@
     "selectSomeOptions": "Sélectionnez plusieurs options, puis lancez la recherche.",
     "amount": "Valeur",
     "budgetsSpending": {
-      "budgetsOrSpending": "Type de dépenses",
+      "budgetsOrSpending": "Flux de Ressources",
       "budgets": "Budgets",
       "spending": "Dépenses",
-      "both": "Budgets et dépenses"
+      "both": "Les deux"
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
@@ -60,10 +66,10 @@
       "toSimple": "Switch to simple: select budget and/or spending"
     },
     "reportingOrganisationGroup": {
-      "select": "Select groups of reporting organisations",
+      "select": "Sélectionnez des groupes d'organisations déclarantes pour les organisations qui publient des données sous plusieurs organisations déclarantes.",
       "apply": "Apply",
-      "label": "Reporting Organisation Group",
-      "selectOne": "Select one..."
+      "label": "Groupes d'Organismes Déclarants",
+      "selectOne": "Sélectionner une groupe..."
     },
     "countries": {
       "by": "par Pays ou région bénéficiaire ",
@@ -75,7 +81,7 @@
       "by": "par Organisme déclarant",
       "label": "Organismes déclarants",
       "for": "Tableau de bord pour",
-      "select": "Choisir un prestataire pour explorer les données."
+      "select": "Choisir une organisme déclarant pour explorer les données."
     },
     "sectors": {
       "by": "par Secteur",
@@ -84,6 +90,7 @@
       "select": "Choisir un secteur pour explorer les données."
     },
     "summary": "Vue d’ensemble",
+    "spendSummaryChartText": "Ce graphique montre les budgets et les dépenses pour les trois années précédentes, l'année en cours et les trois années suivantes. Les filtres sur les flux de ressources et les années et trimestres civils n'ont pas été appliqués à ce graphique.",
     "exploreTheData": "Explorez les données",
     "availableDrilldowns": {
       "activity.iati_identifier": "Identifiant de l’IITA",
@@ -106,6 +113,12 @@
       "year.year": "Année civile",
       "quarter.quarter": "Trimestre civil",
       "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils"
+    },
+    "unavailableDrilldowns": {
+      "transaction_type": "Flux de Ressources",
+      "year": "Année civile",
+      "quarter": "Trimestre civil",
+      "calendar_year_and_quarter": "Année et trimestre civils"
     },
     "activity": "Activité"
   },

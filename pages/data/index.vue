@@ -23,6 +23,7 @@
           :pageSize="null"
           :clickable="true"
          />
+         <hr />
       </b-col>
     </b-row>
     <b-row>
@@ -35,6 +36,7 @@
           :currency.sync="currency"
           :clickable="true"
          />
+         <hr />
       </b-col>
     </b-row>
     <b-row>
@@ -47,8 +49,24 @@
           :currency.sync="currency"
           :clickable="true"
          />
+        <hr />
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <h2>{{ $t('by') }} {{ $t('dataDashboards.availableDrilldowns')['year.year'] }}</h2>
+        <DataBrowser
+          :drilldowns="['year.year']"
+          :setFields="summarySetFields"
+          :currency.sync="currency"
+          bar-chart-height="300px"
+          :show-number-results="false"
+          :pageSize="null"
+          orderBy="year.year" />
+        <p class="text-muted font-italic">{{ $t('dataDashboards.spendSummaryChartText') }}</p>
+      </b-col>
+    </b-row>
+    <DataBrowserSource />
   </div>
 </template>
 <script>
@@ -72,6 +90,21 @@ export default {
     }
   },
   computed: {
+    summarySetFields() {
+      return {
+        ...this.setFields,
+        ...{
+          year: this.calendarYears,
+          transaction_type: ['3', '4', 'budget']
+        }
+      }
+    },
+    calendarYears() {
+      var years = []
+      const year = new Date().getFullYear()
+      const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+      return range(year-3, year+3).map(year => { return `${year}` })
+    }
   },
   mounted: function() {
     this.$store.dispatch('getCodelists')

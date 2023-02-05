@@ -38,8 +38,9 @@
 <download-file></download-file>
 
 </b-card>
-    <b-card body-class="d-flex align-items-center">
-        <b-btn block variant="primary" to="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
+    <b-card>
+        <p><b-btn block variant="primary" to="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p>Choose the columns to be included in your spreadsheet and select the filters to narrow your search. Download the custom set of data in Excel.</p>
     </b-card>
 </b-card-group>
 <hr />

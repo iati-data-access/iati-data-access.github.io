@@ -32,12 +32,18 @@
     "dashboards": "Dashboards:",
     "customise": "Customise",
     "customDownload": "Custom Data Download",
+    "customDownloadText": "Choose the columns to be included in your spreadsheet and select the filters to narrow your search. Download the custom set of data in Excel.",
+    "dataSource": "The source of this data is the organisations publishing data to IATI. The data is updated once per day to capture new or updated data published to the IATI Registry. Additional details can be found in the {methodology} section.",
+    "dataSourceContact": "For support or training, reach out to {emailContact}",
+    "emailContact": "support@iatistandard.org",
     "columns": "Columns",
     "selectColumns": "Select columns",
     "selectAtLeastOneColumn": "You must select at least one column",
     "dragColumnsToReorder": "Drag columns to reorder output",
     "deselect": "Deselect",
     "filters": "Filters",
+    "filtersText": "Select filters to customise the visualisation.",
+    "selectedFilters": "Filters applied",
     "preview": "Preview",
     "currency": "Currency",
     "calendarYear": "Calendar Year",
@@ -49,7 +55,7 @@
     "selectSomeOptions": "Select some options, and then click Run on the left.",
     "amount": "Value",
     "budgetsSpending": {
-      "budgetsOrSpending": "Spending Type",
+      "budgetsOrSpending": "Resource flows",
       "budgets": "Budgets",
       "spending": "Spending",
       "both": "Both"
@@ -60,7 +66,7 @@
       "toSimple": "Switch to simple: select budget and/or spending"
     },
     "reportingOrganisationGroup": {
-      "select": "Select groups of reporting organisations",
+      "select": "Select groups of reporting organisations for organisations that publish data under multiple reporting organisations.",
       "apply": "Apply",
       "label": "Reporting Organisation Group",
       "selectOne": "Select one..."
@@ -84,6 +90,7 @@
       "select": "Select a sector to explore the data."
     },
     "summary": "Summary",
+    "spendSummaryChartText": "This chart shows both budgets and spending for the previous three years, the current year, and the next three years. The resource flows and years/quarters filters have not been applied to this chart.",
     "exploreTheData": "Explore the data",
     "availableDrilldowns": {
       "activity.iati_identifier": "Activity IATI Identifier",
@@ -106,6 +113,12 @@
       "year.year": "Calendar Year",
       "quarter.quarter": "Calendar Quarter",
       "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter"
+    },
+    "unavailableDrilldowns": {
+      "transaction_type": "Resource Flows",
+      "year": "Calendar Year | Calendar Years",
+      "quarter": "Calendar Quarter | Calendar Quarters",
+      "calendar_year_and_quarter": "Calendar Year and Quarter | Calendar Years and Quarters"
     },
     "activity": "Activity"
   },

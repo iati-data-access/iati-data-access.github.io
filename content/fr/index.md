@@ -41,8 +41,9 @@
 <download-file></download-file>
 
 </b-card>
-    <b-card body-class="d-flex align-items-center">
-        <b-btn block variant="primary" to="/fr/data/custom/">Explorez les données <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
+    <b-card>
+        <p><b-btn block variant="primary" to="/fr/data/custom/">Téléchargement de données personnalisées <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p>Choisissez les colonnes à inclure dans votre feuille de calcul et sélectionnez les filtres pour affiner votre recherche. Téléchargez l'ensemble de données personnalisé dans Excel.</p>
     </b-card>
 </b-card-group>
 <hr />

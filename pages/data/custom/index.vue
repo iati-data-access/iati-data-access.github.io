@@ -2,6 +2,7 @@
   <div class="custom-data-browser">
     <DataBrowserNavbar />
     <h1>{{ $t('dataDashboards.customDownload') }}</h1>
+    <p class="lead">{{ $t('dataDashboards.customDownloadText') }}</p>
     <b-row>
       <b-col md="3" class="mt-2">
         <h3>{{ $t('dataDashboards.columns') }}</h3>
@@ -87,6 +88,7 @@
          />
       </b-col>
     </b-row>
+    <DataBrowserSource />
   </div>
 </template>
 <style>

@@ -40,8 +40,9 @@
 <download-file></download-file>
 
 </b-card>
-    <b-card body-class="d-flex align-items-center">
-        <b-btn block variant="primary" to="/pt/data/custom/">Descarga de datos personalizados <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
+    <b-card>
+        <p><b-btn block variant="primary" to="/pt/data/custom/">Descarga de datos personalizados <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p>Escolha as colunas a serem incluídas em sua planilha e selecione os filtros para refinar sua pesquisa. Baixe o conjunto personalizado de dados no Excel.</p>
     </b-card>
 </b-card-group>
 <hr />

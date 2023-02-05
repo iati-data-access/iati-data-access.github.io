@@ -1,6 +1,11 @@
 <template>
   <div>
     <b-row>
+      <b-col>
+        <p class="lead">{{ $t('dataDashboards.filtersText') }}</p>
+      </b-col>
+    </b-row>
+    <b-row>
       <b-col :md="horizontal ? 10 : 12">
         <!-- Budgets or spending -->
         <b-form :inline="horizontal">
@@ -103,6 +108,13 @@
           >{{ $t('dataDashboards.moreFilters') }} <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
       </b-col>
     </b-row>
+    <b-row v-if="selectedFiltersText">
+      <b-col>
+        <hr />
+        <p><b>{{ $t('dataDashboards.selectedFilters') }}</b>:
+          <span v-for="(item, index) in selectedFiltersText"><template v-if="index>0">; </template>{{ item.filter }}: <i>{{ item.values.join(', ') }}</i></span></p>
+      </b-col>
+    </b-row>
     <b-row v-if="horizontal">
       <b-col>
         <hr />
@@ -118,7 +130,7 @@
           <DataBrowserFilterItem
             :field="field"
             :fieldOptions="fields[field]"
-            :fieldLabel="availableDrilldowns[field]"
+            :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
             :updateField="updateField"
             :value="setFields[field]">
           </DataBrowserFilterItem>
@@ -245,6 +257,41 @@ export default {
         return summary
       }, []).sort().join(";")
     },
+    fieldsObj() {
+      return Object.entries(this.fields).reduce((summary, item) => {
+        summary[item[0]] = item[1].reduce((itemSummary, itemItem) => {
+          itemSummary[itemItem.code] = itemItem.name
+          return itemSummary
+        }, {})
+        return summary
+      }, {})
+    },
+    selectedFiltersText() {
+      return Object.entries(this.setFields).reduce((summary, item) => {
+        // We only want to exclude e.g. the country name when on the country page
+        if (this.specificPage) {
+          if (item[0] == this.excludeFilters[0]) { return summary }
+        }
+        if (item[1].length > 0) {
+
+          if (['year', 'quarter', 'calendar_year_and_quarter'].includes(item[0])) {
+            summary.push({
+              filter: this.getDrilldownName(item[0], item[1].length),
+              values: item[1]
+            })
+          } else {
+            summary.push({
+              filter: this.getDrilldownName(item[0], item[1].length),
+              values: item[1].map(itemValue => {
+                return this.fieldsObj[item[0]][itemValue]
+              })
+            })
+          }
+        }
+        return summary
+      }, []).sort((a,b)=> { return a.filter - b.filter})
+
+    },
     _currency: {
       get() {
         return this.currency
@@ -259,6 +306,14 @@ export default {
     DataBrowserFilterItem
   },
   methods: {
+    getDrilldownName(drilldownName, count=null) {
+      const drilldownSource = drilldownName in this.$t('dataDashboards.availableDrilldowns') ? 'dataDashboards.availableDrilldowns' : 'dataDashboards.unavailableDrilldowns'
+      if (count === null) {
+        return this.$t(`${drilldownSource}.${drilldownName}`)
+      } else {
+        return this.$tc(`${drilldownSource}.${drilldownName}`, count)
+      }
+    },
     updateField(field, value) {
       this.$set(this.setFields, field, value)
       this.$emit('update:setFields', this.setFields)

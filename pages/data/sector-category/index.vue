@@ -22,6 +22,7 @@
         <b-spinner variant="secondary" />
       </div>
     </template>
+    <DataBrowserSource />
   </div>
 </template>
 <script>
