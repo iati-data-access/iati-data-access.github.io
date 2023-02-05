@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row>
+    <b-row v-if="horizontal">
       <b-col>
         <p class="lead">{{ $t('dataDashboards.filtersText') }}</p>
       </b-col>
@@ -108,11 +108,10 @@
           >{{ $t('dataDashboards.moreFilters') }} <font-awesome-icon :icon="['fa', 'gear']" /></b-button>
       </b-col>
     </b-row>
-    <b-row v-if="selectedFiltersText">
+    <b-row v-if="selectedFiltersText && horizontal">
       <b-col>
         <hr />
-        <p><b>{{ $t('dataDashboards.selectedFilters') }}</b>:
-          <span v-for="(item, index) in selectedFiltersText"><template v-if="index>0">; </template>{{ item.filter }}: <i>{{ item.values.join(', ') }}</i></span></p>
+        <DataBrowserFiltersText :setFields="setFields" :excludeFilters="excludeFilters" />
       </b-col>
     </b-row>
     <b-row v-if="horizontal">
