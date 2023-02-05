@@ -8,13 +8,13 @@
     <template v-if="fields.reporting_organisation.length >0 ">
       <b-card-group columns>
         <b-card
-          v-for="provider in fields.reporting_organisation"
-          v-bind:key="provider.code">
+          v-for="reporting_organisation in fields.reporting_organisation"
+          v-bind:key="reporting_organisation.code">
           <nuxt-link
           variant="link"
           :to="localePath({
-            name: `data-reporting-organisation-code`, params: { code: provider.code }
-          })">{{ provider.name }}</nuxt-link>
+            name: `data-reporting-organisation-code`, params: { code: reporting_organisation.code }
+          })">{{ reporting_organisation.name }}</nuxt-link>
         </b-card>
       </b-card-group>
     </template>
@@ -23,6 +23,7 @@
         <b-spinner variant="secondary" />
       </div>
     </template>
+    <DataBrowserSource />
   </div>
 </template>
 <script>
@@ -30,6 +31,7 @@
 import { mapState } from 'vuex'
 import DataBrowserNavbar from '~/components/DataBrowserNavbar'
 export default {
+  name: 'DataReportingOrganisation',
   data() {
     return {
     }
