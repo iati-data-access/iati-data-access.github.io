@@ -3,6 +3,7 @@
     <DataBrowserNavbar />
     <h1>{{ $t('dataDashboards.customDownload') }}</h1>
     <p class="lead">{{ $t('dataDashboards.customDownloadText') }}</p>
+    <DataBrowserFiltersText :setFields="setFields" />
     <b-row>
       <b-col md="3" class="mt-2">
         <h3>{{ $t('dataDashboards.columns') }}</h3>
