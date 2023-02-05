@@ -40,6 +40,9 @@ export const state = () => ({
     recipient_country_or_region: 'Country'
   },
   reportingOrganisationGroup: [],
+  fieldsEN: {
+    reporting_organisation: {}
+  },
   fields: {
     reporting_organisation: [],
     reporting_organisation_type: [],
@@ -80,9 +83,11 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setFields(state, {field, data}) {
+  setFields(state, {field, data, locale}) {
     var codes = Object.values(data.reduce((summary, item) => {
-      if (item['status'] != 'active') {
+      // We don't show withdrawn countries or reporting organisations anywhere
+      if ((['recipient_country_or_region', 'reporting_organisation'].includes(field)) &&
+        (item['status'] != 'active')) {
         return summary
       }
       var code, name, label = null
@@ -93,6 +98,11 @@ export const mutations = {
         var code = String(item.code)
         var name = String(item.name).trim()
       }
+      // Fall back to EN language for reporting organisation
+      // (translations of other codelists should be up to date!)
+      if ((field == 'reporting_organisation') && (locale != 'en') && (name === 'null')) {
+        name = state.fieldsEN.reporting_organisation[code].name
+      }
       if (['recipient_country_or_region', 'reporting_organisation', 'reporting_organisation_type'].includes(field)) {
         var label = name
       } else {
@@ -102,7 +112,8 @@ export const mutations = {
       summary[code] = {
         code: code,
         label: label,
-        name: name
+        name: name,
+        status: item.status
       }
       return summary
     }, {}))
@@ -127,6 +138,13 @@ export const mutations = {
       })
     }
     Vue.set(state.fields, field, codes);
+    if ((field == 'reporting_organisation') && (locale == 'en')) {
+      const codes_obj = codes.reduce((summary, item) => {
+        summary[item.code] = item
+        return summary
+      }, {})
+      Vue.set(state.fieldsEN, 'reporting_organisation', codes_obj)
+    }
   },
   setCodelistsRetrieved(state, value) {
     state.codelistsRetrieved = value
@@ -137,6 +155,8 @@ export const mutations = {
   setReportingOrganisationGroup(state, data) {
     state.reportingOrganisationGroup = Object.values(
       data.reduce((summary, item) => {
+        // Ignore withdrawn codes
+        if (item.status == 'withdrawn') { return summary }
         const group_code = String(item['codeforiati:group-code'])
         const group_name = item['codeforiati:group-name']
         if (!(group_code in summary)) {
@@ -169,8 +189,12 @@ export const actions = {
       dispatch('getCodelistData', { field: 'reporting_organisation_group', codelist: 'ReportingOrganisationGroup' })
     }
   },
-  async getCodelistData({ commit }, { field, codelist }) {
-    const locale = this.$i18n.locale
+  async getCodelistData({ commit, state, dispatch }, { field, codelist, locale = this.$i18n.locale }) {
+    // Also load reporting organisation codelist in EN if
+    // the locale is not EN.
+    if ((field == 'reporting_organisation') && (locale != 'en') && (Object.keys(state.fieldsEN.reporting_organisation).length===0)) {
+      await dispatch('getCodelistData', {field: field, codelist: codelist, locale: 'en'})
+    }
     const response = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/${codelist}.json`
       )
     var data = response.data.data
@@ -178,11 +202,11 @@ export const actions = {
       const response_regions = await axios.get(`https://codelists.codeforiati.org/api/json/${locale}/Region.json`
       )
       var data_regions = response_regions.data.data
-      commit('setFields', {field: field, data: data.concat(data_regions)})
+      commit('setFields', {field: field, data: data.concat(data_regions), locale: locale})
     } else if (field == 'reporting_organisation_group') {
       commit('setReportingOrganisationGroup', data)
     } else {
-      commit('setFields', {field: field, data: data})
+      commit('setFields', {field: field, data: data, locale: locale})
     }
   },
   async nuxtServerInit({commit, state, dispatch}) {
