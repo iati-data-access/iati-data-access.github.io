@@ -12,6 +12,7 @@
           v-bind:key="country.code">
           <nuxt-link
           variant="link"
+          :class="country.status == 'withdrawn' ? 'text-muted' : null"
           :to="localePath({
             name: `data-recipient-country-or-region-code`, params: { code: country.code }
           })">{{ country.name }}</nuxt-link>
@@ -23,6 +24,7 @@
         <b-spinner variant="secondary" />
       </div>
     </template>
+    <DataBrowserSource />
   </div>
 </template>
 <script>
