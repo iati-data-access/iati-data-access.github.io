@@ -158,6 +158,7 @@ export default {
         ...this.setFields,
         ...{
           year: this.calendarYears,
+          calendar_year_and_quarter: [],
           transaction_type: ['3', '4', 'budget']
         }
       }

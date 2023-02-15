@@ -53,11 +53,11 @@ export const state = () => ({
     recipient_country_or_region: [],
     multi_country: [
       {
-        code: 0,
+        code: "0",
         label: "Not Multi Country"
       },
       {
-        code: 1,
+        code: "1",
         label: "Multi Country"
       }
     ],
@@ -65,11 +65,11 @@ export const state = () => ({
     sector: [],
     humanitarian: [
       {
-        code: 0,
-        label: "Not Humanitarian"
+        code: "0",
+        label: "Development"
       },
       {
-        code: 1,
+        code: "1",
         label: "Humanitarian"
       }
     ]

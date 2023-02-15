@@ -121,6 +121,8 @@ import axios from 'axios'
 import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
 import Map from '~/components/Map'
+import debounce from "lodash.debounce"
+
 export default {
   props: {
     drilldowns: {
@@ -454,14 +456,25 @@ export default {
     },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
   components: { BarChartComponent, Map },
+  created() {
+    this.loadDataDebounce = debounce(() => {
+      this.loadDataHandler()
+    }, 500);
+  },
+  beforeUnmount() {
+    this.loadData.cancel();
+  },
   methods: {
+    loadData() {
+      this.startedLoading = true
+      this.isBusy = true
+      return this.loadDataDebounce()
+    },
     numberFormatter(value) {
       if (value == null) { value = 0 }
       return value.toLocaleString(undefined, {maximumFractionDigits: 0})
     },
-    loadData() {
-      this.startedLoading = true
-      this.isBusy = true
+    loadDataHandler() {
       // Stop any current requests
       this.cancel();
       let axiosSource = axios.CancelToken.source();
