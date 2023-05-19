@@ -20,7 +20,8 @@ function maybeFixLink (el) {
     const URI = decodeURI(el.props.href);
     const httpScheme = URI.startsWith('http://');
     const httpsScheme = URI.startsWith('https://');
-    const isExternalURI = httpScheme || httpsScheme;
+    const mailtoScheme = URI.startsWith('mailto:');
+    const isExternalURI = httpScheme || httpsScheme || mailtoScheme;
     const href = isExternalURI ? URI : '#' + slugify(URI);
     el.props.href = href;
   }
