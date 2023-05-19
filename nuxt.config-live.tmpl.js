@@ -55,7 +55,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
+    'vue-plausible',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -132,6 +133,12 @@ export default {
   // Google Tag Manager
   gtm: {
     id: 'GTM-TRBGNFQ',
+  },
+
+  // Plausible
+  plausible: {
+    domain: 'countrydata.iatistandard.org',
+    enableAutoOutboundTracking: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
