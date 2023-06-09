@@ -119,7 +119,7 @@
         <hr />
       </b-col>
     </b-row>
-    <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="lg">
+    <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="xl">
       <b-row cols="3" class="p-3">
         <b-col
           class="p-2"
