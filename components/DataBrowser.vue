@@ -26,11 +26,14 @@
               <font-awesome-icon :icon="['fa', option.icon]" />
             </b-form-radio>
           </b-form-radio-group>
-          <b-btn
+          <Download
+            label="XLSX"
             variant="outline-secondary"
             size="sm"
-            :href="XLSXSummaryURL">XLSX <font-awesome-icon :icon="['fa', 'download']" />
-          </b-btn>
+            :url="XLSXSummaryURL"
+            file-name="data.xlsx"
+            container-class="d-inline"
+            :icon="['fa', 'download']" />
           <b-btn
             v-if="customise"
             size="sm"
@@ -120,6 +123,7 @@
 import axios from 'axios'
 import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
+import Download from '~/components/Download'
 import Map from '~/components/Map'
 import debounce from "lodash.debounce"
 
@@ -455,7 +459,7 @@ export default {
       return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=xlsx&lang=${this.lang}`
     },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
-  components: { BarChartComponent, Map },
+  components: { BarChartComponent, Map, Download },
   created() {
     this.loadDataDebounce = debounce(() => {
       this.loadDataHandler()
