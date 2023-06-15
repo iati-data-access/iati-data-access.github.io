@@ -20,6 +20,7 @@
     "bootstrap-vue": "^2.21.2",
     "chart.js": "^2.9.4",
     "core-js": "^3.19.3",
+    "file-saver": "^2.0.5",
     "leaflet": "^1.9.2",
     "lodash": "^4.17.21",
     "markdown-it-footnote": "^3.0.3",
