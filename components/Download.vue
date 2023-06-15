@@ -1,12 +1,12 @@
 <template>
   <div :class="containerClass">
     <template v-if="preparingFile">
-      <b-btn variant="secondary" :size="size" @click="getActivitiesFile">
+      <b-btn variant="secondary" :size="size" @click.prevent="getActivitiesFile" :href="url">
         <b-spinner label="Preparing" small></b-spinner> Preparing file...
       </b-btn>
     </template>
     <template v-else>
-      <b-btn :variant="variant" @click="getActivitiesFile" :size="size" id="dl-btn">
+      <b-btn :variant="variant" @click.prevent="getActivitiesFile" :href="url" :size="size" id="dl-btn">
         <font-awesome-icon :icon="icon" /> {{ label }}
       </b-btn>
     </template>
