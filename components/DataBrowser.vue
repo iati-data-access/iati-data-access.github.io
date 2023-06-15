@@ -123,7 +123,7 @@
 import axios from 'axios'
 import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
-import Download from '~/components/Download'
+import Download from '~/components/Download.vue'
 import Map from '~/components/Map'
 import debounce from "lodash.debounce"
 
