@@ -74,6 +74,8 @@
           :horizontal="false"
           pageName="data-custom"
           :drilldowns.sync="drilldowns"
+          :displayAs.sync="displayAs"
+          :pageSize.sync="pageSize"
         />
       </b-col>
       <b-col md="9" class="mt-2">
@@ -81,11 +83,13 @@
         <DataBrowser
           ref="dataBrowser"
           :drilldowns="drilldowns"
-          displayAs="table"
+          :displayAs.sync="displayAs"
+          :pageSize.sync="pageSize"
           :setFields="setFields"
           :currency.sync="currency"
           :autoReload="autoReload"
           :customise="false"
+          pageName="data-custom"
          />
       </b-col>
     </b-row>
@@ -122,7 +126,9 @@ export default {
       },
       currency: 'usd',
       autoReload: true,
-      drilldownsWithLabels: []
+      drilldownsWithLabels: [],
+      displayAs: 'table',
+      pageSize: 10
     }
   },
   methods: {
@@ -139,6 +145,13 @@ export default {
           label: this.availableDrilldowns[item]
         }
       })
+    },
+    customiseFromQuery() {
+      if (Object.keys(this.$route.query).length>0) {
+        if (this.$route.query.displayAs) {
+          this.displayAs = this.$route.query.displayAs
+        }
+      }
     }
   },
   computed: {
@@ -154,6 +167,7 @@ export default {
   mounted: function() {
     this.$store.dispatch('getCodelists')
     this.setDrilldownsWithLabels()
+    this.customiseFromQuery()
   },
   head() {
     return {
