@@ -41,7 +41,9 @@
               path: '/data/custom/',
               query: {
                 drilldowns: this.drilldownsForQuery,
-                filters: this.fieldsForQuery
+                filters: this.fieldsForQuery,
+                displayAs: this.displayAs_,
+                pageSize: this.pageSize_ ? this.pageSize_ : 'null'
               }})">{{ $t('dataDashboards.customise') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
         </b-form-group>
       </b-col>
@@ -179,10 +181,15 @@ export default {
     },
     customise: {
       default: true
+    },
+    pageName: {
+      default: null
     }
   },
   data() {
     return {
+      privateDisplayAs: this.displayAs,
+      privatePageSize: this.pageSize,
       request: null,
       showFilters: false,
       cells: [],
@@ -217,11 +224,41 @@ export default {
           text: 'All'
         }
       ],
-      displayAs_: this.displayAs,
-      pageSize_: this.pageSize
     }
   },
   computed: {
+    displayAs_: {
+      get() {
+        if (this.pageName == 'data-custom') {
+          return this.displayAs
+        } else {
+          return this.privateDisplayAs
+        }
+      },
+      set(value) {
+        if (this.pageName == 'data-custom') {
+          this.$emit('update:displayAs', value)
+        } else {
+          this.privateDisplayAs = value
+        }
+      }
+    },
+    pageSize_: {
+      get() {
+        if (this.pageName == 'data-custom') {
+          return this.pageSize
+        } else {
+          return this.privatePageSize
+        }
+      },
+      set(value) {
+        if (this.pageName == 'data-custom') {
+          this.$emit('update:pageSize', value)
+        } else {
+          this.privatePageSize = value
+        }
+      }
+    },
     localeSensitiveDrilldowns() {
       return this.drilldowns.reduce((summary, item) => {
         if (['activity.title', 'activity.description'].includes(item)) {
