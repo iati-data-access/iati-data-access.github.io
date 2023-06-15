@@ -198,6 +198,12 @@ export default {
       default() {
         return ['sector_category']
       }
+    },
+    displayAs: {
+      default: null
+    },
+    pageSize: {
+      default: null
     }
   },
   data() {
@@ -291,6 +297,22 @@ export default {
       }, []).sort((a,b)=> { return a.filter - b.filter})
 
     },
+    displayAs_: {
+      get() {
+        return this.displayAs
+      },
+      set(value) {
+        this.$emit('update:displayAs', value)
+      }
+    },
+    pageSize_: {
+      get() {
+        return this.pageSize
+      },
+      set(value) {
+        this.$emit('update:pageSize', value)
+      }
+    },
     _currency: {
       get() {
         return this.currency
@@ -320,25 +342,48 @@ export default {
     updateDrilldowns(drilldowns) {
       this.$emit('update:drilldowns', drilldowns)
     },
+    setCustomPageQuery() {
+      this.$router.push(this.localePath({
+        name: this.pageName,
+        query: {
+          drilldowns: this.drilldownsForQuery,
+          filters: this.fieldsForQuery,
+          displayAs: this.displayAs_,
+          pageSize: this.pageSize_
+        }
+      }))
+    },
     customiseFromQuery() {
       if (Object.keys(this.$route.query).length>0) {
         if (this.customPage) {
           if (this.$route.query.drilldowns) {
             const _drilldowns = this.$route.query.drilldowns.split(";")
-            this.updateDrilldowns(_drilldowns)
+            if (JSON.stringify(_drilldowns) != JSON.stringify(this.drilldowns)) {
+              this.updateDrilldowns(_drilldowns)
+            }
+            if (this.$route.query.displayAs) {
+              this.displayAs_ = this.$route.query.displayAs
+            }
+            if (this.$route.query.pageSize) {
+              this.pageSize_ = this.$route.query.pageSize
+            }
           }
         }
         if (this.$route.query.filters) {
           const queryFilters = this.$route.query.filters.split(";")
           const filtersInQuery = queryFilters.reduce((summary, item) => {
             const [field, values] = item.split(":")
-            this.$set(this.setFields, field, values.split(","))
+            if (JSON.stringify(this.setFields[field]) != JSON.stringify(values.split(","))) {
+              this.$set(this.setFields, field, values.split(","))
+            }
             summary.push(field)
             return summary
           }, [])
           Object.keys(this.setFields).forEach(item => {
             if (!filtersInQuery.includes(item) && (!this.excludeFilters.includes(item))) {
-              this.$set(this.setFields, item, [])
+              if (this.setFields[item].length != 0) {
+                this.$set(this.setFields, item, [])
+              }
             }
           })
         }
@@ -363,29 +408,31 @@ export default {
     '$route.query'() {
       this.customiseFromQuery()
     },
+    displayAs_: {
+      handler() {
+        if (this.customPage) {
+          this.setCustomPageQuery()
+        }
+      }
+    },
+    pageSize_: {
+      handler() {
+        if (this.customPage) {
+          this.setCustomPageQuery()
+        }
+      }
+    },
     drilldowns: {
       handler() {
         if (this.customPage) {
-          this.$router.push(this.localePath({
-            name: this.pageName,
-            query: {
-              drilldowns: this.drilldownsForQuery,
-              filters: this.fieldsForQuery
-            }
-          }))
+          this.setCustomPageQuery()
         }
       }
     },
     setFields: {
       handler() {
         if (this.customPage) {
-          this.$router.push(this.localePath({
-            name: this.pageName,
-            query: {
-              drilldowns: this.drilldownsForQuery,
-              filters: this.fieldsForQuery
-            }
-          }))
+          this.setCustomPageQuery()
         } else if (this.specificPage) {
           this.$router.push(this.localePath({
             name: this.pageName,
