@@ -170,6 +170,7 @@ export default {
       this.items = this.fields[value]
       this.totalRows = this.items.length
       this.currentPage = 1
+      this.filter = null
     }
   },
   mounted: function() {
