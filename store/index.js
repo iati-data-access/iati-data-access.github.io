@@ -49,10 +49,12 @@ export const state = () => ({
     multi_country: [
       {
         code: "0",
+        name: "Not Multi Country",
         label: "Not Multi Country"
       },
       {
         code: "1",
+        name: "Multi Country",
         label: "Multi Country"
       }
     ],
@@ -61,10 +63,12 @@ export const state = () => ({
     humanitarian: [
       {
         code: "0",
+        name: "Development",
         label: "Development"
       },
       {
         code: "1",
+        name: "Humanitarian",
         label: "Humanitarian"
       }
     ]
@@ -104,11 +108,16 @@ export const mutations = {
         var label = `${code} - ${name}`
       }
 
+
+
       summary[code] = {
         code: code,
         label: label,
         name: name,
         status: item.status
+      }
+      if (item.description) {
+        summary[code].description = item.description
       }
       return summary
     }, {}))
