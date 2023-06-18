@@ -54,6 +54,13 @@
     "noResults": "There are no results for your selected filters.",
     "selectSomeOptions": "Select some options, and then click Run on the left.",
     "amount": "Value",
+    "advancedSearch": "Advanced Search",
+    "advancedSearchFields": {
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "select": "Select"
+    },
     "budgetsSpending": {
       "budgetsOrSpending": "Resource Flows",
       "budgets": "Budgets",
