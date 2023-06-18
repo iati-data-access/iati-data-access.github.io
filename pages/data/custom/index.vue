@@ -45,7 +45,8 @@
           :fieldOptions="fields.recipient_country_or_region"
           :fieldLabel="availableDrilldowns.recipient_country_or_region"
           :value="setFields.recipient_country_or_region"
-          :updateField="updateField">
+          :updateField="updateField"
+          :advancedSearch="advancedSearchFn">
         </DataBrowserFilterItem>
 
         <DataBrowserFilterItem
@@ -53,7 +54,8 @@
           :fieldOptions="fields.reporting_organisation"
           :fieldLabel="availableDrilldowns.reporting_organisation"
           :value="setFields.reporting_organisation"
-          :updateField="updateField">
+          :updateField="updateField"
+          :advancedSearch="advancedSearchFn">
         </DataBrowserFilterItem>
 
         <DataBrowserFilterItem
@@ -61,7 +63,8 @@
           :fieldOptions="fields.sector_category"
           :fieldLabel="availableDrilldowns.sector_category"
           :value="setFields.sector_category"
-          :updateField="updateField">
+          :updateField="updateField"
+          :advancedSearch="advancedSearchFn">
         </DataBrowserFilterItem>
 
         <DataBrowserFilter
@@ -76,6 +79,7 @@
           :drilldowns.sync="drilldowns"
           :displayAs.sync="displayAs"
           :pageSize.sync="pageSize"
+          :advancedSearchFn.sync="advancedSearchFn"
         />
       </b-col>
       <b-col md="9" class="mt-2">
@@ -90,6 +94,7 @@
           :autoReload="autoReload"
           :customise="false"
           pageName="data-custom"
+          :advancedSearchFn.sync="advancedSearchFn"
          />
       </b-col>
     </b-row>
@@ -152,6 +157,9 @@ export default {
           this.displayAs = this.$route.query.displayAs
         }
       }
+    },
+    advancedSearchFn() {
+      return
     }
   },
   computed: {
