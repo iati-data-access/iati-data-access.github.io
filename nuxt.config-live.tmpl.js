@@ -73,7 +73,9 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faGear', 'faDownload', 'faTable', 'faChartSimple', 'faMap', 'faWandMagicSparkles'],
+      solid: ['faGear', 'faDownload', 'faTable',
+        'faChartSimple', 'faMap', 'faWandMagicSparkles',
+        'faMagnifyingGlass'],
       regular: []
     }
   },
