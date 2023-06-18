@@ -21,7 +21,7 @@
               v-model="filter"
               type="search"
               id="filterInput"
-              placeholder="Type to Search"
+              :placeholder="$t('dataDashboards.advancedSearchFilter')"
             ></b-form-input>
             <b-input-group-append>
               <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
@@ -120,38 +120,38 @@ export default {
         return [
           {
             key: 'code',
-            label: 'Code',
+            label: this.$t('dataDashboards.advancedSearchFields.code'),
             sortable: true
           },
           {
             key: 'name',
-            label: 'Name',
+            label: this.$t('dataDashboards.advancedSearchFields.name'),
             sortable: true
           },
           {
             key: 'description',
-            label: 'Description',
+            label: this.$t('dataDashboards.advancedSearchFields.description'),
             sortable: true
           },
           {
             key: 'select',
-            label: 'Select'
+            label: this.$t('dataDashboards.advancedSearchFields.select')
           }]
       } else {
         return [
           {
             key: 'code',
-            label: 'Code',
+            label: this.$t('dataDashboards.advancedSearchFields.code'),
             sortable: true
           },
           {
             key: 'name',
-            label: 'Name',
+            label: this.$t('dataDashboards.advancedSearchFields.name'),
             sortable: true
           },
           {
             key: 'select',
-            label: 'Select'
+            label: this.$t('dataDashboards.advancedSearchFields.select')
           }]
       }
     },...mapState(['fields'])
