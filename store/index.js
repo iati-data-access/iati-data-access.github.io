@@ -1,11 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
 
-const baseURL = "https://humportal.org";
-const apiURL = "https://humportal.github.io/humportal-data";
-const analyticsURL =
-  "https://raw.githubusercontent.com/codeforIATI/IATI-Stats-public/gh-pages";
-
 export const state = () => ({
   availableDrilldowns: {
     "activity.iati_identifier": "Activity IATI Identifier",
