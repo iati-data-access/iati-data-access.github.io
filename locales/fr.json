@@ -57,7 +57,7 @@
     "advancedSearch": "Recherche avancée",
     "advancedSearchFields": {
       "code": "Code",
-      "name": "Name",
+      "name": "Nom",
       "description": "Description",
       "select": "Sélectionnez"
     },
