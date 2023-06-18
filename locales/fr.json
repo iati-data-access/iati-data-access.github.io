@@ -54,6 +54,14 @@
     "noResults": "Aucun résultat ne correspond aux filtres sélectionnés.",
     "selectSomeOptions": "Sélectionnez plusieurs options, puis lancez la recherche.",
     "amount": "Valeur",
+    "advancedSearch": "Recherche avancée",
+    "advancedSearchFields": {
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "select": "Sélectionnez"
+    },
+    "advancedSearchFilter": "Type to search for name or description...",
     "budgetsSpending": {
       "budgetsOrSpending": "Flux de Ressources",
       "budgets": "Budgets",

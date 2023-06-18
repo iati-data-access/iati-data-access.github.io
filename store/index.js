@@ -1,11 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
 
-const baseURL = "https://humportal.org";
-const apiURL = "https://humportal.github.io/humportal-data";
-const analyticsURL =
-  "https://raw.githubusercontent.com/codeforIATI/IATI-Stats-public/gh-pages";
-
 export const state = () => ({
   availableDrilldowns: {
     "activity.iati_identifier": "Activity IATI Identifier",
@@ -54,10 +49,12 @@ export const state = () => ({
     multi_country: [
       {
         code: "0",
+        name: "Not Multi Country",
         label: "Not Multi Country"
       },
       {
         code: "1",
+        name: "Multi Country",
         label: "Multi Country"
       }
     ],
@@ -66,10 +63,12 @@ export const state = () => ({
     humanitarian: [
       {
         code: "0",
+        name: "Development",
         label: "Development"
       },
       {
         code: "1",
+        name: "Humanitarian",
         label: "Humanitarian"
       }
     ]
@@ -109,11 +108,16 @@ export const mutations = {
         var label = `${code} - ${name}`
       }
 
+
+
       summary[code] = {
         code: code,
         label: label,
         name: name,
         status: item.status
+      }
+      if (item.description) {
+        summary[code].description = item.description
       }
       return summary
     }, {}))

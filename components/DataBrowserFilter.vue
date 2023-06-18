@@ -131,11 +131,15 @@
             :fieldOptions="fields[field]"
             :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
             :updateField="updateField"
-            :value="setFields[field]">
+            :value="setFields[field]"
+            :advancedSearch="advancedSearch">
           </DataBrowserFilterItem>
         </b-col>
       </b-row>
     </b-modal>
+    <AdvancedSearch
+      :field="advancedSearchField"
+      :setFields.sync="setFields" />
   </div>
 </template>
 <style>
@@ -154,6 +158,7 @@ import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
 import DataBrowserFilterItem from  '~/components/DataBrowserFilterItem'
 import Map from '~/components/Map'
+import AdvancedSearch from '~/components/AdvancedSearch'
 export default {
   props: {
     setFields: {
@@ -204,6 +209,11 @@ export default {
     },
     pageSize: {
       default: null
+    },
+    advancedSearchFn: {
+      default() {
+        return ''
+      }
     }
   },
   data() {
@@ -237,10 +247,21 @@ export default {
           value: 'eur',
           text: 'EUR'
         }
-      ]
+      ],
+      advancedSearchField: null,
+      advancedSearchItems: []
     }
   },
   computed: {
+    advancedSearchFields() {
+      if (this.advancedSearchItems.filter(item => {
+        return item.description
+      }).length > 0) {
+        return ['code', 'name', 'description']
+      } else {
+        return ['code', 'name']
+      }
+    },
     customPage() {
       return this.pageName.includes('data-custom')
     },
@@ -324,7 +345,8 @@ export default {
       'availableDrilldowns', 'years', 'calendar_years_and_quarters'])
   },
   components: {
-    DataBrowserFilterItem
+    DataBrowserFilterItem,
+    AdvancedSearch
   },
   methods: {
     getDrilldownName(drilldownName, count=null) {
@@ -388,6 +410,10 @@ export default {
           })
         }
       }
+    },
+    advancedSearch(field) {
+      this.$bvModal.show('advanced-search')
+      this.advancedSearchField = field
     }
   },
   watch: {
@@ -452,6 +478,7 @@ export default {
   mounted: function() {
     this.customiseFromQuery()
     this.$store.dispatch('getCodelists')
+    this.$emit('update:advancedSearchFn', this.advancedSearch)
   }
 }
 </script>
