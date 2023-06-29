@@ -61,7 +61,8 @@
       @filtered="onFiltered">
       <template v-slot:cell(select)="data">
         <b-form-checkbox
-          v-model="setFields[field]" :value="data.item.code"></b-form-checkbox>
+          v-model="values" :value="data.item.code"
+            name="advanced-checkboxes"></b-form-checkbox>
       </template>
     </b-table>
     <b-form-group
@@ -111,6 +112,18 @@ export default {
       },
       set(value) {
         this.$emit('update:setFields', value)
+      }
+    },
+    values: {
+      get() {
+        return this._setFields[this.field]
+      },
+      set(value) {
+        if (!Array.isArray(value)) {
+          this.$set(this._setFields, this.field, [value])
+        } else {
+          this.$set(this._setFields, this.field, value)
+        }
       }
     },
     tableFields() {
@@ -170,6 +183,7 @@ export default {
       this.items = this.fields[value]
       this.totalRows = this.items.length
       this.currentPage = 1
+      this.filter = null
     }
   },
   mounted: function() {
