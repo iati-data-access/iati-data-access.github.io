@@ -1,6 +1,6 @@
 <template>
   <b-modal
-    :title="`${$t('dataDashboards.advancedSearch')} - ${$tc(`dataDashboards.availableDrilldowns.${field}`)}`"
+    :title="field ? `${$t('dataDashboards.advancedSearch')} - ${$tc(`dataDashboards.availableDrilldowns.${field}`)}`: null"
     id="advanced-search"
     ok-only
     size="xl">
