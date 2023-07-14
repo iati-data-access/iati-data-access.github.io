@@ -356,7 +356,7 @@ export default {
       }
     },
     updateField(field, value) {
-      this.$set(this.setFields, field, value)
+      this.$set(this.setFields, field, value.sort())
       this.$emit('update:setFields', this.setFields)
     },
     updateDrilldowns(drilldowns) {
