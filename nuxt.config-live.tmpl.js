@@ -75,7 +75,7 @@ export default {
     icons: {
       solid: ['faGear', 'faDownload', 'faTable',
         'faChartSimple', 'faMap', 'faWandMagicSparkles',
-        'faMagnifyingGlass'],
+        'faMagnifyingGlass', 'faXmark', 'faBarsStaggered'],
       regular: []
     }
   },
