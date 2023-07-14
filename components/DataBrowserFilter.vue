@@ -24,55 +24,48 @@
             ></b-form-radio-group>
           </b-form-group>
 
-
-          <b-form-group
-            :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
-            :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
-            <b-form-radio-group
-              v-model="setFields.transaction_type"
-              size="md"
-              button-variant="outline-secondary"
-              :stacked="!horizontal"
-              :class="!horizontal ? 'w-100': null"
-              buttons>
-              <b-form-radio
-                :class="option.class"
-                :value="option.value"
-                v-for="option in budgetsSpendingOptions"
-                v-bind:key="option.text">
-                {{ option.text }}
-              </b-form-radio>
-            </b-form-radio-group>
-          </b-form-group>
-            <!--
+          <template v-if="simpleTransactionTypes">
+            <b-form-group
+              :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
+              :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
+              <b-form-radio-group
+                v-model="setFields_.transaction_type"
+                size="md"
+                button-variant="outline-secondary"
+                :stacked="!horizontal"
+                :class="!horizontal ? 'w-100': null"
+                buttons>
+                <b-form-radio
+                  :class="option.class"
+                  :value="option.value"
+                  v-for="option in budgetsSpendingOptions"
+                  v-bind:key="option.text">
+                  {{ option.text }}
+                </b-form-radio>
+              </b-form-radio-group>
+            </b-form-group>
             <b-btn
               v-if="customPage"
               class="mt-0"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=false">{{ $t('dataDashboards.switchTransactionTypes.toAdvanced') }}</b-btn>
-            -->
-          <!--
-          <template v-if="simpleTransactionTypes">
           </template>
           <template v-else>
-            <b-form-group
-              :label="$t('dataDashboards.transactionTypes')"
-              :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
-              <v-select
-                multiple
-                v-model="setFields.transaction_type"
-                :options="fields.transaction_type"
-                :reduce="item => item.code">
-              </v-select>
-            </b-form-group>
+            <DataBrowserFilterItem
+              field="transaction_type"
+              :fieldOptions="fields.transaction_type"
+              :fieldLabel="$t('dataDashboards.transactionTypes')"
+              :value="setFields_.transaction_type"
+              :updateField="updateField"
+              :advancedSearch="advancedSearchFn">
+            </DataBrowserFilterItem>
             <b-btn
               class="mt-0"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=true">{{ $t('dataDashboards.switchTransactionTypes.toSimple') }}</b-btn>
           </template>
-          -->
 
           <DataBrowserFilterItem
             field="year"
