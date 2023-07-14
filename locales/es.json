@@ -131,7 +131,8 @@
       "quarter": "Trimestre natural",
       "calendar_year_and_quarter": "Año y trimestre naturales"
     },
-    "activity": "Actividad"
+    "activity": "Actividad",
+    "organisations": "Organizaciónes"
   },
   "dataSidebarDropdowns": [
     {

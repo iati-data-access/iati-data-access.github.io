@@ -133,7 +133,8 @@
       "quarter": "Calendar Quarter | Calendar Quarters",
       "calendar_year_and_quarter": "Calendar Year and Quarter | Calendar Years and Quarters"
     },
-    "activity": "Activity"
+    "activity": "Activity",
+    "organisations": "Organisations"
   },
   "dataSidebarDropdowns": [
     {
