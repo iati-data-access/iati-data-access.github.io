@@ -491,6 +491,9 @@ export default {
   },
   mounted: function() {
     this.customiseFromQuery()
+    if (!['["3", "4"]','["budget"]','["3","4","budget"]'].includes(JSON.stringify(this.setFields.transaction_type.sort()))) {
+      this.simpleTransactionTypes = false
+    }
     this.$store.dispatch('getCodelists')
     this.$emit('update:advancedSearchFn', this.advancedSearch)
   }
