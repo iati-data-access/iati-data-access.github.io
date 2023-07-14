@@ -203,6 +203,8 @@ export default {
       selectedRegion: null,
       startedLoading: false,
       maxPageSize: 1048576,
+      rollupBy: null,
+      rollupValues: [],
       pageSizeOptions: [
         {
           value: 10,
@@ -266,6 +268,15 @@ export default {
         }
       }
     },
+    fieldsObj() {
+      return Object.entries(this.fields).reduce((summary, item) => {
+        summary[item[0]] = item[1].reduce((itemSummary, itemItem) => {
+          itemSummary[itemItem.code] = itemItem.name
+          return itemSummary
+        }, {})
+        return summary
+      }, {})
+    },
     localeSensitiveDrilldowns() {
       return this.drilldowns.reduce((summary, item) => {
         if (['activity.title', 'activity.description'].includes(item)) {
@@ -311,55 +322,20 @@ export default {
       return (this.startedLoading==false) && (this.autoReload==false)
     },
     barChartDatasets() {
-      if (this.setFields.transaction_type.length == 3) {
-        return [
-          {
-            label: this.$t('dataDashboards.budgetsSpending.budgets'),
-            backgroundColor: '#155366',
-            field: `value_${this.currency}.sum_budget`
-          },
-          {
-            label: this.$t('dataDashboards.budgetsSpending.spending'),
-            backgroundColor: '#06DBE4',
-            field: `value_${this.currency}.sum_3-4`
+      if (this.rollupBy) {
+        return this.rollupValues.map((rollupValue, i) => {
+          return {
+            field: `value_${this.currency}.sum_${rollupValue.join('-')}`,
+            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.getRollupLabel(this.rollupBy, rollupValue)}`,
+            backgroundColor: this.getBackgroundColour(this.rollupBy, rollupValue.join('-'), i, this.rollupValues.length)
           }
-        ]
-      } else if (this.setFields.transaction_type.includes('budget')) {
-        if (this.setFields.year.length > 1) {
-          return this.setFields.year.map(year => {
-            return {
-              label: `${this.$t('dataDashboards.budgetsSpending.budgets')} (${year})`,
-              backgroundColor: '#155366',
-              field: `value_${this.currency}.sum_${year}`
-            }
-          })
-        } else {
-          return [
-            {
-              label: this.$t('dataDashboards.budgetsSpending.budgets'),
-              backgroundColor: '#155366',
-              field: `value_${this.currency}.sum`
-            }
-          ]
-        }
+        })
       } else {
-        if (this.setFields.year.length > 1) {
-          return this.setFields.year.map(year => {
-            return {
-              label: `${this.$t('dataDashboards.budgetsSpending.spending')} (${year})`,
-              backgroundColor: '#06DBE4',
-              field: `value_${this.currency}.sum_${year}`
-            }
-          })
-        } else {
-          return [
-            {
-              label: this.$t('dataDashboards.budgetsSpending.spending'),
-              backgroundColor: '#06DBE4',
-              field: `value_${this.currency}.sum`
-            }
-          ]
-        }
+        return [{
+          field: `value_${this.currency}.sum`,
+          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`,
+          backgroundColor: '#06DBE4',
+        }]
       }
     },
     displayOptions() {
@@ -415,27 +391,11 @@ export default {
           sortable: true
         }
       })
-      if (this.setFields.transaction_type.length == 3) {
-        return _fields.concat({
-          key: `value_${this.currency}.sum_budget`,
-          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.$t('dataDashboards.budgetsSpending.budgets')}`,
-          formatter: this.numberFormatter,
-          thClass: "text-right",
-          tdClass: "text-right",
-          sortable: true
-        }).concat({
-          key: `value_${this.currency}.sum_3-4`,
-          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.$t('dataDashboards.budgetsSpending.spending')}`,
-          formatter: this.numberFormatter,
-          thClass: "text-right",
-          tdClass: "text-right",
-          sortable: true
-        })
-      } else if (this.setFields.year.length > 1) {
-        return _fields.concat(this.setFields.year.map(year => {
+      if (this.rollupBy) {
+        return _fields.concat(this.rollupValues.map(item => {
           return {
-            key: `value_${this.currency}.sum_${year}`,
-            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${year}`,
+            key: `value_${this.currency}.sum_${item.join('-')}`,
+            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.getRollupLabel(this.rollupBy, item)}`,
             formatter: this.numberFormatter,
             thClass: "text-right",
             tdClass: "text-right",
@@ -476,10 +436,8 @@ export default {
       return ''
     },
     rollups() {
-      if (this.setFields.transaction_type.length == 3) {
-        return '&rollup=transaction_type.code:[["3","4"],["budget"]]'
-      } else if (this.setFields.year.length > 1) {
-        return `&rollup=year.year:[${this.setFields.year.map(item => { return `["${item}"]`}).join(',')}]`
+      if (this.rollupBy != null) {
+        return `&rollup=${this.rollupBy}:${JSON.stringify(this.rollupValues)}`
       }
       return ''
     },
@@ -513,7 +471,44 @@ export default {
     this.loadData.cancel();
   },
   methods: {
+    getBackgroundColour(rollupBy, rollupValue, i, l) {
+      if (rollupValue == 'budget') {
+        return '#155366'
+      } else if (rollupValue == '3-4') {
+        return '#06DBE4'
+      }
+      if (i == 1) { return '#155366' }
+      return '#06DBE4'
+    },
+    getRollupLabel(rollupBy, rollupValue) {
+      const rollupKey = rollupBy.includes(".") ? rollupBy.split('.')[0] : rollupBy
+      if (!(rollupKey in this.fieldsObj)) {
+        return rollupValue.join(", ")
+      } else {
+        return rollupValue.map(val => { return this.fieldsObj[rollupKey][val]}).join(", ")
+      }
+    },
+    setRollups() {
+      if (JSON.stringify(this.setFields.transaction_type.sort()) == '["3","4","budget"]') {
+        this.rollupBy = 'transaction_type.code'
+        this.rollupValues = [["3","4"],["budget"]]
+      } else if (this.setFields.transaction_type && this.setFields.transaction_type.length>1 && (JSON.stringify(this.setFields.transaction_type.sort()) == '["3","4"')) {
+        this.rollupBy = 'transaction_type.code'
+        this.rollupValues = this.setFields.transaction_type.map(item => [item])
+      } else if (this.setFields.year && this.setFields.year.length > 1) {
+        this.rollupBy = 'year'
+        this.rollupValues = this.setFields.year.map(item => [item])
+      } else if (this.setFields.calendar_year_and_quarter && this.setFields.calendar_year_and_quarter.length>1) {
+        this.rollupBy = 'calendar_year_and_quarter'
+        this.rollupValues = this.setFields.calendar_year_and_quarter.map(item => [item])
+      } else {
+        this.rollupBy = null
+        this.rollupValues = null
+      }
+    },
     loadData() {
+      // FIXME?
+      this.setRollups()
       this.startedLoading = true
       this.isBusy = true
       return this.loadDataDebounce()
