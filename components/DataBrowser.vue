@@ -492,7 +492,7 @@ export default {
       if (JSON.stringify(this.setFields.transaction_type.sort()) == '["3","4","budget"]') {
         this.rollupBy = 'transaction_type.code'
         this.rollupValues = [["3","4"],["budget"]]
-      } else if (this.setFields.transaction_type && this.setFields.transaction_type.length>1 && (JSON.stringify(this.setFields.transaction_type.sort()) == '["3","4"')) {
+      } else if (this.setFields.transaction_type && this.setFields.transaction_type.length>1 && (JSON.stringify(this.setFields.transaction_type.sort()) != '["3","4"]')) {
         this.rollupBy = 'transaction_type.code'
         this.rollupValues = this.setFields.transaction_type.map(item => [item])
       } else if (this.setFields.year && this.setFields.year.length > 1) {
