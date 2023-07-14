@@ -17,7 +17,7 @@
         <b-input-group-append>
           <b-btn size="sm"
             variant="outline-secondary"
-            @click="advancedSearch(field)"
+            @click="advancedSearch(field, fieldLabel)"
             v-b-tooltip.hover
             :title="$t('dataDashboards.advancedSearch')">
             <font-awesome-icon :icon="['fas', 'magnifying-glass']" />

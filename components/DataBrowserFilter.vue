@@ -139,7 +139,8 @@
     </b-modal>
     <AdvancedSearch
       :field="advancedSearchField"
-      :setFields.sync="setFields" />
+      :fieldLabel="advancedSearchFieldLabel"
+      :setFields.sync="setFields_" />
   </div>
 </template>
 <style>
@@ -249,6 +250,7 @@ export default {
         }
       ],
       advancedSearchField: null,
+      advancedSearchFieldLabel: null,
       advancedSearchItems: []
     }
   },
