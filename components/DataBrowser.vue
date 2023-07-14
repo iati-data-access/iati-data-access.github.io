@@ -577,9 +577,11 @@ export default {
     }
   },
   watch: {
-    year() {
+    year(newValue, oldValue) {
       if (this.autoReload) {
-        this.loadData()
+        if (JSON.stringify(newValue) != JSON.stringify(oldValue)) {
+          this.loadData()
+        }
       }
     },
     pageSize_() {
@@ -587,13 +589,10 @@ export default {
         this.loadData()
       }
     },
-    setFields: {
-      handler() {
-        if (this.autoReload) {
-          this.loadData()
-        }
-      },
-      deep: true
+    '$route.query'() {
+      if (this.autoReload) {
+        this.loadData()
+      }
     },
     currency() {
       if (this.autoReload) {
@@ -605,7 +604,14 @@ export default {
         this.$router.push(this.localePath({name: 'data-recipient-country-or-region-code', params: { code: code }}))
       }
     },
-    drilldowns() {
+    drilldowns(newValue, oldValue) {
+      if (this.autoReload) {
+        if (JSON.stringify(newValue) != JSON.stringify(oldValue)) {
+          this.loadData()
+        }
+      }
+    },
+    currentPage(newValue, oldValue) {
       if (this.autoReload) {
         this.loadData()
       }
