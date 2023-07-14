@@ -11,7 +11,7 @@
     ["/fr/introduction/", "Introduction"],
     ["/fr/methodology/", "Méthodologie"],
     ["/fr/data-notes/", "Notes sur les données"],
-    ["/fr/guidance-analysis/", "Lignes directrices et tableaux de bord d’analyse Excel"]
+    ["/fr/guidance-analysis/", "Lignes directrices"]
   ],
   "accessAnalyseOptions": [
     {
@@ -54,6 +54,7 @@
     "noResults": "Aucun résultat ne correspond aux filtres sélectionnés.",
     "selectSomeOptions": "Sélectionnez plusieurs options, puis lancez la recherche.",
     "amount": "Valeur",
+    "clearField": "Effacer",
     "advancedSearch": "Recherche avancée",
     "advancedSearchFields": {
       "code": "Code",
@@ -70,8 +71,8 @@
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
-      "toAdvanced": "Switch to advanced: select transaction types",
-      "toSimple": "Switch to simple: select budget and/or spending"
+      "toAdvanced": "Passer à la vue avancée : sélectionner les types de transaction",
+      "toSimple": "Passer à la vue simple : sélectionner les budgets et/ou les dépenses"
     },
     "reportingOrganisationGroup": {
       "select": "Sélectionnez des groupes d'organisations déclarantes pour les organisations qui publient des données sous plusieurs organisations déclarantes.",
