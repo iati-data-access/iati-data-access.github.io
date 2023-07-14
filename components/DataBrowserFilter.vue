@@ -74,27 +74,23 @@
           </template>
           -->
 
-          <b-form-group
-            :label="$t('dataDashboards.calendarYear')"
-            style="min-width: 200px;"
-            :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
-            <v-select
-              :options="years"
-              multiple
-              v-model="setFields.year"
-              style="min-width: 200px;"></v-select>
-          </b-form-group>
+          <DataBrowserFilterItem
+            field="year"
+            :fieldOptions="fields.year"
+            :fieldLabel="$t('dataDashboards.calendarYear')"
+            :value="setFields_.year"
+            :updateField="updateField"
+            :advancedSearch="advancedSearchFn">
+          </DataBrowserFilterItem>
 
-          <b-form-group
-            :label="$t('dataDashboards.calendarYearAndQuarter')"
-            style="min-width: 200px;"
-            class="mt-2">
-            <v-select
-              :options="calendar_years_and_quarters"
-              multiple
-              v-model="setFields.calendar_year_and_quarter"
-              style="min-width: 200px;"></v-select>
-          </b-form-group>
+          <DataBrowserFilterItem
+            field="calendar_year_and_quarter"
+            :fieldOptions="fields.calendar_year_and_quarter"
+            :fieldLabel="$t('dataDashboards.calendarYearAndQuarter')"
+            :value="setFields_.calendar_year_and_quarter"
+            :updateField="updateField"
+            :advancedSearch="advancedSearchFn">
+          </DataBrowserFilterItem>
 
         </b-form>
         <!-- Year -->
@@ -191,7 +187,7 @@ export default {
     },
     hideFilters: {
       default() {
-        return []
+        return ['year', 'calendar_year_and_quarter']
       }
     },
     horizontal: {
@@ -344,7 +340,7 @@ export default {
         this.$emit('update:currency', value)
       }
     },...mapState(['codelistLookups', 'fields',
-      'availableDrilldowns', 'years', 'calendar_years_and_quarters'])
+      'availableDrilldowns'])
   },
   components: {
     DataBrowserFilterItem,

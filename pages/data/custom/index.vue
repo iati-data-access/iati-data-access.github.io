@@ -71,7 +71,9 @@
           :hide-filters="['recipient_country_or_region',
             'reporting_organisation',
             'sector_category',
-            'transaction_type']"
+            'transaction_type',
+            'year',
+            'calendar_year_and_quarter']"
           :setFields.sync="setFields"
           :currency.sync="currency"
           :horizontal="false"
