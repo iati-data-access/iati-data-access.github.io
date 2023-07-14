@@ -410,9 +410,10 @@ export default {
         }
       }
     },
-    advancedSearch(field) {
+    advancedSearch(field, fieldLabel) {
       this.$bvModal.show('advanced-search')
       this.advancedSearchField = field
+      this.advancedSearchFieldLabel = fieldLabel
     }
   },
   watch: {
