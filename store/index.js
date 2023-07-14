@@ -30,7 +30,8 @@ export const state = () => ({
     "humanitarian": "Humanitarian",
     "year.year": "Calendar Year",
     "quarter.quarter": "Calendar Quarter",
-    "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter"
+    "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter",
+    "transaction_type": "Transaction Type",
   },
   codelistLookups: {
     reporting_organisation: 'ReportingOrganisation',
