@@ -129,9 +129,6 @@ export const mutations = {
       } else {
         var label = `${code} - ${name}`
       }
-
-
-
       summary[code] = {
         code: code,
         label: label,
