@@ -121,6 +121,22 @@
          />
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <hr />
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="12" class="mt-2">
+        <h3>{{ $t('by') }} {{ $t('dataDashboards.organisations') }}</h3>
+        <DataBrowser
+          :drilldowns="['provider_organisation', 'receiver_organisation', 'transaction_type.code']"
+          displayAs="sankey"
+          :setFields="organisationsSetFields"
+          :currency.sync="currency"
+         />
+      </b-col>
+    </b-row>
     <DataBrowserSource />
   </div>
 </template>
@@ -161,6 +177,14 @@ export default {
           year: this.calendarYears,
           calendar_year_and_quarter: [],
           transaction_type: ['3', '4', 'budget']
+        }
+      }
+    },
+    organisationsSetFields() {
+      return {
+        ...this.setFields,
+        ...{
+          transaction_type: ['1', '3']
         }
       }
     },

@@ -131,7 +131,8 @@
       "quarter": "Trimestre civil",
       "calendar_year_and_quarter": "Ano e trimestre civis"
     },
-    "activity": "Atividade"
+    "activity": "Atividade",
+    "organisations": "Organizações"
   },
   "dataSidebarDropdowns": [
     {

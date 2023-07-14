@@ -103,6 +103,13 @@
                 :total-rows="totalRows"
                 :per-page="pageSize_"></b-pagination>
             </b-col>
+            <b-col v-if="displayAs_=='sankey'">
+              <Sankey
+                :data="cells"
+                :from="`provider_organisation.name_${lang}`"
+                :to="`receiver_organisation.name_${lang}`"
+              />
+            </b-col>
           </b-row>
         </template>
         <template v-else-if="optionsToBeSelected">
@@ -132,6 +139,7 @@ import { mapState } from 'vuex'
 import BarChartComponent from '~/components/BarChartComponent'
 import Download from '~/components/Download.vue'
 import Map from '~/components/Map'
+import Sankey from '~/components/Sankey'
 import debounce from "lodash.debounce"
 
 export default {
@@ -339,7 +347,25 @@ export default {
       }
     },
     displayOptions() {
-      if (this.drilldowns.length > 1) {
+      if (JSON.stringify(this.drilldowns) == '["provider_organisation","receiver_organisation","transaction_type.code"]') {
+        return [
+          {
+            value: 'barChart',
+            text: 'Bar Chart',
+            icon: 'chart-simple'
+          },
+          {
+            value: 'table',
+            text: 'Table',
+            icon: 'table'
+          },
+          {
+            value: 'sankey',
+            text: 'Sankey',
+            icon: 'bars-staggered'
+          }
+        ]
+      } else if (this.drilldowns.length > 1) {
         return [
           {
             value: 'table',
@@ -461,7 +487,7 @@ export default {
       return `${this.summaryURL}&pagesize=${this.maxPageSize}&format=xlsx&lang=${this.lang}`
     },...mapState(['availableDrilldowns', 'codelistLookups', 'fields', 'fieldNames'])
   },
-  components: { BarChartComponent, Map, Download },
+  components: { BarChartComponent, Map, Download, Sankey },
   created() {
     this.loadDataDebounce = debounce(() => {
       this.loadDataHandler()
