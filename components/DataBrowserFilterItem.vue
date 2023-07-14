@@ -7,17 +7,32 @@
         <div class="w-100">
           <b-form-group>
             <v-select
+              style="min-width: 200px;"
               multiple
-              :options="fieldOptions"
+              :taggable="filterFromOptions ? false : true"
+              :options="filterFromOptions ? fieldOptions : []"
               v-model="_value"
-              :reduce="item => item.code">
+              :reduce="filterFromOptions ? item => item.code : item => item">
+              <!-- eslint-disable-next-line vue/no-unused-vars  -->
+              <template #no-options="{ search, searching, loading }">
+                {{ noMatchingOptions }}
+              </template>
             </v-select>
           </b-form-group>
         </div>
-        <b-input-group-append>
+        <b-input-group-append v-if="_value && _value.length > 0">
           <b-btn size="sm"
             variant="outline-secondary"
-            @click="advancedSearch(field)"
+            @click="updateField(field, [])"
+            v-b-tooltip.hover
+            :title="$t('dataDashboards.clearField')">
+            <font-awesome-icon :icon="['fas', 'xmark']" />
+          </b-btn>
+        </b-input-group-append>
+        <b-input-group-append v-if="filterFromOptions">
+          <b-btn size="sm"
+            variant="outline-secondary"
+            @click="advancedSearch(field, fieldLabel)"
             v-b-tooltip.hover
             :title="$t('dataDashboards.advancedSearch')">
             <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
@@ -62,15 +77,48 @@ div.input-group.nowrap {
 <script>
 import { mapState } from 'vuex'
 export default {
-  props: ['field', 'fieldLabel',
-    'fieldOptions', 'updateField',
-    'value', 'advancedSearch'],
+  props: {
+    field: {
+      default: null
+    },
+    fieldLabel: {
+      default: null
+    },
+    fieldOptions: {
+      default() {
+        return {}
+      }
+    },
+    updateField: {
+      default() {
+        return ''
+      }
+    },
+    value: {
+      default: null
+    },
+    advancedSearch: {
+      default() {
+        return ''
+      }
+    },
+    filterFromOptions: {
+      default: true
+    }
+  },
   data() {
     return {
       selectedReportingOrganisationGroup: null
     }
   },
   computed: {
+    noMatchingOptions() {
+      if (this.filterFromOptions) {
+        return this.$t('dataDashboards.noMatchingOptions')
+      } else {
+        return this.$t('dataDashboards.exactSearchTerm')
+      }
+    },
     _value: {
       get() {
         return this.value

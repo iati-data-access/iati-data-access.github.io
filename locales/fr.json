@@ -11,7 +11,7 @@
     ["/fr/introduction/", "Introduction"],
     ["/fr/methodology/", "Méthodologie"],
     ["/fr/data-notes/", "Notes sur les données"],
-    ["/fr/guidance-analysis/", "Lignes directrices et tableaux de bord d’analyse Excel"]
+    ["/fr/guidance-analysis/", "Lignes directrices"]
   ],
   "accessAnalyseOptions": [
     {
@@ -54,6 +54,7 @@
     "noResults": "Aucun résultat ne correspond aux filtres sélectionnés.",
     "selectSomeOptions": "Sélectionnez plusieurs options, puis lancez la recherche.",
     "amount": "Valeur",
+    "clearField": "Effacer",
     "advancedSearch": "Recherche avancée",
     "advancedSearchFields": {
       "code": "Code",
@@ -70,8 +71,8 @@
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
-      "toAdvanced": "Switch to advanced: select transaction types",
-      "toSimple": "Switch to simple: select budget and/or spending"
+      "toAdvanced": "Passer à la vue avancée : sélectionner les types de transaction",
+      "toSimple": "Passer à la vue simple : sélectionner les budgets et/ou les dépenses"
     },
     "reportingOrganisationGroup": {
       "select": "Sélectionnez des groupes d'organisations déclarantes pour les organisations qui publient des données sous plusieurs organisations déclarantes.",
@@ -104,6 +105,7 @@
       "activity.iati_identifier": "Identifiant de l’IITA",
       "activity.title": "Titre",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Groupes d’organismes déclarantes",
       "reporting_organisation": "Organisme déclarant",
       "reporting_organisation_type": "Type d’organisme déclarant",
       "aid_type": "Type d’aide",
@@ -120,7 +122,8 @@
       "humanitarian": "Humanitaire ou Développement",
       "year.year": "Année civile",
       "quarter.quarter": "Trimestre civil",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils",
+      "transaction_type.code": "Flux de Ressources"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Flux de Ressources",

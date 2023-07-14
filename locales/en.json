@@ -11,7 +11,7 @@
     ["/introduction/", "Introduction"],
     ["/methodology/", "Methodology"],
     ["/data-notes/", "Data Notes"],
-    ["/guidance-analysis/", "Guidance and Excel Analysis Dashboards"]
+    ["/guidance-analysis/", "Guidance"]
   ],
   "accessAnalyseOptions": [
     {
@@ -54,7 +54,10 @@
     "noResults": "There are no results for your selected filters.",
     "selectSomeOptions": "Select some options, and then click Run on the left.",
     "amount": "Value",
+    "clearField": "Clear",
     "advancedSearch": "Advanced Search",
+    "noMatchingOptions": "Sorry, no matching options.",
+    "exactSearchTerm": "Type an exact search term and press Enter.",
     "advancedSearchFields": {
       "code": "Code",
       "name": "Name",
@@ -70,8 +73,8 @@
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
-      "toAdvanced": "Switch to advanced: select transaction types",
-      "toSimple": "Switch to simple: select budget and/or spending"
+      "toAdvanced": "Switch to advanced view: select transaction types",
+      "toSimple": "Switch to simple view: select budget and/or spending"
     },
     "reportingOrganisationGroup": {
       "select": "Select groups of reporting organisations for organisations that publish data under multiple reporting organisations.",
@@ -104,6 +107,7 @@
       "activity.iati_identifier": "Activity IATI Identifier",
       "activity.title": "Activity Title",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Reporting Organisation Group",
       "reporting_organisation": "Reporting Organisation",
       "reporting_organisation_type": "Reporting Organisation Type",
       "aid_type": "Aid Type",
@@ -120,7 +124,8 @@
       "humanitarian": "Humanitarian / Development",
       "year.year": "Calendar Year",
       "quarter.quarter": "Calendar Quarter",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Calendar Year and Quarter",
+      "transaction_type.code": "Transaction Type"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Resource Flows",

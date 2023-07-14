@@ -68,9 +68,12 @@ export default {
             })
           } else {
             summary.push({
-              filter: this.getDrilldownName(item[0], item[1].length),
+              filter: this.getDrilldownName(item[0]),
               values: item[1].map(itemValue => {
-                return this.fieldsObj[item[0]][itemValue]
+                if (item[0] in this.fieldsObj) {
+                  return this.fieldsObj[item[0]][itemValue]
+                }
+                return itemValue
               })
             })
           }
@@ -87,8 +90,8 @@ export default {
   methods: {
     getDrilldownName(drilldownName, count=null) {
       const drilldownSource = drilldownName in this.$t('dataDashboards.availableDrilldowns') ? 'dataDashboards.availableDrilldowns' : 'dataDashboards.unavailableDrilldowns'
-      if (count === null) {
-        return this.$t(`${drilldownSource}.${drilldownName}`)
+      if (count == null) {
+        return this.$t(drilldownSource)[drilldownName]
       } else {
         return this.$tc(`${drilldownSource}.${drilldownName}`, count)
       }

@@ -11,7 +11,7 @@
     ["/pt/introduction/", "Introdução"],
     ["/pt/methodology/", "Metodologia"],
     ["/pt/data-notes/", "Notas sobre os dados"],
-    ["/pt/guidance-analysis/", "Orientações e painéis de análise Excel"]
+    ["/pt/guidance-analysis/", "Orientações"]
   ],
   "accessAnalyseOptions": [
     {
@@ -54,6 +54,7 @@
     "noResults": "Não há resultados para os filtros que selecionou",
     "selectSomeOptions": "Selecione algumas opções e clique em Executar à esquerda.",
     "amount": "Valor",
+    "clearField": "Apagar",
     "advancedSearch": "Busca Avançada",
     "advancedSearchFields": {
       "code": "Código",
@@ -70,8 +71,8 @@
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
-      "toAdvanced": "Switch to advanced: select transaction types",
-      "toSimple": "Switch to simple: select budget and/or spending"
+      "toAdvanced": "Passar para a vista avançada: selecionar tipos de transação",
+      "toSimple": "Mudar para a vista simples: selecionar orçamentos e/ou despesas"
     },
     "reportingOrganisationGroup": {
       "select": "Selecione grupos de organizações relatórios para organizações que publicam dados em várias organizações relatórios.",
@@ -104,6 +105,7 @@
       "activity.iati_identifier": "Identificador de atividade da IATI",
       "activity.title": "Título da atividade",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Grupo de organizações relatórios",
       "reporting_organisation": "Organização relatora",
       "reporting_organisation_type": "Tipo de organização relatora",
       "aid_type": "Tipo de ajuda",
@@ -120,7 +122,8 @@
       "humanitarian": "Humanitário / desenvolvimento",
       "year.year": "Ano civil",
       "quarter.quarter": "Trimestre civil",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis",
+      "transaction_type.code": "Fluxos de Recurso"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Fluxos de Recurso",

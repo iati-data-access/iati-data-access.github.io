@@ -1,5 +1,5 @@
 <template>
-  <div class="float-right access-analyse-video">
+  <div class="w-100">
     <b-form-group
       label="Select video"
       label-size="sm">

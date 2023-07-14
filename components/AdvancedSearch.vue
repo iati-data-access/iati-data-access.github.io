@@ -1,6 +1,6 @@
 <template>
   <b-modal
-    :title="`${$t('dataDashboards.advancedSearch')} - ${$tc(`dataDashboards.availableDrilldowns.${field}`)}`"
+    :title="field ? `${$t('dataDashboards.advancedSearch')} - ${fieldLabel}`: null"
     id="advanced-search"
     ok-only
     size="xl">
@@ -88,6 +88,9 @@ import { mapState } from 'vuex'
 export default {
   props: {
     field: {
+      default: null
+    },
+    fieldLabel: {
       default: null
     },
     setFields: {

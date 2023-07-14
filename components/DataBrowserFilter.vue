@@ -24,77 +24,70 @@
             ></b-form-radio-group>
           </b-form-group>
 
-
-          <b-form-group
-            :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
-            :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
-            <b-form-radio-group
-              v-model="setFields.transaction_type"
-              size="md"
-              button-variant="outline-secondary"
-              :stacked="!horizontal"
-              :class="!horizontal ? 'w-100': null"
-              buttons>
-              <b-form-radio
-                :class="option.class"
-                :value="option.value"
-                v-for="option in budgetsSpendingOptions"
-                v-bind:key="option.text">
-                {{ option.text }}
-              </b-form-radio>
-            </b-form-radio-group>
-          </b-form-group>
-            <!--
+          <template v-if="simpleTransactionTypes">
+            <b-form-group
+              :label="$t('dataDashboards.budgetsSpending.budgetsOrSpending')"
+              :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
+              <b-form-radio-group
+                v-model="setFields_.transaction_type"
+                size="md"
+                button-variant="outline-secondary"
+                :stacked="!horizontal"
+                :class="!horizontal ? 'w-100': null"
+                buttons>
+                <b-form-radio
+                  :class="option.class"
+                  :value="option.value"
+                  v-for="option in budgetsSpendingOptions"
+                  v-bind:key="option.text">
+                  {{ option.text }}
+                </b-form-radio>
+              </b-form-radio-group>
+            </b-form-group>
             <b-btn
               v-if="customPage"
               class="mt-0"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=false">{{ $t('dataDashboards.switchTransactionTypes.toAdvanced') }}</b-btn>
-            -->
-          <!--
-          <template v-if="simpleTransactionTypes">
           </template>
           <template v-else>
-            <b-form-group
-              :label="$t('dataDashboards.transactionTypes')"
-              :class="horizontal ? 'mr-4 mt-2': 'mt-2 mb-0'">
-              <v-select
-                multiple
-                v-model="setFields.transaction_type"
-                :options="fields.transaction_type"
-                :reduce="item => item.code">
-              </v-select>
-            </b-form-group>
+            <DataBrowserFilterItem
+              field="transaction_type"
+              :fieldOptions="fields.transaction_type"
+              :fieldLabel="$t('dataDashboards.transactionTypes')"
+              :value="setFields_.transaction_type"
+              :updateField="updateField"
+              :advancedSearch="advancedSearchFn">
+            </DataBrowserFilterItem>
             <b-btn
               class="mt-0"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=true">{{ $t('dataDashboards.switchTransactionTypes.toSimple') }}</b-btn>
           </template>
-          -->
 
-          <b-form-group
-            :label="$t('dataDashboards.calendarYear')"
+          <DataBrowserFilterItem
+            field="year"
+            :fieldOptions="fields.year"
+            :fieldLabel="$t('dataDashboards.calendarYear')"
+            :value="setFields_.year"
+            :updateField="updateField"
+            :advancedSearch="advancedSearchFn"
             style="min-width: 200px;"
             :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
-            <v-select
-              :options="years"
-              multiple
-              v-model="setFields.year"
-              style="min-width: 200px;"></v-select>
-          </b-form-group>
+          </DataBrowserFilterItem>
 
-          <b-form-group
-            :label="$t('dataDashboards.calendarYearAndQuarter')"
-            style="min-width: 200px;"
-            class="mt-2">
-            <v-select
-              :options="calendar_years_and_quarters"
-              multiple
-              v-model="setFields.calendar_year_and_quarter"
-              style="min-width: 200px;"></v-select>
-          </b-form-group>
+          <DataBrowserFilterItem
+            field="calendar_year_and_quarter"
+            :fieldOptions="fields.calendar_year_and_quarter"
+            :fieldLabel="$t('dataDashboards.calendarYearAndQuarter')"
+            :value="setFields_.calendar_year_and_quarter"
+            :updateField="updateField"
+            :advancedSearch="advancedSearchFn"
+            formGroupStyle="min-width: 200px;"
+            :formGroupClass="horizontal ? 'mr-4 mt-2': 'mt-2'">
+          </DataBrowserFilterItem>
 
         </b-form>
         <!-- Year -->
@@ -111,7 +104,7 @@
     <b-row v-if="selectedFiltersText && horizontal">
       <b-col>
         <hr />
-        <DataBrowserFiltersText :setFields="setFields" :excludeFilters="excludeFilters" />
+        <DataBrowserFiltersText :setFields="setFields_" :excludeFilters="excludeFilters" />
       </b-col>
     </b-row>
     <b-row v-if="horizontal">
@@ -120,8 +113,10 @@
       </b-col>
     </b-row>
     <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="xl">
-      <b-row cols="3" class="p-3">
+      <b-row class="p-3">
         <b-col
+          md="6"
+          lg="4"
           class="p-2"
           v-for="field in Object.keys(fields)"
           v-if="!excludeFilters.includes(field) && !hideFilters.includes(field)"
@@ -131,15 +126,28 @@
             :fieldOptions="fields[field]"
             :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
             :updateField="updateField"
-            :value="setFields[field]"
+            :value="setFields_[field]"
             :advancedSearch="advancedSearch">
+          </DataBrowserFilterItem>
+        </b-col>
+        <b-col
+          md="6"
+          lg="4"
+          class="p-2">
+          <DataBrowserFilterItem
+            field="activity.iati_identifier"
+            :fieldLabel="availableDrilldowns['activity.iati_identifier']"
+            :updateField="updateField"
+            :value="setFields_['activity.iati_identifier']"
+            :filterFromOptions="false">
           </DataBrowserFilterItem>
         </b-col>
       </b-row>
     </b-modal>
     <AdvancedSearch
       :field="advancedSearchField"
-      :setFields.sync="setFields" />
+      :fieldLabel="advancedSearchFieldLabel"
+      :setFields.sync="setFields_" />
   </div>
 </template>
 <style>
@@ -190,7 +198,7 @@ export default {
     },
     hideFilters: {
       default() {
-        return []
+        return ['year', 'calendar_year_and_quarter']
       }
     },
     horizontal: {
@@ -249,6 +257,7 @@ export default {
         }
       ],
       advancedSearchField: null,
+      advancedSearchFieldLabel: null,
       advancedSearchItems: []
     }
   },
@@ -272,7 +281,7 @@ export default {
       return this.drilldowns.join(";")
     },
     fieldsForQuery() {
-      return Object.entries(this.setFields).reduce((summary, item) => {
+      return Object.entries(this.setFields_).reduce((summary, item) => {
         // We only want to exclude e.g. the country name when on the country page
         if (this.specificPage) {
           if (item[0] == this.excludeFilters[0]) { return summary }
@@ -293,7 +302,7 @@ export default {
       }, {})
     },
     selectedFiltersText() {
-      return Object.entries(this.setFields).reduce((summary, item) => {
+      return Object.entries(this.setFields_).reduce((summary, item) => {
         // We only want to exclude e.g. the country name when on the country page
         if (this.specificPage) {
           if (item[0] == this.excludeFilters[0]) { return summary }
@@ -309,7 +318,10 @@ export default {
             summary.push({
               filter: this.getDrilldownName(item[0], item[1].length),
               values: item[1].map(itemValue => {
-                return this.fieldsObj[item[0]][itemValue]
+                if (item[0] in this.fieldsObj) {
+                  return this.fieldsObj[item[0]][itemValue]
+                }
+                return itemValue
               })
             })
           }
@@ -317,6 +329,14 @@ export default {
         return summary
       }, []).sort((a,b)=> { return a.filter - b.filter})
 
+    },
+    setFields_: {
+      get() {
+        return this.setFields
+      },
+      set(value) {
+        this.$emit('update:setFields', value)
+      }
     },
     displayAs_: {
       get() {
@@ -342,7 +362,7 @@ export default {
         this.$emit('update:currency', value)
       }
     },...mapState(['codelistLookups', 'fields',
-      'availableDrilldowns', 'years', 'calendar_years_and_quarters'])
+      'availableDrilldowns'])
   },
   components: {
     DataBrowserFilterItem,
@@ -358,7 +378,7 @@ export default {
       }
     },
     updateField(field, value) {
-      this.$set(this.setFields, field, value)
+      this.$set(this.setFields, field, value.sort())
       this.$emit('update:setFields', this.setFields)
     },
     updateDrilldowns(drilldowns) {
@@ -411,23 +431,26 @@ export default {
         }
       }
     },
-    advancedSearch(field) {
+    advancedSearch(field, fieldLabel) {
       this.$bvModal.show('advanced-search')
       this.advancedSearchField = field
+      this.advancedSearchFieldLabel = fieldLabel
     }
   },
   watch: {
-    'setFields.year': {
+    'setFields_.year': {
       handler(value) {
         if (value.length>0) {
+          // Reset calendar_year_and_quarter, to avoid conflicts
           this.$set(this.setFields, 'calendar_year_and_quarter', [])
         }
       }
     },
-    'setFields.calendar_year_and_quarter': {
+    'setFields_.calendar_year_and_quarter': {
       handler(value) {
         if (value.length>0) {
-          this.$set(this.setFields, 'year', [])
+          // Reset year, to avoid conflicts
+          this.$set(this.setFields_, 'year', [])
         }
       }
     },
@@ -477,6 +500,9 @@ export default {
   },
   mounted: function() {
     this.customiseFromQuery()
+    if (!['["3", "4"]','["budget"]','["3","4","budget"]'].includes(JSON.stringify(this.setFields.transaction_type.sort()))) {
+      this.simpleTransactionTypes = false
+    }
     this.$store.dispatch('getCodelists')
     this.$emit('update:advancedSearchFn', this.advancedSearch)
   }

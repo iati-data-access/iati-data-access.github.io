@@ -11,7 +11,7 @@
     ["/es/introduction/", "Antecedentes"],
     ["/es/methodology/", "Metodología"],
     ["/es/data-notes/", "Notas sobre datos"],
-    ["/es/guidance-analysis/", "Paneles de orientación y análisis en Excel"]
+    ["/es/guidance-analysis/", "Orientación"]
   ],
   "accessAnalyseOptions": [
     {
@@ -54,6 +54,7 @@
     "noResults": "Los filtros seleccionados no han arrojado resultados.",
     "selectSomeOptions": "Seleccione algunas opciones y haga clic en “Ejecutar” a la izquierda.",
     "amount": "Valor",
+    "clearField": "Borrar",
     "advancedSearch": "Búsqueda avanzada",
     "advancedSearchFields": {
       "code": "Código",
@@ -70,8 +71,8 @@
     },
     "transactionTypes": "Transaction Type",
     "switchTransactionTypes": {
-      "toAdvanced": "Switch to advanced: select transaction types",
-      "toSimple": "Switch to simple: select budget and/or spending"
+      "toAdvanced": "Pasar a la vista avanzada: seleccionar los tipos de transacción",
+      "toSimple": "Cambiar a vista simple: seleccionar los presupuestos y/o los gastos"
     },
     "reportingOrganisationGroup": {
       "select": "Seleccione grupos de organizaciones notificadoras para organizaciones que publican datos bajo varias organizaciones notificadoras.",
@@ -104,6 +105,7 @@
       "activity.iati_identifier": "Identificador de la IATI de la actividad",
       "activity.title": "Título de la actividad",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Grupo de Organizaciones Notificadoras",
       "reporting_organisation": "Organización notificadora",
       "reporting_organisation_type": "Tipo de organización notificadora",
       "aid_type": "Tipo de ayuda",
@@ -120,7 +122,8 @@
       "humanitarian": "Asistencia humanitaria / desarrollo",
       "year.year": "Año natural",
       "quarter.quarter": "Trimestre natural",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural",
+      "transaction_type.code": "Flujos de Recursos"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Flujos de Recursos",
