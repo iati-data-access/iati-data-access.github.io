@@ -536,8 +536,6 @@ export default {
           this.drilldowns.forEach(drilldown => {
             if (['activity.title', 'activity.description'].includes(drilldown)) {
               item[drilldown] = item[`${drilldown}_${this.lang}`]
-            } else if (['provider_organisation_type', 'receiver_organisation_type'].includes(drilldown)) {
-              item[drilldown] = item[`${drilldown}.code`]
             } else if (drilldown.includes(".")) {
               return item
             } else if (drilldown == 'humanitarian') {
