@@ -105,6 +105,7 @@
       "activity.iati_identifier": "Identificador de atividade da IATI",
       "activity.title": "Título da atividade",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Grupo de organizações relatórios",
       "reporting_organisation": "Organização relatora",
       "reporting_organisation_type": "Tipo de organização relatora",
       "aid_type": "Tipo de ajuda",
@@ -121,7 +122,8 @@
       "humanitarian": "Humanitário / desenvolvimento",
       "year.year": "Ano civil",
       "quarter.quarter": "Trimestre civil",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Ano e trimestre civis",
+      "transaction_type.code": "Fluxos de Recurso"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Fluxos de Recurso",

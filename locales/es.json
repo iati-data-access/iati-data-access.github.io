@@ -105,6 +105,7 @@
       "activity.iati_identifier": "Identificador de la IATI de la actividad",
       "activity.title": "Título de la actividad",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Grupo de Organizaciones Notificadoras",
       "reporting_organisation": "Organización notificadora",
       "reporting_organisation_type": "Tipo de organización notificadora",
       "aid_type": "Tipo de ayuda",
@@ -121,7 +122,8 @@
       "humanitarian": "Asistencia humanitaria / desarrollo",
       "year.year": "Año natural",
       "quarter.quarter": "Trimestre natural",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Año y trimestre natural",
+      "transaction_type.code": "Flujos de Recursos"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Flujos de Recursos",

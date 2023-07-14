@@ -105,6 +105,7 @@
       "activity.iati_identifier": "Identifiant de l’IITA",
       "activity.title": "Titre",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Groupes d’organismes déclarantes",
       "reporting_organisation": "Organisme déclarant",
       "reporting_organisation_type": "Type d’organisme déclarant",
       "aid_type": "Type d’aide",
@@ -121,7 +122,8 @@
       "humanitarian": "Humanitaire ou Développement",
       "year.year": "Année civile",
       "quarter.quarter": "Trimestre civil",
-      "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils"
+      "calendar_year_and_quarter.calendar_year_and_quarter": "Année et trimestre civils",
+      "transaction_type.code": "Flux de Ressources"
     },
     "unavailableDrilldowns": {
       "transaction_type": "Flux de Ressources",

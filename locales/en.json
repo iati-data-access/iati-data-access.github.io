@@ -107,6 +107,7 @@
       "activity.iati_identifier": "Activity IATI Identifier",
       "activity.title": "Activity Title",
       "activity.description": "Activity Description",
+      "reporting_organisation_group": "Reporting Organisation Group",
       "reporting_organisation": "Reporting Organisation",
       "reporting_organisation_type": "Reporting Organisation Type",
       "aid_type": "Aid Type",
