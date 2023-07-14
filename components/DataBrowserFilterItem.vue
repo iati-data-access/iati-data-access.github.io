@@ -14,6 +14,15 @@
             </v-select>
           </b-form-group>
         </div>
+        <b-input-group-append v-if="_value && _value.length > 0">
+          <b-btn size="sm"
+            variant="outline-secondary"
+            @click="updateField(field, [])"
+            v-b-tooltip.hover
+            :title="$t('dataDashboards.clearField')">
+            <font-awesome-icon :icon="['fas', 'xmark']" />
+          </b-btn>
+        </b-input-group-append>
         <b-input-group-append>
           <b-btn size="sm"
             variant="outline-secondary"
