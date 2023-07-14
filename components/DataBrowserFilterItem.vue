@@ -7,6 +7,7 @@
         <div class="w-100">
           <b-form-group>
             <v-select
+              style="min-width: 200px;"
               multiple
               :taggable="filterFromOptions ? false : true"
               :options="filterFromOptions ? fieldOptions : []"

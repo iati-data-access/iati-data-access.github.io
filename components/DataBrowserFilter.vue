@@ -73,7 +73,9 @@
             :fieldLabel="$t('dataDashboards.calendarYear')"
             :value="setFields_.year"
             :updateField="updateField"
-            :advancedSearch="advancedSearchFn">
+            :advancedSearch="advancedSearchFn"
+            style="min-width: 200px;"
+            :class="horizontal ? 'mr-4 mt-2': 'mt-2'">
           </DataBrowserFilterItem>
 
           <DataBrowserFilterItem
@@ -82,7 +84,9 @@
             :fieldLabel="$t('dataDashboards.calendarYearAndQuarter')"
             :value="setFields_.calendar_year_and_quarter"
             :updateField="updateField"
-            :advancedSearch="advancedSearchFn">
+            :advancedSearch="advancedSearchFn"
+            formGroupStyle="min-width: 200px;"
+            :formGroupClass="horizontal ? 'mr-4 mt-2': 'mt-2'">
           </DataBrowserFilterItem>
 
         </b-form>
@@ -109,8 +113,10 @@
       </b-col>
     </b-row>
     <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="xl">
-      <b-row cols="3" class="p-3">
+      <b-row class="p-3">
         <b-col
+          md="6"
+          lg="4"
           class="p-2"
           v-for="field in Object.keys(fields)"
           v-if="!excludeFilters.includes(field) && !hideFilters.includes(field)"
@@ -124,7 +130,10 @@
             :advancedSearch="advancedSearch">
           </DataBrowserFilterItem>
         </b-col>
-        <b-col class="p-2">
+        <b-col
+          md="6"
+          lg="4"
+          class="p-2">
           <DataBrowserFilterItem
             field="activity.iati_identifier"
             :fieldLabel="availableDrilldowns['activity.iati_identifier']"
