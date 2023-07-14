@@ -47,8 +47,8 @@
 </b-card-group>
 <hr />
 <b-alert show variant="secondary" class="text-center">
-    <p>¿Busca los paneles de orientación y análisis? Los hemos trasladado a la sección “Acerca de”.</p>
-    <b-btn variant="secondary" to="/es/guidance-analysis/">Paneles de orientación y análisis en Excel &raquo;</b-btn>
+    <p>¿Busca el orientación? Lo hemos trasladado a la sección “Acerca de”.</p>
+    <b-btn variant="secondary" to="/es/guidance-analysis/">Orientación &raquo;</b-btn>
 </b-alert>
 <hr />
 <div class="text-center">
