@@ -97,6 +97,11 @@
                   })">{{ data.item[`${drilldowns[0]}.name_${lang}`] }}</nuxt-link>
                 </template>
               </b-table>
+              <b-pagination
+                align="fill"
+                v-model="currentPage"
+                :total-rows="totalRows"
+                :per-page="pageSize_"></b-pagination>
             </b-col>
           </b-row>
         </template>
@@ -224,6 +229,8 @@ export default {
           text: 'All'
         }
       ],
+      currentPage: 1,
+      totalRows: 0
     }
   },
   computed: {
@@ -477,12 +484,12 @@ export default {
       return ''
     },
     summaryURL() {
-      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.localeSensitiveDrilldowns.join("|")}&order=value_${this.currency}.sum:desc${this.cuts}&aggregates=value_${this.currency}.sum&simple${this.rollups}`
+      return `${this.$config.baseURL}/babbage/cubes/iatiline/aggregate/?drilldown=${this.localeSensitiveDrilldowns.join("|")}&order=value_${this.currency}.sum:desc${this.cuts}&aggregates=value_${this.currency}.sum${this.rollups}`
     },
     JSONSummaryURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating, because this is the Excel maximum number of rows. But we only want to show a maximum of 1000 on the preview.
       const pageSize = this.pageSize_ != null ? this.pageSize_ : this.maxPageSize
-      return `${this.summaryURL}&pagesize=${pageSize}`
+      return `${this.summaryURL}&pagesize=${pageSize}&page=${this.currentPage}`
     },
     granularURL() {
       // NB the API limits to a maximum of 1,048,576 responses without paginating. But we only want to show a maximum of 1000 on the preview.
@@ -524,6 +531,7 @@ export default {
         cancelToken: axiosSource.token,
       })
       .then(response => {
+        this.totalRows = response.data.total_cell_count
         this.cells = response.data.cells.map(item => {
           this.drilldowns.forEach(drilldown => {
             if (['activity.title', 'activity.description'].includes(drilldown)) {
