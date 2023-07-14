@@ -56,6 +56,8 @@
     "amount": "Value",
     "clearField": "Clear",
     "advancedSearch": "Advanced Search",
+    "noMatchingOptions": "Sorry, no matching options.",
+    "exactSearchTerm": "Type an exact search term and press Enter.",
     "advancedSearchFields": {
       "code": "Code",
       "name": "Name",

@@ -124,6 +124,15 @@
             :advancedSearch="advancedSearch">
           </DataBrowserFilterItem>
         </b-col>
+        <b-col class="p-2">
+          <DataBrowserFilterItem
+            field="activity.iati_identifier"
+            :fieldLabel="availableDrilldowns['activity.iati_identifier']"
+            :updateField="updateField"
+            :value="setFields_['activity.iati_identifier']"
+            :filterFromOptions="false">
+          </DataBrowserFilterItem>
+        </b-col>
       </b-row>
     </b-modal>
     <AdvancedSearch
@@ -300,7 +309,10 @@ export default {
             summary.push({
               filter: this.getDrilldownName(item[0], item[1].length),
               values: item[1].map(itemValue => {
-                return this.fieldsObj[item[0]][itemValue]
+                if (item[0] in this.fieldsObj) {
+                  return this.fieldsObj[item[0]][itemValue]
+                }
+                return itemValue
               })
             })
           }
