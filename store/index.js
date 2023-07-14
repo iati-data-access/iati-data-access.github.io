@@ -1,6 +1,15 @@
 import Vue from "vue";
 import axios from "axios";
 
+
+const calendarYears = function() {
+  // Calendar years run from 2000 to ten years after today
+  var years = []
+  const year = new Date().getFullYear()
+  const range = (start, stop, step = 1) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+  return range(2000, year+10).map(year => { return `${year}` })
+}
+
 export const state = () => ({
   availableDrilldowns: {
     "activity.iati_identifier": "Activity IATI Identifier",
@@ -71,14 +80,26 @@ export const state = () => ({
         name: "Humanitarian",
         label: "Humanitarian"
       }
-    ]
+    ],
+    year: calendarYears().map(item => {
+      return {
+        code: item,
+        label: item,
+        name: item
+      }
+    }),
+    calendar_year_and_quarter: calendarYears().reduce((summary, year) => {
+      ['Q1', 'Q2', 'Q3', 'Q4'].forEach(quarter => {
+        summary.push({
+          code: `${year} ${quarter}`,
+          label: `${year} ${quarter}`,
+          name: `${year} ${quarter}`
+        })
+      })
+      return summary
+    }, [])
   },
   codelistsRetrieved: null,
-  years: ['2014', '2015', '2016', '2017',
-        '2018', '2019', '2020', '2021', '2022',
-        '2023', '2024', '2025', '2026', '2027',
-        '2028', '2029', '2030'],
-  calendar_years_and_quarters: ['2000 Q1', '2000 Q2', '2000 Q3', '2000 Q4', '2001 Q1', '2001 Q2', '2001 Q3', '2001 Q4', '2002 Q1', '2002 Q2', '2002 Q3', '2002 Q4', '2003 Q1', '2003 Q2', '2003 Q3', '2003 Q4', '2004 Q1', '2004 Q2', '2004 Q3', '2004 Q4', '2005 Q1', '2005 Q2', '2005 Q3', '2005 Q4', '2006 Q1', '2006 Q2', '2006 Q3', '2006 Q4', '2007 Q1', '2007 Q2', '2007 Q3', '2007 Q4', '2008 Q1', '2008 Q2', '2008 Q3', '2008 Q4', '2009 Q1', '2009 Q2', '2009 Q3', '2009 Q4', '2010 Q1', '2010 Q2', '2010 Q3', '2010 Q4', '2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4', '2013 Q1', '2013 Q2', '2013 Q3', '2013 Q4', '2014 Q1', '2014 Q2', '2014 Q3', '2014 Q4', '2015 Q1', '2015 Q2', '2015 Q3', '2015 Q4', '2016 Q1', '2016 Q2', '2016 Q3', '2016 Q4', '2017 Q1', '2017 Q2', '2017 Q3', '2017 Q4', '2018 Q1', '2018 Q2', '2018 Q3', '2018 Q4', '2019 Q1', '2019 Q2', '2019 Q3', '2019 Q4', '2020 Q1', '2020 Q2', '2020 Q3', '2020 Q4', '2021 Q1', '2021 Q2', '2021 Q3', '2021 Q4', '2022 Q1', '2022 Q2', '2022 Q3', '2022 Q4', '2023 Q1', '2023 Q2', '2023 Q3', '2023 Q4', '2024 Q1', '2024 Q2', '2024 Q3', '2024 Q4', '2025 Q1', '2025 Q2', '2025 Q3', '2025 Q4', '2026 Q1', '2026 Q2', '2026 Q3', '2026 Q4', '2027 Q1', '2027 Q2', '2027 Q3', '2027 Q4', '2028 Q1', '2028 Q2', '2028 Q3', '2028 Q4', '2029 Q1', '2029 Q2', '2029 Q3', '2029 Q4', '2030 Q1', '2030 Q2', '2030 Q3', '2030 Q4']
 });
 
 export const mutations = {
