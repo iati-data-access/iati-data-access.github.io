@@ -100,7 +100,7 @@
     <b-row v-if="selectedFiltersText && horizontal">
       <b-col>
         <hr />
-        <DataBrowserFiltersText :setFields="setFields" :excludeFilters="excludeFilters" />
+        <DataBrowserFiltersText :setFields="setFields_" :excludeFilters="excludeFilters" />
       </b-col>
     </b-row>
     <b-row v-if="horizontal">
@@ -120,7 +120,7 @@
             :fieldOptions="fields[field]"
             :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
             :updateField="updateField"
-            :value="setFields[field]"
+            :value="setFields_[field]"
             :advancedSearch="advancedSearch">
           </DataBrowserFilterItem>
         </b-col>
@@ -263,7 +263,7 @@ export default {
       return this.drilldowns.join(";")
     },
     fieldsForQuery() {
-      return Object.entries(this.setFields).reduce((summary, item) => {
+      return Object.entries(this.setFields_).reduce((summary, item) => {
         // We only want to exclude e.g. the country name when on the country page
         if (this.specificPage) {
           if (item[0] == this.excludeFilters[0]) { return summary }
@@ -284,7 +284,7 @@ export default {
       }, {})
     },
     selectedFiltersText() {
-      return Object.entries(this.setFields).reduce((summary, item) => {
+      return Object.entries(this.setFields_).reduce((summary, item) => {
         // We only want to exclude e.g. the country name when on the country page
         if (this.specificPage) {
           if (item[0] == this.excludeFilters[0]) { return summary }
@@ -308,6 +308,14 @@ export default {
         return summary
       }, []).sort((a,b)=> { return a.filter - b.filter})
 
+    },
+    setFields_: {
+      get() {
+        return this.setFields
+      },
+      set(value) {
+        this.$emit('update:setFields', value)
+      }
     },
     displayAs_: {
       get() {
@@ -408,17 +416,19 @@ export default {
     }
   },
   watch: {
-    'setFields.year': {
+    'setFields_.year': {
       handler(value) {
         if (value.length>0) {
+          // Reset calendar_year_and_quarter, to avoid conflicts
           this.$set(this.setFields, 'calendar_year_and_quarter', [])
         }
       }
     },
-    'setFields.calendar_year_and_quarter': {
+    'setFields_.calendar_year_and_quarter': {
       handler(value) {
         if (value.length>0) {
-          this.$set(this.setFields, 'year', [])
+          // Reset year, to avoid conflicts
+          this.$set(this.setFields_, 'year', [])
         }
       }
     },
