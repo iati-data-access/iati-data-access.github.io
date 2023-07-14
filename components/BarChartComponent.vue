@@ -1,12 +1,12 @@
 <template>
   <div>
-    <BarChart
-      :data="chartData"
-      :options="barChartOptions"
+    <Bar
+      :chart-data="chartData"
+      :chart-options="barChartOptions"
       class="bar-chart"
       :style="barChartHeight"
       ref="barChart"
-      ></BarChart>
+      ></Bar>
   </div>
 </template>
 <style scoped>
@@ -16,7 +16,10 @@
 }
 </style>
 <script>
-import BarChart from '~/components/charts/bar-chart'
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
   data() {
@@ -49,7 +52,7 @@ export default {
     }
   },
   components: {
-    BarChart
+    Bar
   },
   methods: {
     handleClick(evt, item) {
@@ -93,41 +96,38 @@ export default {
           }
         },
         scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-                callback: function(tick) {
-                  return tick.toLocaleString(undefined, {
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0
-                  })
+          yAxis: {
+            ticks: {
+              beginAtZero: true,
+              callback: function(tick) {
+                return tick.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                  minimumFractionDigits: 0
+                })
+              }
+            },
+            title: {
+              display: true,
+              text: this.valueLabel
+            }
+          },
+          xAxis: {
+            ticks: {
+              callback: function(value, index, ticks) {
+                const tick = this.getLabelForValue(value)
+                const characterLimit = 20
+                if (tick?.length >= characterLimit) {
+                  return (
+                    tick
+                      .slice(0, tick.length)
+                      .substring(0, characterLimit - 1)
+                      .trim() + '...'
+                  )
                 }
-              },
-              scaleLabel: {
-                display: true,
-                labelString: this.valueLabel
+                return tick
               }
             }
-          ],
-          xAxes: [
-            {
-              ticks: {
-                callback: function(tick) {
-                  const characterLimit = 20
-                  if (tick?.length >= characterLimit) {
-                    return (
-                      tick
-                        .slice(0, tick.length)
-                        .substring(0, characterLimit - 1)
-                        .trim() + '...'
-                    )
-                  }
-                  return tick
-                }
-              }
-            }
-          ]
+          }
         }
       }
     },
