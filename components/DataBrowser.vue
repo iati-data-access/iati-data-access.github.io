@@ -97,6 +97,7 @@
                   })">{{ data.item[`${drilldowns[0]}.name_${lang}`] }}</nuxt-link>
                 </template>
               </b-table>
+              <p class="text-muted font-italic">{{ $t('dataDashboards.totalNumberOfResults') }}: {{ totalRows.toLocaleString(undefined, {maximumFractionDigits: 0}) }}</p>
               <b-pagination
                 align="fill"
                 v-model="currentPage"
@@ -503,7 +504,6 @@ export default {
       } else if (rollupValue == '3-4') {
         return '#06DBE4'
       }
-      if (i == 1) { return '#155366' }
       return '#06DBE4'
     },
     getRollupLabel(rollupBy, rollupValue) {

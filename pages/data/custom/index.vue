@@ -96,7 +96,6 @@
           :autoReload="autoReload"
           :customise="false"
           pageName="data-custom"
-          :advancedSearchFn.sync="advancedSearchFn"
          />
       </b-col>
     </b-row>
