@@ -20,20 +20,20 @@ Column | Example (transactions) | Example (budgets)
 --- | --- | ---
 IATI Identifier | 44000-P163328 | 44000-P163328
 Title | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
-Reporting Organisation | 44000 – World Bank | 44000 – World Bank
-Reporting Organisation Type | 40 – Multilateral | 40 – Multilateral
-Aid Type | C01 – Project-type interventions | C01 – Project-type interventions
-Finance Type | 410 – Aid loan excluding debt reorganisation | 410 – Aid loan excluding debt reorganisation
-Flow Type | 10 - ODA | 10 - ODA
+<a href="https://codelists.codeforiati.org/ReportingOrganisation/">Reporting Organisation</a> | 44000 – World Bank | 44000 – World Bank
+<a href="https://codelists.codeforiati.org/OrganisationType/">Reporting Organisation Type</a> | 40 – Multilateral | 40 – Multilateral
+<a href="https://codelists.codeforiati.org/AidType/">Aid Type</a> | C01 – Project-type interventions | C01 – Project-type interventions
+<a href="https://codelists.codeforiati.org/FinanceType/">Finance Type</a> | 410 – Aid loan excluding debt reorganisation | 410 – Aid loan excluding debt reorganisation
+<a href="https://codelists.codeforiati.org/FlowType/">Flow Type</a> | 10 - ODA | 10 - ODA
 Provider Organisation | 44001 – International Bank for Reconstruction and Development | 44001 – International Bank for Reconstruction and Development
-Provider Organisation Type | 40 - Multilateral | 40 - Multilateral
+<a href="https://codelists.codeforiati.org/OrganisationType/">Provider Organisation Type</a> | 40 - Multilateral | 40 - Multilateral
 Receiver Organisation | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
-Receiver Organisation Type | |
-Transaction Type | 2 - Outgoing Commitment | budget - Budget
-Recipient Country or Region | IN - India | IN - India
+<a href="https://codelists.codeforiati.org/OrganisationType/">Receiver Organisation Type</a> | |
+<a href="https://codelists.codeforiati.org/TransactionType/">Transaction Type</a> | 2 - Outgoing Commitment | budget - Budget
+<a href="https://codelists.codeforiati.org/Country/">Recipient Country or Region</a> | IN - India | IN - India
 Multi Country [^1] | 1 | 1
-Sector Category | 210 – Transport & Storage | 210 – Transport & Storage
-Sector | 21020 – Road Transport | 21020 – Road Transport
+<a href="https://codelists.codeforiati.org/SectorGroup/">Sector Category</a> | 210 – Transport & Storage | 210 – Transport & Storage
+<a href="https://codelists.codeforiati.org/Sector/">Sector</a> | 21020 – Road Transport | 21020 – Road Transport
 Humanitarian | 0 | 0
 Calendar Year | 2019 | 2019
 Calendar Quarter | Q4 | Q4

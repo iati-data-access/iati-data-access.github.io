@@ -20,20 +20,20 @@ Colonne | Exemple (transactions) | Exemple (budgets)
 --- | --- | ---
 Identifiant de l’IITA | 44000-P163328 | 44000-P163328
 Titre | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
-Organisme déclarant | 44000 – Banque mondiale | 44000 – Banque mondiale
-Type d’organisme déclarant | 40 – Multilatéral | 40 – Multilatéral
-Type d’aide | C01 – Interventions de type projet | C01 – Interventions de type projet
-Type de financement | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
-Type de flux | 10 – Aide publique au développement | 10 – Aide publique au développement
+<a href="https://codelists.codeforiati.org/fr/ReportingOrganisation/">Organisme déclarant</a> | 44000 – Banque mondiale | 44000 – Banque mondiale
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme déclarant</a> | 40 – Multilatéral | 40 – Multilatéral
+<a href="https://codelists.codeforiati.org/fr/AidType/">Type d’aide</a> | C01 – Interventions de type projet | C01 – Interventions de type projet
+<a href="https://codelists.codeforiati.org/fr/FinanceType/">Type de financement</a> | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
+<a href="https://codelists.codeforiati.org/fr/FlowType/">Type de flux</a> | 10 – Aide publique au développement | 10 – Aide publique au développement
 Organisme prestataire | 44001 – Banque internationale pour la reconstruction et le développement | 44001 – Banque internationale pour la reconstruction et le développement
-Type d’organisme prestataire | 40 – Multilatéral | 40 – Multilatéral
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme prestataire</a> | 40 – Multilatéral | 40 – Multilatéral
 Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
-Type d’organisme bénéficiaire | |
-Type de transaction | 2 – Engagement sortant | 2 – Engagement sortant
-Pays ou région bénéficiaire | IN – Inde | IN – Inde
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme bénéficiaire</a> | |
+<a href="https://codelists.codeforiati.org/fr/TransactionType/">Type de transaction</a> | 2 – Engagement sortant | 2 – Engagement sortant
+<a href="https://codelists.codeforiati.org/fr/Country/">Pays ou région bénéficiaire</a> | IN – Inde | IN – Inde
 Multipays[^1] | 1  | 1
-Catégorie de secteur | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
-Secteur | 21020 – Transport routier | 21020 – Transport routier
+<a href="https://codelists.codeforiati.org/fr/SectorGroup/">Catégorie de secteur</a> | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
+<a href="https://codelists.codeforiati.org/fr/Sector/">Secteur</a> | 21020 – Transport routier | 21020 – Transport routier
 Humanitaire | 0 | 0
 Année civile | 2019 | 2019
 Trimestre civil | T4 | T4
