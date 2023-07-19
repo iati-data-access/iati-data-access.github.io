@@ -267,14 +267,14 @@ export default {
         options.push(
           {
             value: 'local_currrency',
-            text: 'Local Currency'
+            text: this.$t('dataDashboards.currencies.local_currrency')
           }
         )
       } else {
         options.push(
           {
             value: 'local_currrency',
-            text: 'Local Currency',
+            text: this.$t('dataDashboards.currencies.local_currrency'),
             disabled: true
           }
         )
