@@ -104,6 +104,9 @@
                 :data="cells"
                 :from="`provider_organisation.name_${lang}`"
                 :to="`receiver_organisation.name_${lang}`"
+                :flow1="`value_${currency}.sum_1`"
+                :flow3="`value_${currency}.sum_3`"
+                :flow="`value_${currency}.sum`"
               />
             </b-col>
           </b-row>
