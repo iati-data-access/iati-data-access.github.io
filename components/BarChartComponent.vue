@@ -24,8 +24,7 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   data() {
     return {
-      isBusy: true,
-      valueLabel: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`
+      isBusy: true
     }
   },
   props: {
@@ -64,6 +63,12 @@ export default {
     }
   },
   computed: {
+    valueLabel() {
+      return `${this.$t('dataDashboards.amount')} (${this.selectedCurrencyLabel})`
+    },
+    selectedCurrencyLabel() {
+      return this.$t('dataDashboards.currencies')[this.currency]
+    },
     barChartHeight() {
       return `height: ${this.height};`
     },
@@ -82,7 +87,7 @@ export default {
             }),
             label: ((tooltipItem, data) => {
               const datasetLabel = data.datasets[tooltipItem.datasetIndex].label
-              var label = `${datasetLabel} (${this.currency.toUpperCase()})` || '';
+              var label = `${datasetLabel} (${this.selectedCurrencyLabel})` || '';
 
               if (label) {
                   label += ': ';

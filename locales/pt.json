@@ -132,7 +132,12 @@
       "calendar_year_and_quarter": "Ano e trimestre civis"
     },
     "activity": "Atividade",
-    "organisations": "Organizações"
+    "organisations": "Organizações",
+    "currencies": {
+      "usd": "USD",
+      "eur": "EUR",
+      "local_currrency": "Local Currency"
+    }
   },
   "dataSidebarDropdowns": [
     {
@@ -171,7 +176,7 @@
     },
     {
       "key": "currency",
-      "label": "Moeda"
+      "label": "Moeda local"
     }
   ],
   "languageOptions": [

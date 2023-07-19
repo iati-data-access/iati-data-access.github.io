@@ -246,7 +246,14 @@ export default {
       ],
       showFilters: false,
       isBusy: true,
-      currencyOptions: [
+      advancedSearchField: null,
+      advancedSearchFieldLabel: null,
+      advancedSearchItems: []
+    }
+  },
+  computed: {
+    currencyOptions() {
+      var options = [
         {
           value: 'usd',
           text: 'USD'
@@ -255,13 +262,25 @@ export default {
           value: 'eur',
           text: 'EUR'
         }
-      ],
-      advancedSearchField: null,
-      advancedSearchFieldLabel: null,
-      advancedSearchItems: []
-    }
-  },
-  computed: {
+      ]
+      if ((this.setFields_.recipient_country_or_region) && (this.setFields_.recipient_country_or_region.length == 1)) {
+        options.push(
+          {
+            value: 'local_currrency',
+            text: 'Local Currency'
+          }
+        )
+      } else {
+        options.push(
+          {
+            value: 'local_currrency',
+            text: 'Local Currency',
+            disabled: true
+          }
+        )
+      }
+      return options
+    },
     advancedSearchFields() {
       if (this.advancedSearchItems.filter(item => {
         return item.description
@@ -391,12 +410,16 @@ export default {
           drilldowns: this.drilldownsForQuery,
           filters: this.fieldsForQuery,
           displayAs: this.displayAs_,
-          pageSize: this.pageSize_
+          pageSize: this.pageSize_,
+          currency: this._currency
         }
       }))
     },
     customiseFromQuery() {
       if (Object.keys(this.$route.query).length>0) {
+        if (this.$route.query.pageSize) {
+          this._currency = this.$route.query.currency
+        }
         if (this.customPage) {
           if (this.$route.query.drilldowns) {
             const _drilldowns = this.$route.query.drilldowns.split(";")
@@ -438,6 +461,14 @@ export default {
     }
   },
   watch: {
+    'setFields_.recipient_country_or_region': {
+      handler(value) {
+        if (value.length!=1) {
+          // Reset calendar_year_and_quarter, to avoid conflicts
+          this._currency = 'usd'
+        }
+      }
+    },
     'setFields_.year': {
       handler(value) {
         if (value.length>0) {
