@@ -404,20 +404,48 @@ export default {
       this.$emit('update:drilldowns', drilldowns)
     },
     setCustomPageQuery() {
+      var query = {
+        drilldowns: this.drilldownsForQuery,
+        filters: this.fieldsForQuery,
+        displayAs: this.displayAs_
+      }
+      if (this._currency != 'usd') {
+        query.currency = this._currency
+      }
+      if (this.pageSize != 10) {
+        query.pageSize = this.pageSize
+      }
       this.$router.push(this.localePath({
         name: this.pageName,
-        query: {
-          drilldowns: this.drilldownsForQuery,
-          filters: this.fieldsForQuery,
-          displayAs: this.displayAs_,
-          pageSize: this.pageSize_,
-          currency: this._currency
-        }
+        query
+      }))
+    },
+    setSpecificPageQuery() {
+      var query = {}
+      query.filters = this.fieldsForQuery
+      if (this._currency != 'usd') {
+        query.currency = this._currency
+      }
+      this.$router.push(this.localePath({
+        name: this.pageName,
+        params: { code: this.$route.params.code},
+        query,
+      }))
+    },
+    setNonSpecificPageQuery() {
+      var query = {}
+      query.filters = this.fieldsForQuery
+      if (this._currency != 'usd') {
+        query.currency = this._currency
+      }
+      this.$router.push(this.localePath({
+        name: this.pageName,
+        query
       }))
     },
     customiseFromQuery() {
       if (Object.keys(this.$route.query).length>0) {
-        if (this.$route.query.pageSize) {
+        if (this.$route.query.currency) {
           this._currency = this.$route.query.currency
         }
         if (this.customPage) {
@@ -488,6 +516,17 @@ export default {
     '$route.query'() {
       this.customiseFromQuery()
     },
+    _currency: {
+      handler() {
+        if (this.customPage) {
+          this.setCustomPageQuery()
+        } else if (this.specificPage) {
+          this.setSpecificPageQuery()
+        } else {
+          this.setNonSpecificPageQuery()
+        }
+      }
+    },
     displayAs_: {
       handler() {
         if (this.customPage) {
@@ -514,16 +553,9 @@ export default {
         if (this.customPage) {
           this.setCustomPageQuery()
         } else if (this.specificPage) {
-          this.$router.push(this.localePath({
-            name: this.pageName,
-            params: { code: this.$route.params.code},
-            query: { filters: this.fieldsForQuery}
-          }))
+          this.setSpecificPageQuery()
         } else {
-          this.$router.push(this.localePath({
-            name: this.pageName,
-            query: { filters: this.fieldsForQuery}
-          }))
+          this.setNonSpecificPageQuery()
         }
       },
       deep: true
