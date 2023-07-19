@@ -72,7 +72,7 @@ export default {
         onClick: this.handleClick,
         onHover: (event, chartElement) => {
           if (this.clickable == false) { return }
-          event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+          event.native.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
         },
         maintainAspectRatio: false,
         tooltips: {
