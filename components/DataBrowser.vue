@@ -39,12 +39,7 @@
             size="sm"
             :to="localePath({
               path: '/data/custom/',
-              query: {
-                drilldowns: this.drilldownsForQuery,
-                filters: this.fieldsForQuery,
-                displayAs: this.displayAs_,
-                pageSize: this.pageSize_ ? this.pageSize_ : 'null'
-              }})">{{ $t('dataDashboards.customise') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
+              query: customQuery})">{{ $t('dataDashboards.customise') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn>
         </b-form-group>
       </b-col>
     </b-row>
@@ -109,6 +104,9 @@
                 :data="cells"
                 :from="`provider_organisation.name_${lang}`"
                 :to="`receiver_organisation.name_${lang}`"
+                :flow1="`value_${currency}.sum_1`"
+                :flow3="`value_${currency}.sum_3`"
+                :flow="`value_${currency}.sum`"
               />
             </b-col>
           </b-row>
@@ -245,10 +243,26 @@ export default {
         }
       ],
       currentPage: 1,
-      totalRows: 0
+      totalRows: 0,
+      sortBy: null,
+      sortDesc: null
     }
   },
   computed: {
+    customQuery() {
+      var query = {
+        drilldowns: this.drilldownsForQuery,
+        filters: this.fieldsForQuery,
+        displayAs: this.displayAs_
+      }
+      if (this.currency != 'usd') {
+        query.currency = this.currency
+      }
+      if (this.pageSize != 10) {
+        query.pageSize = this.pageSize
+      }
+      return query
+    },
     displayAs_: {
       get() {
         if (this.pageName == 'data-custom') {
