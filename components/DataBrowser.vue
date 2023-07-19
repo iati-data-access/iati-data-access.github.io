@@ -339,14 +339,14 @@ export default {
         return this.rollupValues.map((rollupValue, i) => {
           return {
             field: `value_${this.currency}.sum_${rollupValue.join('-')}`,
-            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.getRollupLabel(this.rollupBy, rollupValue)}`,
+            label: `${this.$t('dataDashboards.amount')} (${this.selectedCurrencyLabel}): ${this.getRollupLabel(this.rollupBy, rollupValue)}`,
             backgroundColor: this.getBackgroundColour(this.rollupBy, rollupValue.join('-'), i, this.rollupValues.length)
           }
         })
       } else {
         return [{
           field: `value_${this.currency}.sum`,
-          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`,
+          label: `${this.$t('dataDashboards.amount')} (${this.selectedCurrencyLabel})`,
           backgroundColor: '#06DBE4',
         }]
       }
@@ -414,6 +414,9 @@ export default {
     lang() {
       return this.$i18n.locale
     },
+    selectedCurrencyLabel() {
+      return this.$t('dataDashboards.currencies')[this.currency]
+    },
     tableFields() {
       const _fields = this.drilldowns.map(item => {
         return {
@@ -426,7 +429,7 @@ export default {
         return _fields.concat(this.rollupValues.map(item => {
           return {
             key: `value_${this.currency}.sum_${item.join('-')}`,
-            label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()}): ${this.getRollupLabel(this.rollupBy, item)}`,
+            label: `${this.$t('dataDashboards.amount')} (${this.selectedCurrencyLabel}): ${this.getRollupLabel(this.rollupBy, item)}`,
             formatter: this.numberFormatter,
             thClass: "text-right",
             tdClass: "text-right",
@@ -436,7 +439,7 @@ export default {
       } else {
         return _fields.concat({
           key: `value_${this.currency}.sum`,
-          label: `${this.$t('dataDashboards.amount')} (${this.currency.toUpperCase()})`,
+          label: `${this.$t('dataDashboards.amount')} (${this.selectedCurrencyLabel})`,
           formatter: this.numberFormatter,
           thClass: "text-right",
           tdClass: "text-right",

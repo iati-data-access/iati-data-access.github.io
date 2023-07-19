@@ -132,7 +132,12 @@
       "calendar_year_and_quarter": "Año y trimestre naturales"
     },
     "activity": "Actividad",
-    "organisations": "Organizaciónes"
+    "organisations": "Organizaciónes",
+    "currencies": {
+      "usd": "USD",
+      "eur": "EUR",
+      "local_currrency": "Divisa local"
+    }
   },
   "dataSidebarDropdowns": [
     {

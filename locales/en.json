@@ -108,6 +108,8 @@
       "activity.iati_identifier": "Activity IATI Identifier",
       "activity.title": "Activity Title",
       "activity.description": "Activity Description",
+      "activity.start_date": "Activity Start Date",
+      "activity.end_date": "Activity End Date",
       "reporting_organisation_group": "Reporting Organisation Group",
       "reporting_organisation": "Reporting Organisation",
       "reporting_organisation_type": "Reporting Organisation Type",
@@ -135,7 +137,12 @@
       "calendar_year_and_quarter": "Calendar Year and Quarter | Calendar Years and Quarters"
     },
     "activity": "Activity",
-    "organisations": "Organisations"
+    "organisations": "Organisations",
+    "currencies": {
+      "usd": "USD",
+      "eur": "EUR",
+      "local_currrency": "Local Currency"
+    }
   },
   "dataSidebarDropdowns": [
     {
