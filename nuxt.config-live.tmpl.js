@@ -129,7 +129,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseURL: 'https://cdfd.iati.opendataservices.coop/api'
+    baseURL: 'https://cdfd.emergentally.com/api'
   },
 
   // Google Tag Manager
