@@ -46,7 +46,7 @@
             </b-form-group>
             <b-btn
               v-if="customPage"
-              class="mt-0"
+              class="mt-0 w-100"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=false">{{ $t('dataDashboards.switchTransactionTypes.toAdvanced') }}</b-btn>
@@ -61,7 +61,7 @@
               :advancedSearch="advancedSearchFn">
             </DataBrowserFilterItem>
             <b-btn
-              class="mt-0"
+              class="mt-0 w-100"
               variant="link"
               size="sm"
               @click="simpleTransactionTypes=true">{{ $t('dataDashboards.switchTransactionTypes.toSimple') }}</b-btn>
