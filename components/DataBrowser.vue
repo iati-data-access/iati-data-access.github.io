@@ -80,7 +80,9 @@
                 responsive
                 small
                 :items="cells"
-                :fields="tableFields">
+                :fields="tableFields"
+                :sort-by.sync="sortBy"
+                :sort-desc.sync="sortDesc">
                 <template #[iatiIdentifierSlotName]="data">
                   <a
                   :href="`https://d-portal.org/savi/?aid=${data.item['activity.iati_identifier']}`"
@@ -472,10 +474,10 @@ export default {
             const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else if (field[0].includes('.')) {
-            const values = field[1].map(item => { return `"${item}"`})
+            const values = field[1].map(item => { return `"${item.replaceAll("__SEMICOLON__", ";")}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else {
-            const values = field[1].map(item => { return `"${item}"`})
+            const values = field[1].map(item => { return `"${item.replaceAll("__SEMICOLON__", ";")}"`})
             summary.push(`${field[0]}.code:${values.join(';')}`)
           }
         }
