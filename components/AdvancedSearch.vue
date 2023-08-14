@@ -84,6 +84,8 @@
   </b-modal>
 </template>
 <script>
+import axios from 'axios'
+import debounce from "lodash.debounce"
 import { mapState } from 'vuex'
 export default {
   props: {
@@ -92,6 +94,9 @@ export default {
     },
     fieldLabel: {
       default: null
+    },
+    searchMembers: {
+      default: false,
     },
     setFields: {
       default() {
@@ -107,6 +112,11 @@ export default {
       totalRows: 0,
       filter: null
     }
+  },
+  created() {
+    this.fetchOptionsDebounce = debounce((value) => {
+      this.fetchOptions(value)
+    }, 500);
   },
   computed: {
     _setFields: {
@@ -153,6 +163,19 @@ export default {
             key: 'select',
             label: this.$t('dataDashboards.advancedSearchFields.select')
           }]
+      } else if ((this.field) && ((this.field.startsWith('provider_organisation')) ||
+              (this.field.startsWith('receiver_organisation')) ||
+              (this.field.startsWith('activity')))) {
+        return [
+          {
+            key: 'name',
+            label: this.$t('dataDashboards.advancedSearchFields.name'),
+            sortable: true
+          },
+          {
+            key: 'select',
+            label: this.$t('dataDashboards.advancedSearchFields.select')
+          }]
       } else {
         return [
           {
@@ -180,10 +203,44 @@ export default {
       this.totalRows = filteredItems.length
       this.currentPage = 1
     },
+    async fetchOptions(search) {
+      if (['', null].includes(search)) {
+        this._fieldOptions = []
+        return
+      }
+      const getModel = () => {
+        if (this.field.startsWith('activity')) {
+          return 'iatiline'
+        } else if (this.field.startsWith('provider_organisation')) {
+          return 'provider_organisation'
+        } else if (this.field.startsWith('receiver_organisation')) {
+          return 'receiver_organisation'
+        }
+      }
+      const model = getModel()
+      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}?order=${this.field}&cut=${this.field}~"${search}"&pagesize=100`
+      axios.get(url)
+      .then(response => {
+        this.items = response.data.data.map(item => {
+          return {
+            code: item[this.field].replaceAll(";", "__SEMICOLON__"),
+            name: item[this.field],
+            label: item[this.field]
+          }
+        })
+      })
+    }
   },
   watch: {
+    filter(value) {
+      if (this.searchMembers) {
+        this.fetchOptionsDebounce(value)
+        this.totalRows = 20
+        this.currentPage = 1
+      }
+    },
     field(value) {
-      this.items = this.fields[value]
+      this.items = this.fields[value] ? this.fields[value] : []
       this.totalRows = this.items.length
       this.currentPage = 1
       this.filter = null
