@@ -20,25 +20,25 @@ Column | Example (transactions) | Example (budgets)
 --- | --- | ---
 IATI Identifier | 44000-P163328 | 44000-P163328
 Title | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
-<a href="https://codelists.codeforiati.org/ReportingOrganisation/">Reporting Organisation</a> | 44000 – World Bank | 44000 – World Bank
-<a href="https://codelists.codeforiati.org/OrganisationType/">Reporting Organisation Type</a> | 40 – Multilateral | 40 – Multilateral
-<a href="https://codelists.codeforiati.org/AidType/">Aid Type</a> | C01 – Project-type interventions | C01 – Project-type interventions
-<a href="https://codelists.codeforiati.org/FinanceType/">Finance Type</a> | 410 – Aid loan excluding debt reorganisation | 410 – Aid loan excluding debt reorganisation
-<a href="https://codelists.codeforiati.org/FlowType/">Flow Type</a> | 10 - ODA | 10 - ODA
+<a href="https://codelists.codeforiati.org/ReportingOrganisation/" rel="noreferrer" target="_blank">Reporting Organisation</a> | 44000 – World Bank | 44000 – World Bank
+<a href="https://codelists.codeforiati.org/OrganisationType/" rel="noreferrer" target="_blank">Reporting Organisation Type</a> | 40 – Multilateral | 40 – Multilateral
+<a href="https://codelists.codeforiati.org/AidType/" rel="noreferrer" target="_blank">Aid Type</a> | C01 – Project-type interventions | C01 – Project-type interventions
+<a href="https://codelists.codeforiati.org/FinanceType/" rel="noreferrer" target="_blank">Finance Type</a> | 410 – Aid loan excluding debt reorganisation | 410 – Aid loan excluding debt reorganisation
+<a href="https://codelists.codeforiati.org/FlowType/" rel="noreferrer" target="_blank">Flow Type</a> | 10 - ODA | 10 - ODA
 Provider Organisation | 44001 – International Bank for Reconstruction and Development | 44001 – International Bank for Reconstruction and Development
-<a href="https://codelists.codeforiati.org/OrganisationType/">Provider Organisation Type</a> | 40 - Multilateral | 40 - Multilateral
+<a href="https://codelists.codeforiati.org/OrganisationType/" rel="noreferrer" target="_blank">Provider Organisation Type</a> | 40 - Multilateral | 40 - Multilateral
 Receiver Organisation | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
-<a href="https://codelists.codeforiati.org/OrganisationType/">Receiver Organisation Type</a> | |
-<a href="https://codelists.codeforiati.org/TransactionType/">Transaction Type</a> | 2 - Outgoing Commitment | budget - Budget
-<a href="https://codelists.codeforiati.org/Country/">Recipient Country or Region</a> | IN - India | IN - India
+<a href="https://codelists.codeforiati.org/OrganisationType/" rel="noreferrer" target="_blank">Receiver Organisation Type</a> | |
+<a href="https://codelists.codeforiati.org/TransactionType/" rel="noreferrer" target="_blank">Transaction Type</a> | 2 - Outgoing Commitment | budget - Budget
+<a href="https://codelists.codeforiati.org/Country/" rel="noreferrer" target="_blank">Recipient Country or Region</a> | IN - India | IN - India
 Multi Country [^1] | 1 | 1
-<a href="https://codelists.codeforiati.org/SectorGroup/">Sector Category</a> | 210 – Transport & Storage | 210 – Transport & Storage
-<a href="https://codelists.codeforiati.org/Sector/">Sector</a> | 21020 – Road Transport | 21020 – Road Transport
+<a href="https://codelists.codeforiati.org/SectorGroup/" rel="noreferrer" target="_blank">Sector Category</a> | 210 – Transport & Storage | 210 – Transport & Storage
+<a href="https://codelists.codeforiati.org/Sector/" rel="noreferrer" target="_blank">Sector</a> | 21020 – Road Transport | 21020 – Road Transport
 Humanitarian | 0 | 0
 Calendar Year | 2019 | 2019
 Calendar Quarter | Q4 | Q4
 Calendar Year and Quarter | 2019 Q4 | 2019 Q4
-URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
+URL | <a href="https://d-portal.org/q.html?aid=44000-P163328" rel="noreferrer" target="_blank">https://d-portal.org/q.html?aid=44000-P163328</a> | <a href="https://d-portal.org/q.html?aid=44000-P163328" rel="noreferrer" target="_blank">https://d-portal.org/q.html?aid=44000-P163328</a>
 Value (USD) | 47,560,000 | 435,000
 Value (EUR) | 41,213,347 | 376,951
 Value (Local currrency) | 33,589,335,939 | 32,829,292

@@ -20,25 +20,25 @@ Colonne | Exemple (transactions) | Exemple (budgets)
 --- | --- | ---
 Identifiant de l’IITA | 44000-P163328 | 44000-P163328
 Titre | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
-<a href="https://codelists.codeforiati.org/fr/ReportingOrganisation/">Organisme déclarant</a> | 44000 – Banque mondiale | 44000 – Banque mondiale
-<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme déclarant</a> | 40 – Multilatéral | 40 – Multilatéral
-<a href="https://codelists.codeforiati.org/fr/AidType/">Type d’aide</a> | C01 – Interventions de type projet | C01 – Interventions de type projet
-<a href="https://codelists.codeforiati.org/fr/FinanceType/">Type de financement</a> | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
-<a href="https://codelists.codeforiati.org/fr/FlowType/">Type de flux</a> | 10 – Aide publique au développement | 10 – Aide publique au développement
+<a href="https://codelists.codeforiati.org/fr/ReportingOrganisation/" rel="noreferrer" target="_blank">Organisme déclarant</a> | 44000 – Banque mondiale | 44000 – Banque mondiale
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/" rel="noreferrer" target="_blank">Type d’organisme déclarant</a> | 40 – Multilatéral | 40 – Multilatéral
+<a href="https://codelists.codeforiati.org/fr/AidType/" rel="noreferrer" target="_blank">Type d’aide</a> | C01 – Interventions de type projet | C01 – Interventions de type projet
+<a href="https://codelists.codeforiati.org/fr/FinanceType/" rel="noreferrer" target="_blank">Type de financement</a> | 410 – Prêt d’aide hors réorganisation de la dette | 410 – Prêt d’aide hors réorganisation de la dette
+<a href="https://codelists.codeforiati.org/fr/FlowType/" rel="noreferrer" target="_blank">Type de flux</a> | 10 – Aide publique au développement | 10 – Aide publique au développement
 Organisme prestataire | 44001 – Banque internationale pour la reconstruction et le développement | 44001 – Banque internationale pour la reconstruction et le développement
-<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme prestataire</a> | 40 – Multilatéral | 40 – Multilatéral
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/" rel="noreferrer" target="_blank">Type d’organisme prestataire</a> | 40 – Multilatéral | 40 – Multilatéral
 Organisme bénéficiaire | Himachal Pradesh Roads & Infrastructure Development Corporation | Himachal Pradesh Roads & Infrastructure Development Corporation
-<a href="https://codelists.codeforiati.org/fr/OrganisationType/">Type d’organisme bénéficiaire</a> | |
-<a href="https://codelists.codeforiati.org/fr/TransactionType/">Type de transaction</a> | 2 – Engagement sortant | 2 – Engagement sortant
-<a href="https://codelists.codeforiati.org/fr/Country/">Pays ou région bénéficiaire</a> | IN – Inde | IN – Inde
+<a href="https://codelists.codeforiati.org/fr/OrganisationType/" rel="noreferrer" target="_blank">Type d’organisme bénéficiaire</a> | |
+<a href="https://codelists.codeforiati.org/fr/TransactionType/" rel="noreferrer" target="_blank">Type de transaction</a> | 2 – Engagement sortant | 2 – Engagement sortant
+<a href="https://codelists.codeforiati.org/fr/Country/" rel="noreferrer" target="_blank">Pays ou région bénéficiaire</a> | IN – Inde | IN – Inde
 Multipays[^1] | 1  | 1
-<a href="https://codelists.codeforiati.org/fr/SectorGroup/">Catégorie de secteur</a> | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
-<a href="https://codelists.codeforiati.org/fr/Sector/">Secteur</a> | 21020 – Transport routier | 21020 – Transport routier
+<a href="https://codelists.codeforiati.org/fr/SectorGroup/" rel="noreferrer" target="_blank">Catégorie de secteur</a> | 210 – Transports et Entreposage |  | 210 – Transports et Entreposage
+<a href="https://codelists.codeforiati.org/fr/Sector/" rel="noreferrer" target="_blank">Secteur</a> | 21020 – Transport routier | 21020 – Transport routier
 Humanitaire | 0 | 0
 Année civile | 2019 | 2019
 Trimestre civil | T4 | T4
 Année et trimestre civils | 2019 T4 | 2019 T4
-URL | https://d-portal.org/q.html?aid=44000-P163328 | https://d-portal.org/q.html?aid=44000-P163328
+URL | <a href="https://d-portal.org/q.html?aid=44000-P163328" rel="noreferrer" target="_blank">https://d-portal.org/q.html?aid=44000-P163328</a> | <a href="https://d-portal.org/q.html?aid=44000-P163328" rel="noreferrer" target="_blank">https://d-portal.org/q.html?aid=44000-P163328</a>
 Valeur (USD) | 47,560,000 | 435,000
 Valeur (EUR) | 41,213,347 | 376,951
 Valeur (Monnaie locale) | 33,589,335,939 | 32,829,292
