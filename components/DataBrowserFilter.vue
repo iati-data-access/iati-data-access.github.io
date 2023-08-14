@@ -113,41 +113,88 @@
       </b-col>
     </b-row>
     <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="xl">
-      <b-row class="p-3">
-        <b-col
-          md="6"
-          lg="4"
-          class="p-2"
-          v-for="field in Object.keys(fields)"
-          v-if="!excludeFilters.includes(field) && !hideFilters.includes(field)"
-          v-bind:key="field">
-          <DataBrowserFilterItem
-            :field="field"
-            :fieldOptions="fields[field]"
-            :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
-            :updateField="updateField"
-            :value="setFields_[field]"
-            :advancedSearch="advancedSearch">
-          </DataBrowserFilterItem>
-        </b-col>
-        <b-col
-          md="6"
-          lg="4"
-          class="p-2">
-          <DataBrowserFilterItem
-            field="activity.iati_identifier"
-            :fieldLabel="availableDrilldowns['activity.iati_identifier']"
-            :updateField="updateField"
-            :value="setFields_['activity.iati_identifier']"
-            :filterFromOptions="false">
-          </DataBrowserFilterItem>
-        </b-col>
-      </b-row>
+      <b-card title="Filter by standard codelists" class="mb-3">
+        <b-card-text>Select one or more options in each of the drop-downs.
+        Results update automatically.</b-card-text>
+        <b-row class="p-3">
+          <b-col
+            lg="4"
+            class="p-2"
+            v-for="field in Object.keys(fields)"
+            v-if="!excludeFilters.includes(field) && !hideFilters.includes(field)"
+            v-bind:key="field">
+            <DataBrowserFilterItem
+              :field="field"
+              :fieldOptions="fields[field]"
+              :fieldLabel="$tc(`dataDashboards.availableDrilldowns.${field}`)"
+              :updateField="updateField"
+              :value="setFields_[field]"
+              :advancedSearch="advancedSearch">
+            </DataBrowserFilterItem>
+          </b-col>
+        </b-row>
+      </b-card>
+      <b-card title="Filter by specific activities, provider or receiver organisations">
+        <b-card-text>Type to search and select for specific values across all activities.
+        Results update automatically.</b-card-text>
+        <b-row class="p-3">
+          <b-col
+            lg="4"
+            class="p-2">
+            <DataBrowserFilterItem
+              field="activity.iati_identifier"
+              :fieldLabel="availableDrilldowns['activity.iati_identifier']"
+              :updateField="updateField"
+              :value="setFields_['activity.iati_identifier']"
+              :searchMembers="true"
+              :advancedSearch="advancedSearch">
+            </DataBrowserFilterItem>
+          </b-col>
+          <b-col
+            lg="4"
+            class="p-2">
+            <DataBrowserFilterItem
+              :field="`activity.title_${lang}`"
+              :fieldLabel="availableDrilldowns['activity.title']"
+              :updateField="updateField"
+              :value="setFields_[`activity.title_${lang}`]"
+              :searchMembers="true"
+              :advancedSearch="advancedSearch">
+            </DataBrowserFilterItem>
+          </b-col>
+          <b-col
+            lg="4"
+            class="p-2">
+            <DataBrowserFilterItem
+              :field="`provider_organisation.name_${lang}`"
+              :fieldLabel="availableDrilldowns['provider_organisation']"
+              :updateField="updateField"
+              :value="setFields_[`provider_organisation.name_${lang}`]"
+              :searchMembers="true"
+              :advancedSearch="advancedSearch">
+            </DataBrowserFilterItem>
+          </b-col>
+          <b-col
+            lg="4"
+            class="p-2">
+            <DataBrowserFilterItem
+              :field="`receiver_organisation.name_${lang}`"
+              :fieldLabel="availableDrilldowns['receiver_organisation']"
+              :updateField="updateField"
+              :value="setFields_[`receiver_organisation.name_${lang}`]"
+              :filterFromOptions="true"
+              :searchMembers="true"
+              :advancedSearch="advancedSearch">
+            </DataBrowserFilterItem>
+          </b-col>
+        </b-row>
+      </b-card>
     </b-modal>
     <AdvancedSearch
       :field="advancedSearchField"
       :fieldLabel="advancedSearchFieldLabel"
-      :setFields.sync="setFields_" />
+      :setFields.sync="setFields_"
+      :searchMembers="advancedSearchMembers" />
   </div>
 </template>
 <style>
@@ -248,10 +295,14 @@ export default {
       isBusy: true,
       advancedSearchField: null,
       advancedSearchFieldLabel: null,
-      advancedSearchItems: []
+      advancedSearchItems: [],
+      advancedSearchMembers: false
     }
   },
   computed: {
+    lang() {
+      return this.$i18n.locale
+    },
     currencyOptions() {
       var options = [
         {
@@ -482,10 +533,11 @@ export default {
         }
       }
     },
-    advancedSearch(field, fieldLabel) {
+    advancedSearch(field, fieldLabel, searchMembers=false) {
       this.$bvModal.show('advanced-search')
       this.advancedSearchField = field
       this.advancedSearchFieldLabel = fieldLabel
+      this.advancedSearchMembers = searchMembers
     }
   },
   watch: {
