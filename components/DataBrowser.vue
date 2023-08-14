@@ -77,6 +77,7 @@
             </b-col>
             <b-col v-if="displayAs_=='table'">
               <b-table
+                responsive
                 small
                 :items="cells"
                 :fields="tableFields">
