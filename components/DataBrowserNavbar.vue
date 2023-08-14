@@ -10,9 +10,10 @@
             exact-active-class="btn-primary"
             :to="localePath('/data/')">{{ $t('dataDashboards.overview') }}</b-nav-item>
         </b-navbar-nav>
-        <b-navbar-nav class="align-items-start">
+        <b-navbar-nav>
           <b-nav-text class="ml-4 mr-2">{{ $t('dataDashboards.dashboards') }}</b-nav-text>
           <b-dropdown
+            right
             split
             :split-to="localePath({path: dropdown.path})"
             v-for="(dropdown) in $t('dataSidebarDropdowns')"
@@ -60,6 +61,12 @@
       background-color: #06DBE4 !important;
       border-color: #06DBE4 !important;
     }
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0px;
   }
 }
 .collapse.show .hide-on-collapse {
