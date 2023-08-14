@@ -42,7 +42,9 @@ export const state = () => ({
     transaction_type: 'TransactionType',
     sector_category: 'SectorGroup',
     sector: 'Sector',
-    recipient_country_or_region: 'Country'
+    recipient_country_or_region: 'Country',
+    provider_organisation_type: 'OrganisationType',
+    receiver_organisation_type: 'OrganisationType',
   },
   reportingOrganisationGroup: [],
   fieldsEN: {
@@ -82,6 +84,8 @@ export const state = () => ({
         label: "Humanitarian"
       }
     ],
+    provider_organisation_type: [],
+    receiver_organisation_type: [],
     year: calendarYears().map(item => {
       return {
         code: item,
