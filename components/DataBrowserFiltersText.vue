@@ -71,9 +71,9 @@ export default {
               filter: this.getDrilldownName(item[0]),
               values: item[1].map(itemValue => {
                 if (item[0] in this.fieldsObj) {
-                  return this.fieldsObj[item[0]][itemValue]
+                  return this.fieldsObj[item[0]][itemValue.replaceAll("__SEMICOLON__", ";")]
                 }
-                return itemValue
+                return itemValue.replaceAll("__SEMICOLON__", ";")
               })
             })
           }
