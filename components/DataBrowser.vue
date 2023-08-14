@@ -633,6 +633,7 @@ export default {
       }
     },
     pageSize_() {
+      this.currentPage = 1
       if (this.autoReload) {
         this.loadData()
       }
