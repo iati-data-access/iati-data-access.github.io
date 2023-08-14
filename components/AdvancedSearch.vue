@@ -218,7 +218,7 @@ export default {
         }
       }
       const model = getModel()
-      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}?order=${this.field}&cut=${this.field}~"${search}"&pagesize=100`
+      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
       axios.get(url)
       .then(response => {
         this.items = response.data.data.map(item => {
@@ -228,6 +228,7 @@ export default {
             label: item[this.field]
           }
         })
+        this.totalRows = this.items.length
       })
     }
   },
@@ -235,7 +236,6 @@ export default {
     filter(value) {
       if (this.searchMembers) {
         this.fetchOptionsDebounce(value)
-        this.totalRows = 20
         this.currentPage = 1
       }
     },
