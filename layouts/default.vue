@@ -86,7 +86,7 @@
   }
   text-align: center;
 }
-.nuxt-content table {
+table {
   word-break: normal;
 }
 .nuxt-content {
