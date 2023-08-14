@@ -86,6 +86,7 @@
                 <template #[iatiIdentifierSlotName]="data">
                   <a
                   :href="`https://d-portal.org/savi/?aid=${data.item['activity.iati_identifier']}`"
+                  rel="noopener noreferrer"
                   target="_blank">{{ data.item['activity.iati_identifier'] }}</a>
                 </template>
                 <template #[clickableDrilldownSlotName]="data">
