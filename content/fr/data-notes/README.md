@@ -53,11 +53,6 @@ Le tableau Excel offert au téléchargement contient plus de données, y compris
 
 Cette analyse permet de repérer les absences générales de données dont il peut être nécessaire d’avoir connaissance. Les données manquantes (champs pour lesquels le traitement des données aboutit à 0,00 dollar US) sont marquées de jaune.
 
-
-<a
-  href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
-  class="download-button">Télécharger ce tableau au format Excel →</a>
-
 <data-gaps-year></data-gaps-year>
 
 ## 3.3 Devise locale pour chaque pays

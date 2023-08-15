@@ -53,10 +53,6 @@ A tabela de Excel descarregável contém mais dados, incluindo os últimos dois 
 
 A tabela identificará lacunas gerais de dados das quais possa ser necessário o conhecimento. As lacunas de dados (onde se encontrou 0,00 USD) estão destacadas em amarelo.
 
-<a
-  href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
-  class="download-button">Descarregar esta tabela em formato Excel →</a>
-
 <data-gaps-year></data-gaps-year>
 
 ## 3.3 Moeda local para cada país

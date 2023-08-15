@@ -53,11 +53,6 @@ La tabla de Excel descargable contiene más datos: incluye datos los últimos do
 
 Esto permitirá identificar carencias de datos generales que pueda ser necesario conocer. Las carencias de datos (donde el resultado ha sido 0.00 USD) están subrayadas en amarillo.
 
-
-<a
-  href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
-  class="download-button">Descargar tabla en formato Excel →</a>
-
 <data-gaps-year></data-gaps-year>
 
 ## 3.3 Divisa local para cada país

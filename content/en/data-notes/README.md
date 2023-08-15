@@ -53,11 +53,6 @@ The downloadable Excel table includes more data, including the past two years, t
 
 This will identify overall data gaps that you may need to be aware of. Data gaps (where USD 0.00 was found) are highlighted in yellow.
 
-
-<a
-  href="https://countrydata.iatistandard.org/data/summary_year.xlsx"
-  class="download-button">Download this table in Excel format →</a>
-
 <data-gaps-year></data-gaps-year>
 
 ## 3.3 Currencies for each country
