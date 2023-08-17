@@ -33,6 +33,11 @@
           :per-page="pageSize"></b-pagination>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col class="text-md-right">
+        <b-btn @click="loadData" :disabled="isBusy"><font-awesome-icon :icon="['fa', 'arrows-rotate']" /> Refresh</b-btn>
+      </b-col>
+    </b-row>
   </div>
 </template>
 <script>
