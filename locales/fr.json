@@ -156,6 +156,16 @@
       "local_currrency": "Monnaie locale"
     }
   },
+  "dataProcessing": {
+    "id": "ID",
+    "type": "Type",
+    "country": "Pays ou région",
+    "beganProcessing": "Début de la mise à jour",
+    "completedProcessing": "Fin de la mise à jour",
+    "status": "Statut",
+    "complete": "Complète",
+    "processing": "En cours"
+  },
   "dataSidebarDropdowns": [
     {
       "path": "/fr/data/recipient-country-or-region/",

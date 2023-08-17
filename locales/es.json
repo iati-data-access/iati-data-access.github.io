@@ -143,7 +143,7 @@
       "provider_organisation.name_fr": "Organización proveedora (FR)",
       "provider_organisation.name_es": "Organización proveedora",
       "provider_organisation.name_pt": "Organización proveedora (PT)",
-      "activity.title_en": "Título de la actividad (EN)",
+      "activity.title_en": "Título de la actividad (EN) ",
       "activity.title_fr": "Título de la actividad (FR)",
       "activity.title_es": "Título de la actividad",
       "activity.title_pt": "Título de la actividad (PT)"
@@ -155,6 +155,16 @@
       "eur": "EUR",
       "local_currrency": "Divisa local"
     }
+  },
+  "dataProcessing": {
+    "id": "ID",
+    "type": "Tipo",
+    "country": "País o Région",
+    "beganProcessing": "Inicio de la actualización",
+    "completedProcessing": "Fin de la actualización",
+    "status": "Estado",
+    "complete": "Completa",
+    "processing": "En curso"
   },
   "dataSidebarDropdowns": [
     {

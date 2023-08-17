@@ -61,3 +61,10 @@ Esto permitirá identificar carencias de datos generales que pueda ser necesario
 
 
 [^1]: Indica si este gasto era originariamente parte de un proyecto multinacional y si la financiación del país se ha calculado en función de la división de porcentajes de la actividad entre los países.
+
+## 3.4 Estado de la importación de datos
+
+La siguiente tabla muestra la fecha en la que se actualizó cada conjunto de datos en la base de datos.
+
+<data-processing></data-processing>
+

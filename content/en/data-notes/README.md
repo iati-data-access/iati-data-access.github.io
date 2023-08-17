@@ -61,3 +61,8 @@ This will identify overall data gaps that you may need to be aware of. Data gaps
 
 [^1]: Signifies whether this spending was originally part of a multi-country project, and funding to this country has been calculated, based on the percentage splits of the activity between countries.
 
+## 3.4 Data import status
+
+The following table shows when each dataset was updated in the database.
+
+<data-processing></data-processing>
