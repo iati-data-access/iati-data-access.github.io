@@ -22,6 +22,7 @@
               type="search"
               id="filterInput"
               :placeholder="$t('dataDashboards.advancedSearchFilter')"
+              :debounce="searchMembers ? 500 : null"
             ></b-form-input>
             <b-input-group-append>
               <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
@@ -58,11 +59,22 @@
       :current-page="currentPage"
       :per-page="perPage"
       :filter="filter"
-      @filtered="onFiltered">
+      @filtered="onFiltered"
+      :busy="isBusy"
+      show-empty>
       <template v-slot:cell(select)="data">
         <b-form-checkbox
           v-model="values" :value="data.item.code"
             name="advanced-checkboxes"></b-form-checkbox>
+      </template>
+      <template #table-busy>
+        <div class="text-center text-secondary my-2">
+          <b-spinner class="align-middle"></b-spinner>
+          <strong>Loading...</strong>
+        </div>
+      </template>
+      <template #empty="scope">
+        <p class="text-center text-secondary">{{ scope.emptyText }}</p>
       </template>
     </b-table>
     <b-form-group
@@ -85,7 +97,6 @@
 </template>
 <script>
 import axios from 'axios'
-import debounce from "lodash.debounce"
 import { mapState } from 'vuex'
 export default {
   props: {
@@ -110,13 +121,9 @@ export default {
       perPage: 20,
       currentPage: 1,
       totalRows: 0,
-      filter: null
+      filter: null,
+      isBusy: false
     }
-  },
-  created() {
-    this.fetchOptionsDebounce = debounce((value) => {
-      this.fetchOptions(value)
-    }, 500);
   },
   computed: {
     _setFields: {
@@ -201,13 +208,13 @@ export default {
     onFiltered(filteredItems) {
       // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length
-      this.currentPage = 1
     },
     async fetchOptions(search) {
       if (['', null].includes(search)) {
         this._fieldOptions = []
         return
       }
+      this.isBusy = true
       const getModel = () => {
         if (this.field.startsWith('activity')) {
           return 'iatiline'
@@ -218,8 +225,8 @@ export default {
         }
       }
       const model = getModel()
-      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
-      axios.get(url)
+      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}/?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
+      await axios.get(url)
       .then(response => {
         this.items = response.data.data.map(item => {
           return {
@@ -229,13 +236,15 @@ export default {
           }
         })
         this.totalRows = this.items.length
+        this.isBusy = false
       })
     }
   },
   watch: {
     filter(value) {
+      this.currentPage = 1
       if (this.searchMembers) {
-        this.fetchOptionsDebounce(value)
+        this.fetchOptions(this.filter)
         this.currentPage = 1
       }
     },
