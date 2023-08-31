@@ -175,7 +175,7 @@ export default {
         }
       }
       const model = getModel()
-      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
+      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}/?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
       axios.get(url)
       .then(response => {
         this._fieldOptions = response.data.data.map(item => {
