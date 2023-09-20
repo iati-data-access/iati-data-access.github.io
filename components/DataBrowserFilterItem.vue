@@ -168,6 +168,9 @@ export default {
       this._value = this.selectedReportingOrganisationGroup.items
     },
     async fetchOptions(search, loading) {
+      if (!(this.searchMembers)) {
+        return
+      }
       if (['', null].includes(search)) {
         return
       }
