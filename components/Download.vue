@@ -2,7 +2,7 @@
   <div :class="containerClass">
     <template v-if="preparingFile">
       <b-btn variant="secondary" :size="size" @click.prevent="getActivitiesFile" :href="url">
-        <b-spinner label="Preparing" small></b-spinner> Preparing file...
+        <b-spinner label="Preparing" small></b-spinner> {{ $t('translations.preparingFile') }}
       </b-btn>
     </template>
     <template v-else>
