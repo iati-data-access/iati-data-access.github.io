@@ -47,7 +47,7 @@ Value (Local currrency) | 33,589,335,939 | 32,829,292
 
 ## 3.2 Data gaps by year
 
-The following table shows each publisher and the total amount of funding (in millions of USD) found in their published data after processing, for all countries/regions. It includes the past three years (for commitments, disbursements and expenditures) and the next three years (for budgets).
+The following table shows each publisher and the total amount of funding (in millions of USD) found in their published data after processing, for all countries/regions. It includes the past three years (for commitments, disbursements and expenditures) and the current and next three years (for budgets).
 
 The downloadable Excel table includes more data, including the past two years, the current year, and the next two years for budgets, incoming funds, commitments, disbursements, and expenditures.
 
