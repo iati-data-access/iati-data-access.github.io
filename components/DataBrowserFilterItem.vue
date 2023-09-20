@@ -113,8 +113,8 @@ export default {
     }
   },
   created() {
-    this.fetchOptionsDebounce = debounce((value) => {
-      this.fetchOptions(value)
+    this.fetchOptionsDebounce = debounce((value, loading) => {
+      this.fetchOptions(value, loading)
     }, 500);
   },
   computed: {
@@ -128,14 +128,21 @@ export default {
     _fieldOptions: {
       get() {
         if (this.searchMembers) {
+          var retrievedOptionsCodes = this.retrievedOptions.map(item => {
+            return item.code
+          })
           // https://vue-select.org/guide/values.html#caveats-with-reduce
-          const existingResults = this.value ? this.value.map(item => {
-            return {
-              code: item,
-              name: item.replaceAll("__SEMICOLON__", ";"),
-              label: item.replaceAll("__SEMICOLON__", ";")
+          const existingResults = this.value ? this.value.reduce((summary, item) => {
+            if (!(retrievedOptionsCodes.includes(item))) {
+              const codelistItem = {
+                code: item,
+                name: item.replaceAll("__SEMICOLON__", ";"),
+                label: item.replaceAll("__SEMICOLON__", ";")
+              }
+              summary.push(codelistItem)
             }
-          }) : []
+            return summary
+          }, []) : []
           return existingResults.concat(this.retrievedOptions)
         } else {
           return this.fieldOptions
@@ -160,11 +167,11 @@ export default {
     handleReportingOrganisationGroups() {
       this._value = this.selectedReportingOrganisationGroup.items
     },
-    fetchOptions(search, loading) {
+    async fetchOptions(search, loading) {
       if (['', null].includes(search)) {
-        this._fieldOptions = []
         return
       }
+      loading(true)
       const getModel = () => {
         if (this.field.startsWith('activity')) {
           return 'iatiline'
@@ -176,7 +183,7 @@ export default {
       }
       const model = getModel()
       const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}/?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
-      axios.get(url)
+      await axios.get(url)
       .then(response => {
         this._fieldOptions = response.data.data.map(item => {
           return {
@@ -186,6 +193,7 @@ export default {
           }
         })
       })
+      loading(false)
     }
   }
 }
