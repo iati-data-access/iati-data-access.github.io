@@ -77,12 +77,16 @@
             </b-col>
             <b-col v-if="displayAs_=='table'">
               <b-table
+                responsive
                 small
                 :items="cells"
-                :fields="tableFields">
+                :fields="tableFields"
+                :sort-by.sync="sortBy"
+                :sort-desc.sync="sortDesc">
                 <template #[iatiIdentifierSlotName]="data">
                   <a
                   :href="`https://d-portal.org/savi/?aid=${data.item['activity.iati_identifier']}`"
+                  rel="noopener noreferrer"
                   target="_blank">{{ data.item['activity.iati_identifier'] }}</a>
                 </template>
                 <template #[clickableDrilldownSlotName]="data">
@@ -471,10 +475,10 @@ export default {
             const values = field[1].map(item => { return `"${item}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else if (field[0].includes('.')) {
-            const values = field[1].map(item => { return `"${item}"`})
+            const values = field[1].map(item => { return `"${item.replaceAll("__SEMICOLON__", ";")}"`})
             summary.push(`${field[0]}:${values.join(';')}`)
           } else {
-            const values = field[1].map(item => { return `"${item}"`})
+            const values = field[1].map(item => { return `"${item.replaceAll("__SEMICOLON__", ";")}"`})
             summary.push(`${field[0]}.code:${values.join(';')}`)
           }
         }
@@ -632,6 +636,7 @@ export default {
       }
     },
     pageSize_() {
+      this.currentPage = 1
       if (this.autoReload) {
         this.loadData()
       }

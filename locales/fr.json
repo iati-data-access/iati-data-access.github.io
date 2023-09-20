@@ -44,6 +44,13 @@
     "filters": "Filtres",
     "filtersText": "Sélectionnez des filtres pour personnaliser la visualisation.",
     "selectedFilters": "Filtres appliqués ",
+    "filtersModal": {
+      "standardTitle": "Filtrer par listes de codes standards",
+      "standardText": "Sélectionnez une ou plusieurs options dans chacune des listes déroulantes. Les résultats sont mis à jour automatiquement.",
+      "specificTitle": "Filtrer par activités spécifiques, ou organismes prestataires ou bénéficiaires",
+      "specificText": "Tapez pour rechercher et sélectionner des valeurs spécifiques dans toutes les activités. Les résultats sont mis à jour automatiquement."
+    },
+    "loading": "Chargement...",
     "preview": "Aperçu",
     "currency": "Devise",
     "calendarYear": "Année civile",
@@ -56,14 +63,19 @@
     "selectSomeOptions": "Sélectionnez plusieurs options, puis lancez la recherche.",
     "amount": "Valeur",
     "clearField": "Effacer",
+    "close": "Fermer",
     "advancedSearch": "Recherche avancée",
+    "noMatchingOptions": "Désolé, il n'y a pas d'options correspondantes.",
+    "exactSearchTerm": "Tapez pour rechercher...",
+    "advancedSearchEmptyText": "Il n'y a pas d'enregistrements",
+    "advancedSearchEmptyFilteredText": "Il n'y a pas d'enregistrements correspondant à votre demande",
     "advancedSearchFields": {
       "code": "Code",
       "name": "Nom",
       "description": "Description",
       "select": "Sélectionnez"
     },
-    "advancedSearchFilter": "Type to search for name or description...",
+    "advancedSearchFilter": "Tapez pour rechercher par nom ou par description...",
     "budgetsSpending": {
       "budgetsOrSpending": "Flux de Ressources",
       "budgets": "Budgets",
@@ -132,7 +144,19 @@
       "transaction_type": "Flux de Ressources",
       "year": "Année civile",
       "quarter": "Trimestre civil",
-      "calendar_year_and_quarter": "Année et trimestre civils"
+      "calendar_year_and_quarter": "Année et trimestre civils",
+      "receiver_organisation.name_en": "Organisme bénéficiaire (EN)",
+      "receiver_organisation.name_fr": "Organisme bénéficiaire",
+      "receiver_organisation.name_es": "Organisme bénéficiaire (ES)",
+      "receiver_organisation.name_pt": "Organisme bénéficiaire (PT)",
+      "provider_organisation.name_en": "Organisme prestataire (EN)",
+      "provider_organisation.name_fr": "Organisme prestataire",
+      "provider_organisation.name_es": "Organisme prestataire (ES)",
+      "provider_organisation.name_pt": "Organisme prestataire (PT)",
+      "activity.title_en": "Titre",
+      "activity.title_fr": "Titre",
+      "activity.title_es": "Titre (ES)",
+      "activity.title_pt": "Titre (PT)"
     },
     "activity": "Activité",
     "organisations": "Organismes",
@@ -141,6 +165,16 @@
       "eur": "EUR",
       "local_currrency": "Monnaie locale"
     }
+  },
+  "dataProcessing": {
+    "id": "ID",
+    "type": "Type",
+    "country": "Pays ou région",
+    "beganProcessing": "Début de la mise à jour",
+    "completedProcessing": "Fin de la mise à jour",
+    "status": "Statut",
+    "complete": "Complète",
+    "processing": "En cours"
   },
   "dataSidebarDropdowns": [
     {
@@ -165,6 +199,7 @@
   "translations": {
     "selectCountry": "Choisir un pays",
     "downloadFile": "Télécharger le fichier",
+    "preparingFile": "Préparation du fichier...",
     "lastUpdated": "Dernière mise à jour :",
     "language": "Langue"
   },

@@ -2,7 +2,7 @@
 title: Methodology
 ---
 
-_Updated: 12th October 2021_
+_Updated: 8th August 2023_
 
 # Methodology
 
@@ -43,18 +43,30 @@ iati-activity/iati-identifier/text()
 
 #### Title
 
-The title of the activity. NB where this is in multiple languages, we have attempted to get just the English language version:
+The title of the activity. We have attempted to get the relevant language version where available, for our supported languages (English, French, Spanish and Portuguese). For each language, we fall back to the English-language title, or alternatively, the first title available:
 
 ```xml
 iati-activity/title/narrative[not(@xml:lang) or @xml:lang='en']/text()
 ```
 
-#### Reporting organisation
+#### Description
 
-The name of the organisation publishing this IATI data:
+The description of the activity. We have attempted to get the relevant language version where available, for our supported languages (English, French, Spanish and Portuguese). For each language, we fall back to the English-language description, or alternatively, the first description available:
 
 ```xml
-iati-activity/reporting-org/text()
+iati-activity/description/narrative[not(@xml:lang) or @xml:lang='en']/text()
+```
+
+<b-alert show variant="info">
+NB: Descriptions are not available in the files which can be downloaded from the front page of this site. They are only available through the <nuxt-link to="/data/">Data Dashboards</nuxt-link>. This is because the file size would otherwise become unmanageable.
+</b-alert>
+
+#### Reporting organisation
+
+The name of the organisation publishing this IATI data; we map these reporting organisations from the list of reporting organisations as recorded on the IATI Registry and made available in the (unofficial) [ReportingOrganisation](https://codelists.codeforiati.org/ReportingOrganisation/) codelist:
+
+```xml
+iati-activity/reporting-org/@ref()
 ```
 
 #### Reporting organisation type
@@ -95,7 +107,7 @@ transaction/value/@value-date
 
 #### Transaction type
 
-The transaction type (e.g. commitment, disbursement, expenditure):
+The transaction type (incoming fund, outgoing commitment, disbursement, expenditure):
 
 ```xml
 transaction/transaction-type/@code
@@ -141,18 +153,35 @@ transaction/flow-type/@code or iati-activity/default-flow-type/@code
 
 #### Provider organisation
 
-The transaction provider organisation, or the activity reporting organisation:
+The transaction provider organisation, or the activity reporting organisation. The name of the organisation is followed be the organisation identifier in [square brackets], where available. Note that we follow a similar process as for the [Title](#title) to get names in English, French, Spanish and Portuguese, where available:
+
+_Name of the organisation_
 
 ```xml
-transaction/provider-org/text()
+transaction/provider-org/narrative[not(@xml:lang) or @xml:lang='en']/text()
 ```
+
+_Organisation identifier_
+
+```xml
+transaction/provider-org/@ref
+```
+
 
 #### Receiver organisation
 
-The transaction receiver organisation, or the activity implementing organisation(s):
+The transaction receiver organisation, or the activity implementing organisation(s).  The name of the organisation is followed be the organisation identifier in [square brackets], where available. Note that we follow a similar process as for the [Title](#title) to get names in English, French, Spanish and Portuguese, where available::
+
+_Name of the organisation_
 
 ```xml
-transaction/provider-org/text()
+transaction/receiver-org/narrative[not(@xml:lang) or @xml:lang='en']/text()
+```
+
+_Organisation identifier_
+
+```xml
+transaction/receiver-org/@ref
 ```
 
 #### Activity-level fallbacks for provider and receiver organisations
@@ -322,22 +351,29 @@ Transactions are aggregated up into one row per quarter, where the following oth
 
 The transaction date is set to the last day of the quarter.
 
-2.8 Conversion to target currency and fiscal period
----------------------------------------------------
+2.8 Conversion to target currency
+---------------------------------
 
-The target currencies are set as USD and Euro for all countries. An additional local currency (e.g. Kenyan shillings for the Kenya output) is also included. The exchange rate date is the last day of the quarter.
+The target currencies are set as USD and Euro for all countries. An additional local currency (e.g. Kenyan shillings for the Kenya output) is also included; the currency is determined by the recipient country. The exchange rate date is the last day of the quarter.
 
 2.9 Language
 ------------
 
-The data is available in English and French. All available Titles in these languages are pulled into the outputs along with all codes. Some Titles and Provider and Recipient Organisations are only available in English.
+The data is available in English, French, Spanish and Portuguese. All available Titles in these languages are pulled into the outputs along with all codes. Some Titles and Provider and Recipient Organisations are only available in English.
 
 2.10 Processing of data
 -----------------------
 
-The data is processed on Github Actions, which is a free service as long as the processing time is less than six hours. This runs every 3 hours. The resulting data files are published on Github Pages. This is also a free service, as long as no file is larger than 100MB and the total repository size is not larger than 1GB.
+The data is processed on a server each day with the following steps:
 
-Given these limits, it is important to keep file size and processing times low. Ensuring that the entire workflow can be delivered through free tools also significantly improves the sustainability of the tools.
+1) download all data from IATI Data Dump
+2) create CSV files using `iati-flattener` (carrying out the above methodology): extracting relevant parts from XML files, creating transaction and budget CSV files per country, and activity CSV files per reporting organisation
+3) for all the activities for a single reporting organisation, update the activities in the database (if a hash of the activity XML data has changed), add any new activities, and delete activities which have been removed from the publisher’s dataset
+4) for each dataset (i.e. for each transaction/country CSV file), add any rows which do not exist in the database, and remove rows which no longer exist in the database (based on a hash of the transaction row)
+5) for each country and each language, roll up the CSV files by quarter, and add labels from the relevant codelists
+6) publish the CSV and Excel files.
+
+The files were previously processed on Github Actions and stored on Github Pages (both free services). However, this caused problems in terms of Github's usage limits.
 
 2.11 Licensing
 --------------

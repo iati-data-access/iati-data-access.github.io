@@ -66,7 +66,8 @@ export default {
     icons: {
       solid: ['faGear', 'faDownload', 'faTable',
         'faChartSimple', 'faMap', 'faWandMagicSparkles',
-        'faMagnifyingGlass', 'faXmark', 'faBarsStaggered'],
+        'faMagnifyingGlass', 'faXmark', 'faBarsStaggered',
+        'faArrowsRotate'],
       regular: []
     }
   },
@@ -131,7 +132,7 @@ export default {
   // Plausible
   plausible: {
     domain: 'countrydata.iatistandard.org',
-    enableAutoOutboundTracking: true,
+    enableAutoOutboundTracking: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

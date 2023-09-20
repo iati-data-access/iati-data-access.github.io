@@ -44,6 +44,13 @@
     "filters": "Filters",
     "filtersText": "Select filters to customise the visualisation.",
     "selectedFilters": "Filters applied",
+    "filtersModal": {
+      "standardTitle": "Filter by standard codelists",
+      "standardText": "Select one or more options in each of the drop-downs. Results update automatically.",
+      "specificTitle": "Filter by specific activities, provider or receiver organisations",
+      "specificText": "Type to search and select for specific values across all activities. Results update automatically."
+    },
+    "loading": "Loading...",
     "preview": "Preview",
     "currency": "Currency",
     "calendarYear": "Calendar Year",
@@ -56,9 +63,12 @@
     "selectSomeOptions": "Select some options, and then click Run on the left.",
     "amount": "Value",
     "clearField": "Clear",
+    "close": "Close",
     "advancedSearch": "Advanced Search",
     "noMatchingOptions": "Sorry, no matching options.",
-    "exactSearchTerm": "Type an exact search term and press Enter.",
+    "exactSearchTerm": "Type to search...",
+    "advancedSearchEmptyText": "There are no records to show",
+    "advancedSearchEmptyFilteredText": "There are no records matching your request",
     "advancedSearchFields": {
       "code": "Code",
       "name": "Name",
@@ -134,7 +144,19 @@
       "transaction_type": "Resource Flows",
       "year": "Calendar Year | Calendar Years",
       "quarter": "Calendar Quarter | Calendar Quarters",
-      "calendar_year_and_quarter": "Calendar Year and Quarter | Calendar Years and Quarters"
+      "calendar_year_and_quarter": "Calendar Year and Quarter | Calendar Years and Quarters",
+      "receiver_organisation.name_en": "Receiver Organisation",
+      "receiver_organisation.name_fr": "Receiver Organisation (FR)",
+      "receiver_organisation.name_es": "Receiver Organisation (ES)",
+      "receiver_organisation.name_pt": "Receiver Organisation (PT)",
+      "provider_organisation.name_en": "Provider Organisation",
+      "provider_organisation.name_fr": "Provider Organisation (FR)",
+      "provider_organisation.name_es": "Provider Organisation (ES)",
+      "provider_organisation.name_pt": "Provider Organisation (PT)",
+      "activity.title_en": "Activity Title",
+      "activity.title_fr": "Activity Title (FR)",
+      "activity.title_es": "Activity Title (ES)",
+      "activity.title_pt": "Activity Title (PT)"
     },
     "activity": "Activity",
     "organisations": "Organisations",
@@ -143,6 +165,16 @@
       "eur": "EUR",
       "local_currrency": "Local Currency"
     }
+  },
+  "dataProcessing": {
+    "id": "ID",
+    "type": "Type",
+    "country": "Country or Region",
+    "beganProcessing": "Began Update",
+    "completedProcessing": "Completed Update",
+    "status": "Status",
+    "complete": "Complete",
+    "processing": "Processing"
   },
   "dataSidebarDropdowns": [
     {
@@ -167,6 +199,7 @@
   "translations": {
     "selectCountry": "Select a country",
     "downloadFile": "Download file",
+    "preparingFile": "Preparing file...",
     "lastUpdated": "Last updated",
     "language": "Language"
   },

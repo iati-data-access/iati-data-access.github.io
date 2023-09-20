@@ -9,10 +9,10 @@
             <v-select
               style="min-width: 200px;"
               multiple
-              :taggable="filterFromOptions ? false : true"
-              :options="filterFromOptions ? fieldOptions : []"
+              :options="_fieldOptions"
               v-model="_value"
-              :reduce="filterFromOptions ? item => item.code : item => item">
+              :reduce="item => item.code"
+              @search="fetchOptionsDebounce">
               <!-- eslint-disable-next-line vue/no-unused-vars  -->
               <template #no-options="{ search, searching, loading }">
                 {{ noMatchingOptions }}
@@ -29,10 +29,10 @@
             <font-awesome-icon :icon="['fas', 'xmark']" />
           </b-btn>
         </b-input-group-append>
-        <b-input-group-append v-if="filterFromOptions">
+        <b-input-group-append>
           <b-btn size="sm"
             variant="outline-secondary"
-            @click="advancedSearch(field, fieldLabel)"
+            @click="advancedSearch(field, fieldLabel, searchMembers)"
             v-b-tooltip.hover
             :title="$t('dataDashboards.advancedSearch')">
             <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
@@ -75,6 +75,8 @@ div.input-group.nowrap {
 }
 </style>
 <script>
+import axios from 'axios'
+import debounce from "lodash.debounce"
 import { mapState } from 'vuex'
 export default {
   props: {
@@ -86,7 +88,7 @@ export default {
     },
     fieldOptions: {
       default() {
-        return {}
+        return []
       }
     },
     updateField: {
@@ -98,25 +100,58 @@ export default {
       default: null
     },
     advancedSearch: {
-      default() {
-        return ''
-      }
+      default: () => {}
     },
-    filterFromOptions: {
-      default: true
+    searchMembers: {
+      default: false
     }
   },
   data() {
     return {
-      selectedReportingOrganisationGroup: null
+      selectedReportingOrganisationGroup: null,
+      retrievedOptions: []
     }
+  },
+  created() {
+    this.fetchOptionsDebounce = debounce((value, loading) => {
+      this.fetchOptions(value, loading)
+    }, 500);
   },
   computed: {
     noMatchingOptions() {
-      if (this.filterFromOptions) {
+      if (!(this.searchMembers)) {
         return this.$t('dataDashboards.noMatchingOptions')
       } else {
         return this.$t('dataDashboards.exactSearchTerm')
+      }
+    },
+    _fieldOptions: {
+      get() {
+        if (this.searchMembers) {
+          var retrievedOptionsCodes = this.retrievedOptions.map(item => {
+            return item.code
+          })
+          // https://vue-select.org/guide/values.html#caveats-with-reduce
+          const existingResults = this.value ? this.value.reduce((summary, item) => {
+            if (!(retrievedOptionsCodes.includes(item))) {
+              const codelistItem = {
+                code: item,
+                name: item.replaceAll("__SEMICOLON__", ";"),
+                label: item.replaceAll("__SEMICOLON__", ";")
+              }
+              summary.push(codelistItem)
+            }
+            return summary
+          }, []) : []
+          return existingResults.concat(this.retrievedOptions)
+        } else {
+          return this.fieldOptions
+        }
+      },
+      set(newValue) {
+        if (this.searchMembers) {
+          this.retrievedOptions = newValue
+        }
       }
     },
     _value: {
@@ -131,6 +166,37 @@ export default {
   methods: {
     handleReportingOrganisationGroups() {
       this._value = this.selectedReportingOrganisationGroup.items
+    },
+    async fetchOptions(search, loading) {
+      if (!(this.searchMembers)) {
+        return
+      }
+      if (['', null].includes(search)) {
+        return
+      }
+      loading(true)
+      const getModel = () => {
+        if (this.field.startsWith('activity')) {
+          return 'iatiline'
+        } else if (this.field.startsWith('provider_organisation')) {
+          return 'provider_organisation'
+        } else if (this.field.startsWith('receiver_organisation')) {
+          return 'receiver_organisation'
+        }
+      }
+      const model = getModel()
+      const url = `${this.$config.baseURL}/babbage/cubes/${model}/members/${this.field}/?order=${this.field}&cut=${this.field}~"${search}"&pagesize=1000`
+      await axios.get(url)
+      .then(response => {
+        this._fieldOptions = response.data.data.map(item => {
+          return {
+            code: item[this.field].replaceAll(";", "__SEMICOLON__"),
+            name: item[this.field],
+            label: item[this.field]
+          }
+        })
+      })
+      loading(false)
     }
   }
 }
