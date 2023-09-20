@@ -70,11 +70,14 @@
       <template #table-busy>
         <div class="text-center text-secondary my-2">
           <b-spinner class="align-middle"></b-spinner>
-          <strong>Loading...</strong>
+          <strong>{{ $t('dataDashboards.loading') }}</strong>
         </div>
       </template>
       <template #empty="scope">
-        <p class="text-center text-secondary">{{ scope.emptyText }}</p>
+        <p class="text-center text-secondary">{{ $t('dataDashboards.advancedSearchEmptyText') }}</p>
+      </template>
+      <template #emptyFiltered="scope">
+        <p class="text-center text-secondary">{{ $t('dataDashboards.advancedSearchEmptyFilteredText') }}</p>
       </template>
     </b-table>
     <b-form-group
