@@ -112,10 +112,14 @@
         <hr />
       </b-col>
     </b-row>
-    <b-modal v-model="showFilters" title="Filters" ok-only ok-title="Close" size="xl">
-      <b-card title="Filter by standard codelists" class="mb-3">
-        <b-card-text>Select one or more options in each of the drop-downs.
-        Results update automatically.</b-card-text>
+    <b-modal
+      v-model="showFilters"
+      :title="$t('dataDashboards.filters')"
+      ok-only
+      :ok-title="$t('dataDashboards.close')"
+      size="xl">
+      <b-card :title="$t('dataDashboards.filtersModal.standardTitle')" class="mb-3">
+        <b-card-text>{{ $t('dataDashboards.filtersModal.standardText') }}</b-card-text>
         <b-row class="p-3">
           <b-col
             lg="4"
@@ -134,9 +138,8 @@
           </b-col>
         </b-row>
       </b-card>
-      <b-card title="Filter by specific activities, provider or receiver organisations">
-        <b-card-text>Type to search and select for specific values across all activities.
-        Results update automatically.</b-card-text>
+      <b-card :title="$t('dataDashboards.filtersModal.specificTitle')">
+        <b-card-text>{{ $t('dataDashboards.filtersModal.specificText') }}</b-card-text>
         <b-row class="p-3">
           <b-col
             lg="4"
