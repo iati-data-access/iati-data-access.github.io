@@ -20,6 +20,7 @@ Colonne | Exemple (transactions) | Exemple (budgets)
 --- | --- | ---
 Identifiant de l’IITA | 44000-P163328 | 44000-P163328
 Titre | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
+<a href="https://codelists.codeforiati.org/ReportingOrganisationGroup/" rel="noreferrer" target="_blank">Groupe d’organisme déclarant</a> | WB – Le Groupe de la Banque Mondiale | WB – Le Groupe de la Banque Mondiale
 <a href="https://codelists.codeforiati.org/fr/ReportingOrganisation/" rel="noreferrer" target="_blank">Organisme déclarant</a> | 44000 – Banque mondiale | 44000 – Banque mondiale
 <a href="https://codelists.codeforiati.org/fr/OrganisationType/" rel="noreferrer" target="_blank">Type d’organisme déclarant</a> | 40 – Multilatéral | 40 – Multilatéral
 <a href="https://codelists.codeforiati.org/fr/AidType/" rel="noreferrer" target="_blank">Type d’aide</a> | C01 – Interventions de type projet | C01 – Interventions de type projet

@@ -20,6 +20,7 @@ Column | Example (transactions) | Example (budgets)
 --- | --- | ---
 IATI Identifier | 44000-P163328 | 44000-P163328
 Title | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
+<a href="https://codelists.codeforiati.org/ReportingOrganisationGroup/" rel="noreferrer" target="_blank">Reporting Organisation Group</a> | WB – World Bank Group | WB – World Bank Group
 <a href="https://codelists.codeforiati.org/ReportingOrganisation/" rel="noreferrer" target="_blank">Reporting Organisation</a> | 44000 – World Bank | 44000 – World Bank
 <a href="https://codelists.codeforiati.org/OrganisationType/" rel="noreferrer" target="_blank">Reporting Organisation Type</a> | 40 – Multilateral | 40 – Multilateral
 <a href="https://codelists.codeforiati.org/AidType/" rel="noreferrer" target="_blank">Aid Type</a> | C01 – Project-type interventions | C01 – Project-type interventions

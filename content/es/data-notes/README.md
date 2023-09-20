@@ -20,6 +20,7 @@ Columna | Ejemplo (transacciones) | Ejemplo (presupuestos)
 --- | --- | ---
 Identificador de la IATI | 44000-P163328 | 44000-P163328
 Título | Himachal Pradesh State Roads Transformation Project | Himachal Pradesh State Roads Transformation Project
+Groupo de organización informante | WB – El Grupo del Banco Mundial | WB – El Grupo del Banco Mundial
 Organización informante | 44000 – Banco Mundial | 44000 – Banco Mundial
 Tipo de organización informante | 40 – Multilateral | 40 – Multilateral
 Tipo de ayuda | C01 – Intervenciones basadas en proyectos| C01 – Intervenciones basadas en proyectos
