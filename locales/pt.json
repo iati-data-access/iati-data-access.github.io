@@ -44,6 +44,13 @@
     "filters": "Filtros",
     "filtersText": "Selecione os filtros para personalizar a visualização.",
     "selectedFilters": "Filtros aplicados",
+    "filtersModal": {
+      "standardTitle": "Filtrar por listas de códigos standard",
+      "standardText": "Seleccione uma ou mais opções em cada um dos menus pendentes. Os resultados são actualizados automaticamente.",
+      "specificTitle": "Filtrar por actividades específicas, organizações prestadoras ou receptoras",
+      "specificText": "Digite para pesquisar e selecionar valores específicos em todas as actividades. Os resultados são actualizados automaticamente."
+    },
+    "loading": "Carregando...",
     "preview": "Pré-visualização",
     "currency": "Moeda",
     "calendarYear": "Ano civil",
@@ -56,16 +63,19 @@
     "selectSomeOptions": "Selecione algumas opções e clique em Executar à esquerda.",
     "amount": "Valor",
     "clearField": "Apagar",
+    "close": "Fechar",
     "advancedSearch": "Busca Avançada",
-    "noMatchingOptions": "Sorry, no matching options.",
-    "exactSearchTerm": "Type to search...",
+    "noMatchingOptions": "Lamento, mas não há opções correspondentes.",
+    "exactSearchTerm": "Digite para pesquisar...",
+    "advancedSearchEmptyText": "Não existem registos",
+    "advancedSearchEmptyFilteredText": "Não existem registos que correspondam ao seu pedido",
     "advancedSearchFields": {
       "code": "Código",
       "name": "Nome",
       "description": "Description",
       "select": "Selecione"
     },
-    "advancedSearchFilter": "Type to search for name or description...",
+    "advancedSearchFilter": "Digite para procurar o nome ou a descrição...",
     "budgetsSpending": {
       "budgetsOrSpending": "Fluxos de Recursos",
       "budgets": "Orçamentos",
@@ -189,6 +199,7 @@
   "translations": {
     "selectCountry": "Selecione um país",
     "downloadFile": "Descarregar arquivo",
+    "preparingFile": "Preparar arquivo...",
     "lastUpdated": "Última atualização:",
     "language": "Idioma"
   },

@@ -44,6 +44,13 @@
     "filters": "Filtros",
     "filtersText": "Seleccione filtros para personalizar la visualización.",
     "selectedFilters": "Filtros aplicados",
+    "filtersModal": {
+      "standardTitle": "Filtrar por listas de códigos estándar",
+      "standardText": "Seleccione una o varias opciones en cada uno de los desplegables. Los resultados se actualizan automáticamente.",
+      "specificTitle": "Filtrar por actividades específicas, organizaciones proveedoras o receptoras",
+      "specificText": "Escriba para buscar y seleccionar valores específicos en todas las actividades. Los resultados se actualizan automáticamente."
+    },
+    "loading": "Cargando...",
     "preview": "Vista previa",
     "currency": "Moneda",
     "calendarYear": "Año natural",
@@ -56,16 +63,19 @@
     "selectSomeOptions": "Seleccione algunas opciones y haga clic en “Ejecutar” a la izquierda.",
     "amount": "Valor",
     "clearField": "Borrar",
+    "close": "Cerrar",
     "advancedSearch": "Búsqueda avanzada",
-    "noMatchingOptions": "Sorry, no matching options.",
-    "exactSearchTerm": "Type to search...",
+    "noMatchingOptions": "Lo sentimos, no hay opciones coincidentes.",
+    "exactSearchTerm": "Escriba para buscar...",
+    "advancedSearchEmptyText": "No hay registros",
+    "advancedSearchEmptyFilteredText": "No hay registros que coincidan con su solicitud",
     "advancedSearchFields": {
       "code": "Código",
       "name": "Nombre",
       "description": "Description",
       "select": "Seleccione"
     },
-    "advancedSearchFilter": "Type to search for name or description...",
+    "advancedSearchFilter": "Escriba para buscar nombre o descripción...",
     "budgetsSpending": {
       "budgetsOrSpending": "Flujos de Recursos",
       "budgets": "Presupuestos",
@@ -189,6 +199,7 @@
   "translations": {
     "selectCountry": "Seleccionar un país",
     "downloadFile": "Descargar archivo",
+    "preparingFile": "Preparando archivo...",
     "lastUpdated": "Última actualización:",
     "language": "Idioma"
   },

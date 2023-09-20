@@ -44,6 +44,13 @@
     "filters": "Filters",
     "filtersText": "Select filters to customise the visualisation.",
     "selectedFilters": "Filters applied",
+    "filtersModal": {
+      "standardTitle": "Filter by standard codelists",
+      "standardText": "Select one or more options in each of the drop-downs. Results update automatically.",
+      "specificTitle": "Filter by specific activities, provider or receiver organisations",
+      "specificText": "Type to search and select for specific values across all activities. Results update automatically."
+    },
+    "loading": "Loading...",
     "preview": "Preview",
     "currency": "Currency",
     "calendarYear": "Calendar Year",
@@ -56,9 +63,12 @@
     "selectSomeOptions": "Select some options, and then click Run on the left.",
     "amount": "Value",
     "clearField": "Clear",
+    "close": "Close",
     "advancedSearch": "Advanced Search",
     "noMatchingOptions": "Sorry, no matching options.",
     "exactSearchTerm": "Type to search...",
+    "advancedSearchEmptyText": "There are no records to show",
+    "advancedSearchEmptyFilteredText": "There are no records matching your request",
     "advancedSearchFields": {
       "code": "Code",
       "name": "Name",
@@ -189,6 +199,7 @@
   "translations": {
     "selectCountry": "Select a country",
     "downloadFile": "Download file",
+    "preparingFile": "Preparing file...",
     "lastUpdated": "Last updated",
     "language": "Language"
   },
