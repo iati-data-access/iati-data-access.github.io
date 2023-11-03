@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import { saveAs } from 'file-saver'
 export default {
   data() {
@@ -43,8 +44,7 @@ export default {
   methods: {
     async getActivitiesFile() {
       this.preparingFile = true
-      await this.$axios({url: this.url,
-        method: 'GET',
+      await axios.get(this.url, {method: 'GET',
         responseType: 'blob'}).then(response => {
         if (response.status === 200) {
           saveAs(
