@@ -2,7 +2,7 @@
 title: Metodologia
 ---
 
-_Atualizado: 12 de outubro 2021_
+_Atualizado: 8 de agosto de 2023_
 
 # Metodologia
 
@@ -43,7 +43,7 @@ iati-activity/iati-identifier/text()
 
 #### Título
 
-O título da atividade. Observação: nos casos em que estão disponíveis em vários idiomas, tentámos obter apenas a versão em inglês no produto final em inglês e as versões em francês, espanhol ou português nos respectivos produtos finais:
+O título da atividade. Tentámos obter a versão do idioma relevante, quando disponível, para os nossos idiomas suportados (inglês, francês, espanhol e português). Para cada idioma, recorremos ao título em inglês ou, em alternativa, ao primeiro título disponível::
 
 ```xml
 iati-activity/title/narrative[not(@xml:lang) ou @xml:lang='en']/text()
@@ -51,7 +51,7 @@ iati-activity/title/narrative[not(@xml:lang) ou @xml:lang='en']/text()
 
 #### Organização relatora
 
-O nome da organização que publica estes dados da IATI:
+O nome da organização que publica estes dados da IATI. Fazemos o levantamento destas organizações relatoras a partir da lista de organizações relatoras registadas no Registo da IATI e disponibilizadas na lista de códigos (não oficial) [ReportingOrganisation](https://codelists.codeforiati.org/ReportingOrganisation/)::
 
 ```xml
 iati-activity/reporting-org/text()
@@ -325,7 +325,7 @@ A data de transação é definida como o último dia do trimestre.
 2.8 Conversão para a moeda e o período fiscal de destino
 ---------------------------------------------------
 
-As moedas de destino são definidas como o USD e o euro para todos os países. É também incluída uma moeda local adicional (por exemplo, o xelim queniano para o produto final do Quénia). A data da taxa de câmbio é o último dia do trimestre.
+As moedas de destino são definidas como o USD e o euro para todos os países. É também incluída uma moeda local adicional (por exemplo, o xelim queniano para o produto final do Quénia). A moeda é determinada pelo país beneficiário. A data da taxa de câmbio é o último dia do trimestre.
 
 2.9 Idioma
 ------------
@@ -335,9 +335,7 @@ Os dados estão disponíveis em inglês, francês, espanhol e português. Todos 
 2.10  Processamento dos dados
 -----------------------
 
-Os dados são processados no GitHub Actions, um serviço gratuito desde que o tempo de processamento seja inferior a 6 horas. O processo é executado a cada 3 horas. Os arquivos de dados resultantes são publicados no GitHub Pages. Este serviço também é gratuito, desde que nenhum arquivo tenha mais de 100 MB e que o tamanho do repositório total não seja superior a 1 GB.
-
-Dados estes limites, é importante manter reduzido o tamanho dos arquivos e o tempo de processamento. Assegurar que todo o fluxo de trabalho possa ser executado por meio de ferramentas gratuitas também melhora significativamente a sustentabilidade das ferramentas.
+Os ficheiros foram previamente processados no Github Actions e armazenados no Github Pages (ambos serviços gratuitos). No entanto, ocorreram problemas devido aos limites de utilização do Github.
 
 2.11  Licenciamento
 --------------
