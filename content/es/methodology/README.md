@@ -2,7 +2,7 @@
 title: Metodología
 ---
 
-_Fecha de actualización: 12 octubre 2021_
+_Fecha de actualización: 8 de agosto de 2023_
 
 # Metodología
 
@@ -43,7 +43,7 @@ iati-activity/iati-identifier/text()
 
 #### Título
 
-El título de la actividad. N. B.: en los casos en los que se encuentra disponible en varios idiomas, intentamos que aparezca únicamente la versión en inglés en los resultados en inglés, y la versión en francés, español o portugués en sus resultados correspondientes:
+El título de la actividad. Cuando existe una versión en el idioma pertinente (siendo los idiomas que ofrecemos inglés, francés, español y portugués), hemos tratado de utilizarla. Para cada idioma, recurrimos al título en inglés o, alternativamente, al primer título disponible:
 
 ```xml
 iati-activity/title/narrative[not(@xml:lang) o @xml:lang='en']/text()
@@ -51,7 +51,7 @@ iati-activity/title/narrative[not(@xml:lang) o @xml:lang='en']/text()
 
 #### Organización informante
 
-El nombre de la organización que publica estos datos de la IATI:
+El nombre de la organización que publica estos datos de la IATI. Extraemos estas organizaciones informantes de la lista del Registro de la IATI publicadas en el listado de códigos de [organizaciones informantes](https://codelists.codeforiati.org/ReportingOrganisation/) (sin carácter oficial):
 
 ```xml
 iati-activity/reporting-org/text()
@@ -325,7 +325,7 @@ La fecha de transacción es el último día del trimestre.
 2.8 Conversión a la divisa y el período fiscal de destino
 ---------------------------------------------------
 
-Las divisas de destino son, para todos los países, el dólar de los Estados Unidos (USD) y el euro. También se incluye una divisa local adicional (por ejemplo, el chelín keniano para los resultados de Kenya). La fecha de tipo de cambio es el último día del trimestre.
+Las divisas de destino son, para todos los países, el dólar de los Estados Unidos (USD) y el euro. También se incluye una divisa local adicional (por ejemplo, el chelín keniano para los resultados de Kenya); el país beneficiario determina la divisa. La fecha de tipo de cambio es el último día del trimestre.
 
 2.9 Idioma
 ------------
@@ -335,9 +335,7 @@ Los datos están disponibles en inglés, francés, español y portugués. Todos 
 2.10 Procesamiento de los datos
 -----------------------
 
-Los datos se procesan con Github Actions, un servicio gratuito siempre y cuando el tiempo del procesamiento no supere las seis horas. Se lleva a cabo cada 3 horas. Los archivos de datos resultantes se publican en Github Pages,  que también es un servicio gratuito siempre y cuando los archivos no superen los 100 MB y el tamaño completo del repositorio no sea mayor que 1 GB.
-
-Teniendo en cuenta estos límites, es importante limitar el tamaño de los archivos y los tiempos del procesamiento. Garantizar que el flujo de trabajo puede completarse mediante herramientas gratuitas también mejora significativamente la sostenibilidad de las herramientas.
+Los archivos solían procesarse con GitHub Actions y almacenarse en GitHub Pages (ambos son servicios gratuitos). No obstante, esto causaba problemas debido a los límites de uso de GitHub.
 
 2.11 Licencias
 --------------
