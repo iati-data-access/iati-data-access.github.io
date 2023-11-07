@@ -51,7 +51,7 @@ iati-activity/title/narrative[not(@xml:lang) ou @xml:lang='en']/text()
 
 #### Organização relatora
 
-O nome da organização que publica estes dados da IATI. Fazemos o levantamento destas organizações relatoras a partir da lista de organizações relatoras registadas no Registo da IATI e disponibilizadas na lista de códigos (não oficial) [ReportingOrganisation](https://codelists.codeforiati.org/ReportingOrganisation/)::
+O nome da organização que publica estes dados da IATI. Fazemos o levantamento destas organizações relatoras a partir da lista de organizações relatoras registadas no Registo da IATI e disponibilizadas na lista de códigos (não oficial) [ReportingOrganisation](https://codelists.codeforiati.org/ReportingOrganisation/):
 
 ```xml
 iati-activity/reporting-org/text()
