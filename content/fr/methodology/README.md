@@ -2,7 +2,7 @@
 title: Méthodologie
 ---
 
-_Date de modification: 12 octobre 2021_
+_Date de modification: 8 août 2023_
 
 # Méthodologie
 
@@ -43,7 +43,7 @@ iati-activity/iati-identifier/text()
 
 #### Titre
 
-L’intitulé de l’activité. N.B. : en cas de version multilingue, nous avons essayé de n’obtenir que la version en anglais dans le produit en anglais et les versions en français, en espagnol et en portugais dans les produits suivants :
+L’intitulé de l’activité. Dans la mesure du possible, nous avons essayé d’obtenir la version pertinente parmi les langues prises en charge (anglais, français, espagnol et portugais). Pour chaque langue, nous nous sommes appuyés sur le titre en langue anglaise ou, à défaut, sur le premier titre disponible :
 
 ```xml
 iati-activity/title/narrative[not(@xml:lang) ou @xml:lang='en']/text()
@@ -51,7 +51,7 @@ iati-activity/title/narrative[not(@xml:lang) ou @xml:lang='en']/text()
 
 #### Organisme déclarant
 
-Le nom de l’organisation qui publie ces données de l’IITA :
+Le nom de l’organisation qui publie ces données de l’IITA. Nous cartographions ces organisations déclarantes à partir de la liste établie par le Registre de l’IITA et mise à disposition dans la liste de codes (non officielle) [des organisations déclarantes](https://codelists.codeforiati.org/fr/ReportingOrganisation/) :
 
 ```xml
 iati-activity/reporting-org/text()
@@ -325,19 +325,17 @@ La date de la transaction est fixée à celle de la fin du trimestre.
 2.8 Convertir les données conformément à la devise cible et à la période fiscale
 ---------------------------------------------------
 
-Les devises cibles sont le dollar US et l’euro pour tous les pays. L’inclusion d’une devise locale (p. ex., le shilling kényan pour l’analyse du Kenya) est également prévue. Le taux de change utilisé correspond à celui en vigueur au dernier jour du trimestre.
+Les devises cibles sont le dollar US et l’euro pour tous les pays. L’inclusion d’une devise locale (p. ex., le shilling kényan pour l’analyse du Kenya) est déterminée par le pays destinataire. Le taux de change utilisé correspond à celui en vigueur au dernier jour du trimestre.
 
 2.9 Langue
 ------------
 
-Les données sont fournies en anglais, en français, en espagnol et en portugais. Tous les intitulés disponibles dans ces langues sont inclus dans l’analyse, de même que tous les codes. Certains intitulés et organismes prestataires ou bénéficiaires ne sont indiqués qu’en anglais.
+Les données sont disponibles en anglais, en français, en espagnol et en portugais. Tous les intitulés disponibles dans ces langues sont inclus dans l’analyse, de même que tous les codes. Certains intitulés et organismes prestataires ou bénéficiaires ne sont indiqués qu’en anglais.
 
 2.10 Traiter les données
 -----------------------
 
-Les données sont traitées au moyen de GitHub Actions, dont l’utilisation reste gratuite tant que le délai de traitement est inférieur à six heures. Le traitement s’effectue toutes les trois heures et les fichiers obtenus sont publiés sur GitHub Pages. Ce service de publication est également gratuit, à condition que la taille du fichier ne dépasse pas 100 Mb et que la taille totale du registre soit inférieure à 1 Gb.
-
-En raison de ces limites, il est important de s’en tenir à des délais de traitement courts et à des tailles de fichier réduites. Employer des outils gratuits pour la totalité du processus de gestion des données permet également de grandement en améliorer le maintien à long terme.
+Les fichiers étaient auparavant traités sur Github Actions et stockés sur Github Pages (deux services gratuits). Mais cela a posé des problèmes eu égard aux limites d’utilisation de Github.
 
 2.11 Licences
 --------------

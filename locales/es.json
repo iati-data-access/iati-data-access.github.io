@@ -45,10 +45,10 @@
     "filtersText": "Seleccione filtros para personalizar la visualización.",
     "selectedFilters": "Filtros aplicados",
     "filtersModal": {
-      "standardTitle": "Filtrar por listas de códigos estándar",
-      "standardText": "Seleccione una o varias opciones en cada uno de los desplegables. Los resultados se actualizan automáticamente.",
-      "specificTitle": "Filtrar por actividades específicas, organizaciones proveedoras o receptoras",
-      "specificText": "Escriba para buscar y seleccionar valores específicos en todas las actividades. Los resultados se actualizan automáticamente."
+      "standardTitle": "Filtrar por listados de códigos estándar",
+      "standardText": "Seleccionar una o más opciones en cada menú desplegable. Los resultados se actualizan automáticamente.",
+      "specificTitle": "Filtrar por actividades, organizaciones proveedoras y organizaciones beneficiarias concretas",
+      "specificText": "Escriba para buscar y seleccionar valores concretos en todas las actividades. Los resultados se actualizan automáticamente."
     },
     "loading": "Cargando...",
     "preview": "Vista previa",
@@ -65,7 +65,7 @@
     "clearField": "Borrar",
     "close": "Cerrar",
     "advancedSearch": "Búsqueda avanzada",
-    "noMatchingOptions": "Lo sentimos, no hay opciones coincidentes.",
+    "noMatchingOptions": "Lo sentimos, no hay coincidencias para su búsqueda.",
     "exactSearchTerm": "Escriba para buscar...",
     "advancedSearchEmptyText": "No hay registros",
     "advancedSearchEmptyFilteredText": "No hay registros que coincidan con su solicitud",

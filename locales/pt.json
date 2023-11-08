@@ -45,12 +45,12 @@
     "filtersText": "Selecione os filtros para personalizar a visualização.",
     "selectedFilters": "Filtros aplicados",
     "filtersModal": {
-      "standardTitle": "Filtrar por listas de códigos standard",
-      "standardText": "Seleccione uma ou mais opções em cada um dos menus pendentes. Os resultados são actualizados automaticamente.",
-      "specificTitle": "Filtrar por actividades específicas, organizações prestadoras ou receptoras",
-      "specificText": "Digite para pesquisar e selecionar valores específicos em todas as actividades. Os resultados são actualizados automaticamente."
+      "standardTitle": "Filtrar por listas de códigos padrão",
+      "standardText": "Selecionar uma ou mais opções em cada um dos menus pendentes. Os resultados são atualizados automaticamente.",
+      "specificTitle": "Filtrar por atividades específicas, organizações prestadoras ou beneficiárias.",
+      "specificText": "Escrever para pesquisar e selecionar valores específicos em todas as atividades. Os resultados são atualizados automaticamente."
     },
-    "loading": "Carregando...",
+    "loading": "A carregar...",
     "preview": "Pré-visualização",
     "currency": "Moeda",
     "calendarYear": "Ano civil",
@@ -65,8 +65,8 @@
     "clearField": "Apagar",
     "close": "Fechar",
     "advancedSearch": "Busca Avançada",
-    "noMatchingOptions": "Lamento, mas não há opções correspondentes.",
-    "exactSearchTerm": "Digite para pesquisar...",
+    "noMatchingOptions": "Lamentamos, mas não existem opções correspondentes.",
+    "exactSearchTerm": "Escrever para pesquisar...",
     "advancedSearchEmptyText": "Não existem registos",
     "advancedSearchEmptyFilteredText": "Não existem registos que correspondam ao seu pedido",
     "advancedSearchFields": {

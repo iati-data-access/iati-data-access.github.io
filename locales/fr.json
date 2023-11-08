@@ -45,12 +45,12 @@
     "filtersText": "Sélectionnez des filtres pour personnaliser la visualisation.",
     "selectedFilters": "Filtres appliqués ",
     "filtersModal": {
-      "standardTitle": "Filtrer par listes de codes standards",
-      "standardText": "Sélectionnez une ou plusieurs options dans chacune des listes déroulantes. Les résultats sont mis à jour automatiquement.",
-      "specificTitle": "Filtrer par activités spécifiques, ou organismes prestataires ou bénéficiaires",
-      "specificText": "Tapez pour rechercher et sélectionner des valeurs spécifiques dans toutes les activités. Les résultats sont mis à jour automatiquement."
+      "standardTitle": "Filtrer par listes de codes normalisés",
+      "standardText": "Sélectionner une ou plusieurs options dans chacune des listes déroulantes. Les résultats sont mis à jour automatiquement.",
+      "specificTitle": "Filtrer par activités, organisations prestataires ou bénéficiaires",
+      "specificText": "Saisir votre texte pour rechercher et sélectionner des valeurs spécifiques parmi toutes les activités. Les résultats sont mis à jour automatiquement."
     },
-    "loading": "Chargement...",
+    "loading": "Chargement en cours...",
     "preview": "Aperçu",
     "currency": "Devise",
     "calendarYear": "Année civile",
@@ -65,8 +65,8 @@
     "clearField": "Effacer",
     "close": "Fermer",
     "advancedSearch": "Recherche avancée",
-    "noMatchingOptions": "Désolé, il n'y a pas d'options correspondantes.",
-    "exactSearchTerm": "Tapez pour rechercher...",
+    "noMatchingOptions": "Malheureusement, aucun résultat ne correspond à votre demande.",
+    "exactSearchTerm": "Saisir votre texte pour rechercher...",
     "advancedSearchEmptyText": "Il n'y a pas d'enregistrements",
     "advancedSearchEmptyFilteredText": "Il n'y a pas d'enregistrements correspondant à votre demande",
     "advancedSearchFields": {
