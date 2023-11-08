@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{506:function(e,n,r){"use strict";r.r(n);var t={middleware:function(e){e.store;var n=e.redirect,r=e.localePath,t=e.route;return n(r({name:"data-recipient-country-or-region-code",params:t.params,query:t.query}))}},o=r(38),component=Object(o.a)(t,undefined,undefined,!1,null,null,null);n.default=component.exports}}]);

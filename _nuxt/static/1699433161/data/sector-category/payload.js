@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/data/sector-category", {data:[{}],fetch:{},mutations:[]});

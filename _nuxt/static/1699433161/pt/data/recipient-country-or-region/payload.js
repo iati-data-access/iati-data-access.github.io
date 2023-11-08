@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/pt/data/recipient-country-or-region", {data:[{}],fetch:{},mutations:[]});
