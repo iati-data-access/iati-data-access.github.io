@@ -45,12 +45,12 @@ export default {
       return this.$t('languageOptions')
     },
     selectedCountryURL() {
-      return `https://cdfd.iati.opendataservices.coop/output/web/xlsx/${this.language}/${this.selectedCountry}.xlsx`
+      return `https://data.countrydata.iatistandard.org/output/web/xlsx/${this.language}/${this.selectedCountry}.xlsx`
     }
   },
   async beforeMount() {
     this.language = this.$i18n.locale
-    var data = await axios.get(`https://cdfd.iati.opendataservices.coop/output/web/xlsx/${this.$t('language')}/index.json`)
+    var data = await axios.get(`https://data.countrydata.iatistandard.org/output/web/xlsx/${this.$t('language')}/index.json`)
     this.lastUpdated = data.data.lastUpdated
     this.countries = data.data.countries.sort((a, b) => {
       const countryRegionBool = {'country': 0, 'region': 1}

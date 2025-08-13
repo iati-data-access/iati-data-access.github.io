@@ -130,7 +130,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseURL: 'https://cdfd.iati.opendataservices.coop/api'
+    baseURL: 'https://data.countrydata.iatistandard.org/api'
   },
 
   // Google Tag Manager
