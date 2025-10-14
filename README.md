@@ -17,8 +17,8 @@ The data behind this repository is generated in the following repositories for e
 
 ```bash
 # clone repository
-$ git clone git@github.com:iati-data-access/docs-beta2.git
-$ cd docs-beta2
+$ git clone git@github.com:iati-data-access/iati-data-access.github.io.git
+$ cd iati-data-access.github.io
 
 # install dependencies
 $ npm install
