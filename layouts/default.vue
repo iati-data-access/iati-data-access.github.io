@@ -1,51 +1,100 @@
 <template>
-  <div>
-    <header class="header" role="header">
-      <b-navbar toggleable="lg" type="light" variant="light">
-        <b-navbar-brand :to="localePath({path: '/'})" class="branding">
-        </b-navbar-brand>
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+  <div class="iati-design-system--enabled">
+    <div class="iati-title-bar">
+      <header class="iati-header" role="header">
 
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
+        <div class="iati-header__section iati-header__section--first">
+          <div class="iati-header__container">
 
-            <b-nav-item
-              :to="localePath({path: '/'})">{{ $t('home') }}</b-nav-item>
+            <a href="https://iatistandard.org/" aria-label="Go to IATI homepage">
+              <img class="iati-header__logo" alt=""
+                src="http://styles.iatistandard.org/assets/svg/source/logo-colour.svg" />
+            </a>
 
-            <b-nav-item
-              :to="localePath({path: '/data/'})">{{ $t('dataDashboards.label') }} <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-nav-item>
-            <b-nav-item
-              :to="localePath({path: '/data/custom/'})"
-              active-class="nuxt-link-exact-active">{{ $t('dataDashboards.customDownload') }} <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']"/></b-nav-item>
-          </b-navbar-nav>
+            <nav class="iati-header__general-nav">
+              <ul class="iati-piped-list">
+                <li><a href="https://iatistandard.org/en/about/">About IATI</a></li>
+                <li><a href="https://iatistandard.org/en/using-data/">Use Data</a></li>
+                <li><a href="https://iatistandard.org/en/guidance/publishing-data/">Publish Data</a></li>
+                <li><a href="https://iatistandard.org/guidance/get-support/">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="iati-header__section iati-header__section--last iati-brand-background">
+          <div class="iati-header__container iati-brand-background__content">
 
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-lg-auto">
-            <b-nav-item-dropdown :text="$t('about')" right>
-              <b-dropdown-item
-                v-for="item in $t('aboutNav')"
-                v-bind:key="item[0]"
-                :to="localePath({path: item[0]})">
-                {{ item[1] }}
-              </b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item-dropdown :text="$t('selectText')" right>
-              <b-dropdown-item
-                v-for="locale in $t('languageOptions')"
-                v-bind:key="locale.value"
-                :to="switchLocalePath(locale.value)"
-                :active="$i18n.locale == locale.value">
-                {{ locale.text }}
-              </b-dropdown-item>
-            </b-nav-item-dropdown>
+            <div class="iati-header__actions">
+              <div class="iati-country-switcher">
+                <label for="iati-country-switcher" class="iati-country-switcher__label">Choose your language</label>
+                <select
+                  id="iati-country-switcher"
+                  class="iati-country-switcher__control"
+                  @change="changeLocale($event)"
+                  :value="$i18n.locale"
+                >
+                  <option
+                    v-for="locale in $t('languageOptions')"
+                    v-bind:key="locale.value"
+                    :value="locale.value"
+                  >
+                    {{ locale.text }}
+                  </option>
+                </select>
+              </div>
+            </div>
 
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-      <b-container class="main-title">
-        <h2>Country Development Finance Data</h2>
-      </b-container>
-    </header>
+            <div class="iati-header-title">
+              <p class="iati-header-title__eyebrow">IATI Tools</p>
+              <p class="iati-header-title__heading">Country Development Finance Data</p>
+            </div>
+
+            <div class="iati-header__nav">
+              <nav>
+                <ul class="iati-tool-nav">
+                  <li>
+                    <nuxt-link :to="localePath({ path: '/' })" class="iati-tool-nav-link">
+                      {{ $t('home') }}
+                    </nuxt-link>
+                  </li>
+                  <li class="dropdown">
+                    <button class="iati-tool-nav-link">
+                      {{ $t('about') }}
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li v-for="item in $t('aboutNav')" v-bind:key="item[0]">
+                        <nuxt-link :to="localePath({ path: item[0] })" class="dropdown-item">
+                          {{ item[1] }}
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <b-nav-item-dropdown :text="$t('about')" right class="iati-tool-nav-link">
+                    <b-dropdown-item
+                      v-for="item in $t('aboutNav')"
+                      v-bind:key="item[0]"
+                      :to="localePath({path: item[0]})">
+                      {{ item[1] }}
+                    </b-dropdown-item>
+                  </b-nav-item-dropdown>
+                  <li>
+                    <nuxt-link :to="localePath({path: '/data/'})" class="iati-tool-nav-link">
+                      {{ $t('dataDashboards.label') }}
+                    </nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link :to="localePath({path: '/data/custom/'})" class="iati-tool-nav-link">
+                      {{ $t('dataDashboards.customDownload') }}
+                    </nuxt-link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+     </div>
     <b-container class="page-container pr-md-5 pl-md-5 pb-md-5" fluid>
       <Nuxt />
     </b-container>
