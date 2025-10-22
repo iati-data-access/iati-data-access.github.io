@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{504:function(n,e,t){"use strict";t.r(e);var r={middleware:function(n){n.store;return(0,n.redirect)((0,n.localePath)({name:"data-reporting-organisation"}))}},o=t(38),component=Object(o.a)(r,undefined,undefined,!1,null,null,null);e.default=component.exports}}]);
