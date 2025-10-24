@@ -98,6 +98,61 @@
     <b-container class="page-container pr-md-5 pl-md-5 pb-md-5" fluid>
       <Nuxt />
     </b-container>
+    <footer class="iati-footer iati-brand-background">
+			<div class="iati-brand-background__content">
+
+				<div class="iati-footer__section iati-footer__section--first">
+					<div class="iati-footer__container">
+					  <div class="iati-footer-block">
+              <h2 class="iati-footer-block__title">Useful links</h2>
+              <div class="iati-footer-block__content">
+                <ul>
+                  <li><a href="https://countrydata.iatistandard.org/">Country Development Finance Data Tool</a></li>
+                  <li><a href="https://d-portal.org/ctrack.html#view=search">d-portals</a></li>
+                  <li><a href="https://datastore.iatistandard.org/">Satastore Search</a></li>
+                </ul>
+              </div>
+					  </div>
+					</div>
+				</div>
+
+				<div class="iati-footer__section iati-footer__section--last">
+				  <div class="iati-footer__container">
+            <nav>
+              <ul class="iati-piped-list iati-footer__legal-nav">
+                <li><a href="https://iatistandard.org/en/privacy-policy/">Privacy</a></li>
+                <li><a href="https://web-terms.iatistandard.org/en/latest/cookie-policy/">Cookies</a></li>
+                <li><a href="https://web-terms.iatistandard.org/en/latest/copyright/">Copyright</a></li>
+                <li><a href="https://web-terms.iatistandard.org/en/latest/data-removal/">Data Removal</a></li>
+              </ul>
+            </nav>
+
+            <div class="iati-country-switcher">
+              <label for="iati-country-switcher-footer" class="iati-country-switcher__label">Choose your language</label>
+              <select id="iati-country-switcher-footer" class="iati-country-switcher__control">
+                <option>English</option>
+              </select>
+            </div>
+
+            <div class="iati-footer__social">
+              <a href="https://www.linkedin.com/company/international-aid-transparency-initiative/" aria-label="LinkedIn">
+                <i class="iati-icon iati-icon--linkedin"></i>
+              </a>
+              <a href="https://x.com/IATI_aid" aria-label="X">
+                <i class="iati-icon iati-icon--x"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCAVH1gcgJXElsj8ENC-bDQQ" aria-label="YouTube">
+                <i class="iati-icon iati-icon--youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/IATIaid" aria-label="Facebook">
+                <i class="iati-icon iati-icon--facebook"></i>
+              </a>
+            </div>
+				  </div>
+				</div>
+			</div>
+		</footer>
+
   </div>
 </template>
 <style lang="scss">
