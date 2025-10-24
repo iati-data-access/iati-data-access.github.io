@@ -50,16 +50,3 @@
     <p>¿Busca el orientación? Lo hemos trasladado a la sección “Acerca de”.</p>
     <b-btn variant="secondary" to="/es/guidance-analysis/">Orientación &raquo;</b-btn>
 </b-alert>
-<hr />
-<div class="text-center">
-    <p class="font-weight-bold">IATI data access tools:</p>
-    <a href="https://countrydata.iatistandard.org/">Country Development Finance Data Tool</a><br />
-    <a href="https://d-portal.org/ctrack.html#view=search">d-portal</a><br />
-    <a href="https://datastore.iatistandard.org/">Datastore Search</a><br />
-</div>
-
-<p class="center-logo">
-    <img src="/powered-by-iati.png" alt="Powered by IATI Data" />
-</p>
-
-[Política de privacidad - en inglés](https://iatistandard.org/en/privacy-policy/)
