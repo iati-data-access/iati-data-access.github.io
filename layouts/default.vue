@@ -244,6 +244,13 @@ div.footnotes {
 </style>
 <script>
 export default {
+  methods: {
+    changeLocale(event) {
+      const newLocale = event.target.value
+      const path = this.switchLocalePath(newLocale)
+      this.$router.push(path)
+    }
+  },
   async asyncData({ $content, params, app }) {
     const page = await $content(app.i18n.locale, params.slug)
       .fetch()
