@@ -4,7 +4,7 @@
 
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
-  <b-btn block variant="primary" to="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+  <b-btn block variant="primary" class="iati-button" to="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
     <b-col lg="4">
@@ -39,7 +39,7 @@
 
 </b-card>
     <b-card>
-        <p><b-btn block variant="primary" to="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p><b-btn block variant="primary" class="iati-button" to="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
         <p>Choose the columns to be included in your spreadsheet and select the filters to narrow your search. Download the custom set of data in Excel.</p>
     </b-card>
 </b-card-group>

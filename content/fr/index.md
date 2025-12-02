@@ -4,7 +4,7 @@
 
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
-  <b-btn block variant="primary" to="/fr/data/">Découvrez les tableaux de bord de données<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+  <b-btn block variant="primary" class="iati-button" to="/fr/data/">Découvrez les tableaux de bord de données<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
     <b-col lg="4">
@@ -42,7 +42,7 @@
 
 </b-card>
     <b-card>
-        <p><b-btn block variant="primary" to="/fr/data/custom/">Téléchargement de données personnalisées <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p><b-btn block variant="primary" class="iati-button" to="/fr/data/custom/">Téléchargement de données personnalisées <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
         <p>Choisissez les colonnes à inclure dans votre feuille de calcul et sélectionnez les filtres pour affiner votre recherche. Téléchargez l'ensemble de données personnalisé dans Excel.</p>
     </b-card>
 </b-card-group>

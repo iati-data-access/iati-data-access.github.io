@@ -3,7 +3,7 @@
 <p class="lead">Puede descargar datos simples en formato Excel sobre compromisos, desembolsos y gastos, así como presupuestos de aplicación futura, clasificados por país y región y diseñados para facilitar un análisis sencillo en una tabla dinámica.</p>
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
-  <b-btn block variant="primary" to="/es/data/">Explorar los paneles de datos<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+  <b-btn block variant="primary" class="iati-button" to="/es/data/">Explorar los paneles de datos<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
     <b-col lg="4">
@@ -41,7 +41,7 @@
 
 </b-card>
     <b-card>
-        <p><b-btn block variant="primary" to="/es/data/custom/">Descarga de datos personalizados <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p><b-btn block variant="primary" class="iati-button" to="/es/data/custom/">Descarga de datos personalizados <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
         <p>Elija las columnas que se incluirán en su hoja de cálculo y seleccione los filtros para restringir su búsqueda. Descargue el conjunto personalizado de datos en Excel.</p>
     </b-card>
 </b-card-group>
