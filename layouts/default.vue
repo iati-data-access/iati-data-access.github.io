@@ -58,26 +58,11 @@
                       {{ $t('home') }}
                     </nuxt-link>
                   </li>
-                  <li class="dropdown">
-                    <button class="iati-tool-nav-link">
+                  <li>
+                    <a :href="`https://docs.countrydata.iatistandard.org/${$i18n.locale}/latest/`" class="iati-tool-nav-link">
                       {{ $t('about') }}
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li v-for="item in $t('aboutNav')" v-bind:key="item[0]">
-                        <nuxt-link :to="localePath({ path: item[0] })" class="dropdown-item">
-                          {{ item[1] }}
-                        </nuxt-link>
-                      </li>
-                    </ul>
+                    </a>
                   </li>
-                  <b-nav-item-dropdown :text="$t('about')" right class="iati-tool-nav-link">
-                    <b-dropdown-item
-                      v-for="item in $t('aboutNav')"
-                      v-bind:key="item[0]"
-                      :to="localePath({path: item[0]})">
-                      {{ item[1] }}
-                    </b-dropdown-item>
-                  </b-nav-item-dropdown>
                   <li>
                     <nuxt-link :to="localePath({path: '/data/'})" class="iati-tool-nav-link">
                       {{ $t('dataDashboards.label') }}
