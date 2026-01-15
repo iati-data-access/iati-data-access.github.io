@@ -11,21 +11,21 @@
         <b-btn
             block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/fr/data/recipient-country-or-region/">par Pays ou région bénéficiaire</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn
             block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/fr/data/reporting-organisation/">par Organisme déclarant</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn
         block
         variant="outline-primary"
-        class="mb-2"
+        class="mb-2 iati-button"
         to="/fr/data/sector-category/">par Catégorie de secteur</b-btn>
     </b-col>
 </b-row>

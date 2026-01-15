@@ -10,19 +10,19 @@
     <b-col lg="4">
         <b-btn block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/data/sector-category/">by Sector Category</b-btn>
     </b-col>
 </b-row>
