@@ -47,7 +47,3 @@
     </b-card>
 </b-card-group>
 <hr />
-<b-alert show variant="secondary" class="text-center">
-    <p>À la recherche des lignes directrices? Nous avons déplacé ce contenu dans la section À propos.</p>
-    <b-btn variant="secondary" to="/fr/guidance-analysis/">Lignes directrices &raquo;</b-btn>
-</b-alert>

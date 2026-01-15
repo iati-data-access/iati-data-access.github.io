@@ -44,7 +44,3 @@
     </b-card>
 </b-card-group>
 <hr />
-<b-alert show variant="secondary" class="text-center">
-	<p>Looking for the guidance? We've moved this content to the About section.</p>
-	<b-btn variant="secondary" to="/guidance-analysis/">Guidance &raquo;</b-btn>
-</b-alert>

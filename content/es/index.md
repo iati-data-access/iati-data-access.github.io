@@ -46,7 +46,3 @@
     </b-card>
 </b-card-group>
 <hr />
-<b-alert show variant="secondary" class="text-center">
-    <p>¿Busca el orientación? Lo hemos trasladado a la sección “Acerca de”.</p>
-    <b-btn variant="secondary" to="/es/guidance-analysis/">Orientación &raquo;</b-btn>
-</b-alert>
