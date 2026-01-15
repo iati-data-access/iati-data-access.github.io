@@ -43,6 +43,12 @@
                   </option>
                 </select>
               </div>
+
+              <a href="https://docs.countrydata.iatistandard.org/" class="iati-button iati-button--light hide--mobile-nav">
+						    <span>Help Docs</span>
+                <i class="iati-icon iati-icon--info"></i>
+              </a>
+
             </div>
 
             <div class="iati-header-title">
