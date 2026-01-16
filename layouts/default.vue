@@ -98,14 +98,29 @@
               <h2 class="iati-footer-block__title">Useful links</h2>
               <div class="iati-footer-block__content">
                 <ul>
-                  <li><a href="https://countrydata.iatistandard.org/">Country Development Finance Data Tool</a></li>
-                  <li><a href="https://d-portal.org/ctrack.html#view=search">d-portals</a></li>
-                  <li><a href="https://datastore.iatistandard.org/">Satastore Search</a></li>
+                  <li><a href="https://github.com/iati-data-access/iati-data-access.github.io">Report bugs, and request features using Github issues</a></li>
                 </ul>
               </div>
 					  </div>
 					</div>
 				</div>
+
+        <div class="iati-footer__section">
+          <div class="iati-footer__container">
+            <div class="iati-footer-block">
+              <h2 class="iati-footer-block__title">Additional information</h2>
+              <div class="iati-footer-block__content iati-footer-block__content--columns">
+                <div>
+                  <p>Part of the IATI Unified Platform.</p>
+                  <p>
+                    Code licensed under
+                    <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 				<div class="iati-footer__section iati-footer__section--last">
 				  <div class="iati-footer__container">
