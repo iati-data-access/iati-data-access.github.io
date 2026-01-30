@@ -115,7 +115,7 @@
                   <p>Part of the IATI Unified Platform.</p>
                   <p>
                     Code licensed under
-                    <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>.
+                    <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL-3.0 license</a>.
                   </p>
                 </div>
               </div>
