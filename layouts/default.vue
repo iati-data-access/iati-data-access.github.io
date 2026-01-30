@@ -65,11 +65,6 @@
                     </nuxt-link>
                   </li>
                   <li>
-                    <a :href="`https://docs.countrydata.iatistandard.org/${$i18n.locale}/latest/`" class="iati-tool-nav-link">
-                      {{ $t('about') }}
-                    </a>
-                  </li>
-                  <li>
                     <nuxt-link :to="localePath({path: '/data/'})" class="iati-tool-nav-link">
                       {{ $t('dataDashboards.label') }}
                     </nuxt-link>
