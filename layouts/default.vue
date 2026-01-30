@@ -98,6 +98,7 @@
               <h2 class="iati-footer-block__title">Useful links</h2>
               <div class="iati-footer-block__content">
                 <ul>
+                  <li><a href="https://github.com/iati-data-access/iati-data-access.github.io">Country Development Finance Data source code</a></li>
                   <li><a href="https://github.com/iati-data-access/iati-data-access.github.io/issues">Report bugs, and request features using Github issues</a></li>
                 </ul>
               </div>
