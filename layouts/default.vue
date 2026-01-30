@@ -98,7 +98,7 @@
               <h2 class="iati-footer-block__title">Useful links</h2>
               <div class="iati-footer-block__content">
                 <ul>
-                  <li><a href="https://github.com/iati-data-access/iati-data-access.github.io">Report bugs, and request features using Github issues</a></li>
+                  <li><a href="https://github.com/iati-data-access/iati-data-access.github.io/issues">Report bugs, and request features using Github issues</a></li>
                 </ul>
               </div>
 					  </div>
