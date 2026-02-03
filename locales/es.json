@@ -34,8 +34,6 @@
     "customDownload": "Descarga de datos personalizados",
     "customDownloadText": "Elija las columnas que se incluirán en su hoja de cálculo y seleccione los filtros para restringir su búsqueda. Descargue el conjunto personalizado de datos en Excel.",
     "dataSource": "La fuente de estos datos son las organizaciones que publican datos en la IATI. Los datos se actualizan una vez al día para capturar datos nuevos o actualizados publicados en el Registro de la IATI. Se pueden encontrar detalles adicionales en la sección {methodology}.",
-    "dataSourceContact": "Para soporte o capacitación, comuníquese con {emailContact}",
-    "emailContact": "support@iatistandard.org",
     "columns": "Columnas",
     "selectColumns": "Seleccionar columnas",
     "selectAtLeastOneColumn": "Debe seleccionar al menos una columna",

@@ -9,12 +9,6 @@
             :to="localePath({path:'/methodology/'})">{{ $t('aboutNav[1][1]') }}</nuxt-link>
         </template>
       </i18n>
-      <i18n path="dataDashboards.dataSourceContact" tag="p">
-        <template v-slot:emailContact>
-          <a
-            :href="`mailto:${$t('dataDashboards.emailContact')}`">{{ $t('dataDashboards.emailContact') }}</a>
-        </template>
-      </i18n>
     </b-col>
   </b-row>
 </template>

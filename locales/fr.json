@@ -34,8 +34,6 @@
     "customDownload": "Téléchargement de données personnalisées",
     "customDownloadText": "Choisissez les colonnes à inclure dans votre feuille de calcul et sélectionnez les filtres pour affiner votre recherche. Téléchargez l'ensemble de données personnalisé dans Excel.",
     "dataSource": "La source de ces données sont les organisations qui publient des données à l'IITA. Les données sont mises à jour une fois par jour pour capturer les données nouvelles ou mises à jour publiées dans le Registre de l'IITA. Des détails supplémentaires peuvent être trouvés dans la section {methodology}.",
-    "dataSourceContact": "Pour le soutien ou une formation, contactez {emailContact}",
-    "emailContact": "support@iatistandard.org",
     "columns": "Colonnes",
     "selectColumns": "Sélectionner les colonnes",
     "selectAtLeastOneColumn": "Veuillez sélectionner au moins une colonne.",
