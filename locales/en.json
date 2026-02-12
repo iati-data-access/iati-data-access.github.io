@@ -26,6 +26,7 @@
   "homepageLookingGuidanceAnalysis": "Looking for the guidance and analysis dashboards? We've moved this content to the About section.",
   "exploreDataDashboards": "Explore Data Dashboards",
   "by": "by",
+  "helpDocs": "help docs",
   "dataDashboards": {
     "label": "Data Dashboards",
     "overview": "Summary Dashboard",
@@ -33,7 +34,7 @@
     "customise": "Customise",
     "customDownload": "Custom Data Download",
     "customDownloadText": "Choose the columns to be included in your spreadsheet and select the filters to narrow your search. Download the custom set of data in Excel.",
-    "dataSource": "The source of this data is the organisations publishing data to IATI. The data is updated once per day to capture new or updated data published to the IATI Registry. Additional details can be found in the {methodology} section.",
+    "dataSource": "The source of this data is the organisations publishing data to IATI. The data is updated once per day to capture new or updated data published to the IATI Registry. Additional details can be found in the {helpDocs}.",
     "columns": "Columns",
     "selectColumns": "Select columns",
     "selectAtLeastOneColumn": "You must select at least one column",
