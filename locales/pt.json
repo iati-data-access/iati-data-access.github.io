@@ -26,6 +26,7 @@
   "homepageLookingGuidanceAnalysis": "Procura orientações e painéis de análise? Transferimos este conteúdo para a secção “Acerca de”",
   "exploreDataDashboards": "Explorar os painéis de dados",
   "by": "por",
+  "helpDocs": "documentos de ajuda",
   "dataDashboards": {
     "label": "Painéis de dados",
     "overview": "Painel de síntese",
@@ -33,9 +34,7 @@
     "customise": "Personalizar",
     "customDownload": "Descarregar dados personalizados",
     "customDownloadText": "Escolha as colunas a serem incluídas em sua planilha e selecione os filtros para refinar sua pesquisa. Baixe o conjunto personalizado de dados no Excel.",
-    "dataSource": "A fonte desses dados são as organizações que publicam dados para a IATI. Os dados são atualizados uma vez por dia para capturar dados novos ou atualizados publicados no Registo da IATI. Detalhes adicionais podem ser encontrados na seção {methodology}.",
-    "dataSourceContact": "Para suporte ou treinamento, entre em contato com {emailContact}",
-    "emailContact": "support@iatistandard.org",
+    "dataSource": "A fonte desses dados são as organizações que publicam dados para a IATI. Os dados são atualizados uma vez por dia para capturar dados novos ou atualizados publicados no Registo da IATI. Detalhes adicionais podem ser encontrados nos {helpDocs}.",
     "columns": "Colunas",
     "selectColumns": "Selecionar colunas",
     "selectAtLeastOneColumn": "Tem de selecionar pelo menos uma coluna",

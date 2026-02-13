@@ -33,12 +33,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/iati-design-system@4.4.0/dist/css/iati.min.css'
+        href: 'https://cdn.jsdelivr.net/npm/iati-design-system@4.5.0/dist/css/iati.min.css'
       }
     ],
     script: [
       {
-        src: 'https://cdn.jsdelivr.net/npm/iati-design-system@4.4.0/dist/js/iati.js',
+        src: 'https://cdn.jsdelivr.net/npm/iati-design-system@4.5.0/dist/js/iati.js',
         defer: true
       }
     ]

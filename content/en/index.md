@@ -4,26 +4,23 @@
 
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
-  <b-btn block variant="primary" to="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+  <a class="iati-button iati-button-wide" href="/data/">Explore Data Dashboards <font-awesome-icon :icon="['fa', 'chart-simple']" /></a>
 </b-card>
 <b-row class="mt-2">
     <b-col lg="4">
-        <b-btn block
-            variant="outline-primary"
-            class="mb-2"
-            to="/data/recipient-country-or-region/">by Recipient Country or Region</b-btn>
+        <a
+          class="iati-button iati-button-wide"
+          href="/data/recipient-country-or-region/">by Recipient Country or Region</a>
     </b-col>
     <b-col lg="4">
-        <b-btn block
-            variant="outline-primary"
-            class="mb-2"
-            to="/data/reporting-organisation/">by Reporting Organisation</b-btn>
+        <a
+          class="iati-button iati-button-wide"
+          href="/data/reporting-organisation/">by Reporting Organisation</a>
     </b-col>
     <b-col lg="4">
-        <b-btn block
-            variant="outline-primary"
-            class="mb-2"
-            to="/data/sector-category/">by Sector Category</b-btn>
+        <a
+          class="iati-button iati-button-wide"
+          href="/data/sector-category/">by Sector Category</a>
     </b-col>
 </b-row>
 
@@ -39,25 +36,8 @@
 
 </b-card>
     <b-card>
-        <p><b-btn block variant="primary" to="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p><a class="iati-button iati-button-wide" href="/data/custom/">Custom data download <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></a></p>
         <p>Choose the columns to be included in your spreadsheet and select the filters to narrow your search. Download the custom set of data in Excel.</p>
     </b-card>
 </b-card-group>
 <hr />
-<b-alert show variant="secondary" class="text-center">
-	<p>Looking for the guidance? We've moved this content to the About section.</p>
-	<b-btn variant="secondary" to="/guidance-analysis/">Guidance &raquo;</b-btn>
-</b-alert>
-<hr />
-<div class="text-center">
-    <p class="font-weight-bold">IATI data access tools:</p>
-    <a href="https://countrydata.iatistandard.org/">Country Development Finance Data Tool</a><br />
-    <a href="https://d-portal.org/ctrack.html#view=search">d-portal</a><br />
-    <a href="https://datastore.iatistandard.org/">Datastore Search</a><br />
-</div>
-
-<p class="center-logo">
-	<img src="/powered-by-iati.png" alt="Powered by IATI Data" />
-</p>
-
-[Privacy Policy](https://iatistandard.org/en/privacy-policy/)

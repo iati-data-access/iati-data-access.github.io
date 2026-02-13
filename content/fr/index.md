@@ -4,28 +4,28 @@
 
 
 <b-card img-src="/data-dashboards-background-countries.png" img-alt="Image" overlay body-class="d-flex align-items-center">
-  <b-btn block variant="primary" to="/fr/data/">Découvrez les tableaux de bord de données<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
+  <b-btn block variant="primary" class="iati-button" to="/fr/data/">Découvrez les tableaux de bord de données<font-awesome-icon :icon="['fa', 'chart-simple']" /></b-btn>
 </b-card>
 <b-row class="mt-2">
     <b-col lg="4">
         <b-btn
             block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/fr/data/recipient-country-or-region/">par Pays ou région bénéficiaire</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn
             block
             variant="outline-primary"
-            class="mb-2"
+            class="mb-2 iati-button"
             to="/fr/data/reporting-organisation/">par Organisme déclarant</b-btn>
     </b-col>
     <b-col lg="4">
         <b-btn
         block
         variant="outline-primary"
-        class="mb-2"
+        class="mb-2 iati-button"
         to="/fr/data/sector-category/">par Catégorie de secteur</b-btn>
     </b-col>
 </b-row>
@@ -42,25 +42,8 @@
 
 </b-card>
     <b-card>
-        <p><b-btn block variant="primary" to="/fr/data/custom/">Téléchargement de données personnalisées <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
+        <p><b-btn block variant="primary" class="iati-button" to="/fr/data/custom/">Téléchargement de données personnalisées <font-awesome-icon :icon="['fa', 'wand-magic-sparkles']" /></b-btn></p>
         <p>Choisissez les colonnes à inclure dans votre feuille de calcul et sélectionnez les filtres pour affiner votre recherche. Téléchargez l'ensemble de données personnalisé dans Excel.</p>
     </b-card>
 </b-card-group>
 <hr />
-<b-alert show variant="secondary" class="text-center">
-    <p>À la recherche des lignes directrices? Nous avons déplacé ce contenu dans la section À propos.</p>
-    <b-btn variant="secondary" to="/fr/guidance-analysis/">Lignes directrices &raquo;</b-btn>
-</b-alert>
-<hr />
-<div class="text-center">
-    <p class="font-weight-bold">IATI data access tools:</p>
-    <a href="https://countrydata.iatistandard.org/">Country Development Finance Data Tool</a><br />
-    <a href="https://d-portal.org/ctrack.html#view=search">d-portal</a><br />
-    <a href="https://datastore.iatistandard.org/">Datastore Search</a><br />
-</div>
-
-<p class="center-logo">
-    <img src="/powered-by-iati.png" alt="Powered by IATI Data" />
-</p>
-
-[Politique de confidentialité - en anglais](https://iatistandard.org/en/privacy-policy/)
