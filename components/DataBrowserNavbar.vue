@@ -38,6 +38,12 @@
 <style lang="scss">
 .navbar-secondary {
   background-color: #eee !important;
+
+  input {
+    /* height: 30px; */
+    line-height: 1.4;
+    margin: 4px 0 0;
+  }
   .btn-link {
     color: #155366 !important;
     &:hover, &:focus, &:active {

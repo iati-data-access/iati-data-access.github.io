@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="data-browser-filter-item">
     <b-form-group
       :label="fieldLabel">
       <b-input-group
@@ -62,6 +62,13 @@
     </b-form-group>
   </div>
 </template>
+<style>
+.iati-design-system--enabled .data-browser-filter-item .no-margin input {
+  /* height: 30px; */
+  line-height: 1.4;
+  margin: 4px 0 0;
+}
+</style>
 <style scoped>
 div.input-group.nowrap {
   flex-wrap: nowrap;
@@ -72,6 +79,9 @@ div.input-group.nowrap {
 }
 .btn-outline-secondary {
   border-color: rgba(60,60,60,0.26);
+}
+.iati-design-system--enabled .no-margin fieldset {
+  padding: 0px;
 }
 </style>
 <script>
