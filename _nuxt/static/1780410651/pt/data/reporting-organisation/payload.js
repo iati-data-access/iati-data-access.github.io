@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/pt/data/reporting-organisation", {data:[{}],fetch:{},mutations:[]});
